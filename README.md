@@ -4,7 +4,7 @@ This is the [Electron](https://electron.atom.io/) based HTML5 frontend for confi
 
 ## Running
 
-You should have a reasonably recent node and npm installed. It's working for me with npm 5.4.0 and node 6.11.2.
+VERY IMPORTANT: For all of the below you should have ridiculously reasonably recent node and npm versions installed. It's working for me with npm 5.3.0 and node 8.4.0. Several earlier versions of node and npm are known not to work.
 
 Run:
 
@@ -14,15 +14,17 @@ Run:
 
 ## Developing
 
-Run:
+To begin developing, run:
 
     $ npm install
     $ npm run build-watch &
     $ npm start
 
-Changes made to the js/ts/scss files will be detected, and the built app files will be available in the `build` directory. Doing "command-r" should reload the files in the Electron webview, though this doesn't work as consistently as one might like; sometimes you have to re-start electron.
+Changes made to the js/ts/scss files will be detected, and the built app files will be available in the `build` directory. Doing "command-r" only very rarely updates the files in the webview, so usually when you make changes you have to stop and re-run `npm start`.
 
 ### To install libraries
+
+To install libraries to be used by the web app, run:
 
     $ npm install foolib@version --save
 
@@ -38,18 +40,16 @@ See https://github.com/angular/angular-cli/wiki/generate-component for details
 
 ### Building the executables
 
-NB: There is a bug in npm 5.3.0, and maybe earlier versions, that prevents the executable from being built (see https://github.com/electron-userland/electron-packager/issues/686). 5.4.0 works, so install that if you run into any issues.
+NB: See the note above about npm/node versions. All commands, including `npm install`, have to have been run with particular versions of node/npm installed.
 
 To build the macOS executable, run:
 
     $ npm run build-mac-executable
 
-And the executable will be at `mesh-frontend-electron-darwin-x64/mesh-frontend-electron.app`.
+...And several flavors of distributable mac executables will then be in the `out` directory.
 
-To build the Windows executable from a mac, you first need to install Wine (`brew install wine`). Then run:
+Building for windows from the mac does not work yet; when/if it does, you will be able to do it by running:
 
     $ npm run build-win-executable
-
-And the executable will be placed at `mesh-frontend-electron-win32-x64/mesh-frontend-electron.exe`.
 
 The executables are build using the [electron-packager](https://github.com/electron-userland/electron-packager) tool.

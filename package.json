@@ -12,8 +12,9 @@
     "build-watch": "ng build --watch --output-path=build",
     "test": "ng test",
     "lint": "ng lint",
-    "build-mac-executable": "npm run build && node_modules/.bin/electron-packager --platform=darwin --overwrite .",
-    "build-win-executable": "npm run build && node_modules/.bin/electron-packager --platform=win32 --overwrite ."
+    "build-mac-executable": "npm run build && node_modules/.bin/electron-builder --mac",
+    "build-win-executable": "npm run build && node_modules/.bin/electron-builder --win",
+    "postinstall": "node_modules/.bin/electron-builder install-app-deps"
   },
   "private": true,
   "repository": {
@@ -24,6 +25,16 @@
   "license": "ISC",
   "bugs": {
     "url": ""
+  },
+  "build": {
+    "appId": "org.meshlabs.configurator",
+    "mac": {
+      "category": "your.app.category.type"
+    },
+    "directories": {
+      "buildResources": "build-resources",
+      "output": "out"
+    }
   },
   "homepage": "",
   "dependencies": {
@@ -52,7 +63,7 @@
     "@types/node": "~6.0.60",
     "codelyzer": "~3.1.1",
     "electron": "^1.7.5",
-    "electron-packager": "^9.0.0",
+    "electron-builder": "^19.26.3",
     "jasmine-core": "~2.6.2",
     "jasmine-spec-reporter": "~4.1.0",
     "karma": "~1.7.0",
