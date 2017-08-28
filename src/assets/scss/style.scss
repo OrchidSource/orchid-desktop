@@ -1,0 +1,177 @@
+// TODO: package this with the app
+@import url(http://fonts.googleapis.com/css?family=Roboto);
+
+/* Order matter! */
+@import './mixins';
+@import './variables';
+
+@import './alert';
+@import './alert';
+@import './badge';
+@import './code';
+@import './input-group';
+@import './images';
+@import './responsive-embed';
+@import './reboot';
+@import './breadcrumb';
+@import './jumbotron';
+@import './tables';
+@import './button-group';
+@import './list-group';
+@import './tooltip';
+@import './toggle';
+@import './buttons';
+@import './media';
+@import './transitions';
+@import './card';
+@import './type';
+@import './carousel';
+@import './modal';
+@import './utilities';
+@import './close';
+@import './nav';
+@import './navbar';
+@import './custom-forms';
+@import './normalize';
+@import './custom';
+@import './pagination';
+@import './dropdown';
+@import './popover';
+@import './forms';
+@import './print';
+@import './grid';
+@import './progress';
+
+$primary-color: #18BECC;
+$secondary-color: #F5A623;
+$headers: 'Roboto', sans serif;
+$dark-bg-color: #616161;
+$primary-text-color: #4A4A4A;
+$secondary-text-color: #99A1B0;
+$white-text: #fff;
+
+
+/*common */
+
+html {
+	font-size: 16px;
+}
+
+.row.equal-height {
+    display: flex;
+    flex-wrap: wrap;
+}
+.row.equal-height > [class*='col-'] {
+    display: flex;
+    flex-direction: column;
+}
+
+.card {
+    flex: 1;
+    margin-bottom: 1.5rem;
+}
+.row .col {padding-top: 30px;padding-bottom: 30px;}
+#wrapper{padding-left: 215px;padding-right: 30px;width:100%;}
+.btn-primary{background-color: $primary-color;border-color: $primary-color;}
+.ci-met-stack {background: url('../imgs/met-stack.svg') no-repeat;height:20px;float: left;}
+
+input[type="range"]{
+-webkit-appearance: none;
+    -moz-apperance: none;
+    border-radius: 6px;
+    height: 12px;
+    background-color: $primary-color;
+}
+
+input[type='range']::-webkit-slider-thumb {
+    -webkit-appearance: none !important;
+    background-color: $primary-color;
+    /* Oval: */
+background: $primary-color;
+box-shadow: 0 2px 4px 0 rgba(0,0,0,0.50);
+border-radius: 50%;
+    height: 22px;
+    width: 22px;
+}
+
+.h-80{height:80% !important;}
+.h-20{height:20% !important;}
+.dropdown{
+.flag {width: 20px; height: 15px;margin-right: 5px;}
+}
+
+
+/* side nav */
+#sidebar-wrapper{
+ margin-left: -200px;
+  left: 200px;
+  width: 200px;
+  background: #CCC;
+  position: fixed;
+  height: 100%;
+  overflow-y: hidden;
+  z-index: 1000;
+  transition: all 0.4s ease 0s;
+.sidenav {
+      background-color:$dark-bg-color;
+      color: $white-text;
+      color: #fff;
+      height: 100vh;
+      font-size: 13px;
+    }
+    .nav-pills {
+ a {color: #fff; font-family: $headers;font-size: .8rem;
+ .badge{margin-left: 0px !important;margin-right: 20px;width: 20px; text-align: center;padding: 4px;background-color:#fff;color:$primary-text-color;font-weight: bold;font-size: 85%;line-height:85%;}}
+ .fa{font-size: 20px;line-height: 20px;margin-right: 20px;width: 20px; text-align: center;vertical-align: middle;}
+ .fa-globe{line-height: 36px;}
+ .nav-link {padding:.6rem 0;}
+ .nav-link.active:hover{a{background-color: transparent;}}
+.nav-link.active, .nav-link.active:hover{background: none;color:$secondary-color;}
+}
+}
+
+
+
+/* Dashboard */
+
+.dashboard-content{
+
+padding-top: 30px;
+/*all cards*/
+.card{box-shadow: 0 2px 4px 0 rgba(35,36,37,0.30);}
+	.dashboard-card {
+	.card-block {padding: .2rem 0rem 1.25rem 0rem;
+	.btn{padding: 0.5rem .7rem;}
+	.dropdown-toggle{border: none;
+	&:hover{background:none;}
+	&:active,&:focus{background-color:transparent;border: none;}}}
+	.show {
+		.btn-secondary.dropdown-toggle {background-color: transparent; border: none;}
+		.dropdown-menu{width: 100%;}
+	}
+	.card-action-container{padding: 5px 15px;.btn,.btn-group,input{width:100%;}}
+	.card-content{width: 100%; text-align: center;padding: 15px;
+	h3 {font-size: 6rem; text-align: center;}
+	img{width: 100%;}
+
+	}
+	color:$secondary-text-color;
+		h4 {text-transform: uppercase;color: $secondary-text-color; font-family: $headers; font-size: .6rem; display: inline;}
+		.card-help{float: right;
+			.fa-question-circle{color: $primary-color;}
+		}
+	}
+	/*MET balance*/
+	.met-balance {
+
+
+	}
+	/*Usage Summary*/
+	.usage-summary {
+	hr {margin-bottom: 0px;}
+	}
+	/*Browsing location*/
+	.browsing-location{
+	 .dropdown-toggle::after{float: right;margin-top: 6px;}
+	 }
+} /* End Dashboard Content*/

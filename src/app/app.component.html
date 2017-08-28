@@ -1,0 +1,37 @@
+<div id="wrapper">
+  <div id="sidebar-wrapper" class="row">
+    <div class="sidenav col">
+      <div class="navbar navbar-inverse sidebar-navbar">
+        <ul class="nav flex-column nav-pills nav-stacked">
+
+          <li class="nav-item">
+            <a href="#" title="connect" class="nav-link" data-toggle="tooltip">
+              <span class="fa fa-globe fa-2x float-left"></span>
+              <label class='toggler__label'>
+                <input type="checkbox" hidden>
+                <div class='toggler'></div>
+              </label>
+            </a>
+          </li>
+
+          <li class="nav-item nav-item-inverse">
+            <a routerLink="/dashboard" routerLinkActive="active" class="nav-link"><span class="fa fa-area-chart"></span> Dashboard</a>
+          </li>
+          <li class="nav-item">
+            <a  routerLink="/met-manager" routerLinkActive="active" class="nav-link"><span class="fa ci-met-stack"></span> MET Manager</a>
+          </li>
+          <li class="nav-item">
+            <a routerLink="/notifications" routerLinkActive="active" class="nav-link"><span class="badge badge-primary">4</span> Notifications</a>
+          </li>
+          <li class="nav-item">
+            <a routerLink="/help" routerLinkActive="active" class="nav-link"><span class="fa fa-question-circle"></span> Help</a>
+          </li>
+        </ul>
+      </div><!--/.nav-collapse -->
+    </div>
+  </div><!-- #sidebar-wrapper -->
+
+  <div class="col dashboard-content">
+    <router-outlet></router-outlet>
+  </div> <!-- .dashboard-content-->
+</div> <!-- #wrapper -->
