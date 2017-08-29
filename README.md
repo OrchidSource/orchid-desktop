@@ -42,14 +42,30 @@ See https://github.com/angular/angular-cli/wiki/generate-component for details
 
 NB: See the note above about npm/node versions. All commands, including `npm install`, have to have been run with particular versions of node/npm installed.
 
-To build the macOS executable, run:
+All executables get placed in the `out` directory.
+
+Building can take a very long time, especially the first time you do it; be patient.
+
+All executables are built using the [electron-packager](https://github.com/electron-userland/electron-packager) tool; see the options for that tool to see how to modify the generated executables (e.g. sign them or change the app icon).
+
+#### Mac OX
+
+It is only possible to build a Mac executable from a Mac computer.
+
+To build the macOS executable, run the following command from a mac:
 
     $ npm run build-mac-executable
 
 ...And several flavors of distributable mac executables will then be in the `out` directory.
 
-Building for windows from the mac does not work yet; when/if it does, you will be able to do it by running:
+#### Windows
+
+It is possible to build for Windows from a non-windows machine using Docker. To do so you need [Docker for mac](https://docs.docker.com/docker-for-mac/) installed. Then run:
 
     $ npm run build-win-executable
 
-The executables are build using the [electron-packager](https://github.com/electron-userland/electron-packager) tool.
+#### Linux
+
+This is untested, but should work:
+
+    $ npm run build-linux-executable
