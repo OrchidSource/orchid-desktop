@@ -5,6 +5,7 @@ import { DashboardComponent } from './dashboard/dashboard.component';
 import { MetManagerComponent } from './met-manager/met-manager.component';
 import { NotificationsComponent } from './notifications/notifications.component';
 import { HelpComponent } from './help/help.component';
+import { StartPurchaseComponent } from './purchase/start-purchase/start-purchase.component';
 
 const routes: Routes = [
   {
@@ -15,6 +16,13 @@ const routes: Routes = [
   {
     path: 'dashboard',
     component: DashboardComponent
+  },
+  // Maybe these purchase modal routes should go in their own file?
+  //
+  {
+    path: 'startpurchase',
+    outlet: 'modal',
+    component: StartPurchaseComponent
   },
   {
     path: 'met-manager',

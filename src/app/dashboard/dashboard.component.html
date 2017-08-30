@@ -1,16 +1,26 @@
 <div class="row equal-height">
   <div class="col-sm-4">
     <div class="card dashboard-card">
-      <div class="card-header"><h4 class="card-title">MET Balance</h4><span class="card-help"><a href="#" title="You need MET to connect!" data-toggle="tooltip" class=""><span class="fa fa-question-circle"></span></a></span></div>
+      <div class="card-header">
+        <h4 class="card-title">MET Balance</h4>
+        <span class="card-help">
+          <a href="#" title="You need MET to connect!" data-toggle="tooltip" class=""><span class="fa fa-question-circle"></span></a>
+        </span>
+      </div>
       <div class="h-100 card-block justify-content-end">
         <div class="card-content h-80 justify-content-end"><h3 class="card-text met-balance">0</h3></div>
-        <div class="card-action-container h-20 justify-content-end"><a class="btn btn-primary" href="#" role="button">Purchase MET</a></div>
+        <div class="card-action-container h-20 justify-content-end">
+          <a class="btn btn-primary" href="#" role="button" [routerLink]="[ '', {outlets: { modal: 'startpurchase' } }]">Purchase MET</a>
+        </div>
       </div>
     </div>
   </div>
   <div class="col-sm-4">
     <div class="card dashboard-card browsing-location">
-      <div class="card-header"><h4 class="card-title">Default Browsing Location</h4><span class="card-help"><a href="#" class="" title="This is where you will appear to be browsing the internet from." data-toggle="tooltip" data-placement="bottom"><span class="fa fa-question-circle"></span></a></span></div>
+      <div class="card-header">
+        <h4 class="card-title">Default Browsing Location</h4>
+        <span class="card-help"><a href="#" class="" title="This is where you will appear to be browsing the internet from." data-toggle="tooltip" data-placement="bottom"><span class="fa fa-question-circle"></span></a></span>
+      </div>
       <div class="h-100 card-block justify-content-end">
         <div class="card-content h-80 justify-content-end"><img src="assets/imgs/map-placeholder.svg"></div>
         <div class="card-action-container h-20 justify-content-end">
@@ -51,7 +61,10 @@
   </div>
   <div class="col-sm-4">
     <div class="card dashboard-card">
-      <div class="card-header"><h4 class="card-title">Security Level</h4><span class="card-help"><a href="#" class=""><span class="fa fa-question-circle"></span></a></span></div>
+      <div class="card-header">
+        <h4 class="card-title">Security Level</h4>
+        <span class="card-help"><a href="#" class=""><span class="fa fa-question-circle"></span></a></span>
+      </div>
       <div class="h-100 card-block justify-content-end">
         <div class="card-content h-80 justify-content-end"><h3 class="card-text security-level"><output for="security-range" id="sec-lev">5</output></h3></div>
         <div class="card-action-container h-20 justify-content-end">
@@ -65,7 +78,10 @@
 <div class="row equal-height">
   <div class="col-sm-4">
     <div class="card dashboard-card">
-      <div class="card-header"><h4 class="card-title">Usage Summary</h4><span class="card-help"><a href="#" class=""><span class="fa fa-question-circle"></span></a></span></div>
+      <div class="card-header">
+        <h4 class="card-title">Usage Summary</h4>
+        <span class="card-help"><a href="#" class=""><span class="fa fa-question-circle"></span></a></span>
+      </div>
       <div class="h-100 card-block justify-content-end">
         <div class="card-content h-80 justify-content-end"><img src="assets/imgs/chart-placeholder.svg"><hr/></div>
         <div class="card-action-container h-20 justify-content-end">
@@ -77,7 +93,10 @@
   </div>
   <div class="col-sm-4">
     <div class="card dashboard-card">
-      <div class="card-header"><h4 class="card-title">Bandwidth</h4><span class="card-help"><a href="#" class=""><span class="fa fa-question-circle"></span></a></span></div>
+      <div class="card-header">
+        <h4 class="card-title">Bandwidth</h4>
+        <span class="card-help"><a href="#" class=""><span class="fa fa-question-circle"></span></a></span>
+      </div>
       <div class="h-100 card-block justify-content-end">
         <div class="card-content h-80 justify-content-end"><img src="assets/imgs/ograph-placeholder.svg"></div>
         <div class="card-action-container h-20 justify-content-end">
@@ -101,3 +120,4 @@
   </div>
 
 </div><!--row-->
+<!-- <router-outlet name="modal"></router-outlet> -->

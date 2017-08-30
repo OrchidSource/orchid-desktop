@@ -55,6 +55,10 @@ fieldset[disabled] a.btn {
 .btn-primary {
   @include button-variant($btn-primary-color, $btn-primary-bg, $btn-primary-border);
 }
+// The "second" primary button... a.k.a. the orange button.
+.btn-second-primary {
+  @include button-variant(white, $secondary-color, $secondary-color);
+}
 .btn-secondary {
   @include button-variant($btn-secondary-color, $btn-secondary-bg, $btn-secondary-border);
 }

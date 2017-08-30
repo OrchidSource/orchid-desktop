@@ -1,6 +1,14 @@
 // TODO: package this with the app
 @import url(http://fonts.googleapis.com/css?family=Roboto);
 
+$primary-color: #18BECC;
+$secondary-color: #F5A623;
+$headers: 'Roboto', sans serif;
+$dark-bg-color: #616161;
+$primary-text-color: #4A4A4A;
+$secondary-text-color: #99A1B0;
+$white-text: #fff;
+
 /* Order matter! */
 @import './mixins';
 @import './variables';
@@ -41,14 +49,6 @@
 @import './print';
 @import './grid';
 @import './progress';
-
-$primary-color: #18BECC;
-$secondary-color: #F5A623;
-$headers: 'Roboto', sans serif;
-$dark-bg-color: #616161;
-$primary-text-color: #4A4A4A;
-$secondary-text-color: #99A1B0;
-$white-text: #fff;
 
 
 /*common */
