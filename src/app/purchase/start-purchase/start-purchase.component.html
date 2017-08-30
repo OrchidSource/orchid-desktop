@@ -4,12 +4,52 @@
       <div class="modal-body">
 
         <h1>Purchase Tokens</h1>
-        <div>You can use MESH tokens to purchase internet access.</div>
+        <div class="secondary-text">You can use MESH tokens to purchase internet access.</div>
         <div>
           <a href="">How many tokens do I need?</a>
         </div>
 
-        <button class="btn btn-second-primary">Next</button>
+        <div class="row">
+          <div class="col-6">
+            Number of tokens
+
+            <div ngbDropdown class="d-inline-block">
+              <button class="btn btn-secondary" id="dropdownBasic1" ngbDropdownToggle>
+                {{ token_purchase_cart.tokens | number }}
+              </button>
+              <div ngbDropdownMenu aria-labelledby="dropdownBasic1">
+                <button class="dropdown-item"
+                *ngFor="let tks of number_tokens_options"
+                (click)="token_purchase_cart.tokens = tks">
+                {{ tks | number}}
+              </button>
+            </div>
+          </div>
+
+          </div>
+          <div class="col-6">
+            Total bandwidth
+            <div ngbDropdown class="d-inline-block">
+              <button class="btn btn-secondary" id="dropdownBasic1" ngbDropdownToggle>
+                {{ token_purchase_cart.bandwidth }}
+              </button>
+              <div ngbDropdownMenu aria-labelledby="dropdownBasic1">
+                <button class="dropdown-item"
+                *ngFor="let bw of bandwidth_options"
+                (click)="token_purchase_cart.bandwidth = bw">
+                {{ bw | number }}
+              </button>
+            </div>
+          </div>
+        </div>
+        <div class="col-12">
+          Total cost in USD: ${{ calculate_cost() | number }}
+        </div>
+        <div class="col-6 offset-3">
+          <button class="btn btn-second-primary btn-large next-button">Next</button>
+        </div>
+      </div> <!-- .row -->
+
 
       </div>
     </div><!-- /.modal-content -->

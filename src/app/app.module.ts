@@ -1,5 +1,6 @@
 import { BrowserModule } from '@angular/platform-browser';
 import { NgModule } from '@angular/core';
+import { FormsModule } from '@angular/forms';
 
 import { AppRoutingModule } from './app-routing.module';
 import { AppComponent } from './app.component';
@@ -14,13 +15,14 @@ import { StartPurchaseComponent } from './purchase/start-purchase/start-purchase
   declarations: [
     AppComponent,
     DashboardComponent,
+    HelpComponent,
     MetManagerComponent,
     NotificationsComponent,
-    HelpComponent,
     StartPurchaseComponent
   ],
   imports: [
     BrowserModule,
+    FormsModule,
     AppRoutingModule,
     NgbModule.forRoot()
   ],
