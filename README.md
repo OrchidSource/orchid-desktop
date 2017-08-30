@@ -34,7 +34,7 @@ Then either link to the files in the app/index.html file, or add the files as de
 
 The easiest way is to use the `ng generate` command; e.g.:
 
-    $ ng generate component my-cool-new-component
+    $ node_modules/.bin/ng generate component my-cool-new-component
 
 See https://github.com/angular/angular-cli/wiki/generate-component for details
 
