@@ -9,7 +9,8 @@ import { DashboardComponent } from './dashboard/dashboard.component';
 import { MetManagerComponent } from './met-manager/met-manager.component';
 import { NotificationsComponent } from './notifications/notifications.component';
 import { HelpComponent } from './help/help.component';
-import { StartPurchaseComponent } from './purchase/start-purchase/start-purchase.component';
+import { PurchaseStartComponent } from './purchase/purchase-start/purchase-start.component';
+import { PurchasePaymentComponent } from './purchase/purchase-payment/purchase-payment.component';
 
 @NgModule({
   declarations: [
@@ -18,7 +19,8 @@ import { StartPurchaseComponent } from './purchase/start-purchase/start-purchase
     HelpComponent,
     MetManagerComponent,
     NotificationsComponent,
-    StartPurchaseComponent
+    PurchasePaymentComponent,
+    PurchaseStartComponent
   ],
   imports: [
     BrowserModule,

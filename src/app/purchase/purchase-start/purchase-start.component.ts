@@ -1,11 +1,11 @@
 import { Component, OnInit } from '@angular/core';
 
 @Component({
-  selector: 'app-start-purchase',
-  templateUrl: './start-purchase.component.html',
-  styleUrls: ['./start-purchase.component.scss']
+  selector: 'app-purchase-start',
+  templateUrl: './purchase-start.component.html',
+  styleUrls: ['./purchase-start.component.scss']
 })
-export class StartPurchaseComponent implements OnInit {
+export class PurchaseStartComponent implements OnInit {
 
   number_tokens_options: number[] = [1000, 5000, 10000, 50000];
   bandwidth_options: number[] = [5, 10, 25, 50];
