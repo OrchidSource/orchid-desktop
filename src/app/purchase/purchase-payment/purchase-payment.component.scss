@@ -17,8 +17,9 @@
 // The div on the right where payment info is entered
 .payment-info {
   width: 100%;
-  
+
   .payment-info-body {
+    min-height: 300px;
     overflow-y: scroll
   }
 }

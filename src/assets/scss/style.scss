@@ -204,3 +204,9 @@ padding-top: 30px;
 		justify-content: center;
 	}
 }
+
+// put on the modal-title if you want it to be as small as possible; e.g. if you just want enough space for a "close" button
+.modal-header-sm {
+	padding: 2px 3px 0 3px;
+	border: 0;
+}

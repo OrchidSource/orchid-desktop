@@ -1,6 +1,11 @@
 <div class="modal fade show" tabindex="-1" role="dialog">
   <div class="modal-dialog modal-lg" role="document">
     <div class="modal-content">
+      <div class="modal-header modal-header-sm">
+        <a [routerLink]="[ '', {outlets: { modal: null } }]" class="close" data-dismiss="modal" aria-label="Close">
+          <i class="fa fa-times-circle" aria-hidden="true"></i>
+        </a>
+      </div>
       <div class="modal-body">
         <form>
           <div class="payment-container">
@@ -53,7 +58,7 @@
                     </div>
 
                     <div class="form-group">
-                      <label for="payment_credit_card_security_code">Security code (?)</label>
+                      <label for="payment_credit_card_security_code">Security code <span class="fa fa-question-circle"></span></label>
                       <input type="text" class="form-control" id="payment_credit_card_security_code">
                     </div>
 
@@ -84,7 +89,7 @@
 
               <div>
                 <button type="submit" class="btn btn-second-primary">
-                  Purchase X MET for $y
+                  Purchase {{token_purchase_cart.tokens | number }} MET for ${{ (.5 * token_purchase_cart.tokens) | number }}
                 </button>
               </div>
             </div>
