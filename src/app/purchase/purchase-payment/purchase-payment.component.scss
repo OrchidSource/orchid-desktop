@@ -16,7 +16,11 @@
 
 // The div on the right where payment info is entered
 .payment-info {
-
+  width: 100%;
+  
+  .payment-info-body {
+    overflow-y: scroll
+  }
 }
 
 .inline-form-elements-container {

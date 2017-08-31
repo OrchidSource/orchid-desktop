@@ -14,7 +14,10 @@
             Number of tokens
 
             <div ngbDropdown class="d-inline-block">
-              <button class="btn btn-secondary" id="dropdownBasic1" ngbDropdownToggle>
+              <button class="btn btn-secondary btn-chiclet" id="dropdownBasic1" ngbDropdownToggle>
+                <div class="chiclet">
+                  <div>M</div>
+                </div>
                 {{ token_purchase_cart.tokens | number }}
               </button>
               <div ngbDropdownMenu aria-labelledby="dropdownBasic1">
@@ -30,7 +33,10 @@
           <div class="col-6">
             Total bandwidth
             <div ngbDropdown class="d-inline-block">
-              <button class="btn btn-secondary" id="dropdownBasic1" ngbDropdownToggle>
+              <button class="btn btn-secondary btn-chiclet" id="dropdownBasic1" ngbDropdownToggle>
+                <div class="chiclet">
+                  <div>G</div>
+                </div>
                 {{ token_purchase_cart.bandwidth }}
               </button>
               <div ngbDropdownMenu aria-labelledby="dropdownBasic1">

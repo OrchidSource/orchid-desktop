@@ -1,7 +1,9 @@
 // TODO: package this with the app
 @import url(http://fonts.googleapis.com/css?family=Roboto);
 
+// The turquiose color
 $primary-color: #18BECC;
+// The orange color
 $secondary-color: #F5A623;
 $headers: 'Roboto', sans serif;
 $dark-bg-color: #616161;
@@ -178,4 +180,27 @@ padding-top: 30px;
 
 .secondary-text {
 	color: $secondary-text-color;
+}
+
+
+// Put a "chiclet" on the left of a button.
+// To use, put .btn-chiclet on the .btn element, and put a .chiclet div inside the button
+.btn-chiclet {
+	padding-left: 55px;
+	> .chiclet {
+		display: block;
+		position: absolute;
+		left: 0;
+		top: 0;
+		bottom: 0;
+		border-radius: .25rem 0 0 .25rem;
+		background-color: $primary-color;
+		color: white;
+		width: 40px;
+
+		// centers contained divs
+		display: flex;
+		flex-direction: column;
+		justify-content: center;
+	}
 }
