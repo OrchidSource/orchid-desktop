@@ -37,7 +37,7 @@
                 <button class="dropdown-item"
                 *ngFor="let bw of bandwidth_options"
                 (click)="token_purchase_cart.bandwidth = bw">
-                {{ bw | number }}
+                {{ bw | number }} GB
               </button>
             </div>
           </div>
@@ -46,7 +46,7 @@
           Total cost in USD: ${{ calculate_cost() | number }}
         </div>
         <div class="col-6 offset-3">
-          <button class="btn btn-second-primary btn-large next-button">Next</button>
+          <a class="btn btn-second-primary btn-large next-button"[routerLink]="[ '', {outlets: { modal: 'purchase-payment' } }]" >Next</a>
         </div>
       </div> <!-- .row -->
 

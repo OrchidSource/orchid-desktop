@@ -1,19 +1,6 @@
 $vertical-margin: 20px;
 
-:host {
-  position: fixed;
-  top: 0;
-  bottom: 0;
-  left: 0;
-  right: 0;
-
-  z-index: 2000;
-}
-
-// TODO: this should be moved into a "global" style
 .modal {
-  display: block;
-  background-color:rgba(0, 0, 0, 0.5);
 
   .modal-body {
     text-align: center;
@@ -28,11 +15,11 @@ $vertical-margin: 20px;
   [ngbDropdown] {
     width: 100%;
   }
-  button {
+  .btn {
     width: 100%;
   }
 
-  button.next-button {
+  .btn.next-button {
     margin-top: $vertical-margin;
   }
 

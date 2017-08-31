@@ -3,7 +3,8 @@ import { Component, OnInit } from '@angular/core';
 @Component({
   selector: 'app-purchase-start',
   templateUrl: './purchase-start.component.html',
-  styleUrls: ['./purchase-start.component.scss']
+  styleUrls: ['./purchase-start.component.scss'],
+  host: {class: 'modal-host'}
 })
 export class PurchaseStartComponent implements OnInit {
 

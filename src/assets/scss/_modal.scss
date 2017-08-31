@@ -140,3 +140,19 @@
 @include media-breakpoint-up(lg) {
   .modal-lg { max-width: $modal-lg; }
 }
+
+/* Class that should be put on containers of .modal elements */
+.modal-host {
+  position: fixed;
+  top: 0;
+  bottom: 0;
+  left: 0;
+  right: 0;
+
+  z-index: 2000;
+  .modal {
+    display: block;
+    background-color:rgba(0, 0, 0, 0.5);
+
+  }
+}

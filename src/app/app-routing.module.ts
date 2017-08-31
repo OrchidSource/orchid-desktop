@@ -6,6 +6,7 @@ import { MetManagerComponent } from './met-manager/met-manager.component';
 import { NotificationsComponent } from './notifications/notifications.component';
 import { HelpComponent } from './help/help.component';
 import { PurchaseStartComponent } from './purchase/purchase-start/purchase-start.component';
+import { PurchasePaymentComponent } from './purchase/purchase-payment/purchase-payment.component';
 
 const routes: Routes = [
   {
@@ -23,6 +24,11 @@ const routes: Routes = [
     path: 'purchase-start',
     outlet: 'modal',
     component: PurchaseStartComponent
+  },
+  {
+    path: 'purchase-payment',
+    outlet: 'modal',
+    component: PurchasePaymentComponent
   },
   {
     path: 'met-manager',
