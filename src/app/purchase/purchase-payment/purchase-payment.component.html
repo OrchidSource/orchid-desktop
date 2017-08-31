@@ -1,8 +1,85 @@
 <div class="modal fade show" tabindex="-1" role="dialog">
-  <div class="modal-dialog" role="document">
+  <div class="modal-dialog modal-lg" role="document">
     <div class="modal-content">
       <div class="modal-body">
-        purchase-payment works!
+        <form>
+          <div class="payment-container">
+            <div class="payment-options p-4">
+              <div>
+
+                <div class="form-check">
+                  <label class="form-check-label">
+                    <input class="form-check-input" type="radio" name="payment_type" value="credit_card" checked>
+                    Credit Card
+                  </label>
+                </div>
+
+                <div class="form-check">
+                  <label class="form-check-label">
+                    <input class="form-check-input" type="radio" name="payment_type" value="paypal">
+                    PayPal
+                  </label>
+                </div>
+
+                <div class="form-check">
+                  <label class="form-check-label">
+                    <input class="form-check-input" type="radio" name="payment_type"  value="cryptocurrency">
+                    Cryptocurrency
+                  </label>
+                </div>
+
+              </div>
+            </div>
+            <div class="payment-info p-4">
+              <h1>Payment</h1>
+              <div class="credit-card">
+                <div class="form-group">
+                  <label for="payment_credit_card_name">Name on card</label>
+                  <input type="text" class="form-control" id="payment_credit_card_name">
+                </div>
+
+                <div class="form-group">
+                  <label for="payment_credit_card_number">Card number</label>
+                  <input type="text" class="form-control" id="payment_credit_card_number">
+                </div>
+
+                <div class="inline-form-elements-container">
+
+                  <div class="form-group">
+                    <label for="payment_credit_card_expiration_date">Expiration date</label>
+                    <input type="text" class="form-control" id="payment_credit_card_expiration_date" placeholder="MM/YY">
+                  </div>
+
+                  <div class="form-group">
+                    <label for="payment_credit_card_security_code">Security code (?)</label>
+                    <input type="text" class="form-control" id="payment_credit_card_security_code">
+                  </div>
+
+                  <div class="form-group">
+                    <label for="payment_credit_card_zip_code">Zip code</label>
+                    <input type="text" class="form-control" id="payment_credit_card_zip_code">
+                  </div>
+
+                </div>
+
+                <div class="form-check">
+                  <label class="form-check-label secondary-text">
+                    <input type="checkbox" class="form-check-input">
+                    Save card info
+                  </label>
+                </div>
+
+
+              </div>
+
+              <div>
+                <button type="submit" class="btn btn-second-primary">
+                  Purchase X MET for $y
+                </button>
+              </div>
+            </div>
+          </div><!-- .payment-container -->
+        </form>
       </div>
     </div>
   </div>
