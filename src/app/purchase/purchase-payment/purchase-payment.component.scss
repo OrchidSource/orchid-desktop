@@ -1,3 +1,4 @@
+$container-padding: 1.5rem;
 
 .payment-container {
   display: flex;
@@ -6,6 +7,7 @@
 // The div on the left with the radio buttons
 .payment-options {
   min-width: 190px;
+  padding: $container-padding;
 
   // Center content vertically
   display: flex;
@@ -16,6 +18,7 @@
 
 // The div on the right where payment info is entered
 .payment-info {
+  padding: 0 $container-padding $container-padding $container-padding;
   width: 100%;
 
   .payment-info-body {

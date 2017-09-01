@@ -205,8 +205,20 @@ padding-top: 30px;
 	}
 }
 
-// put on the modal-title if you want it to be as small as possible; e.g. if you just want enough space for a "close" button
-.modal-header-sm {
-	padding: 2px 3px 0 3px;
-	border: 0;
+/* some modal utility things
+*/
+.modal {
+	// We use the h1 for the modal title; this brings it closer to the top.
+	.modal-body {
+		padding-top: 0;
+		h1 {
+			margin-top: 0;
+		}
+	}
+	// put on the modal-title if you want it to be as small as possible; e.g. if you just want enough space for a "close" button
+	.modal-header-sm {
+		padding: 2px 3px 0 3px;
+		border: 0;
+	}
+
 }

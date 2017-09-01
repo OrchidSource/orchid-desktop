@@ -9,7 +9,7 @@
       <div class="modal-body">
         <form>
           <div class="payment-container">
-            <div class="payment-options p-4">
+            <div class="payment-options">
               <div>
 
                 <div class="form-check">
@@ -35,7 +35,7 @@
 
               </div>
             </div>
-            <div class="payment-info p-4">
+            <div class="payment-info">
               <h1>Payment</h1>
 
               <div class="payment-info-body">
@@ -58,7 +58,11 @@
                     </div>
 
                     <div class="form-group">
-                      <label for="payment_credit_card_security_code">Security code <span class="fa fa-question-circle"></span></label>
+                      <label for="payment_credit_card_security_code">
+                        Security code <span class="fa fa-question-circle text-primary"
+                                            ngbPopover="Info about the security code"
+                                            popoverTitle="Security code"></span>
+                      </label>
                       <input type="text" class="form-control" id="payment_credit_card_security_code">
                     </div>
 
