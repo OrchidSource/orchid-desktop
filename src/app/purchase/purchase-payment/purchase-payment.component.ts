@@ -26,17 +26,33 @@ export class PurchasePaymentComponent implements OnInit {
     this.build_form();
   }
 
-  requiredFactory = function(payment_type: string) {
+  requiredFactory = function(for_payment_type: string, payment_type_form_control: FormControl) {
     return function(control: AbstractControl) {
-      debugger;
-      return payment_type === this.payment_form.get('payment_type') && control.value.length === 0 ? {er: 'required'} : null;
+      console.log('ptfc', control);
+      if (for_payment_type !== payment_type_form_control.value) {
+        console.log('valid');
+        return null;
+      }
+      if (!control.value || control.value.length === 0) {
+        console.log('INVALID');
+        return {er: "required"}
+      } else {
+        console.log('valid');
+        return null;
+      }
     }
   }
 
   build_form() {
+    let payment_type_form_control = new FormControl(PTYPES.CREDIT_CARD);
     this.payment_form = new FormGroup({
-      'credit_card_name': new FormControl('', this.requiredFactory(PTYPES.CREDIT_CARD)),
-      'payment_type': new FormControl(PTYPES.CREDIT_CARD)
+      'credit_card_name': new FormControl('', this.requiredFactory(PTYPES.CREDIT_CARD, payment_type_form_control)),
+      'credit_card_number': new FormControl('', this.requiredFactory(PTYPES.CREDIT_CARD, payment_type_form_control)),
+      'credit_card_expiration_date': new FormControl('', this.requiredFactory(PTYPES.CREDIT_CARD, payment_type_form_control)),
+      'credit_card_security_code': new FormControl('', this.requiredFactory(PTYPES.CREDIT_CARD, payment_type_form_control)),
+      'credit_card_zip_code': new FormControl('', this.requiredFactory(PTYPES.CREDIT_CARD, payment_type_form_control)),
+      'credit_card_save_info': new FormControl(false),
+      'payment_type': payment_type_form_control
     });
   }
 
