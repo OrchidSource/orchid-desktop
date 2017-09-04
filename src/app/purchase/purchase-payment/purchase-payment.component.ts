@@ -26,34 +26,40 @@ export class PurchasePaymentComponent implements OnInit {
     this.build_form();
   }
 
-  requiredFactory = function(for_payment_type: string, payment_type_form_control: FormControl) {
-    return function(control: AbstractControl) {
-      console.log('ptfc', control);
-      if (for_payment_type !== payment_type_form_control.value) {
-        console.log('valid');
-        return null;
-      }
-      if (!control.value || control.value.length === 0) {
-        console.log('INVALID');
-        return {er: "required"}
-      } else {
-        console.log('valid');
-        return null;
-      }
-    }
-  }
-
   build_form() {
-    let payment_type_form_control = new FormControl(PTYPES.CREDIT_CARD);
-    this.payment_form = new FormGroup({
-      'credit_card_name': new FormControl('', this.requiredFactory(PTYPES.CREDIT_CARD, payment_type_form_control)),
-      'credit_card_number': new FormControl('', this.requiredFactory(PTYPES.CREDIT_CARD, payment_type_form_control)),
-      'credit_card_expiration_date': new FormControl('', this.requiredFactory(PTYPES.CREDIT_CARD, payment_type_form_control)),
-      'credit_card_security_code': new FormControl('', this.requiredFactory(PTYPES.CREDIT_CARD, payment_type_form_control)),
-      'credit_card_zip_code': new FormControl('', this.requiredFactory(PTYPES.CREDIT_CARD, payment_type_form_control)),
-      'credit_card_save_info': new FormControl(false),
-      'payment_type': payment_type_form_control
-    });
+    this.payment_form = new FormGroup(
+      {
+        'credit_card_name': new FormControl(''),
+        'credit_card_number': new FormControl(''),
+        'credit_card_expiration_date': new FormControl(''),
+        'credit_card_security_code': new FormControl(''),
+        'credit_card_zip_code': new FormControl(''),
+        'credit_card_save_info': new FormControl(false),
+        'payment_type': new FormControl(PTYPES.CREDIT_CARD)
+      },
+      (function() {
+        var ptypes = PTYPES;
+        return function(formGroup: FormGroup) {
+          var missing = {};
+          if (formGroup.get('payment_type').value === ptypes.CREDIT_CARD) {
+            var cc_required = ['credit_card_name', 'credit_card_number', 'credit_card_zip_code', 'credit_card_security_code', 'credit_card_expiration_date'];
+            cc_required.forEach((r) => {
+              if (!formGroup.get(r).value) {
+                missing[r] = 'required';
+              }
+            })
+          } else if (formGroup.get('payment_type').value === ptypes.PAYPAL) {
+
+          } else if (formGroup.get('payment_type').value === ptypes.CRYPTOCURRENCY) {
+          }
+
+          if (Object.keys(missing).length > 0) {
+            return missing;
+          }
+          return null;
+        }
+      })()
+    );
   }
 
   ngOnInit() {

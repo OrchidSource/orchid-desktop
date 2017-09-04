@@ -41,7 +41,7 @@
               <h1>Payment</h1>
 
               <div class="payment-info-body">
-                <div class="credit-card" [hidden]="payment_form.get('payment_type').value != PAYMENT_TYPES.CREDIT_CARD">
+                <div class="credit-card" [hidden]="payment_form.get('payment_type').value !== PAYMENT_TYPES.CREDIT_CARD">
                   <div class="form-group">
                     <label for="payment_credit_card_name">Name on card</label>
                     <input type="text" formControlName="credit_card_name" class="form-control" id="payment_credit_card_name">
@@ -65,12 +65,12 @@
                                             ngbPopover="Info about the security code"
                                             popoverTitle="Security code"></span>
                       </label>
-                      <input type="text" class="form-control" id="payment_credit_card_security_code">
+                      <input type="text" class="form-control" formControlName="credit_card_security_code" id="payment_credit_card_security_code">
                     </div>
 
                     <div class="form-group">
                       <label for="payment_credit_card_zip_code">Zip code</label>
-                      <input type="text" class="form-control" id="payment_credit_card_zip_code" >
+                      <input type="text" class="form-control" formControlName="credit_card_zip_code" id="payment_credit_card_zip_code" >
                     </div>
 
                   </div>
@@ -83,11 +83,11 @@
                   </div>
                 </div> <!-- .credit-card -->
 
-                <div class="paypal" [hidden]="payment_form.get('payment_type').value != PAYMENT_TYPES.PAYPAL">
+                <div class="paypal" [hidden]="payment_form.get('payment_type').value !== PAYMENT_TYPES.PAYPAL">
                   PayPal
                 </div>
 
-                <div class="paypal" [hidden]="payment_form.get('payment_type').value != PAYMENT_TYPES.CRYPTOCURRENCY">
+                <div class="paypal" [hidden]="payment_form.get('payment_type').value !== PAYMENT_TYPES.CRYPTOCURRENCY">
                   Cryptocurrency
                 </div>
 
