@@ -6,11 +6,17 @@ This is the [Electron](https://electron.atom.io/) based HTML5 frontend for confi
 
 VERY IMPORTANT: For all of the below you should have ridiculously reasonably recent node and npm versions installed. It's working for me with npm 5.3.0 and node 8.4.0. Several earlier versions of node and npm are known not to work.
 
-Run:
+To run the electron app:
 
     $ npm install
     $ npm run build
     $ npm start
+
+To run the app from from the browser, first do `npm run build` or `npm run build-watch`, then run the following (note that things related to accessing the user's system won't work):
+
+    $ npm run serve-web
+
+Then browse to the weird url http://localhost:8080/build/build/dashboard
 
 ## Developing
 
