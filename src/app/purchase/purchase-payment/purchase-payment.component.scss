@@ -6,6 +6,7 @@ $container-padding: 1.5rem;
 
 // The div on the left with the radio buttons
 .payment-options {
+  position: relative;
   min-width: 190px;
   padding: $container-padding;
 
@@ -14,6 +15,15 @@ $container-padding: 1.5rem;
   flex-direction: column;
   justify-content: center;
   resize: vertical;
+
+  .back-button {
+    position: absolute;
+    bottom: 0;
+    bottom: 0;
+    left: 0;
+    right: 0;
+    margin: $container-padding;
+  }
 }
 
 // The div on the right where payment info is entered
