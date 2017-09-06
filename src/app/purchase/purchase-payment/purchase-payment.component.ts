@@ -1,6 +1,7 @@
 import { Component, OnInit } from '@angular/core';
 import { FormBuilder, FormControl, FormGroup, Validators, AbstractControl } from '@angular/forms';
 import { PurchaseCart } from '../purchase-cart';
+import { CardValidators } from '../card-validators';
 
 @Component({
   selector: 'app-purchase-payment',
@@ -25,6 +26,7 @@ export class PurchasePaymentComponent implements OnInit {
   selected_form: FormGroup;
 
   constructor() {
+    console.log(CardValidators);
     this.build_forms();
   }
 
@@ -32,7 +34,7 @@ export class PurchasePaymentComponent implements OnInit {
     this.payment_forms.credit_card = new FormGroup(
       {
         'name': new FormControl('', Validators.required),
-        'number': new FormControl('', Validators.required),
+        'number': new FormControl('', [Validators.required, CardValidators.number]),
         'expiration_date': new FormControl('', Validators.required),
         'security_code': new FormControl('', Validators.required),
         'zip_code': new FormControl('', Validators.required),
