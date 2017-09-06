@@ -14,7 +14,7 @@ To run the electron app:
 
 To run the app from from the browser, first do `npm run build` or `npm run build-watch`, then run the following (note that things related to accessing the user's system won't work):
 
-    $ npm run serve-web
+    $ npm run serve
 
 Then browse to the weird url http://localhost:8080/build/build/dashboard
 
