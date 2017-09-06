@@ -8,69 +8,69 @@
       </div>
       <div class="modal-body">
 
-        <form [formGroup]="payment_form" novalidate>
-          <div class="payment-container">
-            <div class="payment-options">
-              <div>
+        <div class="payment-container">
+          <div class="payment-options">
+            <div>
 
-                <div class="form-check">
-                  <label class="form-check-label">
-                    <input class="form-check-input" type="radio" formControlName="payment_type" name="payment_type" [value]="PAYMENT_TYPES.CREDIT_CARD" checked>
-                    Credit Card
-                  </label>
-                </div>
-
-                <div class="form-check">
-                  <label class="form-check-label">
-                    <input class="form-check-input" type="radio" formControlName="payment_type" name="payment_type" [value]="PAYMENT_TYPES.PAYPAL">
-                    PayPal
-                  </label>
-                </div>
-
-                <div class="form-check">
-                  <label class="form-check-label">
-                    <input class="form-check-input" type="radio" formControlName="payment_type" name="payment_type" [value]="PAYMENT_TYPES.CRYPTOCURRENCY">
-                    Cryptocurrency
-                  </label>
-                </div>
-
+              <div class="form-check">
+                <label class="form-check-label">
+                  <input class="form-check-input" type="radio" [(ngModel)]="selected_form" name="payment_type" [value]="payment_forms.credit_card">
+                  Credit Card
+                </label>
               </div>
-              <a class="btn btn-secondary back-button" [routerLink]="[ '', {outlets: { modal: 'purchase-start' } }]">Back</a>
-            </div>
-            <div class="payment-info">
-              <h1>Payment</h1>
 
-              <div class="payment-info-body">
-                <div class="credit-card" [hidden]="payment_form.get('payment_type').value !== PAYMENT_TYPES.CREDIT_CARD">
+              <div class="form-check">
+                <label class="form-check-label">
+                  <input class="form-check-input" type="radio" [(ngModel)]="selected_form" name="payment_type" [value]="payment_forms.paypal">
+                  PayPal
+                </label>
+              </div>
+
+              <div class="form-check">
+                <label class="form-check-label">
+                  <input class="form-check-input" type="radio" [(ngModel)]="selected_form" name="payment_type" [value]="payment_forms.cryptocurrency">
+                  Cryptocurrency
+                </label>
+              </div>
+
+            </div>
+            <a class="btn btn-secondary back-button" [routerLink]="[ '', {outlets: { modal: 'purchase-start' } }]">Back</a>
+          </div>
+          <div class="payment-info">
+            <h1>Payment</h1>
+
+            <div class="payment-info-body">
+              <div class="credit-card" [hidden]="selected_form !== payment_forms.credit_card">
+                <form [formGroup]="payment_forms.credit_card" novalidate>
                   <div class="form-group">
                     <label for="payment_credit_card_name">Name on card</label>
-                    <input type="text" formControlName="credit_card_name" class="form-control" id="payment_credit_card_name">
+                    <input type="text" formControlName="name" class="form-control" id="payment_credit_card_name">
                   </div>
 
                   <div class="form-group">
                     <label for="payment_credit_card_number">Card number</label>
-                    <input type="text" formControlName="credit_card_number" class="form-control" id="payment_credit_card_number">
+                    <input type="text" formControlName="number" class="form-control" id="payment_credit_card_number">
                   </div>
 
                   <div class="inline-form-elements-container">
 
                     <div class="form-group">
                       <label for="payment_credit_card_expiration_date">Expiration date</label>
-                      <input type="text" class="form-control" formControlName="credit_card_expiration_date" id="payment_credit_card_expiration_date" placeholder="MM/YY">
+                      <input type="text" class="form-control" formControlName="expiration_date" id="payment_credit_card_expiration_date" placeholder="MM/YY">
                     </div>
 
                     <div class="form-group">
                       <label for="payment_credit_card_security_code">
                         Security code <span class="fa fa-question-circle text-primary"
-                                            ngbPopover="Info about the security code"
-                                            popoverTitle="Security code"></span>
+                        ngbPopover="Info about the security code"
+                        popoverTitle="Security code"></span>
                       </label>
-                      <input type="text" class="form-control" formControlName="credit_card_security_code" id="payment_credit_card_security_code">
+                      <input type="text" class="form-control" formControlName="security_code" id="payment_credit_card_security_code">
                     </div>
 
                     <div class="form-group">
                       <label for="payment_credit_card_zip_code">Zip code</label>
-                      <input type="text" class="form-control" formControlName="credit_card_zip_code" id="payment_credit_card_zip_code" >
+                      <input type="text" class="form-control" formControlName="zip_code" id="payment_credit_card_zip_code" >
                     </div>
 
                   </div>
@@ -81,26 +81,27 @@
                       Save card info
                     </label>
                   </div>
-                </div> <!-- .credit-card -->
+                </form>
+              </div> <!-- .credit-card -->
 
-                <div class="paypal" [hidden]="payment_form.get('payment_type').value !== PAYMENT_TYPES.PAYPAL">
-                  PayPal
-                </div>
-
-                <div class="paypal" [hidden]="payment_form.get('payment_type').value !== PAYMENT_TYPES.CRYPTOCURRENCY">
-                  Cryptocurrency
-                </div>
-
-              </div> <!-- .payment-info-body -->
-
-              <div>
-                <button type="submit" class="btn btn-second-primary" [disabled]="payment_form.status === 'INVALID'">
-                  Purchase {{token_purchase_cart.tokens | number }} MET for ${{ (.5 * token_purchase_cart.tokens) | number }}
-                </button>
+              <div class="paypal" [hidden]="selected_form !== payment_forms.paypal">
+                PayPal
               </div>
+
+              <div class="paypal" [hidden]="selected_form !== payment_forms.cryptocurrency">
+                Cryptocurrency
+              </div>
+
+
+            </div> <!-- .payment-info-body -->
+
+            <div>
+              <button type="submit" class="btn btn-second-primary" [disabled]="selected_form.status === 'INVALID'">
+                Purchase {{token_purchase_cart.tokens | number }} MET for ${{ (.5 * token_purchase_cart.tokens) | number }}
+              </button>
             </div>
-          </div><!-- .payment-container -->
-        </form>
+          </div>
+        </div><!-- .payment-container -->
       </div>
     </div>
   </div>
