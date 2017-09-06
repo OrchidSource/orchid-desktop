@@ -16,7 +16,7 @@ To run the app from from the browser, first do `npm run build` or `npm run build
 
     $ npm run serve
 
-Then browse to the weird url http://localhost:8080/build/build/dashboard
+Then browse to the weird url http://localhost:8080/build
 
 ## Developing
 
