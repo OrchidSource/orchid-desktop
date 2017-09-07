@@ -10,7 +10,7 @@
 
         <h1>Purchase Tokens</h1>
         <small class="secondary-text">You can use MESH tokens to purchase internet access.</small>
-        <div class="row steps-row"><div class="step-group"><span class="step step-complete">1</span><small>Select quantity</small></div></div>
+        <div class="row steps-row"><div class="step-group"><span class="step complete">1</span><small>Select quantity</small></div></div>
         <div class="row">
           <div class="col-6">
               <label for="met">Number of tokens</label>
@@ -32,7 +32,7 @@
           <small>Total cost in USD: ${{ calculate_cost() | number }}</small>
         </div>
         <div class="text-center col-12"><small><a href="" class="primary-text-color">How many tokens do I need?</a></small></div>
-        <div class="col-4 offset-4">
+        <div class="col-4 offset-4 text-center">
           <a class="btn btn-lg btn-second-primary btn-large next-button"[routerLink]="[ '/met-manager', {outlets: { 'met-manager-modal': 'purchase-payment' } }]" >Next</a>
           <br />
           <a href="#" class=""><small class="secondary-text">Back</small></a>

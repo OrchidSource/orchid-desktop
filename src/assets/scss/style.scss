@@ -9,6 +9,7 @@ $headers: 'Roboto', sans serif;
 $dark-bg-color: #616161;
 $primary-text-color: #4A4A4A;
 $secondary-text-color: #99A1B0;
+$light-grey-bg: #99A1B0;
 $white-text: #fff;
 
 /* Order matter! */
@@ -122,7 +123,7 @@ border-radius: 50%;
       font-size: 13px;
     }
     .nav-pills {
- a {color: #fff; font-family: $headers;font-size: .8rem;
+ a {color: #fff; font-family: $headers;font-size: .8rem;text-decoration:underline;
  .badge{margin-left: 0px !important;margin-right: 20px;width: 20px; text-align: center;padding: 4px;background-color:#fff;color:$primary-text-color;font-weight: bold;font-size: 85%;line-height:85%;}}
  .fa{font-size: 20px;line-height: 20px;margin-right: 20px;width: 20px; text-align: center;vertical-align: middle;}
  .fa-globe{line-height: 36px;}
@@ -214,6 +215,10 @@ letter-spacing: 0.5px;}
 	}
 }
 
+.step-group{
+	.step{color: #fff;font-size: 13px;background-color:$light-grey-bg;border-radius: 50%;width:22px;height:22px;margin-right:5px;display: inline-block;text-align: center;line-height: 22px;}
+	.step.complete{background-color:$secondary-color;}
+}
 /* some modal utility things
 */
 .modal {
