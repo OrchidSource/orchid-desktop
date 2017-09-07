@@ -1,6 +1,6 @@
 <div class="row equal-height">
   <div class="col-sm-4">
-    <div class="card dashboard-card">
+    <div class="card dashboard-card met-balance">
       <div class="card-header">
         <h4 class="card-title">MET Balance</h4>
         <span class="card-help">
@@ -8,7 +8,7 @@
         </span>
       </div>
       <div class="h-100 card-block justify-content-end">
-        <div class="card-content h-80 justify-content-end"><h3 class="card-text met-balance">0</h3></div>
+        <div class="card-content h-80 justify-content-end"><h3 class="card-text">0</h3></div>
         <div class="card-action-container h-20 justify-content-end">
           <a class="btn btn-primary" href="#" role="button" [routerLink]="[ '/met-manager', {outlets: { 'met-manager-modal': 'purchase-start' } }]">Purchase MET</a>
         </div>
@@ -60,15 +60,17 @@
     </div>
   </div>
   <div class="col-sm-4">
-    <div class="card dashboard-card">
+    <div class="card dashboard-card security-level">
       <div class="card-header">
         <h4 class="card-title">Security Level</h4>
         <span class="card-help"><a href="#" class=""><span class="fa fa-question-circle"></span></a></span>
       </div>
-      <div class="h-100 card-block justify-content-end">
-        <div class="card-content h-80 justify-content-end"><h3 class="card-text security-level"><output for="security-range" id="sec-lev">5</output></h3></div>
+      <div class="h-100 card-block justify-content-end" ng-controller="Ctrl" ng-app="sec-val">
+        <div class="card-content h-80 justify-content-end"><h3 class="card-text"><output for="security-range" id="sec-lev">5</output></h3></div>
         <div class="card-action-container h-20 justify-content-end">
-          <input id="security-slider" type="range" min="0" max="10" value="5" id="security-range" step="1"  oninput="outputUpdate(value)" />
+          <form name="set-security-level">
+          <input id="security-slider" type="range" min="0" max="10" value="5" id="security-range" step="1" data-ng-model="security.level" />
+        </form>
         </div>
       </div>
 

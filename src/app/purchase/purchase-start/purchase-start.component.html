@@ -1,63 +1,41 @@
 <div class="modal fade show" tabindex="-1" role="dialog">
   <div class="modal-dialog modal-lg" role="document">
-    <div class="modal-content">
+    <div class="modal-content col-lg-10 offset-1">
       <div class="modal-header modal-header-sm">
-        <a [routerLink]="[ '/met-manager', {outlets: { 'met-manager-modal': null } }]" class="close" data-dismiss="modal" aria-label="Close">
+        <a [routerLink]="[ '/dashboard', {outlets: { 'met-manager-modal': null } }]" class="close" data-dismiss="modal" aria-label="Close">
           <i class="fa fa-times-circle" aria-hidden="true"></i>
         </a>
       </div>
       <div class="modal-body">
 
         <h1>Purchase Tokens</h1>
-        <div class="secondary-text">You can use MESH tokens to purchase internet access.</div>
-        <div>
-          <a href="">How many tokens do I need?</a>
-        </div>
-
+        <small class="secondary-text">You can use MESH tokens to purchase internet access.</small>
+        <div class="row steps-row"><div class="step-group"><span class="step step-complete">1</span><small>Select quantity</small></div></div>
         <div class="row">
           <div class="col-6">
-            Number of tokens
+              <label for="met">Number of tokens</label>
 
-            <div ngbDropdown class="d-inline-block">
-              <button class="btn btn-secondary btn-chiclet" id="dropdownBasic1" ngbDropdownToggle>
-                <div class="chiclet">
-                  <div>M</div>
-                </div>
-                {{ token_purchase_cart.tokens | number }}
-              </button>
-              <div ngbDropdownMenu aria-labelledby="dropdownBasic1">
-                <button class="dropdown-item"
-                *ngFor="let tks of number_tokens_options"
-                (click)="token_purchase_cart.tokens = tks">
-                {{ tks | number}}
-              </button>
-            </div>
-          </div>
+                <div class="input-group">
+      <span class="input-group-addon chiclet btn-primary" id="met-icon">M</span>
+      <input type="number" class="form-control" aria-describedby="met-icon" value="5" step=".01" name="met">
+                        </div>
 
           </div>
           <div class="col-6">
-            Total bandwidth
-            <div ngbDropdown class="d-inline-block">
-              <button class="btn btn-secondary btn-chiclet" id="dropdownBasic1" ngbDropdownToggle>
-                <div class="chiclet">
-                  <div>G</div>
-                </div>
-                {{ token_purchase_cart.bandwidth | number }} GB
-              </button>
-              <div ngbDropdownMenu aria-labelledby="dropdownBasic1">
-                <button class="dropdown-item"
-                *ngFor="let bw of bandwidth_options"
-                (click)="token_purchase_cart.bandwidth = bw">
-                {{ bw | number }} GB
-              </button>
-            </div>
-          </div>
+              <label for="gb">Total bandwidth</label>
+              <div class="input-group">
+    <span class="input-group-addon chiclet btn-primary" id="gb-icon"><img src="assets/imgs/gb-icon.svg"></span>
+    <input type="number" class="form-control" aria-describedby="gb-icon" value="5" step=".5" name="gb">
+                      </div>
         </div>
         <div class="col-12">
-          Total cost in USD: ${{ calculate_cost() | number }}
+          <small>Total cost in USD: ${{ calculate_cost() | number }}</small>
         </div>
-        <div class="col-6 offset-3">
-          <a class="btn btn-second-primary btn-large next-button"[routerLink]="[ '/met-manager', {outlets: { 'met-manager-modal': 'purchase-payment' } }]" >Next</a>
+        <div class="text-center col-12"><small><a href="" class="primary-text-color">How many tokens do I need?</a></small></div>
+        <div class="col-4 offset-4">
+          <a class="btn btn-lg btn-second-primary btn-large next-button"[routerLink]="[ '/met-manager', {outlets: { 'met-manager-modal': 'purchase-payment' } }]" >Next</a>
+          <br />
+          <a href="#" class=""><small class="secondary-text">Back</small></a>
         </div>
       </div> <!-- .row -->
 

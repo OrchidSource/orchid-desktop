@@ -1,7 +1,8 @@
 import { BrowserModule } from '@angular/platform-browser';
 import { NgModule } from '@angular/core';
+import { Component } from '@angular/core';
 import { FormsModule, ReactiveFormsModule } from '@angular/forms';
-
+import { ChartsModule } from 'ng2-charts/ng2-charts';
 import { AppRoutingModule } from './app-routing.module';
 import { AppComponent } from './app.component';
 import { NgbModule } from '@ng-bootstrap/ng-bootstrap';
@@ -27,6 +28,7 @@ import { PurchasePaymentComponent } from './purchase/purchase-payment/purchase-p
     FormsModule,
     ReactiveFormsModule,
     AppRoutingModule,
+    ChartsModule,
     NgbModule.forRoot()
   ],
   providers: [],
