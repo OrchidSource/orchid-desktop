@@ -2,7 +2,7 @@
   <div class="modal-dialog modal-lg" role="document">
     <div class="modal-content">
       <div class="modal-header modal-header-sm">
-        <a [routerLink]="[ '', {outlets: { modal: null } }]" class="close" data-dismiss="modal" aria-label="Close">
+        <a [routerLink]="[ '/met-manager', {outlets: { 'met-manager-modal': null } }]" class="close" data-dismiss="modal" aria-label="Close">
           <i class="fa fa-times-circle" aria-hidden="true"></i>
         </a>
       </div>
@@ -57,7 +57,7 @@
           Total cost in USD: ${{ calculate_cost() | number }}
         </div>
         <div class="col-6 offset-3">
-          <a class="btn btn-second-primary btn-large next-button"[routerLink]="[ '', {outlets: { modal: 'purchase-payment' } }]" >Next</a>
+          <a class="btn btn-second-primary btn-large next-button"[routerLink]="[ '/met-manager', {outlets: { 'met-manager-modal': 'purchase-payment' } }]" >Next</a>
         </div>
       </div> <!-- .row -->
 

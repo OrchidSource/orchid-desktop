@@ -18,21 +18,21 @@ const routes: Routes = [
     path: 'dashboard',
     component: DashboardComponent
   },
-  // Maybe these purchase modal routes should go in their own file?
-  //
-  {
-    path: 'purchase-start',
-    outlet: 'modal',
-    component: PurchaseStartComponent
-  },
-  {
-    path: 'purchase-payment',
-    outlet: 'modal',
-    component: PurchasePaymentComponent
-  },
   {
     path: 'met-manager',
-    component: MetManagerComponent
+    component: MetManagerComponent,
+    children: [
+      {
+        path: 'purchase-start',
+        outlet: 'met-manager-modal',
+        component: PurchaseStartComponent
+      },
+      {
+        path: 'purchase-payment',
+        outlet: 'met-manager-modal',
+        component: PurchasePaymentComponent
+      }
+    ]
   },
   {
     path: 'notifications',
