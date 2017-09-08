@@ -2,6 +2,7 @@ import { BrowserModule } from '@angular/platform-browser';
 import { NgModule } from '@angular/core';
 import { Component } from '@angular/core';
 import { FormsModule, ReactiveFormsModule } from '@angular/forms';
+import * as ChartJS from 'chart.js';
 import { ChartsModule } from 'ng2-charts/ng2-charts';
 import { AppRoutingModule } from './app-routing.module';
 import { AppComponent } from './app.component';
@@ -14,6 +15,7 @@ import { PurchaseStartComponent } from './purchase/purchase-start/purchase-start
 import { PurchasePaymentComponent } from './purchase/purchase-payment/purchase-payment.component';
 import { PurchaseConfirmationComponent } from './purchase/purchase-confirmation/purchase-confirmation.component';
 import {TooltipModule} from "ngx-tooltip";
+
 
 @NgModule({
   declarations: [
