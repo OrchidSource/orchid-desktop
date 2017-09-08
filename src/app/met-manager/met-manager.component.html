@@ -1,4 +1,8 @@
 <router-outlet name="met-manager-modal"></router-outlet>
 <p>
   met-manager works!
+  <canvas baseChart
+            [data]="doughnutChartData"
+            [labels]="doughnutChartLabels"
+            [chartType]="doughnutChartType"></canvas>
 </p>
