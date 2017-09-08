@@ -1,0 +1,28 @@
+<div class="modal fade show" tabindex="-1" role="dialog">
+  <div class="modal-dialog modal-lg" role="document">
+    <div class="modal-content col-lg-10 offset-1">
+      <div class="modal-header modal-header-sm">
+        <a [routerLink]="[ '/met-manager', {outlets: { 'met-manager-modal': null } }]" class="close" data-dismiss="modal" aria-label="Close">
+          <i class="fa fa-times-circle" aria-hidden="true"></i>
+        </a>
+      </div>
+      <div class="modal-body cols-lg-11 text-center">
+        <h1>Confirmation</h1>
+        <small class="secondary-text">Confirm and complete your purchase below.</small>
+        <div class="row steps-row"><div class="col step-group complete text-left"><i class="fa fa-check">&nbsp;</i><small>Select quantity</small></div><div class="col step-group text-center complete"><i class="fa fa-check">&nbsp;</i><small>Choose payment method</small></div><div class="col text-right step-group active"><span class="step">3</span><small>Confirmation</small></div></div>
+
+        <div class="payment-container text-left row">
+          <div class="col col-lg-12">
+            <div class="col col-lg-6 offset-2">
+              <button type="submit" class="btn btn-second-primary btn-lg" routerLink="/dashboard">Purchase MET!</button>
+              <br />
+              <div class="text-center">
+                <a class="" href="#" role="button" [routerLink]="[ '../', {outlets: { 'met-manager-modal': 'purchase-payment' } }]"><small class="secondary-text">Back</small></a>
+              </div>
+            </div>
+          </div> <!-- .payment-info-body -- >
+        </div><!-- .payment-container -->
+      </div>
+    </div>
+  </div>
+</div>

@@ -96,7 +96,7 @@
             </div> <!-- .payment-info-body -->
 
             <div>
-              <button type="submit" class="btn btn-second-primary" [disabled]="selected_form.status === 'INVALID'">
+              <button type="submit" class="btn btn-second-primary" [disabled]="selected_form.status === 'INVALID'" [routerLink]="[ '../', {outlets: { 'met-manager-modal': 'purchase-confirmation' } }]" >
                 Purchase {{token_purchase_cart.tokens | number }} MET for ${{ (.5 * token_purchase_cart.tokens) | number }}
               </button>
               <br />

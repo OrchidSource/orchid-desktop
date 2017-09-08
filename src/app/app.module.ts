@@ -12,6 +12,8 @@ import { NotificationsComponent } from './notifications/notifications.component'
 import { HelpComponent } from './help/help.component';
 import { PurchaseStartComponent } from './purchase/purchase-start/purchase-start.component';
 import { PurchasePaymentComponent } from './purchase/purchase-payment/purchase-payment.component';
+import { PurchaseConfirmationComponent } from './purchase/purchase-confirmation/purchase-confirmation.component';
+import {TooltipModule} from "ngx-tooltip";
 
 @NgModule({
   declarations: [
@@ -21,6 +23,7 @@ import { PurchasePaymentComponent } from './purchase/purchase-payment/purchase-p
     MetManagerComponent,
     NotificationsComponent,
     PurchasePaymentComponent,
+    PurchaseConfirmationComponent,
     PurchaseStartComponent
   ],
   imports: [
@@ -28,6 +31,7 @@ import { PurchasePaymentComponent } from './purchase/purchase-payment/purchase-p
     FormsModule,
     ReactiveFormsModule,
     AppRoutingModule,
+    TooltipModule,
     ChartsModule,
     NgbModule.forRoot()
   ],

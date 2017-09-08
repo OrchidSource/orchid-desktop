@@ -124,6 +124,12 @@ border-radius: 50%;
       font-size: 13px;
     }
     .nav-pills {
+			.toggler{width:122px;
+				div {position: absolute;top:7px;left:42px;color:$primary-text-color;}
+				div:before {content: 'Connect';text-transform:uppercase;color:$primary-text-color;}
+				&__label input:checked ~ .toggler div{left:14px;}
+				&__label input:checked ~ .toggler div:before {content: 'Connected';color: #fff !important;}
+			}
  a {color: #fff; font-family: $headers;font-size: .8rem;
  .badge{margin-left: 0px !important;margin-right: 20px;width: 20px; text-align: center;padding: 4px;background-color:#fff;color:$primary-text-color;font-weight: bold;font-size: 85%;line-height:85%;}}
  .fa{font-size: 20px;line-height: 20px;margin-right: 20px;width: 20px; text-align: center;vertical-align: middle;}
@@ -193,6 +199,21 @@ letter-spacing: 0.5px;}
 	color: $secondary-text-color;
 }
 
+input[type=number]::-webkit-inner-spin-button {
+  opacity: 1;
+}
+
+input[type="number"]::-webkit-outer-spin-button,
+input[type="number"]::-webkit-inner-spin-button {
+    -webkit-appearance: none;
+    background: #FFF url(../imgs/spinners.png) no-repeat center center;
+    width: 2em;
+    opacity: 1; /* shows Spin Buttons per default (Chrome >= 39) */
+    position: absolute;
+    top: 0;
+    right: 0;
+    bottom: 0;
+}
 
 // Put a "chiclet" on the left of a button.
 // To use, put .btn-chiclet on the .btn element, and put a .chiclet div inside the button
@@ -232,11 +253,13 @@ letter-spacing: 0.5px;}
 	// We use the h1 for the modal title; this brings it closer to the top.
 	.modal-body {
 		padding-top: 0;
-		.payment-container, .steps-row{margin-top: 30px;}
+		.steps-row{margin-top: 20px;}
+		.payment-container{margin-top: 30px;}
 		h1 {
 			margin-top: 0;
 			text-align: center;
 		}
+		label {margin-bottom: .2rem;}
 		.input-group{
 		input[type='number']{height:52px;}
 		.input-group-addon{width: 56px;}
