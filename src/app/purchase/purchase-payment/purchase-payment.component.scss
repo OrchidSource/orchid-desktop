@@ -7,14 +7,12 @@ $container-padding: 1.5rem;
 // The div on the left with the radio buttons
 .payment-options {
   position: relative;
-  min-width: 190px;
-  padding: $container-padding;
+
 
   // Center content vertically
   display: flex;
   flex-direction: column;
-  justify-content: center;
-  resize: vertical;
+
 
   .back-button {
     position: absolute;
@@ -33,7 +31,7 @@ $container-padding: 1.5rem;
 
   .payment-info-body {
     min-height: 300px;
-    overflow-y: scroll
+    overflow-y: auto
   }
 }
 

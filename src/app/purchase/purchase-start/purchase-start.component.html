@@ -2,15 +2,14 @@
   <div class="modal-dialog modal-lg" role="document">
     <div class="modal-content col-lg-10 offset-1">
       <div class="modal-header modal-header-sm">
-        <a [routerLink]="[ '/dashboard', {outlets: { 'met-manager-modal': null } }]" class="close" data-dismiss="modal" aria-label="Close">
+        <a [routerLink]="[ '/met-manager', {outlets: { 'met-manager-modal': null } }]" class="close" data-dismiss="modal" aria-label="Close">
           <i class="fa fa-times-circle" aria-hidden="true"></i>
         </a>
       </div>
-      <div class="modal-body">
-
-        <h1>Purchase Tokens</h1>
-        <small class="secondary-text">You can use MESH tokens to purchase internet access.</small>
-        <div class="row steps-row"><div class="step-group"><span class="step complete">1</span><small>Select quantity</small></div></div>
+      <div class="modal-body cols-lg-11 text-center">
+        <h1>Purchase MET Tokens</h1>
+        <small class="secondary-text">You can use MET tokens to purchase internet access on MESH.</small>
+        <div class="row steps-row"><div class="col step-group active"><span class="step">1</span><small>Select quantity</small></div><div class="col step-group text-center"><span class="step">2</span><small>Choose payment method</small></div><div class="col text-right step-group"><span class="step">3</span><small>Confirmation</small></div></div>
         <div class="row">
           <div class="col-6">
               <label for="met">Number of tokens</label>
@@ -31,9 +30,9 @@
         <div class="col-12">
           <small>Total cost in USD: ${{ calculate_cost() | number }}</small>
         </div>
-        <div class="text-center col-12"><small><a href="" class="primary-text-color">How many tokens do I need?</a></small></div>
+        <div class="text-center col-12"><a href="" class="primary-text-color"><small>How many tokens do I need?</small></a></div>
         <div class="col-4 offset-4 text-center">
-          <a class="btn btn-lg btn-second-primary btn-large next-button"[routerLink]="[ '/met-manager', {outlets: { 'met-manager-modal': 'purchase-payment' } }]" >Next</a>
+          <a class="btn btn-lg btn-second-primary btn-large next-button"[routerLink]="[ '../', {outlets: { 'met-manager-modal': 'purchase-payment' } }]" >Next</a>
           <br />
           <a href="#" class=""><small class="secondary-text">Back</small></a>
         </div>

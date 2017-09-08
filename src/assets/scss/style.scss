@@ -60,6 +60,7 @@ html {
 	font-size: 16px;
 }
 
+
 .row.equal-height {
     display: flex;
     flex-wrap: wrap;
@@ -123,7 +124,7 @@ border-radius: 50%;
       font-size: 13px;
     }
     .nav-pills {
- a {color: #fff; font-family: $headers;font-size: .8rem;text-decoration:underline;
+ a {color: #fff; font-family: $headers;font-size: .8rem;
  .badge{margin-left: 0px !important;margin-right: 20px;width: 20px; text-align: center;padding: 4px;background-color:#fff;color:$primary-text-color;font-weight: bold;font-size: 85%;line-height:85%;}}
  .fa{font-size: 20px;line-height: 20px;margin-right: 20px;width: 20px; text-align: center;vertical-align: middle;}
  .fa-globe{line-height: 36px;}
@@ -217,7 +218,13 @@ letter-spacing: 0.5px;}
 
 .step-group{
 	.step{color: #fff;font-size: 13px;background-color:$light-grey-bg;border-radius: 50%;width:22px;height:22px;margin-right:5px;display: inline-block;text-align: center;line-height: 22px;}
-	.step.complete{background-color:$secondary-color;}
+	.connector{hr{width:100%;}}
+	&.active span{background-color:$secondary-color;}
+	&.complete{
+		span{background-color:$brand-success;}
+		.fa-check{color:$brand-success;}
+	}
+	&.col {padding-top:0px;padding-bottom: 0px;}
 }
 /* some modal utility things
 */
@@ -225,8 +232,10 @@ letter-spacing: 0.5px;}
 	// We use the h1 for the modal title; this brings it closer to the top.
 	.modal-body {
 		padding-top: 0;
+		.payment-container, .steps-row{margin-top: 30px;}
 		h1 {
 			margin-top: 0;
+			text-align: center;
 		}
 		.input-group{
 		input[type='number']{height:52px;}
@@ -235,7 +244,7 @@ letter-spacing: 0.5px;}
 	}
 	// put on the modal-title if you want it to be as small as possible; e.g. if you just want enough space for a "close" button
 	.modal-header-sm {
-		padding: 2px 3px 0 3px;
+		padding: 10px 3px 0 3px;
 		border: 0;
 	}
 

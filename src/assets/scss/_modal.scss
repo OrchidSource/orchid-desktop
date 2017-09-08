@@ -24,6 +24,7 @@
   // https://github.com/twbs/bootstrap/pull/10951.
   outline: 0;
   h1 {margin-bottom: .2rem;}
+  a small {text-decoration:underline;}
   // We deliberately don't use `-webkit-overflow-scrolling: touch;` due to a
   // gnarly iOS Safari bug: https://bugs.webkit.org/show_bug.cgi?id=158342
   // See also https://github.com/twbs/bootstrap/issues/17695

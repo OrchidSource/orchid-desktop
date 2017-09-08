@@ -1,44 +1,44 @@
 <div class="modal fade show" tabindex="-1" role="dialog">
   <div class="modal-dialog modal-lg" role="document">
-    <div class="modal-content">
+    <div class="modal-content col-lg-10 offset-1">
       <div class="modal-header modal-header-sm">
         <a [routerLink]="[ '/met-manager', {outlets: { 'met-manager-modal': null } }]" class="close" data-dismiss="modal" aria-label="Close">
           <i class="fa fa-times-circle" aria-hidden="true"></i>
         </a>
       </div>
-      <div class="modal-body">
+      <div class="modal-body cols-lg-11 text-center">
+        <h1>Payment</h1>
+        <small class="secondary-text">Choose a payment method and enter details below.</small>
+        <div class="row steps-row"><div class="col step-group complete text-left"><i class="fa fa-check">&nbsp;</i><small>Select quantity</small></div><div class="col step-group text-center active"><span class="step">2</span><small>Choose payment method</small></div><div class="col text-right step-group"><span class="step">3</span><small>Confirmation</small></div></div>
 
-        <div class="payment-container">
-          <div class="payment-options">
+        <div class="payment-container text-left row">
+          <div class="payment-options col-lg-3">
             <div>
 
               <div class="form-check">
                 <label class="form-check-label">
                   <input class="form-check-input" type="radio" [(ngModel)]="selected_form" name="payment_type" [value]="payment_forms.credit_card">
-                  Credit Card
+                  <small>Debit Card</small>
                 </label>
               </div>
 
               <div class="form-check">
                 <label class="form-check-label">
                   <input class="form-check-input" type="radio" [(ngModel)]="selected_form" name="payment_type" [value]="payment_forms.paypal">
-                  PayPal
+                  <small>PayPal</small>
                 </label>
               </div>
 
               <div class="form-check">
                 <label class="form-check-label">
                   <input class="form-check-input" type="radio" [(ngModel)]="selected_form" name="payment_type" [value]="payment_forms.cryptocurrency">
-                  Cryptocurrency
+                  <small>Cryptocurrency</small>
                 </label>
               </div>
 
             </div>
-            <a class="btn btn-secondary back-button" [routerLink]="[ '', {outlets: { modal: 'purchase-start' } }]">Back</a>
           </div>
-          <div class="payment-info">
-            <h1>Payment</h1>
-
+          <div class="payment-info col-lg-9">
             <div class="payment-info-body">
               <div class="credit-card" [hidden]="selected_form !== payment_forms.credit_card">
                 <form [formGroup]="payment_forms.credit_card" novalidate>
@@ -99,6 +99,10 @@
               <button type="submit" class="btn btn-second-primary" [disabled]="selected_form.status === 'INVALID'">
                 Purchase {{token_purchase_cart.tokens | number }} MET for ${{ (.5 * token_purchase_cart.tokens) | number }}
               </button>
+              <br />
+              <div class="text-center">
+              <a class="" href="#" role="button" [routerLink]="[ '../', {outlets: { 'met-manager-modal': 'purchase-start' } }]"><small class="secondary-text">Back</small></a>
+              </div>
             </div>
           </div>
         </div><!-- .payment-container -->
