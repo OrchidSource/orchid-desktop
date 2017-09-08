@@ -60,6 +60,8 @@ html {
 	font-size: 16px;
 }
 
+.hidden{display: none !important;}
+.panda{background: url('../imgs/met-stack.svg') no-repeat;height:20px;float: left;}
 
 .row.equal-height {
     display: flex;
