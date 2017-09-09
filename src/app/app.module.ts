@@ -14,8 +14,7 @@ import { HelpComponent } from './help/help.component';
 import { PurchaseStartComponent } from './purchase/purchase-start/purchase-start.component';
 import { PurchasePaymentComponent } from './purchase/purchase-payment/purchase-payment.component';
 import { PurchaseConfirmationComponent } from './purchase/purchase-confirmation/purchase-confirmation.component';
-import {TooltipModule} from "ngx-tooltip";
-
+import { PopoverModule } from 'ng2-pop-over';
 
 @NgModule({
   declarations: [
@@ -33,11 +32,19 @@ import {TooltipModule} from "ngx-tooltip";
     FormsModule,
     ReactiveFormsModule,
     AppRoutingModule,
-    TooltipModule,
     ChartsModule,
+    PopoverModule,
     NgbModule.forRoot()
   ],
   providers: [],
   bootstrap: [AppComponent]
 })
 export class AppModule { }
+function MyCtrl($scope) {
+
+    $scope.myvalue = false;
+
+    $scope.showAlert = function(){
+      $scope.myvalue = true;
+    };
+}

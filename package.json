@@ -56,6 +56,8 @@
     "creditcards": "^2.1.2",
     "font-awesome": "^4.7.0",
     "ng2-charts": "^1.6.0",
+    "ng2-pop-over": "^0.9.37",
+    "ng2-popover": "0.0.14",
     "ng2-tooltip": "0.0.7",
     "ngx-popper": "^1.1.0",
     "ngx-tooltip": "0.0.9",

@@ -77,7 +77,7 @@
     </div>
   </div>
 </div>
-<div class="row equal-height hidden"> <!-- show this row after user has gone through "Earn Met" flow -->
+<div class="row equal-height" *ngIf="showMETMessage"> <!-- show this row after user has gone through "Earn Met" flow -->
   <div class="col-sm-4">
     <div class="card dashboard-card">
       <div class="card-header">

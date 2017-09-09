@@ -35,9 +35,15 @@
   <div class="col dashboard-content">
     <router-outlet></router-outlet>
   </div> <!-- .dashboard-content-->
-  <div class="row equal-height panda">
+  <div class="row equal-height panda text-center">
     <div class="col-lg-4 offset-4">
-      <a class="btn btn-lg btn-second-primary btn-large next-button" [routerLink]="[ '../', {outlets: { 'met-manager-modal': 'purchase-payment' } }]" >Earn MET</a>
-    </div>
-  </div> 
+      <a class="btn btn-lg btn-second-primary next-button" (click)='helpPO.show($event)'>Earn MET</a>
+      <pop-over #helpPO [my]="'top left'" [at]="'center bottom'" [anchor-to]="true" >
+      <div class="message">
+        Soon you will be able to earn MET!
+        Sign up here to learn more...
+      </div>
+</pop-over>
+
+  </div>
 </div> <!-- #wrapper -->
