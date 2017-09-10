@@ -61,12 +61,19 @@ html {
 }
 
 .hidden{display: none !important;}
-.panda{background: url('../imgs/panda-placeholder.png') no-repeat;height: 259px;background-size: cover;margin-top: 30px;}
+.panda{background: url('../imgs/panda-placeholder.png') no-repeat;height: 259px;background-size: 100%;margin-top: 30px;flex:1 1;padding: 0 0 0 15px;}
 .pop-over-content .message {    width: 340px;
     left: -160px;
 		top: 30px;
-    position: absolute;}
+    position: absolute;
+		background: #4A4A4A;
+	box-shadow: 1px 1px 4px 0 rgba(0,0,0,0.41);
+	border-radius: 4px;
+	color: #fff;
+	padding: 15px;}
 .btn-second-primary:hover {background-color:#ffb335; border-color: #eccb93;}
+.btn-second-primary{color: #fff !important;}
+.btn{padding: 8px .7rem;font-family: Roboto, "Helvetica Neue", Arial, sans-serif !important;font-weight: 300;}
 .row.equal-height {
     display: flex;
     flex-wrap: wrap;
@@ -81,8 +88,12 @@ html {
     margin-bottom: 1.5rem;
 }
 .row .col {padding-top: 30px;padding-bottom: 30px;}
-#wrapper{padding-left: 215px;padding-right: 25px;width:100%;}
+#wrapper{padding-left: 215px;padding-right: 25px;width:100%;    display: flex;
+    flex-direction: column;
+    min-height: 100vh;}
+
 .btn-primary{background-color: $primary-color;border-color: $primary-color;}
+.btn-lg{padding: 0.75rem 1.5rem !important;}
 .ci-met-stack {background: url('../imgs/met-stack.svg') no-repeat;height:20px;float: left;}
 
 input[type="range"]{
@@ -151,20 +162,21 @@ border-radius: 50%;
 /* Dashboard */
 
 .dashboard-content{
-
+flex: 0 1;
 padding-top: 30px;
 padding-right: 0px;
 /*all cards*/
 .card{box-shadow: 0 2px 4px 0 rgba(35,36,37,0.30);}
 	.dashboard-card {
+		padding-bottom: 10px;
 		.card-header{padding: .3rem 10px;
 font-family: Roboto-Regular;
 font-size: 12px;
 color: #99A1B0;
 letter-spacing: 0.5px;}
 	.card-block {padding: .2rem 0rem 1.25rem 0rem;
-	.btn{padding: 8px .7rem;font-family: Roboto, "Helvetica Neue", Arial, sans-serif;}
-	.btn-lg{font-weight:normal;font-size: 20px;line-height: 25px;}
+
+	.btn-lg{font-weight:300;font-size: 20px;line-height: 25px;}
 	.dropdown-toggle{border: none;
 	&:hover{background:none;}
 	&:active,&:focus{background-color:transparent;border: none;}}}
