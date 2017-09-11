@@ -1,8 +1,67 @@
 <router-outlet name="met-manager-modal"></router-outlet>
+<div class="row equal-height">
+  <div class="col-sm-4"><!--this div should be hidden until people can actually earn MET -->
+    <div class="card dashboard-card met-balance">
+      <div class="card-header">
+        <h4 class="card-title">Total Earnings</h4><span class="card-title-data">982.76 MET</span>
+        <span class="card-help">
+          <a href="#" ngbTooltip="This is how much MET you have earned over time" placement="bottom"><span class="fa fa-question-circle"></span></a>
+        </span>
+      </div>
+      <div class="h-100 card-block justify-content-end">
+        <div class="card-content h-80 justify-content-end"><canvas id="earningsChart" width="240" height="180"></canvas></div>
+        <div class="card-action-container h-20 justify-content-end">
+          <p class="card-desc">MET Earned</p>
+          <small>MET earned over time</small>
+        </div>
+      </div>
+    </div>
+  </div>
+  <div class="col-sm-4">
+    <div class="card dashboard-card browsing-location">
+      <div class="card-header">
+        <h4 class="card-title">Current MET VALUE (USD)</h4><span class="card-title-data">1,236</span>
+        <span class="card-help"><a href="#" class="" title="Current value of 1 MET in USD" data-toggle="tooltip" data-placement="bottom"><span class="fa fa-question-circle"></span></a></span>
+      </div>
+      <div class="h-100 card-block justify-content-end">
+        <div class="card-content h-80 justify-content-end"><canvas id="valueChart" width="240" height="180"></canvas></div>
+        <div class="card-action-container h-20 justify-content-end">
+          <p class="card-desc">MET Value</p>
+          <small>Value of MET in USD over time</small>
+        </div>
+
+      </div>
+
+    </div>
+  </div>
+  <div class="col-sm-4">
+    <div class="card dashboard-card security-level">
+      <div class="card-header">
+        <h4 class="card-title">Current MET VALUE (GB)</h4><span class="card-title-data">22</span>
+        <span class="card-help"><a href="#" class=""><span class="fa fa-question-circle"></span></a></span>
+      </div>
+      <div class="h-100 card-block justify-content-end" ng-controller="Ctrl" ng-app="sec-val">
+        <div class="card-content h-80 justify-content-end"><canvas id="gbValueChart" width="240" height="180"></canvas></div>
+        <div class="card-action-container h-20 justify-content-end">
+          <p class="card-desc">MET Value</p>
+          <small>Value of MET in gigabytes over time</small>
+        </div>
+      </div>
+
+    </div>
+  </div>
+</div> <!-- end 1st row -->
+<div class="row equal-height">
+  <div class="col-sm-4 info-data">
+    <h4>Current Balance</h4>
+    <h3>465.34</h3>
+  </div>
+  <div class="col-sm-4">
+    <a class="btn btn-primary btn-lg" href="#" role="button" [routerLink]="[ '', {outlets: { 'met-manager-modal': 'purchase-start' } }]">BUY</a>
+  </div>
+  <div class="col-sm-4">
+    <a class="btn btn-second-primary btn-lg" href="#" role="button" [routerLink]="[ '', {outlets: { 'met-manager-modal': 'purchase-start' } }]">SELL</a>
+  </div>
+</div><!--end 2nd row-->
 <p>
-  met-manager works!
-  <canvas baseChart
-            [data]="doughnutChartData"
-            [labels]="doughnutChartLabels"
-            [chartType]="doughnutChartType"></canvas>
 </p>

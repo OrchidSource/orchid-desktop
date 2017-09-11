@@ -62,6 +62,7 @@
     "ngx-popper": "^1.1.0",
     "ngx-tooltip": "0.0.9",
     "rxjs": "^5.4.2",
+    "watch": "^1.0.2",
     "zone.js": "^0.8.14"
   },
   "devDependencies": {

@@ -62,15 +62,29 @@ html {
 
 .hidden{display: none !important;}
 .panda{background: url('../imgs/panda-placeholder.png') no-repeat;height: 259px;background-size: 100%;margin-top: 30px;flex:1 1;padding: 0 0 0 15px;}
-.pop-over-content .message {    width: 340px;
-    left: -160px;
-		top: 30px;
+.pop-over-content .message {width: 443px;
+    left: -210px;
+    top: 20px;
     position: absolute;
-		background: #4A4A4A;
-	box-shadow: 1px 1px 4px 0 rgba(0,0,0,0.41);
-	border-radius: 4px;
+background: rgba(74,74,74,0.89);
+box-shadow: 1px 1px 4px 0 rgba(0,0,0,0.41);
+border-radius: 4px 4px 4px 4px;
 	color: #fff;
-	padding: 15px;}
+	padding: 12px;
+    font-size: 13px;
+    border-radius: 4px;
+	&:before{
+		right: 100%;
+    top: 35%;
+    border: solid transparent;
+    content: " ";
+    height: 0;
+    width: 0;
+    position: absolute;
+    border-color: rgba(194, 225, 245, 0);
+    border-right-color: rgba(74, 74, 74, 0.89);
+    border-width: 16px;
+    margin-top: -16px;}}
 .btn-second-primary:hover {background-color:#ffb335; border-color: #eccb93;}
 .btn-second-primary{color: #fff !important;}
 .btn{padding: 8px .7rem;font-family: Roboto, "Helvetica Neue", Arial, sans-serif !important;font-weight: 300;}
@@ -173,9 +187,10 @@ padding-right: 0px;
 font-family: Roboto-Regular;
 font-size: 12px;
 color: #99A1B0;
-letter-spacing: 0.5px;}
+letter-spacing: 0.5px;.card-title-data{color: #3F414C;padding-left: 5px;}}
 	.card-block {padding: .2rem 0rem 1.25rem 0rem;
 
+	p.card-desc{color: #3F414C;margin-bottom:-5px;}
 	.btn-lg{font-weight:300;font-size: 20px;line-height: 25px;}
 	.dropdown-toggle{border: none;
 	&:hover{background:none;}

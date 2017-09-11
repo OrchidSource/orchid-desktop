@@ -35,22 +35,21 @@
   <div class="col dashboard-content">
     <router-outlet></router-outlet>
   </div> <!-- .dashboard-content-->
-  <div class="row equal-height panda text-center">
+<div class="row equal-height panda text-center" *ngIf="!isDB">  <!-- hide me unless on Dashboard not working yet -->
     <div class="col-lg-4 offset-4">
       <a class="btn btn-lg btn-second-primary next-button" (click)='helpPO.show($event)'>Earn MET</a>
       <pop-over #helpPO [my]="'top left'" [at]="'center bottom'" [anchor-to]="true" >
       <div class="message">
         Soon you will be able to earn MET and help to create a free and openly accessible internet.<br /><br />
         Sign up below and be among the first to participate.<br />
-        <form>
-          <div class="form-group">
-        <input type="email" class="form-control">
-        <input type="submit">
-      </div>
-    </form>
+        <form class="form-inline">
+  <div class="form-group">
+    <input type="email" class="form-control" id="Email" placeholder="name@example.com">
+  </div>
+  <button type="submit" class="btn btn-primary">Alert Me</button>
+</form>
       </div>
 </pop-over>
-<button type="button" class="btn btn-lg btn-danger" data-toggle="popover" title="Popover title" data-content="And here's some amazing content. It's very engaging. Right?">Click to toggle popover</button>
 
   </div>
 </div> <!-- #wrapper -->
