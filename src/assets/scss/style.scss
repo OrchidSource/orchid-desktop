@@ -69,8 +69,7 @@ h4 {text-transform: uppercase;color: $secondary-text-color; font-family: $header
 .panda{background: url('../imgs/panda-placeholder.png') no-repeat;height: 259px;background-size: 100%;margin-top: 30px;flex:1 1;padding: 0 0 0 15px;}
 .panda-flip{background: url('../imgs/panda-placeholder-flip.png') no-repeat;background-size: 100%;background-position:center bottom;    width: 104%;
     left: 0px;
-    position: absolute;
-    height: 100vh;}
+    position: absolute;padding-bottom: 30px;margin-top:-15px;}
 .pop-over-content .message {width: 443px;
     left: -210px;
     top: 20px;

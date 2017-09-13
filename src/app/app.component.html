@@ -35,7 +35,7 @@
   <div class="col dashboard-content">
     <router-outlet></router-outlet>
   </div> <!-- .dashboard-content-->
-<div class="row equal-height panda text-center" *ngIf="!isDB">  <!-- hide me unless on Dashboard not working yet -->
+<div class="row equal-height panda text-center" *ngIf="isDB">  <!-- hide me unless on Dashboard not working yet -->
     <div class="col-lg-4 offset-4">
       <a class="btn btn-lg btn-second-primary next-button" (click)='helpPO.show($event)'>Earn MET</a>
       <pop-over #helpPO [my]="'top left'" [at]="'center bottom'" [anchor-to]="true" >
@@ -52,4 +52,5 @@
 </pop-over>
 
   </div>
+</div>
 </div> <!-- #wrapper -->
