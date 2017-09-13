@@ -7,7 +7,7 @@ $primary-color: #18BECC;
 $secondary-color: #F5A623;
 $headers: 'Roboto', sans serif;
 $dark-bg-color: #616161;
-$primary-text-color: #4A4A4A;
+$primary-text-color: #3F414C;
 $secondary-text-color: #99A1B0;
 $light-grey-bg: #99A1B0;
 $white-text: #fff;
@@ -56,12 +56,21 @@ $white-text: #fff;
 
 /*common */
 
-html {
-	font-size: 16px;
-}
-
+html {font-size: 16px;}
+h2{/* 1.3 MET: */
+font-size: 24px;
+color: #000000;
+line-height: 24px;}
+h3 {font-size: 70px;font-weight: 400;color:$secondary-text-color;}
+h3 span{color:$primary-text-color;font-size: 22px;font-weight: normal;}
+h4 {text-transform: uppercase;color: $secondary-text-color; font-family: $headers; font-size: 12px; display: inline;}
 .hidden{display: none !important;}
+.back-link{margin-top: 5px;}
 .panda{background: url('../imgs/panda-placeholder.png') no-repeat;height: 259px;background-size: 100%;margin-top: 30px;flex:1 1;padding: 0 0 0 15px;}
+.panda-flip{background: url('../imgs/panda-placeholder-flip.png') no-repeat;background-size: 100%;background-position:center bottom;    width: 104%;
+    left: 0px;
+    position: absolute;
+    height: 100vh;}
 .pop-over-content .message {width: 443px;
     left: -210px;
     top: 20px;
@@ -187,10 +196,10 @@ padding-right: 0px;
 font-family: Roboto-Regular;
 font-size: 12px;
 color: #99A1B0;
-letter-spacing: 0.5px;.card-title-data{color: #3F414C;padding-left: 5px;}}
+letter-spacing: 0.5px;.card-title-data{color: $primary-text-color;padding-left: 5px;}}
 	.card-block {padding: .2rem 0rem 1.25rem 0rem;
 
-	p.card-desc{color: #3F414C;margin-bottom:-5px;}
+	p.card-desc{color: $primary-text-color;margin-bottom:-5px;}
 	.btn-lg{font-weight:300;font-size: 20px;line-height: 25px;}
 	.dropdown-toggle{border: none;
 	&:hover{background:none;}
@@ -201,12 +210,12 @@ letter-spacing: 0.5px;.card-title-data{color: #3F414C;padding-left: 5px;}}
 	}
 	.card-action-container{padding: 5px 15px;.btn,.btn-group,input, .dropdown {width:100%;}}
 	.card-content{width: 100%; text-align: center;padding: 10px;
-	h3 {font-size: 72px; text-align: center;margin:auto;font-weight: 400;}
+	h3 {text-align: center;margin:auto;}
 	img{width: 100%;}
 
 	}
 	color:$secondary-text-color;
-		h4 {text-transform: uppercase;color: $secondary-text-color; font-family: $headers; font-size: 12px; display: inline;}
+
 		.card-help{float: right;
 			.fa-question-circle{color: $primary-color;}
 		}

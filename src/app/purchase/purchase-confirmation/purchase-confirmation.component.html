@@ -11,13 +11,34 @@
         <small class="secondary-text">Confirm and complete your purchase below.</small>
         <div class="row steps-row"><div class="col step-group complete text-left"><i class="fa fa-check">&nbsp;</i><small>Select quantity</small></div><div class="col step-group text-center complete"><i class="fa fa-check">&nbsp;</i><small>Choose payment method</small></div><div class="col text-right step-group active"><span class="step">3</span><small>Confirmation</small></div></div>
 
-        <div class="payment-container text-left row">
-          <div class="col col-lg-12">
+        <div class="confirmation-container text-left row">
+            <div class="col col-lg-8 offset-2">
+              <div class="info-container row">
+                <div class="col col-lg-8">
+                  <small>You are purchasing:</small>
+                </div>
+                <div class="col col-lg-4">
+                  <h2>1.3 MET</h2>
+                </div>
+                <div class="col col-lg-8">
+                  <small>For (USD):</small>
+                </div>
+                <div class="col col-lg-4">
+                  <h2>$68.52</h2>
+                </div>
+                <div class="col col-lg-8">
+                  <small>With credit card ending in:</small>
+                </div>
+                <div class="col col-lg-4">
+                  <h2>4242</h2>
+                </div>
+              </div>
+            </div>
             <div class="col col-lg-6 offset-3">
               <button type="submit" class="btn btn-second-primary btn-lg" routerLink="/dashboard">Purchase MET!</button>
               <br />
               <div class="text-center">
-                <a class="" href="#" role="button" [routerLink]="[ '../', {outlets: { 'met-manager-modal': 'purchase-payment' } }]"><small class="secondary-text">Back</small></a>
+                <a class="back-link" href="#" role="button" [routerLink]="[ '../', {outlets: { 'met-manager-modal': 'purchase-payment' } }]"><small class="secondary-text">Back</small></a>
               </div>
             </div>
           </div> <!-- .payment-info-body -- >

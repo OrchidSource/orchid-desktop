@@ -1,7 +1,11 @@
 $container-padding: 1.5rem;
-
-.payment-container {
+$secondary-text-color: #99A1B0;
+.row {.col {padding-top:15px; padding-bottom: 15px;}}
+.confirmation-container {
   display: flex;
+  .info-container{border: 1px solid #99A1B0;border-radius: 4px;padding:16px;
+small {color:$secondary-text-color;}
+  }
 }
 
 // The div on the left with the radio buttons
