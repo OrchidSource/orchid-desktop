@@ -1,8 +1,8 @@
-<div class="row equal-height" ng-init="isDB = true">
+<div class="row equal-height">
   <div class="col-sm-4">
     <div class="card dashboard-card met-balance">
       <div class="card-header">
-        <h4 class="card-title">MET Balance</h4>
+        <h4 class="card-title">MET Balance {{isDB}}</h4>
         <span class="card-help">
           <a href="#" ngbTooltip="You need MET to connect!" placement="bottom"><span class="fa fa-question-circle"></span></a>
         </span>
@@ -58,7 +58,7 @@
       </div>
     </div>
   </div>
-  
+
   <div class="col-sm-4">
     <div class="card dashboard-card security-level">
       <div class="card-header">

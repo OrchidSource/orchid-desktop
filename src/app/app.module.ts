@@ -15,6 +15,7 @@ import { PurchaseStartComponent } from './purchase/purchase-start/purchase-start
 import { PurchasePaymentComponent } from './purchase/purchase-payment/purchase-payment.component';
 import { PurchaseConfirmationComponent } from './purchase/purchase-confirmation/purchase-confirmation.component';
 import { PopoverModule } from 'ng2-pop-over';
+import { NgIf } from '@angular/common';
 
 @NgModule({
   declarations: [

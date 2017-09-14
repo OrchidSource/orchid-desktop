@@ -1,17 +1,26 @@
+<div class="arrow arrow-{{show}}"></div>
 <div class="row panda-flip">
   <div class="col-lg-4 col text-center">
     <div class="help-step"><span>1</span><h5>Get MET</h5></div>
-    <div class="help-image"><img src="assets/imgs/coin-stack-placeholder.png" /></div>
+    <div class="help-image" on-mouseover="show = 1"><img src="assets/imgs/coin-stack-placeholder.png"  /></div>
   </div>
   <div class="col-lg-4 col text-center">
     <div class="help-step"><span>2</span><h5>Connect</h5></div>
-    <div class="help-image"><img src="assets/imgs/connect-image.svg" /></div>
+    <div class="help-image" on-mouseover="show = 2"><img src="assets/imgs/connect-image.svg" /></div>
   </div>
   <div class="col-lg-4 col text-center">
     <div class="help-step"><span>3</span><h5>Customize</h5></div>
-    <div class="help-image"><img src="assets/imgs/customize.svg" /></div>
+    <div class="help-image" on-mouseover="show = 3"><img src="assets/imgs/customize.svg" /></div>
   </div>
-  <div class="col-lg-8 col offset-1 help-container">
+  <div class="col-lg-8 col offset-1 help-container" *ngIf="show==1">
+    <img src="assets/imgs/get-met-help-placeholder.png" align="center" />
+    <small>Lorem ipsum dolor sit amet, consectetur adipiscing elit, sed do eiusmod tempor incididunt ut labore et dolore magna aliqua.</small>
+  </div>
+  <div class="col-lg-8 col offset-1 help-container" *ngIf="show==2">
+    <img src="assets/imgs/connect-placeholder.png" align="center" />
+    <small>Lorem ipsum dolor sit amet, consectetur adipiscing elit, sed do eiusmod tempor incididunt ut labore et dolore magna aliqua.</small>
+  </div>
+  <div class="col-lg-8 col offset-1 help-container" *ngIf="show==3">
     <img src="assets/imgs/get-met-help-placeholder.png" align="center" />
     <small>Lorem ipsum dolor sit amet, consectetur adipiscing elit, sed do eiusmod tempor incididunt ut labore et dolore magna aliqua.</small>
   </div>
