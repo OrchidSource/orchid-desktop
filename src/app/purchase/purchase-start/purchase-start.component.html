@@ -29,8 +29,13 @@
         </div>
         <div class="col-12">
           <small>Total cost in USD: ${{ calculate_cost() | number }}</small>
-        </div> 
-        <div class="text-center col-12"><a href="" class="primary-text-color"><small>How many tokens do I need?</small></a></div>
+        </div>
+        <div class="text-center col-12"><a class="primary-text-color" (mouseover)='helpPO2.show($event)'  (mouseleave)='helpPO2.hide()'><small>How many tokens do I need?</small></a></div>
+        <pop-over #helpPO2 [my]="'top left'" [at]="'center bottom'" [anchor-to]="'true'" [content-class]="'po2'">
+        <div class="message">
+          Most internet plans include between [X] and [XX] Gigabytes(GB) of data per month. Most cell phone plans include between 1 and 5GB per month. Currently you can use 1GB of data for about .34 MET. You can use this as a guide to determine how much MET you will need to purchase. Keep in mind that the value of MET can change.
+        </div>
+  </pop-over>
         <div class="col-4 offset-4 text-center">
           <a href="#" class="btn btn-lg btn-second-primary btn-large next-button" [routerLink]="[ '../', {outlets: { 'met-manager-modal': 'purchase-payment' } }]" >Next</a>
           <br />

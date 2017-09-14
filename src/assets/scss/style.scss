@@ -57,6 +57,7 @@ $white-text: #fff;
 /*common */
 
 html {font-size: 16px;}
+a small {color:$primary-color !important;}
 h2{/* 1.3 MET: */
 font-size: 24px;
 color: #000000;
@@ -70,7 +71,8 @@ h4 {text-transform: uppercase;color: $secondary-text-color; font-family: $header
 .panda-flip{background: url('../imgs/panda-placeholder-flip.png') no-repeat;background-size: 100%;background-position:center bottom;    width: 104%;
     left: 0px;
     position: absolute;padding-bottom: 30px;margin-top:-15px;height:96vh;}
-.pop-over-content .message {width: 443px;
+.pop-over-content {z-index: 3000;
+  .message {width: 443px;
     left: -210px;
     top: 20px;
     position: absolute;
@@ -92,7 +94,17 @@ border-radius: 4px 4px 4px 4px;
     border-color: rgba(194, 225, 245, 0);
     border-right-color: rgba(74, 74, 74, 0.89);
     border-width: 16px;
-    margin-top: -16px;}}
+    margin-top: -16px;}
+  }
+}
+.po2 {
+  .message{
+    &:before{right: 50%;
+  top: 0%;margin-right: -16px;
+  margin-top: -32px;
+border-bottom-color: rgba(74, 74, 74, 0.89);
+border-right-color: transparent;}
+  }}
 .btn-second-primary:hover {background-color:#ffb335; border-color: #eccb93;}
 .btn-second-primary{color: #fff !important;}
 .btn{padding: 8px .7rem;font-family: Roboto, "Helvetica Neue", Arial, sans-serif !important;font-weight: 300;}

@@ -2,13 +2,28 @@
   span {background: #FFFFFF;border: 1px dashed #79E2F5;border-radius:50%;width:39px;    display: inline-block;text-align: center;line-height: 39px; height:39px;color:#79E2F5;font-family:Roboto;font-size: 24px;margin-right:18px;}
   h5 {display: inline-block;}
 }
+.panda-flip{.row{.col{padding-bottom:0px;}}}
 .help-image{img{padding: 25px 0px 0px 65px;}}
+.step{transform: scale(1);transition: all .25s ease-in-out;}
+.step.active{transform: scale(1.1);transition: all .25s ease-in-out;
+  .help-step{span {background: #79E2F5;box-shadow: 0 0 0 2px #79E2F5;border: 2px dashed #fff;color: #fff;}}}
+.step-1{animation: zoomIn .25s;}
+.step-2{animation: zoomIn .5s;}
+.step-3{animation: zoomIn .75s;}
 .help-container{/* Rectangle 6: */
 background: rgba(255,255,255,0.90);
-border: 1px dashed #79E2F5;
-border-radius: 4px;padding: 20px;
+border: 2px dashed #79E2F5;
+border-radius: 4px;padding: 30px;
 img{display:block;margin:0px auto 20px;}}
 .arrow{background: url('../../assets/imgs/arrow.svg') no-repeat;width: 117px;height: 66px;position: absolute;z-index: 1000;left: -62px;}
 .arrow-1{top:125px;}
 .arrow-2{top:35px;}
 .arrow-3{top:85px;}
+@keyframes zoomIn {
+  from {
+    transform: scale(0);
+  }
+  to {
+    transform: scale(1);
+  }
+}

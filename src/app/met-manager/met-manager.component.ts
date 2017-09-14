@@ -42,7 +42,7 @@ export class MetManagerComponent implements OnInit {
     labels: ["Mar", "Apr", "May", "Jun", "Jul", "Aug"],
     datasets: [{
       label: "MET Value",
-      data: ['33.45', '55.92', '127.50', '222.00', '290.67', '547.52'],
+      data: ['33.45', '55.92', '127.50', '322.00', '790.67', '1236.05'],
       fill: false,
       borderColor: '#F5A623',
       pointBorderColor: '#F5A623',
