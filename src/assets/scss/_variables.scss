@@ -730,15 +730,15 @@ $card-columns-margin:       $card-spacer-y !default;
 
 // Tooltips
 
-$tooltip-max-width:           200px !default;
-$tooltip-color:               $white !default;
-$tooltip-bg:                  $black !default;
-$tooltip-opacity:             .9 !default;
+$tooltip-max-width:           300px !default;
+$tooltip-color:               $primary-text-color !default;
+$tooltip-bg:                  $white !default;
+$tooltip-opacity:             1 !default;
 $tooltip-padding-y:           3px !default;
 $tooltip-padding-x:           8px !default;
 $tooltip-margin:              3px !default;
 
-$tooltip-arrow-width:         5px !default;
+$tooltip-arrow-width:         8px !default;
 $tooltip-arrow-color:         $tooltip-bg !default;
 
 

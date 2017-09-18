@@ -196,6 +196,7 @@ border-radius: 50%;
 /* Dashboard */
 
 .dashboard-content{
+  .last {.tooltip{margin-left: -140px;.tooltip-inner{&:before{left:97%;}}}}
 flex: 0 1;
 padding-top: 30px;
 padding-right: 0px;
@@ -227,8 +228,12 @@ letter-spacing: 0.5px;.card-title-data{color: $primary-text-color;padding-left: 
 	}
 	color:$secondary-text-color;
 
-		.card-help{float: right;
+		.card-help{position:absolute;top:5px;right:10px;
 			.fa-question-circle{color: $primary-color;}
+      .tooltip{
+      .tooltip-inner{width:300px;box-shadow: 0 0 0 2px #FFF;border: 2px dashed #79E2F5;}
+    }
+
 		}
 	}
 	/*MET balance*/

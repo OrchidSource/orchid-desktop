@@ -18,8 +18,7 @@
   <div class="col-sm-4">
     <div class="card dashboard-card browsing-location">
       <div class="card-header">
-        <h4 class="card-title">Default Browsing Location</h4>
-        <span class="card-help"><a ngbTooltip="This is where you will appear to be browsing the internet from." placement="bottom"><span class="fa fa-question-circle"></span></a></span>
+        <h4 class="card-title">Default Browsing Location</h4><span class="card-help"><a ngbTooltip="This is where you will appear to be browsing the internet from." placement="bottom"><span class="fa fa-question-circle"></span></a></span>
       </div>
       <div class="h-100 card-block justify-content-end">
         <div class="card-content h-80 justify-content-end"><img src="assets/imgs/map-placeholder.svg"></div>
@@ -59,11 +58,11 @@
     </div>
   </div>
 
-  <div class="col-sm-4">
+  <div class="col-sm-4 last">
     <div class="card dashboard-card security-level">
       <div class="card-header">
         <h4 class="card-title">Security Level</h4>
-        <span class="card-help"><a ngbTooltip="" placement="bottom"><span class="fa fa-question-circle"></span></a></span>
+        <span class="card-help"><a ngbTooltip="Your security level determines how many nodes your connection will pass through. Higher security level = more nodes." placement="bottom"><span class="fa fa-question-circle"></span></a></span>
       </div>
       <div class="h-100 card-block justify-content-end" ng-controller="Ctrl" ng-app="sec-val">
         <div class="card-content h-80 justify-content-end">
