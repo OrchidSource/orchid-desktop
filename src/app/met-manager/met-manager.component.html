@@ -5,7 +5,7 @@
       <div class="card-header">
         <h4 class="card-title">Total Earnings</h4><span class="card-title-data">982.76 MET</span>
         <span class="card-help">
-          <a href="#" ngbTooltip="This is how much MET you have earned over time" placement="bottom"><span class="fa fa-question-circle"></span></a>
+          <a ngbTooltip="This is how much MET you have earned over time" placement="bottom"><span class="fa fa-question-circle"></span></a>
         </span>
       </div>
       <div class="h-100 card-block justify-content-end">
@@ -21,7 +21,7 @@
     <div class="card dashboard-card browsing-location">
       <div class="card-header">
         <h4 class="card-title">Current MET VALUE (USD)</h4><span class="card-title-data">1,236</span>
-        <span class="card-help"><a href="#" class="" title="Current value of 1 MET in USD" data-toggle="tooltip" data-placement="bottom"><span class="fa fa-question-circle"></span></a></span>
+        <span class="card-help"><a ngbTooltip="Current value of 1 MET in USD" placement="bottom"><span class="fa fa-question-circle"></span></a></span>
       </div>
       <div class="h-100 card-block justify-content-end">
         <div class="card-content h-80 justify-content-end"><canvas id="valueChart" width="240" height="180"></canvas></div>
@@ -29,7 +29,6 @@
           <p class="card-desc">MET Value (USD)</p>
           <small>Value of MET in USD over time</small>
         </div>
-
       </div>
 
     </div>
@@ -38,7 +37,7 @@
     <div class="card dashboard-card security-level">
       <div class="card-header">
         <h4 class="card-title">Current MET VALUE (GB)</h4><span class="card-title-data">22</span>
-        <span class="card-help"><a href="#" class=""><span class="fa fa-question-circle"></span></a></span>
+        <span class="card-help"><a ngbTooltip=""  placement="bottom"><span class="fa fa-question-circle"></span></a></span>
       </div>
       <div class="h-100 card-block justify-content-end" ng-controller="Ctrl" ng-app="sec-val">
         <div class="card-content h-80 justify-content-end"><canvas id="gbValueChart" width="240" height="180"></canvas></div>
