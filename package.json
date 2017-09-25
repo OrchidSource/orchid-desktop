@@ -1,7 +1,7 @@
 {
-  "name": "mesh-frontend-electron",
+  "name": "Orchid",
   "version": "0.0.1",
-  "description": "Mesh html/electron front-end",
+  "description": "Orchid html5/electron front-end",
   "main": "index.js",
   "scripts": {
     "start": "electron .",
@@ -22,16 +22,17 @@
     "type": "git",
     "url": ""
   },
-  "author": "MESH/Opus Logica Inc.",
-  "license": "ISC",
+  "author": "Mesh Network Lab Inc.",
+  "license": "AGPLv3",
   "bugs": {
-    "url": ""
+    "url": "https://meshlabs.org/support"
   },
   "build": {
-    "appId": "org.meshlabs.configurator",
-    "mac": {
-      "category": "your.app.category.type"
-    },
+    "appId": "org.meshlabs.mac.app",
+    "artifactName": "Orchid",
+    "compression": "store",
+    "dmg" { "internetEnabled": true },
+    "mac": { "category": "your.app.category.type" },
     "directories": {
       "buildResources": "build-resources",
       "output": "out"
