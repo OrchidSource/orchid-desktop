@@ -32,7 +32,7 @@
     "appId": "org.meshlabs.mac.app",
     "artifactName": "Orchid",
     "compression": "store",
-    "dmg" { "internetEnabled": true },
+    "dmg": { "internetEnabled": true },
     "mac": { "category": "your.app.category.type" },
     "directories": {
       "buildResources": "build-resources",
