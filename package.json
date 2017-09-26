@@ -16,7 +16,8 @@
     "build-win-executable": "npm run build && docker run --rm -ti -v ${PWD}:/project -v ${PWD}/node-modules:/project/node_modules -v ~/.cache/electron:/root/.cache/electron -v ~/.cache/electron-builder:/root/.cache/electron-builder electronuserland/electron-builder:wine /bin/bash -c \"yarn && node_modules/.bin/electron-builder --win\"",
     "build-linux-executable": "npm run build && docker run --rm -ti -v ${PWD}:/project -v ${PWD}/node-modules:/project/node_modules -v ~/.cache/electron:/root/.cache/electron -v ~/.cache/electron-builder:/root/.cache/electron-builder electronuserland/electron-builder:latest /bin/bash -c \"yarn && node_modules/.bin/electron-builder\"",
     "postinstall": "node_modules/.bin/electron-builder install-app-deps",
-    "generate-icon": "iconutil -c icns icons/orchid.iconset --output ./build-resources/icon.icns"
+    "generate-icon": "iconutil -c icns icons/orchid.iconset --output ./build-resources/icon.icns",
+    "generat-icon-linux": "convert icons/orchid.iconset/icon_512x512.png -resize 128x128 icons/orchid.iconset/icon_128x128.png && png2icns ./build-resources/icon.icns icons/orchid.iconset/icon_512x512.png icons/orchid.iconset/icon_128x128.png"
   },
   "private": true,
   "repository": {
@@ -32,8 +33,12 @@
     "appId": "org.meshlabs.mac.app",
     "artifactName": "Orchid",
     "compression": "store",
-    "dmg": { "internetEnabled": true },
-    "mac": { "category": "your.app.category.type" },
+    "dmg": {
+      "internetEnabled": true
+    },
+    "mac": {
+      "category": "your.app.category.type"
+    },
     "directories": {
       "buildResources": "build-resources",
       "output": "out"
