@@ -30,7 +30,6 @@
   },
   "build": {
     "appId": "network.orchid.macosx.app",
-    "artifactName": "Orchid",
     "compression": "store",
     "dmg": {
       "internetEnabled": true
