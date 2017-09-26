@@ -44,6 +44,12 @@ The easiest way is to use the `ng generate` command; e.g.:
 
 See https://github.com/angular/angular-cli/wiki/generate-component for details
 
+
+### Icons
+
+The raw icon files live in the `icons` directory. To update the icon for MacOS, update the png files in the `icons/orchid.iconset` directory; see https://developer.apple.com/library/content/documentation/GraphicsAnimation/Conceptual/HighResolutionOSX/Optimizing/Optimizing.html for a list of the file sizes/names that should be in that directory. In practice, you don't need to supply all of these files; the most appropriate available icon size will be used. So if you are lazy, just include a 512x512 version of the icon. Once you've updated the file there, run `npm run generate-icon` and the icns file will be generated and placed in `build-resources`. Check that file in.
+
+
 ### Building the executables
 
 NB: See the note above about npm/node versions. All commands, including `npm install`, have to have been run with particular versions of node/npm installed.
@@ -52,7 +58,7 @@ All executables get placed in the `out` directory.
 
 Building can take a very long time, especially the first time you do it; be patient.
 
-All executables are built using the [electron-packager](https://github.com/electron-userland/electron-packager) tool; see the options for that tool to see how to modify the generated executables (e.g. sign them or change the app icon).
+All executables are built using the [electron-builder](https://www.electron.build/) tool; see the options for that tool to see how to modify the generated executables (e.g. sign them or change the app icon).
 
 #### Mac OX
 
