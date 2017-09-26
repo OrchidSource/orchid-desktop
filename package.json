@@ -36,7 +36,7 @@
       "internetEnabled": true
     },
     "mac": {
-      "category": "public.app-category.your.app.utilities",
+      "category": "public.app-category.your.app.utilities"
     },
     "directories": {
       "buildResources": "build-resources",
