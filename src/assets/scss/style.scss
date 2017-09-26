@@ -69,6 +69,8 @@ h4 {text-transform: uppercase;color: $secondary-text-color; font-family: $header
 .back-link{margin-top: 5px;}
 .panda{background: url('../imgs/panda-placeholder.png') no-repeat;background-size: 100%;background-position: bottom;margin-top: 30px;flex:1 1;position: absolute;width: 100%;height: 100%;margin-left: 0px;margin-right: 0px;bottom: 0px;z-index: 0;}
 .panda-flip{background: url('../imgs/panda-placeholder-flip.png') no-repeat;background-size: 100%;background-position: bottom;}
+.panda-center{background: url('../imgs/panda-placeholder-center.png') no-repeat;background-size: 100%;background-position: bottom;opacity: .7;}
+
 .pop-over-content {z-index: 3000;
   .message {width: 443px;
     left: -210px;
