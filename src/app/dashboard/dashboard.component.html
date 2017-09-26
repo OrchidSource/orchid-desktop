@@ -122,21 +122,24 @@
     </div>
   </div>
 </div>
-  <div class="row equal-height panda text-center" *ngIf="isDB">  <!-- hide me unless on Dashboard not working yet -->
-    <div class="col-lg-4 offset-4">
-      <a class="btn btn-lg btn-second-primary next-button" (click)='helpPO.show($event)'>Earn CHI</a>
-      <pop-over #helpPO [my]="'top left'" [at]="'center bottom'"  [anchor-to]="'true'" [content-class]="'po1'">
-	<div class="message">
-          Soon you will be able to earn CHI and help to create a free and openly accessible internet.<br /><br />
-          Sign up below and be among the first to participate.<br /><br />
-          <form class="form-inline">
-	    <div class="form-group">
-	      <input type="email" class="form-control" id="email-signup" name="email-signup" placeholder="name@example.com">
-	    </div>&nbsp;
-	    <button type="submit" class="btn btn-primary">Alert Me</button>
-	  </form>
-	</div>
-      </pop-over>
+  <div class="row panda text-center">
 
-    </div>
   </div>
+  <div class="row equal-height">
+  <div class="col-lg-4 offset-4">
+    <a class="btn btn-lg btn-second-primary next-button" (click)='helpPO.show($event)'>Earn CHI</a>
+    <pop-over #helpPO [my]="'top left'" [at]="'center bottom'"  [anchor-to]="'true'" [content-class]="'po1'">
+<div class="message">
+        Soon you will be able to earn CHI and help to create a free and openly accessible internet.<br /><br />
+        Sign up below and be among the first to participate.<br /><br />
+        <form class="form-inline">
+    <div class="form-group">
+      <input type="email" class="form-control" id="email-signup" name="email-signup" placeholder="name@example.com">
+    </div>&nbsp;
+    <button type="submit" class="btn btn-primary">Alert Me</button>
+  </form>
+</div>
+    </pop-over>
+
+  </div>
+</div>
