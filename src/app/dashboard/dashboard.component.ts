@@ -8,9 +8,10 @@ import { BrowserModule } from "@angular/platform-browser";
   styleUrls: ['./dashboard.component.scss']
 })
 
+
+
 export class DashboardComponent implements OnInit {
     security = { level: 5 };
-    isDB = true;
     ngOnInit() {
      }
 }
