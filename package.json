@@ -29,11 +29,14 @@
     "url": "https://meshlabs.org/support"
   },
   "build": {
-    "appId": "org.meshlabs.mac.app",
-    "artifactName": "Orchid",
+    "appId": "network.orchid.macosx.app",
     "compression": "store",
-    "dmg": { "internetEnabled": true },
-    "mac": { "category": "your.app.category.type" },
+    "dmg": {
+      "internetEnabled": true
+    },
+    "mac": {
+      "category": "public.app-category.your.app.utilities"
+    },
     "directories": {
       "buildResources": "build-resources",
       "output": "out"
