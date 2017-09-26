@@ -2,15 +2,15 @@
   <div class="col-sm-4">
     <div class="card dashboard-card met-balance">
       <div class="card-header">
-        <h4 class="card-title">MET Balance</h4>
+        <h4 class="card-title">CHI Balance</h4>
         <span class="card-help">
-          <a ngbTooltip="You need MET to connect!" placement="bottom"><span class="fa fa-question-circle"></span></a>
+          <a ngbTooltip="You need CHI to connect!" placement="bottom"><span class="fa fa-question-circle"></span></a>
         </span>
       </div>
       <div class="h-100 card-block justify-content-end">
         <div class="card-content h-80 justify-content-end"><h3 class="card-text">0</h3></div>
         <div class="card-action-container h-20 justify-content-end">
-          <a class="btn btn-primary btn-lg" href="#" role="button" [routerLink]="[ '/met-manager', {outlets: { 'met-manager-modal': 'purchase-start' } }]">Purchase MET</a>
+          <a class="btn btn-primary btn-lg" href="#" role="button" [routerLink]="[ '/met-manager', {outlets: { 'met-manager-modal': 'purchase-start' } }]">Purchase CHI</a>
         </div>
       </div>
     </div>
@@ -111,14 +111,32 @@
 
   <div class="col-sm-4">
     <div class="card dashboard-card">
-      <div class="card-header"><h4 class="card-title">MET Earned</h4><span class="card-help"><a href="#" class=""><span class="fa fa-question-circle"></span></a></span></div>
+      <div class="card-header"><h4 class="card-title">CHI Earned</h4><span class="card-help"><a href="#" class=""><span class="fa fa-question-circle"></span></a></span></div>
       <div class="h-100 card-block justify-content-end">
         <div class="card-content h-80 justify-content-end"><img src="assets/imgs/bgraph-placeholder.svg"></div>
         <div class="card-action-container h-20 justify-content-end">
-          <strong>MET Earned</strong><br />MET earned over time
+          <strong>CHI Earned</strong><br />CHI earned over time
         </div>
       </div>
 
     </div>
   </div>
 </div>
+  <div class="row equal-height panda text-center" *ngIf="isDB">  <!-- hide me unless on Dashboard not working yet -->
+    <div class="col-lg-4 offset-4">
+      <a class="btn btn-lg btn-second-primary next-button" (click)='helpPO.show($event)'>Earn CHI</a>
+      <pop-over #helpPO [my]="'top left'" [at]="'center bottom'"  [anchor-to]="'true'" [content-class]="'po1'">
+	<div class="message">
+          Soon you will be able to earn CHI and help to create a free and openly accessible internet.<br /><br />
+          Sign up below and be among the first to participate.<br /><br />
+          <form class="form-inline">
+	    <div class="form-group">
+	      <input type="email" class="form-control" id="email-signup" name="email-signup" placeholder="name@example.com">
+	    </div>&nbsp;
+	    <button type="submit" class="btn btn-primary">Alert Me</button>
+	  </form>
+	</div>
+      </pop-over>
+
+    </div>
+  </div>

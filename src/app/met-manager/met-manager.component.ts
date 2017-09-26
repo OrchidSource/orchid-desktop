@@ -28,7 +28,7 @@ export class MetManagerComponent implements OnInit {
   var earningsData = {
     labels: ["Mar", "Apr", "May", "Jun", "Jul", "Aug"],
     datasets: [{
-      label: "MET Earned",
+      label: "CHI Earned",
       data: [0, '5.9', '7.5', '2.0', '20', '5.5'],
       fill: false,
       borderColor: '#18BECC',
@@ -41,7 +41,7 @@ export class MetManagerComponent implements OnInit {
   var valueData = {
     labels: ["Mar", "Apr", "May", "Jun", "Jul", "Aug"],
     datasets: [{
-      label: "MET Value",
+      label: "CHI Value",
       data: ['33.45', '55.92', '127.50', '322.00', '790.67', '1236.05'],
       fill: false,
       borderColor: '#F5A623',
@@ -54,7 +54,7 @@ export class MetManagerComponent implements OnInit {
   var gbValueData = {
     labels: ["Mar", "Apr", "May", "Jun", "Jul", "Aug"],
     datasets: [{
-      label: "MET Value in GB",
+      label: "CHI Value in GB",
       data: ['40', '33.5', '36.7', '28.5', '22', '24'],
       fill: false,
       borderColor: '#E068C4',
