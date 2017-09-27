@@ -1,5 +1,5 @@
 <router-outlet name="met-manager-modal"></router-outlet>
-<div class="row panda panda-center text-center">
+<div class="row panda text-center">
 </div>
 <div class="row equal-height">
   <div class="col-sm-4"><!--this div should be hidden until people can actually earn CHI -->
@@ -44,8 +44,8 @@
       <div class="h-100 card-block justify-content-end" ng-controller="Ctrl" ng-app="sec-val">
         <div class="card-content h-80 justify-content-end"><canvas id="gbValueChart" width="240" height="130"></canvas></div>
         <div class="card-action-container h-20 justify-content-end">
-          <p class="card-desc">CHI Value (GB)</p>
-          <small>Value of CHI in gigabytes over time</small>
+          <p class="card-desc">Cost per GB (CHI)</p>
+          <small>Cost per GB in CHI over time</small>
         </div>
       </div>
 
@@ -58,10 +58,10 @@
     <h3>465.34<span>CHI</span></h3>
   </div>
   <div class="col-sm-4 my-auto">
-    <a class="btn btn-primary btn-lg" href="#" role="button" [routerLink]="[ '/met-manager', {outlets: { 'met-manager-modal': 'purchase-start' } }]">BUY</a>
+    <a class="btn btn-primary btn-lg" href="#" role="button" [routerLink]="[ '/met-manager', {outlets: { 'met-manager-modal': 'purchase-start' } }]">HOW TO BUY</a>
   </div>
   <div class="col-sm-4 my-auto">
-    <a class="btn btn-second-primary btn-lg" href="#" role="button" [routerLink]="[ '', {outlets: { 'met-manager-modal': 'purchase-start' } }]">SELL</a>
+    <a class="btn btn-second-primary btn-lg" href="#" role="button" [routerLink]="[ '', {outlets: { 'met-manager-modal': 'purchase-start' } }]">HOW TO SELL</a>
   </div>
 </div><!--end 2nd row-->
 <p>
