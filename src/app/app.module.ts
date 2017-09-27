@@ -9,7 +9,7 @@ import { AppComponent } from './app.component';
 import { NgbModule } from '@ng-bootstrap/ng-bootstrap';
 import { DashboardComponent } from './dashboard/dashboard.component';
 import { MetManagerComponent } from './met-manager/met-manager.component';
-import { NotificationsComponent } from './notifications/notifications.component';
+import { AboutComponent } from './about/about.component';
 import { HelpComponent } from './help/help.component';
 import { PurchaseStartComponent } from './purchase/purchase-start/purchase-start.component';
 import { PurchasePaymentComponent } from './purchase/purchase-payment/purchase-payment.component';
@@ -24,7 +24,7 @@ import { NgIf } from '@angular/common';
     DashboardComponent,
     HelpComponent,
     MetManagerComponent,
-    NotificationsComponent,
+    AboutComponent,
     PurchasePaymentComponent,
     PurchaseConfirmationComponent,
     PurchaseHowToComponent,

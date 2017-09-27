@@ -172,6 +172,11 @@ border-radius: 50%;
       color: #fff;
       height: 100vh;
       font-size: 13px;
+      .dropup{position:absolute;bottom:60px;padding: 0px 15px;width:138px;
+      .dropdown-menu{left: auto !important;top:auto !important;min-width:auto !important;
+      .dropdown-item {padding: 10px 1.5rem;}}
+      .dropdown-toggle{width:100%;
+      &:after{float:right;margin-top:6px;color:#fff;}}}
     }
     .nav-pills {
 			.toggler{width:122px;

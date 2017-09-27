@@ -21,15 +21,24 @@
           <li class="nav-item">
             <a  routerLink="/met-manager" routerLinkActive="active" class="nav-link"><span class="fa ci-met-stack"></span> CHI Manager</a>
           </li>
-          <!-- <li class="nav-item">
-          <a routerLink="/notifications" routerLinkActive="active" class="nav-link"><span class="badge badge-primary">4</span> Notifications</a>
-          </li> -->
           <li class="nav-item">
             <a routerLink="/help" routerLinkActive="active" class="nav-link"><span class="fa fa-question-circle"></span> Getting Started</a>
           </li>
+          <li class="nav-item">
+            <a routerLink="/about" routerLinkActive="active" class="nav-link"><span class="fa fa-info-circle"></span> About</a>
+          </li>
         </ul>
+
       </div><!--/.nav-collapse -->
+      <div ngbDropdown placement="top-right" class="d-inline-block">
+      <button class="btn btn-outline-secondary" id="languageSelect" ngbDropdownToggle>English</button>
+      <div ngbDropdownMenu aria-labelledby="languageSelect">
+        <button class="dropdown-item">العربية</button>
+        <button class="dropdown-item">中国</button>
+        <button class="dropdown-item">русский</button>
+      </div>
     </div>
+  </div>
   </div><!-- #sidebar-wrapper -->
 
   <div class="col dashboard-content">
