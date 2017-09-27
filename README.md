@@ -50,7 +50,7 @@ See https://github.com/angular/angular-cli/wiki/generate-component for details
 The raw icon files live in the `icons` directory. To update the icon for MacOS, update the png files in the `icons/orchid.iconset` directory; see https://developer.apple.com/library/content/documentation/GraphicsAnimation/Conceptual/HighResolutionOSX/Optimizing/Optimizing.html for a list of the file sizes/names that should be in that directory. In practice, you don't need to supply all of these files; the most appropriate available icon size will be used. So if you are lazy, just include a 512x512 version of the icon. Once you've updated the file there, run `npm run generate-icon` and the icns file will be generated and placed in `build-resources`. Check that file in.
 
 
-### Linuz Icons
+### Linux Icons
 
 Create icons for building on linux with `npm run generate-icon-linux` which directly creates the properly sized pngs and outputs them into build/icons
 
