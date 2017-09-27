@@ -1,4 +1,5 @@
 import { Component } from '@angular/core';
+import { DashboardComponent } from './dashboard/dashboard.component';
 
 @Component({
   selector: 'body',
@@ -6,5 +7,6 @@ import { Component } from '@angular/core';
   styleUrls: ['./app.component.css']
 })
 export class AppComponent {
+isDB = true;
   title = 'app';
 }

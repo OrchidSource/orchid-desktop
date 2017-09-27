@@ -1,4 +1,4 @@
-const {app, BrowserWindow} = require('electron');
+const {app, BrowserWindow, nativeImage} = require('electron');
 const path = require('path');
 const url = require('url');
 
@@ -8,9 +8,15 @@ let win;
 
 function createWindow() {
   // Create the browser window.
+
+  // TODO I think this is a bug with how electron handles icons in linux
+  // and should be fixed to deal with multiple resolution sizes
+  let _appIcon = nativeImage.createFromPath(__dirname + "/build/icons/icon_128x128.png")
+
   win = new BrowserWindow({
     width: 1200,
-    height: 800
+    height: 800,
+    icon: _appIcon,
   });
 
   // and load the index.html of the app.
