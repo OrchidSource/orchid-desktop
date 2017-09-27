@@ -14,6 +14,7 @@ import { HelpComponent } from './help/help.component';
 import { PurchaseStartComponent } from './purchase/purchase-start/purchase-start.component';
 import { PurchasePaymentComponent } from './purchase/purchase-payment/purchase-payment.component';
 import { PurchaseConfirmationComponent } from './purchase/purchase-confirmation/purchase-confirmation.component';
+import { PurchaseHowToComponent } from './purchase/purchase-how-to/purchase-how-to.component';
 import { PopoverModule } from 'ng2-pop-over';
 import { NgIf } from '@angular/common';
 
@@ -26,6 +27,7 @@ import { NgIf } from '@angular/common';
     NotificationsComponent,
     PurchasePaymentComponent,
     PurchaseConfirmationComponent,
+    PurchaseHowToComponent,
     PurchaseStartComponent
   ],
   imports: [
