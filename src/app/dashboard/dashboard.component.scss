@@ -1,0 +1,9 @@
+@mixin minimized-breakpoint(){
+ @media (max-width: 500px) { @content; }
+}
+@mixin breakpoint-md{
+ @media (max-width: 767px) { @content; }
+}
+
+.earn-chi{@include breakpoint-md {padding-bottom:40px !important;}}
+.panda{@include breakpoint-md {display:none;}}

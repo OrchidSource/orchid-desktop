@@ -8,6 +8,7 @@ import { DashboardComponent } from './dashboard/dashboard.component';
 })
 export class AppComponent {
 isDB = true;
+connected = false;
 imgsrc='assets/imgs/button-not-connected.png';
   title = 'app';
 }

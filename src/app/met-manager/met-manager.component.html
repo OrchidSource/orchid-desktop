@@ -1,8 +1,24 @@
 <router-outlet name="met-manager-modal"></router-outlet>
 <div class="row panda panda-chi text-center">
 </div>
-<div class="row equal-height">
-  <div class="col-sm-4"><!--this div should be hidden until people can actually earn CHI -->
+<div class="row equal-height" style="margin-top: 10px;">
+  <div class="col-lg-4 col-md-12 col-sm-12 info-data">
+    <h4>Current CHI Balance</h4>
+    <h3>465.34<span>CHI</span></h3>
+  </div>
+  <div class="col-lg-4 col-md-6 col-sm-12 my-auto">
+    <a class="btn btn-primary btn-lg" href="#" role="button" [routerLink]="[ '/met-manager', {outlets: { 'met-manager-modal': 'purchase-how-to' } }]">HOW TO BUY</a>
+  </div>
+  <div class="col-lg-4 col-md-6 col-sm-12 my-auto">
+    <a class="btn btn-second-primary btn-lg" href="#" role="button" [routerLink]="[ '', {outlets: { 'met-manager-modal': 'purchase-start' } }]">HOW TO SELL</a>
+  </div>
+  <div class="col-lg-12 col-md-12 col-sm-12">
+  <hr />
+</div>
+</div>
+
+<div class="row equal-height met-manager">
+  <div class="col-lg-4 col-md-12 col-sm-12"><!--this div should be hidden until people can actually earn CHI -->
     <div class="card dashboard-card met-balance">
       <div class="card-header">
         <h4 class="card-title">Total Earnings</h4><span class="card-title-data">982.76 CHI</span>
@@ -19,10 +35,10 @@
       </div>
     </div>
   </div>
-  <div class="col-sm-4">
+  <div class="col-lg-4 col-md-6 col-sm-12">
     <div class="card dashboard-card browsing-location">
       <div class="card-header">
-        <h4 class="card-title">Current CHI VALUE (USD)</h4><span class="card-title-data">1,236</span>
+        <h4 class="card-title">CHI VALUE (USD)</h4><span class="card-title-data">1,236</span>
         <span class="card-help"><a ngbTooltip="Current value of 1 CHI in USD" placement="bottom"><span class="fa fa-question-circle"></span></a></span>
       </div>
       <div class="h-100 card-block justify-content-end">
@@ -35,10 +51,10 @@
 
     </div>
   </div>
-  <div class="col-sm-4 last">
+  <div class="col-lg-4 col-md-6 col-sm-12 last">
     <div class="card dashboard-card security-level">
       <div class="card-header">
-        <h4 class="card-title">Current CHI VALUE (GB)</h4><span class="card-title-data">22</span>
+        <h4 class="card-title">CHI VALUE (GB)</h4><span class="card-title-data">22</span>
         <span class="card-help"><a ngbTooltip="Current value of 1 CHI in gigabytes."  placement="bottom"><span class="fa fa-question-circle"></span></a></span>
       </div>
       <div class="h-100 card-block justify-content-end" ng-controller="Ctrl" ng-app="sec-val">
@@ -52,27 +68,16 @@
     </div>
   </div>
 </div> <!-- end 1st row -->
-<div class="row equal-height" style="margin-top: 10px;">
-  <div class="col-sm-4 info-data">
-    <h4>Current CHI Balance</h4>
-    <h3>465.34<span>CHI</span></h3>
-  </div>
-  <div class="col-sm-4 my-auto">
-    <a class="btn btn-primary btn-lg" href="#" role="button" [routerLink]="[ '/met-manager', {outlets: { 'met-manager-modal': 'purchase-how-to' } }]">HOW TO BUY</a>
-  </div>
-  <div class="col-sm-4 my-auto">
-    <a class="btn btn-second-primary btn-lg" href="#" role="button" [routerLink]="[ '', {outlets: { 'met-manager-modal': 'purchase-start' } }]">HOW TO SELL</a>
-  </div>
-</div><!--end 2nd row-->
-<div class="row equal-height"  style="margin-top: 10px;">
+<!--end 2nd row-->
+<div class="row equal-height wallet-info"  style="margin-top: 10px;">
   <div class="col-lg-8 info-data">
     <h4>Wallet Address <span class="card-help"><a ngbTooltip="Cryptocurrencies like Chi are stored and accessed using wallet addresses. This of it like your bank account, only without the bank!"  placement="bottom"><span class="fa fa-question-circle"></span></a></span></h4>
     <div class="row">
-    <div class="col-lg-9">
+    <div class="col-lg-9 col-sm-12 wallet-address">
     0x177b46f8fCf57C5CA32747ecf57ed359481b16eD<br />
     <a href="" class="help-text">Copy address to clipboard</a>
   </div>
-  <div class="col-lg-3">
+  <div class="col-lg-3 col-sm-12">
     <img src="assets/imgs/etherwalletQRCode.jpg" align="right" width="90" />
 </div>
 

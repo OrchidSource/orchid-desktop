@@ -73,7 +73,9 @@ h3 span{color:$primary-text-color;font-size: 18px;font-weight: normal;margin-lef
 h4 {text-transform: uppercase;color: $secondary-text-color; font-family: $headers; font-size: 12px; display: inline;}
 .hidden{display: none !important;}
 .back-link{margin-top: 5px;}
-.panda{background: url('../imgs/panda-placeholder.png') no-repeat;background-size: 100%;background-position: bottom;margin-top: 30px;flex:1 1;position: absolute;width: 100%;height: 100%;margin-left: 0px;margin-right: 0px;bottom: 0px;z-index: 0;opacity: .7;}
+.panda{
+  @include minimized-breakpoint {display:none;}
+  background: url('../imgs/panda-placeholder.png') no-repeat;background-size: 100%;background-position: bottom;margin-top: 30px;flex:1 1;position: absolute;width: 100%;height: 100%;margin-left: 0px;margin-right: 0px;bottom: 0px;z-index: 0;opacity: .7;}
 .panda-flip{background: url('../imgs/panda-placeholder-flip.png') no-repeat;background-size: 100%;background-position: bottom;}
 .panda-chi{background: url('../imgs/panda-coins.png') no-repeat;background-size: 100%;background-position: bottom;}
 .help-text{text-decoration:underline;}
@@ -238,7 +240,6 @@ font-size: 12px;
 color: #99A1B0;
 letter-spacing: 0.5px;.card-title-data{color: $primary-text-color;padding-left: 5px;}}
 	.card-block {padding: .2rem 0rem 1.25rem 0rem;
-
 	p.card-desc{color: $primary-text-color;margin-bottom:-5px;}
 	.btn-lg{font-weight:300;font-size: 20px;line-height: 25px;}
 	.dropdown-toggle{border: none;
@@ -264,6 +265,7 @@ letter-spacing: 0.5px;.card-title-data{color: $primary-text-color;padding-left: 
 
 		}
 	}
+
 	/*MET balance*/
 	.met-balance {
 .card-content{display: flex;}
@@ -279,6 +281,7 @@ letter-spacing: 0.5px;.card-title-data{color: $primary-text-color;padding-left: 
 	.browsing-location{
 	 .dropdown-toggle::after{float: right;margin-top: 6px;}
 	 }
+
 } /* End Dashboard Content*/
 
 .secondary-text {

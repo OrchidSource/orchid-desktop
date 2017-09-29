@@ -1,1 +1,18 @@
-
+@mixin minimized-breakpoint(){
+ @media (max-width: 500px) { @content; }
+}
+@mixin breakpoint-md{
+ @media (max-width: 767px) { @content; }
+}
+  .card-action-container{
+    @include minimized-breakpoint {display:none;}
+  }
+  .card-block{@include minimized-breakpoint {padding-bottom:.5rem !important;}}
+  .wallet-address{@include minimized-breakpoint {font-size:9px;}}
+  .col-sm-12 {.btn-lg{@include minimized-breakpoint {margin-bottom:10px;}@include breakpoint-md {margin-bottom:10px;}}}
+hr{    width: 100%;
+    margin-top: 0px;
+    margin-bottom: 20px;}
+.panda{@include breakpoint-md {display:none;}}
+.wallet-info{@include breakpoint-md {padding-bottom:40px;}}
+.btn-lg{margin-bottom: 20px;}
