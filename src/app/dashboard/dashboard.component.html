@@ -67,13 +67,9 @@
         <span class="card-help"><a ngbTooltip="Your security level determines how many nodes your connection will pass through. Higher security level = more nodes." placement="bottom"><span class="fa fa-question-circle"></span></a></span>
       </div>
       <div class="h-100 card-block justify-content-end" ng-controller="Ctrl" ng-app="sec-val">
-        <div class="card-content h-80 justify-content-end">
-	  <h3 class="card-text"><output for="security-range" id="sec-lev">{{security.level}}</output></h3>
-	</div>
+        <div class="card-content h-80 justify-content-end"><!-- not connected show this image  <img src="assets/imgs/connection-not-connected.gif" align="center" /> --><img src="assets/imgs/connection-animation.gif" align="center" /></div>
         <div class="card-action-container h-20 justify-content-end">
-          <form name="set-security-level">
-            <input id="security-slider" type="range" min="0" max="10" value="5" name="security.level" step="1" [(ngModel)]="security.level"  />
-          </form>
+          <h6 class="text-center" style="margin-top: 15px;text-transform:uppercase;">Secure Connection <!--Inactive-->Active</h6>
         </div>
       </div>
     </div>

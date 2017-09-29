@@ -63,14 +63,14 @@ font-size: 24px;
 color: #000000;
 line-height: 24px;}
 h3 {font-size: 70px;font-weight: 400;color:$secondary-text-color;letter-spacing:-3px;}
-h3 span{color:$primary-text-color;font-size: 22px;font-weight: normal;margin-left: 15px;letter-spacing:0px;}
+h3 span{color:$primary-text-color;font-size: 18px;font-weight: normal;margin-left: 5px;letter-spacing:0px;}
 h4 {text-transform: uppercase;color: $secondary-text-color; font-family: $headers; font-size: 12px; display: inline;}
 .hidden{display: none !important;}
 .back-link{margin-top: 5px;}
-.panda{background: url('../imgs/panda-placeholder.png') no-repeat;background-size: 100%;background-position: bottom;margin-top: 30px;flex:1 1;position: absolute;width: 100%;height: 100%;margin-left: 0px;margin-right: 0px;bottom: 0px;z-index: 0;}
+.panda{background: url('../imgs/panda-placeholder.png') no-repeat;background-size: 100%;background-position: bottom;margin-top: 30px;flex:1 1;position: absolute;width: 100%;height: 100%;margin-left: 0px;margin-right: 0px;bottom: 0px;z-index: 0;opacity: .7;}
 .panda-flip{background: url('../imgs/panda-placeholder-flip.png') no-repeat;background-size: 100%;background-position: bottom;}
-.panda-center{background: url('../imgs/panda-placeholder-center.png') no-repeat;background-size: 100%;background-position: bottom;opacity: .7;}
-
+.panda-chi{background: url('../imgs/panda-coins.png') no-repeat;background-size: 100%;background-position: bottom;}
+.help-text{text-decoration:underline;}
 .pop-over-content {z-index: 3000;
   .message {width: 443px;
     left: -210px;
@@ -166,12 +166,14 @@ border-radius: 50%;
   overflow-y: hidden;
   z-index: 1000;
   transition: all 0.4s ease 0s;
+.connect-button{width: 84px;margin:auto;}
 .sidenav {
       background-color:$dark-bg-color;
       color: $white-text;
       color: #fff;
       height: 100vh;
       font-size: 13px;
+      .nav{margin-top:20px;}
       .dropup{position:absolute;bottom:60px;padding: 0px 15px;width:138px;
       .dropdown-menu{left: auto !important;top:auto !important;min-width:auto !important;
       .dropdown-item {padding: 10px 1.5rem;}}
@@ -201,6 +203,7 @@ border-radius: 50%;
 
 .dashboard-content{
   .row.equal-height{padding: 0px 15px;margin-left: 0px;  margin-right: 0px;}
+  .fa-question-circle{color: $primary-color;}
   height: 100vh;
   .last {.tooltip{margin-left: -140px;.tooltip-inner{&:before{left:97%;}}}}
 flex: 0 1;
@@ -236,7 +239,7 @@ letter-spacing: 0.5px;.card-title-data{color: $primary-text-color;padding-left: 
 	color:$secondary-text-color;
 
 		.card-help{position:absolute;top:5px;right:10px;
-			.fa-question-circle{color: $primary-color;}
+
       .tooltip{
       .tooltip-inner{width:300px;box-shadow: 0 0 0 2px #FFF;border: 2px dashed #79E2F5;}
     }
@@ -249,7 +252,7 @@ letter-spacing: 0.5px;.card-title-data{color: $primary-text-color;padding-left: 
 
 	}
 
-	.security-level{.card-content{display: flex;}}
+	.security-level{.card-content{img{width: 85%;}}}
 	/*Usage Summary*/
 	.usage-summary {
 	hr {margin-bottom: 0px;}

@@ -1,5 +1,5 @@
 <router-outlet name="met-manager-modal"></router-outlet>
-<div class="row panda text-center">
+<div class="row panda panda-chi text-center">
 </div>
 <div class="row equal-height">
   <div class="col-sm-4"><!--this div should be hidden until people can actually earn CHI -->
@@ -52,7 +52,7 @@
     </div>
   </div>
 </div> <!-- end 1st row -->
-<div class="row equal-height">
+<div class="row equal-height" style="margin-top: 10px;">
   <div class="col-sm-4 info-data">
     <h4>Current CHI Balance</h4>
     <h3>465.34<span>CHI</span></h3>
@@ -64,5 +64,19 @@
     <a class="btn btn-second-primary btn-lg" href="#" role="button" [routerLink]="[ '', {outlets: { 'met-manager-modal': 'purchase-start' } }]">HOW TO SELL</a>
   </div>
 </div><!--end 2nd row-->
-<p>
-</p>
+<div class="row equal-height"  style="margin-top: 10px;">
+  <div class="col-lg-8 info-data">
+    <h4>Wallet Address <span class="card-help"><a ngbTooltip="Cryptocurrencies like Chi are stored and accessed using wallet addresses. This of it like your bank account, only without the bank!"  placement="bottom"><span class="fa fa-question-circle"></span></a></span></h4>
+    <div class="row">
+    <div class="col-lg-9">
+    0x177b46f8fCf57C5CA32747ecf57ed359481b16eD<br />
+    <a href="" class="help-text">Copy address to clipboard</a>
+  </div>
+  <div class="col-lg-3">
+    <img src="assets/imgs/etherwalletQRCode.jpg" align="right" width="90" />
+</div>
+
+  </div>
+
+</div>
+</div><!--end 3rd row-->

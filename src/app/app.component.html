@@ -4,16 +4,21 @@
   <div id="sidebar-wrapper" class="row">
     <div class="sidenav col">
       <div class="navbar navbar-inverse sidebar-navbar">
+        <div class="text-center">
+        <a class="text-center"><!-- show when connected <img src="assets/imgs/button-connected.png" align="center" class="connect-button" /> --><img src="assets/imgs/button-not-connected.png" align="center" class="connect-button" /></a>
+        <br />
+        Connect
+      </div>
         <ul class="nav flex-column nav-pills nav-stacked">
-
+<!--
           <li class="nav-item">
             <a title="connect" class="nav-link" data-toggle="tooltip">
               <label class='toggler__label'>
                 <input type="checkbox" hidden>
-                <div class='toggler'><div class="status"></div></div>
+                <div class='toggler' ng-click="connected = !connected"><div class="status"></div></div>
               </label>
             </a>
-          </li>
+          </li> -->
 
           <li class="nav-item nav-item-inverse">
             <a routerLink="/dashboard" routerLinkActive="active" class="nav-link"><span class="fa fa-area-chart"></span> Dashboard</a>
