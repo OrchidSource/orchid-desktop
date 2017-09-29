@@ -4,8 +4,8 @@
   <div id="sidebar-wrapper" class="row">
     <div class="sidenav col">
       <div class="navbar navbar-inverse sidebar-navbar">
-        <div class="text-center">
-        <a class="text-center"><!-- show when connected <img src="assets/imgs/button-connected.png" align="center" class="connect-button" /> --><img src="assets/imgs/button-not-connected.png" align="center" class="connect-button" /></a>
+        <div class="text-center" on-click="imgsrc='assets/imgs/button-connected.png'">
+        <a class="text-center"><!-- show when connected <img src="assets/imgs/button-connected.png" align="center" class="connect-button" /> --><img src="{{imgsrc}}" align="center" class="connect-button" /></a>
         <br />
         Connect
       </div>
