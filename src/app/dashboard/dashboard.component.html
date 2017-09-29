@@ -1,7 +1,7 @@
 <div class="row panda text-center">
 </div>
 <div class="row equal-height">
-  <div class="col-sm-4">
+  <div class="col-lg-4 col-md-12 col-sm-12">
     <div class="card dashboard-card met-balance">
       <div class="card-header">
         <h4 class="card-title">CHI Balance</h4>
@@ -17,7 +17,7 @@
       </div>
     </div>
   </div>
-  <div class="col-sm-4">
+  <div class="col-lg-4  col-md-6 col-sm-12">
     <div class="card dashboard-card browsing-location">
       <div class="card-header">
         <h4 class="card-title">Default Browsing Location</h4><span class="card-help"><a ngbTooltip="This is where you will be browsing the internet from." placement="bottom"><span class="fa fa-question-circle"></span></a></span>
@@ -60,10 +60,10 @@
     </div>
   </div>
 
-  <div class="col-sm-4 last">
+  <div class="col-lg-4 col-md-6 col-sm-12 last">
     <div class="card dashboard-card security-level">
       <div class="card-header">
-        <h4 class="card-title">Security Level</h4>
+        <h4 class="card-title">Connection Status</h4>
         <span class="card-help"><a ngbTooltip="Your security level determines how many nodes your connection will pass through. Higher security level = more nodes." placement="bottom"><span class="fa fa-question-circle"></span></a></span>
       </div>
       <div class="h-100 card-block justify-content-end" ng-controller="Ctrl" ng-app="sec-val">
@@ -122,7 +122,7 @@
 </div>
 
   <div class="row equal-height">
-  <div class="col-lg-4 offset-4">
+  <div class="col-lg-4 col-md-6 col-sm-12 offset-lg-4">
     <a class="btn btn-lg btn-second-primary next-button" (click)='helpPO.show($event)'>Earn CHI</a>
     <pop-over #helpPO [my]="'top left'" [at]="'center bottom'"  [anchor-to]="'true'" [content-class]="'po1'">
 <div class="message">

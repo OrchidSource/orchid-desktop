@@ -11,7 +11,7 @@ $primary-text-color: #3F414C;
 $secondary-text-color: #99A1B0;
 $light-grey-bg: #99A1B0;
 $white-text: #fff;
-
+$darkest-grey: #3F414C;
 /* Order matter! */
 @import './mixins';
 @import './variables';
@@ -53,10 +53,16 @@ $white-text: #fff;
 @import './grid';
 @import './progress';
 
+@mixin minimized-breakpoint(){
+ @media (max-width: 500px) { @content; }
+}
 
 /*common */
 
 html {font-size: 16px;}
+#electron-titlebar {
+  span{float: right;font-size: 12px;font-weight: normal;}
+padding:8px 30px; background: $darkest-grey;border-radius: 10px 10px 0 0;text-align: center;color: #fff;font-size: 13px;text-transform:uppercase;}
 a small {color:$primary-color !important;}
 h2{/* 1.3 MET: */
 font-size: 24px;
@@ -123,11 +129,13 @@ border-right-color: transparent;}
     margin-bottom: 1.5rem;
 }
 .row .col {padding-top: 30px;padding-bottom: 30px;}
-#wrapper{padding-left: 200px;width:100%;display: flex;flex-direction: column;min-height: 100vh;}
+#wrapper{padding-left: 200px;width:100%;display: flex;flex-direction: column;min-height: 100vh;
+@include minimized-breakpoint {padding-left: 110px;}}
 
 .btn-primary{background-color: $primary-color;border-color: $primary-color;}
 .btn-lg{padding: 0.75rem 1.5rem !important;}
-.ci-met-stack {background: url('../imgs/met-stack.svg') no-repeat;height:20px;float: left;}
+.ci-met-stack {background: url('../imgs/met-stack.svg') no-repeat;height:20px;float: left;
+  @include minimized-breakpoint {width: 36px; height:36px;background-size: 36px;background-position:center;float:none;}}
 
 input[type="range"]{
 -webkit-appearance: none;
@@ -166,6 +174,9 @@ border-radius: 50%;
   overflow-y: hidden;
   z-index: 1000;
   transition: all 0.4s ease 0s;
+  @include minimized-breakpoint {margin-left: -110px;
+   left: 110px;
+   width: 110px;}
 .connect-button{width: 84px;margin:auto;}
 .sidenav {
       background-color:$dark-bg-color;
@@ -173,25 +184,32 @@ border-radius: 50%;
       color: #fff;
       height: 100vh;
       font-size: 13px;
-      .nav{margin-top:20px;}
+      @include minimized-breakpoint {padding: 30px 0px;}
+      .navbar{@include minimized-breakpoint {padding: 0 0;}}
+      .nav{margin-top:20px;@include minimized-breakpoint {border-bottom: 1px solid $gray-lighter}}
       .dropup{position:absolute;bottom:60px;padding: 0px 15px;width:138px;
+        @include minimized-breakpoint {width:100%; text-align:center;padding: 0px 0px;}
       .dropdown-menu{left: auto !important;top:auto !important;min-width:auto !important;
       .dropdown-item {padding: 10px 1.5rem;}}
       .dropdown-toggle{width:100%;
+        @include minimized-breakpoint {width:100px;}
       &:after{float:right;margin-top:6px;color:#fff;}}}
     }
     .nav-pills {
+      li.nav-item{@include minimized-breakpoint {background: gray;
+    border-top: 1px solid $gray-lighter;}}
 			.toggler{width:122px;
 				div {position: absolute;top:7px;left:42px;color:$primary-text-color;}
 				div:before {content: 'Connect';text-transform:uppercase;color:$primary-text-color;}
 				&__label input:checked ~ .toggler div{left:14px;}
 				&__label input:checked ~ .toggler div:before {content: 'Connected';color: #fff !important;}
 			}
- a {color: #fff; font-family: $headers;font-size: .8rem;
- .badge{margin-left: 0px !important;margin-right: 20px;width: 20px; text-align: center;padding: 4px;background-color:#fff;color:$primary-text-color;font-weight: bold;font-size: 85%;line-height:85%;}}
- .fa{font-size: 20px;line-height: 20px;margin-right: 20px;width: 20px; text-align: center;vertical-align: middle;}
+ a {color: #fff; font-family: $headers;font-size: .8rem;}
+ .fa{
+   font-size: 20px;line-height: 20px;margin-right: 20px;width: 20px; text-align: center;vertical-align: middle;
+ @include minimized-breakpoint {font-size: 36px;width:36px;margin-right: 0px;display:block;margin-bottom:10px;opacity: .9;line-height:36px;width: 100%;}}
  .fa-globe{line-height: 36px;}
- .nav-link {padding:.6rem 0;}
+ .nav-link {padding:.6rem 0;@include minimized-breakpoint {text-align:center;}}
  .nav-link.active:hover{a{background-color: transparent;}}
 .nav-link.active, .nav-link.active:hover{background: none;color:$secondary-color;}
 }
