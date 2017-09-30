@@ -1,1 +1,9 @@
+@mixin minimized-breakpoint(){
+ @media (max-width: 500px) { @content; }
+}
+@mixin breakpoint-md{
+ @media (max-width: 767px) { @content; }
+}
+
 h1 {margin-top:0px;}
+p {@include minimized-breakpoint {font-size:13px;}}

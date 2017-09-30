@@ -9,6 +9,7 @@ import { PurchaseStartComponent } from './purchase/purchase-start/purchase-start
 import { PurchasePaymentComponent } from './purchase/purchase-payment/purchase-payment.component';
 import { PurchaseConfirmationComponent } from './purchase/purchase-confirmation/purchase-confirmation.component';
 import { PurchaseHowToComponent } from './purchase/purchase-how-to/purchase-how-to.component';
+import { SellHowToComponent } from './sell/sell-how-to/sell-how-to.component';
 
 const routes: Routes = [
   {
@@ -33,6 +34,11 @@ const routes: Routes = [
         path: 'purchase-how-to',
         outlet: 'met-manager-modal',
         component: PurchaseHowToComponent
+      },
+      {
+        path: 'sell-how-to',
+        outlet: 'met-manager-modal',
+        component: SellHowToComponent
       },
       {
         path: 'purchase-payment',

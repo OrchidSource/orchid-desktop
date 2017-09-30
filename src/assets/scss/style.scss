@@ -249,7 +249,8 @@ letter-spacing: 0.5px;.card-title-data{color: $primary-text-color;padding-left: 
 		.btn-secondary.dropdown-toggle {background-color: transparent; border: none;}
 		.dropdown-menu{width: 100%;}
 	}
-	.card-action-container{padding: 5px 15px;.btn,.btn-group,input, .dropdown {width:100%;}}
+	.card-action-container{padding: 5px 15px;display: flex; flex-direction:column; 
+    .btn,.btn-group,input, .dropdown {width:100%;}}
 	.card-content{width: 100%; text-align: center;padding: 10px;
 	h3 {text-align: center;margin:auto;}
 	img{width: 100%;}
