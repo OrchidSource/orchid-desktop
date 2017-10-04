@@ -1,12 +1,24 @@
+@mixin minimized-breakpoint(){
+ @media (max-width: 500px) { @content; }
+}
+@mixin breakpoint-md{
+ @media (max-width: 767px) { @content; }
+}
+
 .help-step{
-  span {background: #FFFFFF;border: 1px dashed #79E2F5;border-radius:50%;width:39px;    display: inline-block;text-align: center;line-height: 39px; height:39px;color:#79E2F5;font-family:Roboto;font-size: 24px;margin-right:18px;}
+  span {background: #FFFFFF;border: 1px dashed #79E2F5;border-radius:50%;width:39px;display: inline-block;text-align: center;line-height: 39px; height:39px;color:#79E2F5;font-family:Roboto;font-size: 24px;margin-right:18px;@include minimized-breakpoint {font-size: 17px;line-height: 27px;height: 30px;width: 30px;}}
   h5 {display: inline-block;}
 }
 .panda-flip{.row{.col{padding-bottom:0px;}}}
-.help-image{img{padding: 25px 0px 0px 65px;}}
-.step{transform: scale(1);transition: all .25s ease-in-out;}
+.help-image{img{padding: 25px 0px 0px 65px;@include minimized-breakpoint {max-width: 50px;padding:0px;margin-left:15px;}}@include minimized-breakpoint {float: left;}}
+.step{transform: scale(1);transition: all .25s ease-in-out;@include minimized-breakpoint {flex-direction: row !important;align-items: center;padding-top: 15px;
+    padding-bottom: 15px;}}
 .step.active{transform: scale(1.1);transition: all .25s ease-in-out;
-  .help-step{span {background: #79E2F5;box-shadow: 0 0 0 2px #79E2F5;border: 2px dashed #fff;color: #fff;}}}
+  @include minimized-breakpoint {transform: scale(1);}
+  .help-step{
+    @include minimized-breakpoint {display: inline-table;float: left;}
+    span {
+      background: #79E2F5;box-shadow: 0 0 0 2px #79E2F5;border: 2px dashed #fff;color: #fff;}}}
 .step-1{animation: zoomIn .25s;}
 .step-2{animation: zoomIn .5s;}
 .step-3{animation: zoomIn .75s;}
@@ -15,11 +27,25 @@ background: rgba(255,255,255,0.90);
 border: 2px dashed #79E2F5;
 border-radius: 4px;padding: 30px;
 img{display:block;margin:0px auto 20px;width:90%;height:auto;}}
-.arrow{background: url('../../assets/imgs/arrow.svg') no-repeat;width: 117px;height: 66px;position: absolute;z-index: 1000;left: -55px;}
-.arrow-1{top:192px;}
-.arrow-2{top:50px;}
-.arrow-3{top:152px;}
+.arrow{background: url('../../assets/imgs/arrow.svg') no-repeat;width: 117px;height: 66px;position: absolute;z-index: 1000;left: -55px;
+@include minimized-breakpoint {width: 68px;
+    height: 38px;
+    position: fixed;
+    left: 71px;
+    background-size: contain;}}
+.arrow-1{top:192px;@include minimized-breakpoint {top: 284px;}}
+.arrow-2{top:50px;@include minimized-breakpoint {top: 88px;}}
+.arrow-3{top:152px;@include minimized-breakpoint {top: 202px;}}
 @keyframes zoomIn {
+  from {
+    transform: scale(0);
+  }
+  to {
+    transform: scale(1);
+  }
+}
+
+@keyframes slideAround {
   from {
     transform: scale(0);
   }
