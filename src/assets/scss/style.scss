@@ -179,7 +179,8 @@ border-radius: 50%;
   @include minimized-breakpoint {margin-left: -100px;
    left: 100px;
    width: 100px;}
-.connect-button{width: 84px;margin:auto;}
+.connect-button{width: 84px;margin:auto;margin-bottom: 6px;}
+.connect{text-transform: uppercase;}
 .sidenav {
       background-color:$dark-bg-color;
       color: $white-text;
