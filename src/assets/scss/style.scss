@@ -54,7 +54,7 @@ $darkest-grey: #3F414C;
 @import './progress';
 
 @mixin minimized-breakpoint(){
- @media (max-width: 500px) { @content; }
+ @media (max-width: 575px) { @content; }
 }
 
 /*common */
@@ -80,7 +80,10 @@ h4 {text-transform: uppercase;color: $secondary-text-color; font-family: $header
 .panda-chi{background: url('../imgs/panda-coins.png') no-repeat;background-size: 100%;background-position: bottom;}
 .help-text{text-decoration:underline;}
 .pop-over-content {z-index: 3000;
-  .message {width: 443px;
+  .message {
+    @include minimized-breakpoint {width:380px;width: 328px;left: -165px;}
+    form{.form-group{@include minimized-breakpoint {margin-bottom: 0rem;}}}
+    width: 443px;
     left: -210px;
     top: 20px;
     position: absolute;
@@ -179,7 +182,7 @@ border-radius: 50%;
   @include minimized-breakpoint {margin-left: -100px;
    left: 100px;
    width: 100px;}
-.connect-button{width: 84px;margin:auto;margin-bottom: 6px;}
+.connect-button{width: 84px;max-width: 84px;margin:auto;margin-bottom: 6px;}
 .connect{text-transform: uppercase;}
 .sidenav {
       background-color:$dark-bg-color;

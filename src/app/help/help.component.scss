@@ -1,5 +1,5 @@
 @mixin minimized-breakpoint(){
- @media (max-width: 500px) { @content; }
+ @media (max-width: 575px) { @content; }
 }
 @mixin breakpoint-md{
  @media (max-width: 767px) { @content; }
@@ -11,8 +11,8 @@
 }
 .panda-flip{.row{.col{padding-bottom:0px;}}}
 .help-image{img{padding: 25px 0px 0px 65px;@include minimized-breakpoint {max-width: 50px;padding:0px;margin-left:15px;}}@include minimized-breakpoint {float: left;}}
-.step{transform: scale(1);transition: all .25s ease-in-out;@include minimized-breakpoint {flex-direction: row !important;align-items: center;padding-top: 15px;
-    padding-bottom: 15px;}}
+.step{transform: scale(1);transition: all .25s ease-in-out;
+  @include minimized-breakpoint {text-align: center;flex-direction: row !important;align-items: center;padding: 15px 5px;}}
 .step.active{transform: scale(1.1);transition: all .25s ease-in-out;
   @include minimized-breakpoint {transform: scale(1);}
   .help-step{
