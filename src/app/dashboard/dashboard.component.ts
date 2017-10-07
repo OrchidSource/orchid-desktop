@@ -1,6 +1,7 @@
 import { Component, NgModule, OnInit } from '@angular/core';
 import { platformBrowserDynamic } from "@angular/platform-browser-dynamic";
 import { BrowserModule } from "@angular/platform-browser";
+import { status } from "../app.component";
 
 @Component({
   selector: 'app-dashboard',
@@ -11,7 +12,6 @@ import { BrowserModule } from "@angular/platform-browser";
 
 
 export class DashboardComponent implements OnInit {
-    security = { level: 5 };
     ngOnInit() {
      }
 }

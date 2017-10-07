@@ -85,7 +85,7 @@ h4 {text-transform: uppercase;color: $secondary-text-color; font-family: $header
     form{.form-group{@include minimized-breakpoint {margin-bottom: 0rem;}}}
     width: 443px;
     left: -210px;
-    top: 20px;
+    top: 32px;
     position: absolute;
 background: rgba(74,74,74,0.89);
 box-shadow: 1px 1px 4px 0 rgba(0,0,0,0.41);
@@ -95,17 +95,18 @@ border-radius: 4px 4px 4px 4px;
     font-size: 13px;
     border-radius: 4px;
 	&:before{
-		right: 100%;
-    top: 35%;
+		right: 50%;
+    top: 0%;
     border: solid transparent;
     content: " ";
     height: 0;
     width: 0;
     position: absolute;
     border-color: rgba(194, 225, 245, 0);
-    border-right-color: rgba(74, 74, 74, 0.89);
+    border-bottom-color: rgba(74, 74, 74, 0.89);
     border-width: 16px;
-    margin-top: -16px;}
+    margin-top: -32px;
+  margin-left: 16px;}
   }
 }
 .po2 {
@@ -182,8 +183,10 @@ border-radius: 50%;
   @include minimized-breakpoint {margin-left: -100px;
    left: 100px;
    width: 100px;}
-.connect-button{width: 84px;max-width: 84px;margin:auto;margin-bottom: 6px;}
-.connect{text-transform: uppercase;}
+.connect{width: 82px;max-width: 84px;height:75px;margin:auto;margin-bottom: 30px;text-transform: uppercase;background:url('../imgs/button-not-connected.svg');background-size: contain;background-repeat: no-repeat;
+&:after{content:'connect';position:relative;top:80px;}}
+.connect-on{background:url('../imgs/button-connected.svg');background-size:contain;background-repeat: no-repeat;
+&:after{content:'connected';}}
 .sidenav {
       background-color:$dark-bg-color;
       color: $white-text;

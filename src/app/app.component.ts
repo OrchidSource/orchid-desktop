@@ -6,17 +6,16 @@ import { DashboardComponent } from './dashboard/dashboard.component';
   templateUrl: './app.component.html',
   styleUrls: ['./app.component.scss']
 })
+
 export class AppComponent {
+
 isDB = true;
-status = 'Connect';
-imgsrc='assets/imgs/button-not-connected.png';
-  title = 'app';
+public connected = false;
+title = 'app';
 }
 
-function Ctrl($scope) {
-    $scope.state = 'on';
+var status = {
+  connected: false
+};
 
-    $scope.changeState = function() {
-        $scope.state = $scope.state === 'on' ? 'off' : 'on';
-    }
-}
+export { status };
