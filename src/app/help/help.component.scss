@@ -38,7 +38,7 @@ img{display:block;margin:0px auto 20px;width:90%;height:auto;}}
     position: fixed;
     left: 71px;
     background-size: contain;}}
-.arrow-1{top:198px;@include minimized-breakpoint {top: 284px;}}
+.arrow-1{top:195px;@include minimized-breakpoint {top: 284px;}}
 .arrow-2{top:50px;@include minimized-breakpoint {top: 88px;}}
 .arrow-3{top:154px;@include minimized-breakpoint {top: 202px;}}
 @keyframes zoomIn {

@@ -57,6 +57,17 @@ $darkest-grey: #3F414C;
  @media (max-width: 575px) { @content; }
 }
 
+@font-face {
+  font-family: 'ChiFont';
+  src:  url('../fonts/ChiFont.eot?tws7d0');
+  src:  url('../fonts/ChiFont.eot?tws7d0#iefix') format('embedded-opentype'),
+    url('../fonts/ChiFont.ttf?tws7d0') format('truetype'),
+    url('../fonts/ChiFont.woff?tws7d0') format('woff'),
+    url('../fonts/ChiFont.svg?tws7d0#icomoon') format('svg');
+  font-weight: normal;
+  font-style: normal;
+}
+
 /*common */
 
 html {font-size: 16px;}
@@ -71,6 +82,14 @@ line-height: 24px;}
 h3 {font-size: 70px;font-weight: 400;color:$secondary-text-color;letter-spacing:-3px;}
 h3 span{color:$primary-text-color;font-size: 18px;font-weight: normal;margin-left: 5px;letter-spacing:0px;}
 h4 {text-transform: uppercase;color: $secondary-text-color; font-family: $headers; font-size: 12px; display: inline;}
+
+.icon-chi-solid{
+  font-family: 'ChiFont';
+  &:before {
+  content: "\e903";
+}
+}
+
 .hidden{display: none !important;}
 .back-link{margin-top: 5px;}
 .panda{
