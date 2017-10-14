@@ -2,21 +2,38 @@
 </div>
 <div class="row equal-height">
   <div class="col-lg-4 col-md-12 col-sm-12">
-    <div class="card dashboard-card met-balance">
+    <div class="card dashboard-card met-balance inline-trigger" on-mouseover='fundPO.show($event)' on-mouseout='fundPO.hide()'>
       <div class="card-header">
-        <h4 class="card-title">CHI Balance</h4>
+        <h4 class="card-title">Balance</h4>
         <span class="card-help">
-          <a ngbTooltip="You need CHI to connect!" placement="bottom"><span class="fa fa-question-circle"></span></a>
+          <a ngbTooltip="You need tokens to connect!" placement="bottom"><span class="fa fa-question-circle"></span></a>
         </span>
       </div>
       <div class="h-100 card-block justify-content-end">
         <div class="card-content h-80 justify-content-end"><h3 class="card-text">0</h3></div>
         <div class="card-action-container h-20 justify-content-end">
-          <a class="btn btn-primary btn-lg" href="#" role="button" [routerLink]="[ '/met-manager', {outlets: { 'met-manager-modal': 'purchase-how-to' } }]">Get CHI</a>
+          <a class="btn btn-primary btn-lg" href="#" role="button" [routerLink]="[ '/met-manager', {outlets: { 'met-manager-modal': 'purchase-how-to' } }]">Fund Account</a>
         </div>
       </div>
     </div>
   </div>
+
+
+  <div class="col-lg-4 col-md-6 col-sm-12 last">
+    <div class="card dashboard-card security-level">
+      <div class="card-header">
+        <h4 class="card-title">Connection Status</h4>
+        <span class="card-help"><a ngbTooltip="Your security level determines how many nodes your connection will pass through. Higher security level = more nodes." placement="bottom"><span class="fa fa-question-circle"></span></a></span>
+      </div>
+      <div class="h-100 card-block justify-content-end" ng-controller="Ctrl" ng-app="sec-val">
+        <div class="card-content h-80 justify-content-end"><!-- not connected show this image  <img src="assets/imgs/connection-not-connected.gif" align="center" /> --><img src="assets/imgs/connection-animation.gif" align="center" /></div>
+        <div class="card-action-container h-20 justify-content-end">
+          <h6 class="text-center" style="margin-top: 15px;text-transform:uppercase;">Secure Connection <!--Inactive-->Active For</h6><h3 class="text-center">01:36:12</h3>
+        </div>
+      </div>
+    </div>
+  </div>
+
   <div class="col-lg-4  col-md-6 col-sm-12">
     <div class="card dashboard-card browsing-location">
       <div class="card-header">
@@ -55,21 +72,6 @@
               </div>
             </div>
           </div>
-        </div>
-      </div>
-    </div>
-  </div>
-
-  <div class="col-lg-4 col-md-6 col-sm-12 last">
-    <div class="card dashboard-card security-level">
-      <div class="card-header">
-        <h4 class="card-title">Connection Status {{connected}}</h4>
-        <span class="card-help"><a ngbTooltip="Your security level determines how many nodes your connection will pass through. Higher security level = more nodes." placement="bottom"><span class="fa fa-question-circle"></span></a></span>
-      </div>
-      <div class="h-100 card-block justify-content-end" ng-controller="Ctrl" ng-app="sec-val">
-        <div class="card-content h-80 justify-content-end"><!-- not connected show this image  <img src="assets/imgs/connection-not-connected.gif" align="center" /> --><img src="assets/imgs/connection-animation.gif" align="center" /></div>
-        <div class="card-action-container h-20 justify-content-end">
-          <h6 class="text-center" style="margin-top: 15px;text-transform:uppercase;">Secure Connection <!--Inactive-->Active</h6>
         </div>
       </div>
     </div>
@@ -124,7 +126,7 @@
   <div class="row equal-height earn-chi">
   <div class="col-lg-4 col-md-12 col-sm-12 offset-lg-4">
     <a class="btn btn-lg btn-second-primary next-button" (click)='helpPO.show($event)'>Earn CHI</a>
-    <pop-over #helpPO [my]="'top left'" [at]="'center bottom'"  [anchor-to]="'true'" [content-class]="'po1'">
+    <pop-over #helpPO [my]="'top left'" [at]="'center bottom'"  [anchor-to]="'true'" [content-class]="'po-top'">
 <div class="message">
         Soon you will be able to earn CHI and help to create a free and openly accessible internet.<br /><br />
         Sign up below and be among the first to participate.<br /><br />
@@ -134,6 +136,12 @@
     </div>&nbsp;
     <button type="submit" class="btn btn-primary">Alert Me</button>
   </form>
+</div>
+    </pop-over>
+
+    <pop-over #fundPO [my]="'top left'" [at]="'right middle'"  [anchor-to]="'true'" [content-class]="'po-right'">
+<div class="message">
+        Coming Soon
 </div>
     </pop-over>
 
