@@ -8,8 +8,11 @@ export class ConfigService {
     constructor() {
         this._blankBrowsingLocation = new BrowsingLocation("", "");
         this._browsingLocations = [];
-        this._initBrowsingLocations()
+        this._initBrowsingLocations();
+        this._connected = false;
     }
+
+    private _connected : boolean;
 
     private _selectedBrowsingLocation : BrowsingLocation;
 
@@ -44,8 +47,7 @@ export class ConfigService {
 
     get selectedBrowsingLocation() : BrowsingLocation {
         if (this._selectedBrowsingLocation === undefined) {
-            return new BrowsingLocation("us", "lksadjf")
-            //return this._blankBrowsingLocation;
+            return this._blankBrowsingLocation;
         }
         return this._selectedBrowsingLocation;
     }
@@ -54,9 +56,16 @@ export class ConfigService {
         return this._browsingLocations;
     }
 
+    get connected() : boolean {
+        return this._connected;
+    }
+
     set selectedBrowsingLocation(browsingLocation : BrowsingLocation) {
         this._selectedBrowsingLocation = browsingLocation; 
     }
 
+    set connected(connected : boolean) {
+        this._connected = connected;
+    }
 
 }
