@@ -40,7 +40,7 @@
         <h4 class="card-title">Default Browsing Location</h4><span class="card-help"><a ngbTooltip="This is where you will be browsing the internet from." placement="bottom"><span class="fa fa-question-circle"></span></a></span>
       </div>
       <div class="h-100 card-block justify-content-end">
-        <div class="card-content h-80 justify-content-end"><img src="assets/imgs/map-placeholder.svg"></div>
+        <div class="card-content h-80 justify-content-end"><img [src]="selectedBrowsingLocation().mapUrl"></div>
         <div class="card-action-container h-20 justify-content-end">
 
           <div class="dropdown">
@@ -52,7 +52,7 @@
                         ngbDropdownToggle
                         aria-haspopup="true"
                         aria-expanded="false">
-                  <img src="assets/imgs/icons/flags/us.svg" class="flag" /> The United States
+                  <img [src]="selectedBrowsingLocation().flagUrl" class="flag" /> {{ selectedBrowsingLocation().name }}
                 </button>
                 <div ngbDropdownMenu aria-labelledby="dropdownMenuButton">
                   <!-- <div id="custom-search-input">
@@ -65,9 +65,10 @@
                       <input type="text" class="form-control input-lg" placeholder="Search" />
                     </div>
                   </div> -->
-                  <a class="dropdown-item"><img src="assets/imgs/icons/flags/de.svg" class="flag" /> Germany</a>
-                  <a class="dropdown-item"><img src="assets/imgs/icons/flags/jp.svg" class="flag" /> Japan</a>
-                  <a class="dropdown-item"><img src="assets/imgs/icons/flags/gb.svg" class="flag" /> United Kingdom</a>
+                    <a *ngFor="let browsingLocation of browsingLocations()" class="dropdown-item" (click)="setSelectedBrowsingLocation(browsingLocation)">
+                        <img [src]="browsingLocation.flagUrl" class="flag"/>
+                        {{ browsingLocation.name }}
+                    </a>
                 </div>
               </div>
             </div>
