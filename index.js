@@ -14,9 +14,11 @@ function createWindow() {
   let _appIcon = nativeImage.createFromPath(__dirname + "/build/icons/icon_128x128.png")
 
   win = new BrowserWindow({
-    width: 1200,
-    height: 800,
-    icon: _appIcon,
+      width: 1200,
+      height: 800,
+      minWidth: 410,
+      minHeight: 410,
+      icon: _appIcon,
   });
 
   // and load the index.html of the app.

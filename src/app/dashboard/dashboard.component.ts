@@ -26,7 +26,6 @@ export class DashboardComponent implements OnInit {
     }
 
     selectedBrowsingLocation() : BrowsingLocation {
-        console.log(this._config.selectedBrowsingLocation.mapUrl);
         return this._config.selectedBrowsingLocation;
     }
 
