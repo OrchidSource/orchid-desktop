@@ -47,8 +47,7 @@ export class ConfigService {
 
     get selectedBrowsingLocation() : BrowsingLocation {
         if (this._selectedBrowsingLocation === undefined) {
-            return new BrowsingLocation("us", "lksadjf")
-            //return this._blankBrowsingLocation;
+            return this._blankBrowsingLocation;
         }
         return this._selectedBrowsingLocation;
     }
