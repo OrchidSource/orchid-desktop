@@ -52,6 +52,7 @@
   },
   "homepage": "",
   "dependencies": {
+    "7zip-bin-mac": "^1.0.1",
     "@angular/animations": "^4.2.4",
     "@angular/common": "^4.2.4",
     "@angular/compiler": "^4.2.4",
