@@ -238,7 +238,7 @@ button {background: $brand-primary;color: #fff;
       font-size: 13px;
       @include minimized-breakpoint {padding: 30px 0px;}
       .navbar{@include minimized-breakpoint {padding: 0 0;}}
-      .nav{margin-top:20px;@include minimized-breakpoint {border-bottom: 1px solid $gray-lighter}}
+      .nav{margin-top:30px;@include minimized-breakpoint {border-bottom: 1px solid $gray-lighter}}
       .dropup{position:absolute;bottom:60px;padding: 0px 15px;width:170px;
         @include minimized-breakpoint {width:100%; text-align:center;padding: 0px 0px;}
       .dropdown-menu{left: auto !important;top:auto !important;min-width:140px !important;
@@ -257,14 +257,14 @@ button {background: $brand-primary;color: #fff;
 				&__label input:checked ~ .toggler div{left:14px;}
 				&__label input:checked ~ .toggler div:before {content: 'Connected';color: #fff !important;}
 			}
- a {color: $gray-lighter; font-family: $headers;font-size: .8rem;}
+ a {color: $gray-lighter; font-family: $headers;font-size: .9rem;}
  .fa{
    font-size: 20px;line-height: 20px;margin-right: 20px;width: 20px; text-align: center;vertical-align: middle;
  @include minimized-breakpoint {font-size: 36px;width:36px;margin-right: 0px;display:block;margin-bottom:10px;opacity: .9;line-height:36px;width: 100%;}}
  .fa-globe{line-height: 36px;}
- .nav-link {padding:.6rem 0;@include minimized-breakpoint {text-align:center;}}
+ .nav-link {padding:.9rem 0;@include minimized-breakpoint {text-align:center;}}
  .nav-link.active:hover{a{background-color: transparent;}}
-.nav-link.active, .nav-link.active:hover{background: none;color:$secondary-color;
+.nav-link.active, .nav-link.active:hover{.fa{color:$brand-primary;}background: none;color:#fff;
   @include minimized-breakpoint {background: $gray-lighter; color:$gray;border-radius: 0px;}
 }
 }
