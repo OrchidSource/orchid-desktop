@@ -216,9 +216,20 @@ border-radius: 50%;
    left: 100px;
    width: 100px;}
 .connect{width: 82px;max-width: 84px;height:75px;margin:auto;margin-bottom: 30px;text-transform: uppercase;background:url('../imgs/button-not-connected.svg');background-size: contain;background-repeat: no-repeat;
-&:after{content:'connect';position:relative;top:80px;}}
+button {position:relative;top:86px;
+  padding: 5px 12px;
+    line-height: 1;
+    background: $gray-lighter;
+    border-radius: 12px;
+    border: none;
+    font-family: "Roboto";
+    font-weight: 500;
+    font-size: 16px;
+    color: #3F414C;
+  &:after{content:'OFF';}}}
 .connect-on{background:url('../imgs/button-connected.svg');background-size:contain;background-repeat: no-repeat;
-&:after{content:'connected';}}
+button {background: $brand-primary;color: #fff;
+  &:after{content:'ON';}}}
 .sidenav {
       background-color:$dark-bg-color;
       color: $white-text;
