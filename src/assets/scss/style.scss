@@ -151,7 +151,8 @@ margin-left: 16px;}}}
 }
 .btn-second-primary:hover {background-color:#ffb335; border-color: #eccb93;}
 .btn-second-primary{color: #fff !important;}
-.btn{padding: 8px .7rem;font-family: Roboto, "Helvetica Neue", Arial, sans-serif !important;font-weight: 300;}
+.btn{padding: 8px .7rem;font-family: Roboto, "Helvetica Neue", Arial, sans-serif !important;font-weight: 300;
+&:focus{color: #fff;border: 2px solid $brand-primry-light;}}
 .row.equal-height {
     display: flex;
     flex-wrap: wrap;
