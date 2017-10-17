@@ -83,12 +83,14 @@ h3 {font-size: 70px;font-weight: 400;color:$secondary-text-color;letter-spacing:
 h3 span{color:$primary-text-color;font-size: 18px;font-weight: normal;margin-left: 5px;letter-spacing:0px;}
 h4 {text-transform: uppercase;color: $secondary-text-color; font-family: $headers; font-size: 12px; display: inline;}
 
-.icon-chi-solid{
-  font-family: 'ChiFont';
+.icon-chi-solid{font-family: 'ChiFont';
   &:before {
   content: "\e903";
 }
 }
+form {.form-group{.form-control{
+  &:focus {border: 1px solid $brand-primary;box-shadow: 0px 1px 8px $brand-primary-light;}
+}}}
 
 .hidden{display: none !important;}
 .back-link{margin-top: 5px;}
@@ -152,7 +154,7 @@ margin-left: 16px;}}}
 .btn-second-primary:hover {background-color:#ffb335; border-color: #eccb93;}
 .btn-second-primary{color: #fff !important;}
 .btn{padding: 8px .7rem;font-family: Roboto, "Helvetica Neue", Arial, sans-serif !important;font-weight: 300;
-&:focus{color: #fff;border: 2px solid $brand-primry-light;}}
+&:focus{color: #fff;}}
 .row.equal-height {
     display: flex;
     flex-wrap: wrap;
@@ -172,7 +174,7 @@ margin-left: 16px;}}}
 @include minimized-breakpoint {padding-left: 100px;}}
 
 .btn-primary{background-color: $primary-color;border-color: $primary-color;}
-.btn-lg{padding: 0.75rem 1.5rem !important;}
+.btn-lg{padding: 0.75rem 1.5rem !important;text-transform:uppercase;}
 .ci-met-stack {background: url('../imgs/met-stack.svg') no-repeat;height:20px;float: left;
   @include minimized-breakpoint {width: 36px; height:36px;background-size: 36px;background-position:center;float:none;}}
 
