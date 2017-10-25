@@ -68,3 +68,25 @@ app.on('activate', () => {
 
 // In this file you can include the rest of your app's specific main process
 // code. You can also put them in separate files and require them here.
+
+let orchid = require('orchid-core');
+
+let logizomai = require('logizomai');
+let using = logizomai.using;
+
+async function filter(host) {
+    return true;
+}
+
+const port = 1323;
+const referral = 'orchid://0@10.0.1.108:3200/0/Gl_fSMnErtey2CS3xUIdng4o-eeraVChiOYevLP_tRU';
+
+(async () => {
+    await using(new orchid.DummyClock(), async (clock) => {
+    await using(new orchid.DummyContext(clock), async (context) => {
+    await context.refer(referral);
+    await using(await new orchid.Client(context)._(), async (client) => {
+    await using(await new orchid.SocksCapture(context, client, filter, port)._(), async (virtual) => {
+    virtual.retain();
+}); }); }); });
+})().catch();

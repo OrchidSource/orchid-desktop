@@ -71,12 +71,14 @@
     "electron-titlebar": "github:Menci/electron-titlebar",
     "electron-window-state": "^4.1.1",
     "font-awesome": "^4.7.0",
+    "logizomai": "^0.9.2",
     "ng2-charts": "^1.6.0",
     "ng2-pop-over": "^0.9.37",
     "ng2-popover": "0.0.14",
     "ng2-tooltip": "0.0.7",
     "ngx-popper": "^1.1.0",
     "ngx-tooltip": "0.0.9",
+    "orchid-p2p": "git+https://git.saurik.com/orchid-p2p.git",
     "rxjs": "^5.4.2",
     "watch": "^1.0.2",
     "zone.js": "^0.8.14"
@@ -87,7 +89,7 @@
     "@angular/language-service": "^4.2.4",
     "@types/jasmine": "~2.5.53",
     "@types/jasminewd2": "~2.0.2",
-    "@types/node": "~6.0.60",
+    "@types/node": "~8.0.15",
     "codelyzer": "~3.1.1",
     "electron": "^1.7.5",
     "electron-builder": "^19.26.3",
@@ -103,6 +105,6 @@
     "protractor": "~5.1.2",
     "ts-node": "~3.2.0",
     "tslint": "~5.3.2",
-    "typescript": "~2.3.3"
+    "typescript": "~2.5.2"
   }
 }
