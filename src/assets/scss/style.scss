@@ -70,8 +70,9 @@ $darkest-grey: #3F414C;
 
 /*common */
 
-html {font-size: 16px;}
-#electron-titlebar {
+html {font-size: 16px; overflow:hidden;}
+#electron-titlebar {-webkit-app-region: drag;
+  #title-bar-btns{float: left;-webkit-app-region: no-drag;}
   span{float: right;font-size: 12px;font-weight: normal;}
 padding:8px 30px; background: $darkest-grey;border-radius: 10px 10px 0 0;text-align: center;color: #fff;font-size: 13px;text-transform:uppercase;}
 a small {color:$primary-color !important;}

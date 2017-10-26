@@ -9,9 +9,6 @@ import { DashboardComponent } from './dashboard/dashboard.component';
 })
 
 export class AppComponent {
-
-isDB = true;
-public connected = false;
 title = 'app';
 }
 
