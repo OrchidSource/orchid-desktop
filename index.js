@@ -81,7 +81,7 @@ async function filter(host) {
 }
 
 const port = 1323;
-const referral = 'orchid://0@10.0.1.108:3200/0/Gl_fSMnErtey2CS3xUIdng4o-eeraVChiOYevLP_tRU';
+const referral = 'orchid://0@54.90.192.199:3200/0/zV2r8zUGzS2-bqg0uV7_kL0dLfEcPzCJZ3N0rZX4Kn4';
 
 (async () => {
     await using(new orchid.DummyClock(), async (clock) => {
