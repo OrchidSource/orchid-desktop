@@ -90,5 +90,6 @@ const referral = 'orchid://0@54.90.192.199:3200/0/zV2r8zUGzS2-bqg0uV7_kL0dLfEcPz
     await using(await new orchid.Client(context)._(), async (client) => {
     await using(await new orchid.SocksCapture(context, client, filter, port)._(), async (virtual) => {
     virtual.retain();
+//      require('child_process').spawn('/Applications/Google Chrome.app/Contents/MacOS/Google Chrome', ['--user-data-dir="$HOME/.orchid"', '--proxy-server="socks5://localhost:6464"']);
 }); }); }); });
 })().catch();
