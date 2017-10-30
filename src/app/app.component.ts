@@ -1,6 +1,8 @@
 import { Component } from '@angular/core';
 import { DashboardComponent } from './dashboard/dashboard.component';
-import chromeManager from './classes/chromeManager';
+var app = require('electron').remote.app;
+
+console.log("app: ", app);
 
 @Component({
   selector: 'body',
@@ -16,12 +18,11 @@ export class AppComponent {
     console.log("Value of connected: ", this.connected);
     this.connected = !this.connected;
     console.log("Value of connected now: ", this.connected);
-    var cm = new chromeManager();
 
     if (this.connected) {
-      cm.startChrome();
+      app.startChrome();
     } else
-      cm.stopChrome();
+      app.stopChrome();
   }
 }
 

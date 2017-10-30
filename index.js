@@ -1,7 +1,32 @@
-const {app, BrowserWindow, nativeImage} = require('electron');
+var {app, BrowserWindow, nativeImage} = require('electron');
 const path = require('path');
 const url = require('url');
+const { spawn } = require('child_process');
 
+var chrome_variables = {
+  userData: app.getPath("userData"),
+  executable: "/Applications/Google Chrome.app/Contents/MacOS/Google Chrome",
+  instance: null,
+
+  startChrome: function() {
+    var userData = this.userData;
+    var program = this.executable;
+    this.instance = spawn(program, ['--user-data-dir="' + userData + '"', '--proxy-server="socks5://localhost:1323"']);
+    console.log("Chrome started", this.instance);
+  },
+
+  stopChrome: function() {
+    if (this.instance) {
+      this.instance.kill();
+      this.instance = null;
+      console.log("Chrome Stopped");
+    } else {
+      console.log("Chrome wasn't running");
+    }
+  }
+};
+
+app.chrome_vars = chrome_variables;
 
 // Keep a global reference of the window object, if you don't, the window will
 // be closed automatically when the JavaScript object is garbage collected.
