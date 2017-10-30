@@ -11,7 +11,10 @@ var chrome_variables = {
   startChrome: function() {
     var userData = this.userData;
     var program = this.executable;
-    this.instance = spawn(program, ['--user-data-dir=' + userData, '--proxy-server=socks5://127.0.0.1:1323']);
+    var args = ['--user-data-dir=' + userData,
+                '--proxy-server=socks5://127.0.0.1:1323',
+                '--host-resolver-rules=MAP * ~NOTFOUND , EXCLUDE 127.0.0.1'];
+    this.instance = spawn(program, args);
     console.log("Chrome started", this.instance);
   },
 
