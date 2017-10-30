@@ -2,9 +2,6 @@ import { Component } from '@angular/core';
 import { DashboardComponent } from './dashboard/dashboard.component';
 var app = (<any>window).require('electron').remote.app;
 
-// console.log("app: ", app);
-// (<any>window).testapp = app;
-
 @Component({
   selector: 'body',
   templateUrl: './app.component.html',
@@ -21,9 +18,9 @@ export class AppComponent {
     console.log("Value of connected now: ", this.connected);
 
     if (this.connected) {
-      app.chrome_variables.startChrome();
+      app.chrome_vars.startChrome();
     } else
-      app.chrome_variables.stopChrome();
+      app.chrome_vars.stopChrome();
   }
 }
 
