@@ -84,13 +84,11 @@ const port = 1323;
 const referral = 'orchid://0@54.90.192.199:3200/0/zV2r8zUGzS2-bqg0uV7_kL0dLfEcPzCJZ3N0rZX4Kn4';
 
 (async () => {
-    await using(new orchid.DummyClock(), async (clock) => {
+  await using(new orchid.DummyClock(), async (clock) => {
     await using(new orchid.DummyContext(clock), async (context) => {
-    await context.refer(referral);
-    await using(await new orchid.Client(context)._(), async (client) => {
-    await using(await new orchid.SocksCapture(context, client, filter, port)._(), async (virtual) => {
-    virtual.retain();
-    var userData = app.getPath("userData") + "/ChromeData";
-    require('child_process').spawn('/Applications/Google Chrome.app/Contents/MacOS/Google Chrome', ['--user-data-dir="' + userData + '"', '--proxy-server="socks5://localhost:6464"']);
-}); }); }); });
+      await context.refer(referral);
+      await using(await new orchid.Client(context)._(), async (client) => {
+        await using(await new orchid.SocksCapture(context, client, filter, port)._(), async (virtual) => {
+          virtual.retain();
+        }); }); }); });
 })().catch();
