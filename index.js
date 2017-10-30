@@ -11,7 +11,7 @@ var chrome_variables = {
   startChrome: function() {
     var userData = this.userData;
     var program = this.executable;
-    this.instance = spawn(program, ['--user-data-dir="' + userData + '"', '--proxy-server="socks5://localhost:1323"']);
+    this.instance = spawn(program, ['--user-data-dir=' + userData, '--proxy-server=socks5://127.0.0.1:1323']);
     console.log("Chrome started", this.instance);
   },
 
