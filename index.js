@@ -1,10 +1,18 @@
 var {app, BrowserWindow, nativeImage} = require('electron');
 const path = require('path');
 const url = require('url');
+<<<<<<< HEAD
 const fs = require('fs');
 const { spawn } = require('child_process');
+=======
+const {spawn} = require('child_process');
+>>>>>>> bundle-half-fixed-it
 
 var chrome_variables = {
+  EVENTS: {
+    CONNECTED: 'connected',
+    DISCONNECTED: 'disconnected'
+  },
   userData: app.getPath("userData"),
   executable: "/Applications/Google Chrome.app/Contents/MacOS/Google Chrome",
   instance: null,
@@ -12,11 +20,16 @@ var chrome_variables = {
   startChrome: function() {
     var userData = this.userData;
     var program = this.executable;
+<<<<<<< HEAD
     var args = ['--user-data-dir=' + userData,
                 '--proxy-server=socks5://127.0.0.1:1323',
                 '--host-resolver-rules=MAP * ~NOTFOUND , EXCLUDE 127.0.0.1'];
     this.instance = spawn(program, args);
+=======
+    this.instance = spawn(program, ['--user-data-dir=' + userData, '--proxy-server=socks5://127.0.0.1:1323']);
+>>>>>>> bundle-half-fixed-it
     console.log("Chrome started", this.instance);
+    win.webContents.send(this.EVENTS.CONNECTED);
   },
 
   stopChrome: function() {
@@ -27,6 +40,7 @@ var chrome_variables = {
     } else {
       console.log("Chrome wasn't running");
     }
+    win.webContents.send(this.EVENTS.DISCONNECTED);
   }
 };
 
@@ -44,12 +58,12 @@ function createWindow() {
   let _appIcon = nativeImage.createFromPath(__dirname + "/build/icons/icon_128x128.png")
 
   win = new BrowserWindow({
-      width: 1200,
-      height: 800,
-      minWidth: 410,
-      minHeight: 410,
-      icon: _appIcon,
-      titleBarStyle: 'hidden',
+    width: 1200,
+    height: 800,
+    minWidth: 410,
+    minHeight: 410,
+    icon: _appIcon,
+    titleBarStyle: 'hidden',
   });
 
   // and load the index.html of the app.
@@ -106,7 +120,7 @@ let logizomai = require('logizomai');
 let using = logizomai.using;
 
 async function filter(host) {
-    return true;
+  return true;
 }
 
 const port = 1323;
