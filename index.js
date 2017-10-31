@@ -1,12 +1,8 @@
 var {app, BrowserWindow, nativeImage} = require('electron');
 const path = require('path');
 const url = require('url');
-<<<<<<< HEAD
 const fs = require('fs');
 const { spawn } = require('child_process');
-=======
-const {spawn} = require('child_process');
->>>>>>> bundle-half-fixed-it
 
 var chrome_variables = {
   EVENTS: {
@@ -20,14 +16,10 @@ var chrome_variables = {
   startChrome: function() {
     var userData = this.userData;
     var program = this.executable;
-<<<<<<< HEAD
     var args = ['--user-data-dir=' + userData,
                 '--proxy-server=socks5://127.0.0.1:1323',
                 '--host-resolver-rules=MAP * ~NOTFOUND , EXCLUDE 127.0.0.1'];
     this.instance = spawn(program, args);
-=======
-    this.instance = spawn(program, ['--user-data-dir=' + userData, '--proxy-server=socks5://127.0.0.1:1323']);
->>>>>>> bundle-half-fixed-it
     console.log("Chrome started", this.instance);
     win.webContents.send(this.EVENTS.CONNECTED);
   },

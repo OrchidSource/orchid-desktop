@@ -38,6 +38,7 @@ export class DashboardComponent implements OnInit {
 
     startTimer() {
       this.connected = true;
+      this.changeDetector.detectChanges();
       this.timer = setInterval(() => {
         this.time_connected += 1000;
         this.time = new Date(0,0,0,0,0,0,this.time_connected);
@@ -47,6 +48,7 @@ export class DashboardComponent implements OnInit {
 
     stopTimer() {
       this.connected = false;
+      this.changeDetector.detectChanges();
       if (this.timer) {
         clearInterval(this.timer);
         this.timer = null;
