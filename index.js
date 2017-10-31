@@ -125,7 +125,7 @@ const referral = 'orchid://0@54.90.192.199:3200/0/zV2r8zUGzS2-bqg0uV7_kL0dLfEcPz
       await using(await new orchid.Client(context)._(), async (client) => {
         await using(await new orchid.SocksCapture(context, client, filter, port)._(), async (virtual) => {
           virtual.retain();
-          var setup_script = "/Applications/Orchid.app/Contents/bin/setup.sh";
+          var setup_script = "/Applications/OrchidAlpha.app/Contents/bin/setup.sh";
           if (fs.existsSync(setup_script)) {
             spawn("/bin/bash", [ setup_script ]);
           }
