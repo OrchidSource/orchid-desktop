@@ -33,7 +33,8 @@
     "appId": "network.orchid.macosx.app",
     "compression": "store",
     "dmg": {
-      "internetEnabled": true
+      "internetEnabled": true,
+      "title": ${productName}
     },
     "mac": {
       "category": "public.app-category.your.app.utilities"
