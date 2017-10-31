@@ -1,9 +1,13 @@
 var {app, BrowserWindow, nativeImage} = require('electron');
 const path = require('path');
 const url = require('url');
-const { spawn } = require('child_process');
+const {spawn} = require('child_process');
 
 var chrome_variables = {
+  EVENTS: {
+    CONNECTED: 'connected',
+    DISCONNECTED: 'disconnected'
+  },
   userData: app.getPath("userData"),
   executable: "/Applications/Google Chrome.app/Contents/MacOS/Google Chrome",
   instance: null,
@@ -13,6 +17,7 @@ var chrome_variables = {
     var program = this.executable;
     this.instance = spawn(program, ['--user-data-dir="' + userData + '"', '--proxy-server="socks5://localhost:1323"']);
     console.log("Chrome started", this.instance);
+    win.webContents.send(this.EVENTS.CONNECTED);
   },
 
   stopChrome: function() {
@@ -23,6 +28,7 @@ var chrome_variables = {
     } else {
       console.log("Chrome wasn't running");
     }
+    win.webContents.send(this.EVENTS.DISCONNECTED);
   }
 };
 
@@ -40,12 +46,12 @@ function createWindow() {
   let _appIcon = nativeImage.createFromPath(__dirname + "/build/icons/icon_128x128.png")
 
   win = new BrowserWindow({
-      width: 1200,
-      height: 800,
-      minWidth: 410,
-      minHeight: 410,
-      icon: _appIcon,
-      titleBarStyle: 'hidden',
+    width: 1200,
+    height: 800,
+    minWidth: 410,
+    minHeight: 410,
+    icon: _appIcon,
+    titleBarStyle: 'hidden',
   });
 
   // and load the index.html of the app.
@@ -102,7 +108,7 @@ let logizomai = require('logizomai');
 let using = logizomai.using;
 
 async function filter(host) {
-    return true;
+  return true;
 }
 
 const port = 1323;
@@ -115,5 +121,8 @@ const referral = 'orchid://0@54.90.192.199:3200/0/zV2r8zUGzS2-bqg0uV7_kL0dLfEcPz
       await using(await new orchid.Client(context)._(), async (client) => {
         await using(await new orchid.SocksCapture(context, client, filter, port)._(), async (virtual) => {
           virtual.retain();
-        }); }); }); });
+        });
+      });
+    });
+  });
 })().catch();

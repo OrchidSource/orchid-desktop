@@ -28,7 +28,7 @@
       <div class="h-100 card-block justify-content-end" ng-controller="Ctrl" ng-app="sec-val">
         <div class="card-content h-80 justify-content-end"><!-- not connected show this image  <img src="assets/imgs/connection-not-connected.gif" align="center" /> --><img src="assets/imgs/connection-animation.gif" align="center" /></div>
         <div class="card-action-container h-20 justify-content-end">
-          <h6 class="text-center" style="margin-top: 15px;text-transform:uppercase;">Secure Connection <!--Inactive-->Active</h6><h3 class="text-center">01:36:12</h3>
+          <h6 class="text-center" style="margin-top: 15px;text-transform:uppercase;">Secure Connection {{ connected ? 'Active' : 'Inactive' }}</h6><h3 class="text-center">{{time | date: 'HH:mm:ss'}}<!-- 01:36:12 --></h3>
         </div>
       </div>
     </div>
