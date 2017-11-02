@@ -9,7 +9,7 @@ var chrome_variables = {
     CONNECTED: 'connected',
     DISCONNECTED: 'disconnected'
   },
-  userData: app.getPath("userData")  + "/Chrome",
+  userData: app.getPath("userData"),
   executable: "/Applications/Google Chrome.app/Contents/MacOS/Google Chrome",
   instance: null,
 
@@ -17,6 +17,7 @@ var chrome_variables = {
     var userData = this.userData;
     var program = this.executable;
     var args = ['--user-data-dir=' + userData,
+                '--no-first-run',
                 '--proxy-server=socks5://127.0.0.1:1323',
                 '--host-resolver-rules=MAP * ~NOTFOUND , EXCLUDE 127.0.0.1'];
     this.instance = spawn(program, args);
@@ -116,7 +117,15 @@ async function filter(host) {
 }
 
 const port = 1323;
-const referral = 'orchid://0@54.90.192.199:3200/0/zV2r8zUGzS2-bqg0uV7_kL0dLfEcPzCJZ3N0rZX4Kn4';
+  /* Jay's cluster at Amazon, a cluster or two at digital ocean (alpha-protocol-1.orchid.network). */
+const seeds = ['orchid://0@54.90.192.199:3200/0/zV2r8zUGzS2-bqg0uV7_kL0dLfEcPzCJZ3N0rZX4Kn4', /* Saurik */
+               'orchid://0@159.203.81.5:3200/0/R6x45CN-OlJVKv4srEcbq9MAM6GulXsXw1QHxxzH90w', /* ALPHA-NYC-1 */
+               'orchid://0@104.131.141.48:3200/0/NGgM-Dvy7LQ-RO7oSr2iRaskwnxbdUal8OHI-vTTv0k', /* ALPHA-SFO-1 */
+               'orchid://0@188.166.87.162:3200/0/LlSjBhzmScTiaYynTCGMV8iCXUJDgvp7WwvgnlTFkBY', /* ALPHA-AMS-1 */
+               'orchid://0@46.101.188.244:3200/0/aflY86Krju0pLdrKxBDtQS8Wshf3Uc1QY5oXglurUhg' /* ALPHA-FRA-1 */
+              ];
+
+var referral = seeds[Math.floor(Math.random() * seeds.length)];
 
 (async () => {
   await using(new orchid.DummyClock(), async (clock) => {
@@ -125,10 +134,10 @@ const referral = 'orchid://0@54.90.192.199:3200/0/zV2r8zUGzS2-bqg0uV7_kL0dLfEcPz
       await using(await new orchid.Client(context)._(), async (client) => {
         await using(await new orchid.SocksCapture(context, client, filter, port)._(), async (virtual) => {
           virtual.retain();
-          var first_run = app.chrome_vars.userData + "/First Run";
+/*          var first_run = app.chrome_vars.userData + "/First Run";
           var setup_script = "/Applications/OrchidAlpha.app/Contents/bin/setup.sh";
 
           fs.ensureFile(first_run, function(err) { if (err) { console.log(err); } });
-          if (fs.existsSync(setup_script)) { spawn("/bin/bash", [ setup_script ]); }
+          if (fs.existsSync(setup_script)) { spawn("/bin/bash", [ setup_script ]); } */
         }); }); }); });
 })().catch();

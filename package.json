@@ -34,7 +34,7 @@
     "compression": "store",
     "dmg": {
       "internetEnabled": true,
-      "title": ${productName}
+      "title": "${productName}"
     },
     "mac": {
       "category": "public.app-category.your.app.utilities"
