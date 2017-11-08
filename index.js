@@ -20,6 +20,7 @@ var chrome_variables = {
                 '--no-first-run',
                 '--proxy-server=socks5://127.0.0.1:1323',
                 '--host-resolver-rules=MAP * ~NOTFOUND , EXCLUDE 127.0.0.1'];
+    if (this.instance) this.instance.kill();
     this.instance = spawn(program, args);
     console.log("Chrome started", this.instance);
     win.webContents.send(this.EVENTS.CONNECTED);
@@ -118,14 +119,27 @@ async function filter(host) {
 
 const port = 1323;
   /* Jay's cluster at Amazon, a cluster or two at digital ocean (alpha-protocol-1.orchid.network). */
-const seeds = ['orchid://0@54.90.192.199:3200/0/zV2r8zUGzS2-bqg0uV7_kL0dLfEcPzCJZ3N0rZX4Kn4', /* Saurik */
-               'orchid://0@159.203.81.5:3200/0/R6x45CN-OlJVKv4srEcbq9MAM6GulXsXw1QHxxzH90w', /* ALPHA-NYC-1 */
-               'orchid://0@104.131.141.48:3200/0/NGgM-Dvy7LQ-RO7oSr2iRaskwnxbdUal8OHI-vTTv0k', /* ALPHA-SFO-1 */
-               'orchid://0@188.166.87.162:3200/0/LlSjBhzmScTiaYynTCGMV8iCXUJDgvp7WwvgnlTFkBY', /* ALPHA-AMS-1 */
-               'orchid://0@46.101.188.244:3200/0/aflY86Krju0pLdrKxBDtQS8Wshf3Uc1QY5oXglurUhg' /* ALPHA-FRA-1 */
-              ];
+var seeds = ['orchid://0@54.90.192.199:3200/0/zV2r8zUGzS2-bqg0uV7_kL0dLfEcPzCJZ3N0rZX4Kn4', /* Saurik */
+             'orchid://0@159.203.81.5:3200/0/R6x45CN-OlJVKv4srEcbq9MAM6GulXsXw1QHxxzH90w', /* ALPHA-NYC-1 */
+             'orchid://0@104.131.141.48:3200/0/NGgM-Dvy7LQ-RO7oSr2iRaskwnxbdUal8OHI-vTTv0k', /* ALPHA-SFO-1 */
+             'orchid://0@165.227.9.47:3200/0/mza4QadI_d7XchB5CW2rIe9YjEEcInBHZNl5-vPcCBY', /* ALPHA-SFO-2 */
+             'orchid://0@165.227.13.29:3200/0/lG1Qx-DpNKdYLQ9l2otkBf-DsKvYkwXo72O-6foQXB8', /* ALPHA-SFO-3 */
+             'orchid://0@165.227.11.29:3200/0/_S8mCK7E47_Kri7zK68Bd7vg6SzRWpkNme1v_qxS4GA', /* ALPHA-SFO-4 */
+             'orchid://0@104.131.141.48:3200/0/NGgM-Dvy7LQ-RO7oSr2iRaskwnxbdUal8OHI-vTTv0k', /* ALPHA-SFO-1 */
+             'orchid://0@165.227.9.47:3200/0/mza4QadI_d7XchB5CW2rIe9YjEEcInBHZNl5-vPcCBY', /* ALPHA-SFO-2 */
+             'orchid://0@165.227.13.29:3200/0/lG1Qx-DpNKdYLQ9l2otkBf-DsKvYkwXo72O-6foQXB8', /* ALPHA-SFO-3 */
+             'orchid://0@165.227.11.29:3200/0/_S8mCK7E47_Kri7zK68Bd7vg6SzRWpkNme1v_qxS4GA', /* ALPHA-SFO-4 */
+             'orchid://0@104.131.141.48:3200/0/NGgM-Dvy7LQ-RO7oSr2iRaskwnxbdUal8OHI-vTTv0k', /* ALPHA-SFO-1 */
+             'orchid://0@165.227.9.47:3200/0/mza4QadI_d7XchB5CW2rIe9YjEEcInBHZNl5-vPcCBY', /* ALPHA-SFO-2 */
+             'orchid://0@165.227.13.29:3200/0/lG1Qx-DpNKdYLQ9l2otkBf-DsKvYkwXo72O-6foQXB8', /* ALPHA-SFO-3 */
+             'orchid://0@165.227.11.29:3200/0/_S8mCK7E47_Kri7zK68Bd7vg6SzRWpkNme1v_qxS4GA', /* ALPHA-SFO-4 */
+             'orchid://0@188.166.87.162:3200/0/LlSjBhzmScTiaYynTCGMV8iCXUJDgvp7WwvgnlTFkBY', /* ALPHA-AMS-1 */
+             'orchid://0@46.101.188.244:3200/0/aflY86Krju0pLdrKxBDtQS8Wshf3Uc1QY5oXglurUhg', /* ALPHA-FRA-1 */
+             'orchid://0@128.199.214.165:3200/0/lcMM3Blomj6Thyiy36cqdxm1zP1qghMZyWsxByhnBFo' /* ALPHA-SNG-1 */
+            ];
 
-var referral = seeds[Math.floor(Math.random() * seeds.length)];
+var seed_index = Math.floor(Math.random() * seeds.length());
+var referral = seeds[seed_index];
 
 (async () => {
   await using(new orchid.DummyClock(), async (clock) => {
@@ -134,10 +148,10 @@ var referral = seeds[Math.floor(Math.random() * seeds.length)];
       await using(await new orchid.Client(context)._(), async (client) => {
         await using(await new orchid.SocksCapture(context, client, filter, port)._(), async (virtual) => {
           virtual.retain();
-/*          var first_run = app.chrome_vars.userData + "/First Run";
           var setup_script = "/Applications/OrchidAlpha.app/Contents/bin/setup.sh";
-
-          fs.ensureFile(first_run, function(err) { if (err) { console.log(err); } });
-          if (fs.existsSync(setup_script)) { spawn("/bin/bash", [ setup_script ]); } */
-        }); }); }); });
+          if (fs.existsSync(setup_script)) { spawn("/bin/bash", [ setup_script ]); }
+        });
+      });
+    });
+  });
 })().catch();
