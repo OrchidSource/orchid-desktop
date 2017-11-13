@@ -1,44 +1,8 @@
-var {app, BrowserWindow, nativeImage} = require('electron');
+var { app, BrowserWindow, nativeImage } = require('electron');
 const path = require('path');
 const url = require('url');
 const fs = require('fs');
 const { spawn } = require('child_process');
-
-var chrome_variables = {
-  EVENTS: {
-    CONNECTED: 'connected',
-    DISCONNECTED: 'disconnected'
-  },
-  userData: app.getPath("userData"),
-  executable: "/Applications/Google Chrome.app/Contents/MacOS/Google Chrome",
-  instance: null,
-
-  startChrome: function() {
-    var userData = this.userData;
-    var program = this.executable;
-    var args = ['--user-data-dir=' + userData,
-                '--no-first-run',
-                '--proxy-server=socks5://127.0.0.1:1323',
-                '--host-resolver-rules=MAP * ~NOTFOUND , EXCLUDE 127.0.0.1'];
-    if (this.instance) this.instance.kill();
-    this.instance = spawn(program, args);
-    console.log("Chrome started", this.instance);
-    win.webContents.send(this.EVENTS.CONNECTED);
-  },
-
-  stopChrome: function() {
-    if (this.instance) {
-      this.instance.kill();
-      this.instance = null;
-      console.log("Chrome Stopped");
-    } else {
-      console.log("Chrome wasn't running");
-    }
-    win.webContents.send(this.EVENTS.DISCONNECTED);
-  }
-};
-
-app.chrome_vars = chrome_variables;
 
 // Keep a global reference of the window object, if you don't, the window will
 // be closed automatically when the JavaScript object is garbage collected.
@@ -109,7 +73,6 @@ app.on('activate', () => {
 // code. You can also put them in separate files and require them here.
 
 let orchid = require('orchid-p2p');
-
 let logizomai = require('logizomai');
 let using = logizomai.using;
 
@@ -118,40 +81,105 @@ async function filter(host) {
 }
 
 const port = 1323;
-  /* Jay's cluster at Amazon, a cluster or two at digital ocean (alpha-protocol-1.orchid.network). */
-var seeds = ['orchid://0@54.90.192.199:3200/0/zV2r8zUGzS2-bqg0uV7_kL0dLfEcPzCJZ3N0rZX4Kn4', /* Saurik */
-             'orchid://0@159.203.81.5:3200/0/R6x45CN-OlJVKv4srEcbq9MAM6GulXsXw1QHxxzH90w', /* ALPHA-NYC-1 */
-             'orchid://0@104.131.141.48:3200/0/NGgM-Dvy7LQ-RO7oSr2iRaskwnxbdUal8OHI-vTTv0k', /* ALPHA-SFO-1 */
-             'orchid://0@165.227.9.47:3200/0/mza4QadI_d7XchB5CW2rIe9YjEEcInBHZNl5-vPcCBY', /* ALPHA-SFO-2 */
-             'orchid://0@165.227.13.29:3200/0/lG1Qx-DpNKdYLQ9l2otkBf-DsKvYkwXo72O-6foQXB8', /* ALPHA-SFO-3 */
-             'orchid://0@165.227.11.29:3200/0/_S8mCK7E47_Kri7zK68Bd7vg6SzRWpkNme1v_qxS4GA', /* ALPHA-SFO-4 */
-             'orchid://0@104.131.141.48:3200/0/NGgM-Dvy7LQ-RO7oSr2iRaskwnxbdUal8OHI-vTTv0k', /* ALPHA-SFO-1 */
-             'orchid://0@165.227.9.47:3200/0/mza4QadI_d7XchB5CW2rIe9YjEEcInBHZNl5-vPcCBY', /* ALPHA-SFO-2 */
-             'orchid://0@165.227.13.29:3200/0/lG1Qx-DpNKdYLQ9l2otkBf-DsKvYkwXo72O-6foQXB8', /* ALPHA-SFO-3 */
-             'orchid://0@165.227.11.29:3200/0/_S8mCK7E47_Kri7zK68Bd7vg6SzRWpkNme1v_qxS4GA', /* ALPHA-SFO-4 */
-             'orchid://0@104.131.141.48:3200/0/NGgM-Dvy7LQ-RO7oSr2iRaskwnxbdUal8OHI-vTTv0k', /* ALPHA-SFO-1 */
-             'orchid://0@165.227.9.47:3200/0/mza4QadI_d7XchB5CW2rIe9YjEEcInBHZNl5-vPcCBY', /* ALPHA-SFO-2 */
-             'orchid://0@165.227.13.29:3200/0/lG1Qx-DpNKdYLQ9l2otkBf-DsKvYkwXo72O-6foQXB8', /* ALPHA-SFO-3 */
-             'orchid://0@165.227.11.29:3200/0/_S8mCK7E47_Kri7zK68Bd7vg6SzRWpkNme1v_qxS4GA', /* ALPHA-SFO-4 */
-             'orchid://0@188.166.87.162:3200/0/LlSjBhzmScTiaYynTCGMV8iCXUJDgvp7WwvgnlTFkBY', /* ALPHA-AMS-1 */
-             'orchid://0@46.101.188.244:3200/0/aflY86Krju0pLdrKxBDtQS8Wshf3Uc1QY5oXglurUhg', /* ALPHA-FRA-1 */
-             'orchid://0@128.199.214.165:3200/0/lcMM3Blomj6Thyiy36cqdxm1zP1qghMZyWsxByhnBFo' /* ALPHA-SNG-1 */
-            ];
 
-var seed_index = Math.floor(Math.random() * seeds.length());
-var referral = seeds[seed_index];
+var sfo_seeds = [ 'orchid://0@104.131.141.48:3200/0/NGgM-Dvy7LQ-RO7oSr2iRaskwnxbdUal8OHI-vTTv0k', /* ALPHA-SFO-1 */
+                  'orchid://0@165.227.9.47:3200/0/mza4QadI_d7XchB5CW2rIe9YjEEcInBHZNl5-vPcCBY',   /* ALPHA-SFO-2 */
+                  'orchid://0@165.227.13.29:3200/0/lG1Qx-DpNKdYLQ9l2otkBf-DsKvYkwXo72O-6foQXB8',  /* ALPHA-SFO-3 */
+                  'orchid://0@165.227.11.29:3200/0/_S8mCK7E47_Kri7zK68Bd7vg6SzRWpkNme1v_qxS4GA'   /* ALPHA-SFO-4 */
+                ];
 
-(async () => {
-  await using(new orchid.DummyClock(), async (clock) => {
-    await using(new orchid.DummyContext(clock), async (context) => {
-      await context.refer(referral);
-      await using(await new orchid.Client(context)._(), async (client) => {
-        await using(await new orchid.SocksCapture(context, client, filter, port)._(), async (virtual) => {
-          virtual.retain();
-          var setup_script = "/Applications/OrchidAlpha.app/Contents/bin/setup.sh";
-          if (fs.existsSync(setup_script)) { spawn("/bin/bash", [ setup_script ]); }
+var nyc_seeds = [ 'orchid://0@159.203.81.5:3200/0/R6x45CN-OlJVKv4srEcbq9MAM6GulXsXw1QHxxzH90w'];   /* ALPHA-NYC-1 */
+var ams_seeds = ['orchid://0@188.166.87.162:3200/0/LlSjBhzmScTiaYynTCGMV8iCXUJDgvp7WwvgnlTFkBY'];  /* ALPHA-AMS-1 */
+var jf_seeds  = ['orchid://0@54.90.192.199:3200/0/zV2r8zUGzS2-bqg0uV7_kL0dLfEcPzCJZ3N0rZX4Kn4'];   /* Saurik */
+
+var de_seeds  = ['orchid://0@46.101.188.244:3200/0/aflY86Krju0pLdrKxBDtQS8Wshf3Uc1QY5oXglurUhg'];  /* ALPHA-FRA-1 */
+var sng_seeds = ['orchid://0@128.199.214.165:3200/0/lcMM3Blomj6Thyiy36cqdxm1zP1qghMZyWsxByhnBFo']; /* ALPHA-SNG-1 */
+
+var us_seeds  = sfo_seeds.concat(nyc_seeds).concat(jf_seeds);
+var eu_seeds  = ams_seeds.concat(de_seeds);
+var cn_seeds  = sng_seeds; 
+
+var all_seeds = (us_seeds).concat(eu_seeds).concat(cn_seeds);
+
+function start_orchid_network(desired_exit_location) {
+  var choices = all_seeds;
+
+  if (desired_exit_location == "US") {
+    choices = us_seeds;
+  } else if (desired_exit_location == "EU") {
+    choices = eu_seeds;
+  } else if (desired_exit_location == "CN") {
+    choices = cn_seeds;
+  }
+  var index = Math.floor(Math.random() * choices.length());
+  var referral = choices[index];
+  var result;
+
+result =  (async () => {
+    await using(new orchid.DummyClock(), async (clock) => {
+      await using(new orchid.DummyContext(clock), async (context) => {
+        await context.refer(referral);
+        await using(await new orchid.Client(context)._(), async (client) => {
+          await using(await new orchid.SocksCapture(context, client, filter, port)._(), async (virtual) => {
+            virtual.retain();
+          });
         });
       });
     });
-  });
-})().catch();
+  })().catch();
+
+  console.log("result: ", result);
+};
+
+function stop_orchid_network() {
+};
+
+var chrome_variables = {
+  EVENTS: {
+    CONNECTED: 'connected',
+    DISCONNECTED: 'disconnected'
+  },
+  userData: app.getPath("userData"),
+  executable: "/Applications/Google Chrome.app/Contents/MacOS/Google Chrome",
+  instance: null,
+
+    startNetwork: function(location) {
+      stop_orchid_network();
+      start_orchid_network(location);
+    },
+
+    stoptNetwork: function() {
+      stop_orchid_network();
+    },
+
+  startChrome: function() {
+    var userData = this.userData;
+    var program = this.executable;
+    var args = ['--user-data-dir=' + userData,
+                '--no-first-run',
+                '--proxy-server=socks5://127.0.0.1:1323',
+                '--host-resolver-rules=MAP * ~NOTFOUND , EXCLUDE 127.0.0.1'];
+    if (this.instance) this.instance.kill();
+    this.instance = spawn(program, args);
+    console.log("Chrome started", this.instance);
+    win.webContents.send(this.EVENTS.CONNECTED);
+  },
+
+  stopChrome: function() {
+    if (this.instance) {
+      this.instance.kill();
+      this.instance = null;
+      console.log("Chrome Stopped");
+    } else {
+      console.log("Chrome wasn't running");
+    }
+    win.webContents.send(this.EVENTS.DISCONNECTED);
+  }
+};
+
+app.chrome_vars = chrome_variables;
+
+var setup_script = "/Applications/OrchidAlpha.app/Contents/bin/setup.sh";
+if (fs.existsSync(setup_script)) { spawn("/bin/bash", [ setup_script ]); }
+
+app.chrome_vars.startNetwork();
