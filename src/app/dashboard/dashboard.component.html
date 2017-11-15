@@ -72,7 +72,7 @@
                     <a *ngFor="let browsingLocation of browsingLocations()" class="dropdown-item" (click)="setSelectedBrowsingLocation(browsingLocation)">
                         <img [src]="browsingLocation.flagUrl" class="flag" />
 			<span *ngIf="browsingLocation.name != 'The United States'">
-			  <span class="browsing-from-disabled">
+			  <span class="not-browsing-from-disabled">
                             {{ browsingLocation.name }}
 			  </span>
 			</span>

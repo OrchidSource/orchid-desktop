@@ -22,9 +22,10 @@ export class ConfigService {
 
     private _availableBrowsingLocations : any[] = [
         { nick: "us", name: "The United States" },
-        { nick: "gb", name: "United Kingdom", },
+        { nick: "eu", name: "European Union", },
 	{ nick: "de", name: "Germany", },
-        { nick: "jp", name: "Japan", }
+        { nick: "hkg", name: "Hong Kong", },
+	{ nick: "sng", name: "Singapore", }
     ]
 
     private _initBrowsingLocations() {

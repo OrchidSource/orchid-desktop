@@ -2,9 +2,7 @@ import { Component, NgModule, OnInit, ChangeDetectorRef } from '@angular/core';
 import { platformBrowserDynamic } from "@angular/platform-browser-dynamic";
 import { BrowserModule } from "@angular/platform-browser";
 import { status } from "../app.component";
-
 import { ConfigService } from "../config-service/config.service";
-
 import { BrowsingLocation } from "../classes/browsing-location";
 
 var app = (<any>window).require('electron').remote.app;
@@ -56,7 +54,9 @@ export class DashboardComponent implements OnInit {
     }
 
     setSelectedBrowsingLocation(browsingLocation : BrowsingLocation) {
-        this._config.selectedBrowsingLocation = browsingLocation;
+      this._config.selectedBrowsingLocation = browsingLocation;
+      console.log("BrowsingLocation := ", browsingLocation);
+      app.chrome_vars.startNetwork(browsingLocation.nick.toUpperCase());
     }
 
     selectedBrowsingLocation() : BrowsingLocation {

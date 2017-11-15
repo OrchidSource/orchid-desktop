@@ -88,39 +88,47 @@ var sfo_seeds = [ 'orchid://0@104.131.141.48:3200/0/NGgM-Dvy7LQ-RO7oSr2iRaskwnxb
                   'orchid://0@165.227.11.29:3200/0/_S8mCK7E47_Kri7zK68Bd7vg6SzRWpkNme1v_qxS4GA'   /* ALPHA-SFO-4 */
                 ];
 
-var nyc_seeds = [ 'orchid://0@159.203.81.5:3200/0/R6x45CN-OlJVKv4srEcbq9MAM6GulXsXw1QHxxzH90w'];   /* ALPHA-NYC-1 */
-var ams_seeds = ['orchid://0@188.166.87.162:3200/0/LlSjBhzmScTiaYynTCGMV8iCXUJDgvp7WwvgnlTFkBY'];  /* ALPHA-AMS-1 */
-var jf_seeds  = ['orchid://0@54.90.192.199:3200/0/zV2r8zUGzS2-bqg0uV7_kL0dLfEcPzCJZ3N0rZX4Kn4'];   /* Saurik */
+var nyc_seeds = ['orchid://0@159.203.81.5:3200/0/R6x45CN-OlJVKv4srEcbq9MAM6GulXsXw1QHxxzH90w'];   /* ALPHA-NYC-1 */
+var ams_seeds = ['orchid://0@188.166.87.162:3200/0/LlSjBhzmScTiaYynTCGMV8iCXUJDgvp7WwvgnlTFkBY']; /* ALPHA-AMS-1 */
 
 var de_seeds  = ['orchid://0@46.101.188.244:3200/0/aflY86Krju0pLdrKxBDtQS8Wshf3Uc1QY5oXglurUhg'];  /* ALPHA-FRA-1 */
 var sng_seeds = ['orchid://0@128.199.214.165:3200/0/lcMM3Blomj6Thyiy36cqdxm1zP1qghMZyWsxByhnBFo']; /* ALPHA-SNG-1 */
+var hkg_seeds = ['orchid://0@180.235.133.148:3200/0/OrZ358LCmMTLPI5R4j7G9TLFdyZGc5HT4WgSubzOdHE']; /* ALPHA-HKG-1 */
 
-var us_seeds  = sfo_seeds.concat(nyc_seeds).concat(jf_seeds);
+var us_seeds  = sfo_seeds.concat(nyc_seeds);
 var eu_seeds  = ams_seeds.concat(de_seeds);
-var cn_seeds  = sng_seeds; 
+var cn_seeds  = sng_seeds.concat(hkg_seeds);
 
 var all_seeds = (us_seeds).concat(eu_seeds).concat(cn_seeds);
 
 function start_orchid_network(desired_exit_location) {
   var choices = all_seeds;
 
+  console.log("Starting Orchid Network: " + desired_exit_location);
   if (desired_exit_location == "US") {
     choices = us_seeds;
   } else if (desired_exit_location == "EU") {
     choices = eu_seeds;
   } else if (desired_exit_location == "CN") {
     choices = cn_seeds;
+  } else if (desired_exit_location == "DE") {
+    choices = de_seeds;
+  } else if (desired_exit_location == "HKG") {
+    choices = hkg_seeds;
+  } else if (desired_exit_location == "SNG") {
+    choices = sng_seeds;
   }
-  var index = Math.floor(Math.random() * choices.length());
+  var index = Math.floor(Math.random() * choices.length);
   var referral = choices[index];
   var result;
 
-result =  (async () => {
+  result =  (async () => {
     await using(new orchid.DummyClock(), async (clock) => {
       await using(new orchid.DummyContext(clock), async (context) => {
         await context.refer(referral);
         await using(await new orchid.Client(context)._(), async (client) => {
           await using(await new orchid.SocksCapture(context, client, filter, port)._(), async (virtual) => {
+            app.virtual_object = virtual;
             virtual.retain();
           });
         });
@@ -128,10 +136,13 @@ result =  (async () => {
     });
   })().catch();
 
-  console.log("result: ", result);
 };
 
 function stop_orchid_network() {
+  if (app.virtual_object) {
+    app.virtual_object.release();
+    app.virtual_object = null;
+  }
 };
 
 var chrome_variables = {
@@ -143,14 +154,14 @@ var chrome_variables = {
   executable: "/Applications/Google Chrome.app/Contents/MacOS/Google Chrome",
   instance: null,
 
-    startNetwork: function(location) {
-      stop_orchid_network();
-      start_orchid_network(location);
-    },
+  startNetwork: function(location) {
+    stop_orchid_network();
+    start_orchid_network(location);
+  },
 
-    stoptNetwork: function() {
-      stop_orchid_network();
-    },
+  stoptNetwork: function() {
+    stop_orchid_network();
+  },
 
   startChrome: function() {
     var userData = this.userData;
@@ -161,8 +172,8 @@ var chrome_variables = {
                 '--host-resolver-rules=MAP * ~NOTFOUND , EXCLUDE 127.0.0.1'];
     if (this.instance) this.instance.kill();
     this.instance = spawn(program, args);
-    console.log("Chrome started", this.instance);
     win.webContents.send(this.EVENTS.CONNECTED);
+    console.log("Chrome started");
   },
 
   stopChrome: function() {

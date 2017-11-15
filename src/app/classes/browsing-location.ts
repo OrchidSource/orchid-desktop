@@ -51,6 +51,4 @@ export class BrowsingLocation {
     set name(name : string) {
         this._notAllowed();
     }
-
-
 }
