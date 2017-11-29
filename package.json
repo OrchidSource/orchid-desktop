@@ -72,6 +72,7 @@
     "electron-titlebar": "github:Menci/electron-titlebar",
     "electron-window-state": "^4.1.1",
     "font-awesome": "^4.7.0",
+    "jquery": "*",
     "logizomai": "^0.9.2",
     "ng2-charts": "^1.6.0",
     "ng2-pop-over": "^0.9.37",

@@ -102,6 +102,8 @@ var cn_seeds  = sng_seeds.concat(hkg_seeds);
 
 var all_seeds = (us_seeds).concat(eu_seeds).concat(cn_seeds);
 
+app.virtuals = [];
+
 function start_orchid_network(desired_exit_location) {
   var choices = all_seeds;
 
@@ -132,7 +134,7 @@ function start_orchid_network(desired_exit_location) {
         await using(await new orchid.vpn.Client(context)._(), async (client) => {
           await using(await new orchid.vpn.SocksCapture(context, client, filter, port)._(), async (virtual) => {
             virtual.retain();
-            // app.virtual_object = virtual;
+            app.virtuals.push(virtual);
           });
         });
       });
@@ -141,10 +143,10 @@ function start_orchid_network(desired_exit_location) {
 }
 
 function stop_orchid_network() {
-  if (app.virtual_object) {
-    console.log("Stop Orchid Network: app.virtual_object:", app.virtual_object);
-    // app.virtual_object.release();
-    // app.virtual_object = null;
+  if (app.virtuals && app.virtuals.length) {
+    console.log("Stopping Orchid Network...");
+    var virtual = app.virtuals.pop();
+    virtual.release();
   }
 };
 
