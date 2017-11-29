@@ -79,7 +79,8 @@
     "ng2-tooltip": "0.0.7",
     "ngx-popper": "^1.1.0",
     "ngx-tooltip": "0.0.9",
-    "orchid-p2p": "git+https://orchid:meshlabs@git.saurik.com/orchid-p2p.git",
+    "@orchidprotocol/core": "*",
+    "@orchidprotocol/service-vpn": "*",
     "rxjs": "^5.4.2",
     "watch": "^1.0.2",
     "zone.js": "^0.8.14"

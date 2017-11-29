@@ -72,13 +72,14 @@ app.on('activate', () => {
 // In this file you can include the rest of your app's specific main process
 // code. You can also put them in separate files and require them here.
 
-let orchid = require('orchid-p2p');
 let logizomai = require('logizomai');
+let orchid = { core: require('@orchidprotocol/core'), vpn: require('@orchidprotocol/service-vpn') };
 let using = logizomai.using;
 
 async function filter(host) {
+  console.log("FILTER CALLED");
   return true;
-}
+};
 
 const port = 1323;
 
@@ -104,6 +105,7 @@ var all_seeds = (us_seeds).concat(eu_seeds).concat(cn_seeds);
 function start_orchid_network(desired_exit_location) {
   var choices = all_seeds;
 
+  if (!desired_exit_location) desired_exit_location = "ALL";
   console.log("Starting Orchid Network: " + desired_exit_location);
   if (desired_exit_location == "US") {
     choices = us_seeds;
@@ -122,26 +124,27 @@ function start_orchid_network(desired_exit_location) {
   var referral = choices[index];
   var result;
 
-  result =  (async () => {
-    await using(new orchid.DummyClock(), async (clock) => {
-      await using(new orchid.DummyContext(clock), async (context) => {
+  console.log("REFERRAL:" + referral);
+  result = (async() => {
+    await using(new orchid.core.DummyClock(), async (clock) => {
+      await using(new orchid.core.DummyContext(clock), async (context) => {
         await context.refer(referral);
-        await using(await new orchid.Client(context)._(), async (client) => {
-          await using(await new orchid.SocksCapture(context, client, filter, port)._(), async (virtual) => {
-            app.virtual_object = virtual;
+        await using(await new orchid.vpn.Client(context)._(), async (client) => {
+          await using(await new orchid.vpn.SocksCapture(context, client, filter, port)._(), async (virtual) => {
             virtual.retain();
+            // app.virtual_object = virtual;
           });
         });
       });
     });
-  })().catch();
-
-};
+  })().catch(function(err) { console.log("Error: ", err); });
+}
 
 function stop_orchid_network() {
   if (app.virtual_object) {
-    app.virtual_object.release();
-    app.virtual_object = null;
+    console.log("Stop Orchid Network: app.virtual_object:", app.virtual_object);
+    // app.virtual_object.release();
+    // app.virtual_object = null;
   }
 };
 

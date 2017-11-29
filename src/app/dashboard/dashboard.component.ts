@@ -66,5 +66,4 @@ export class DashboardComponent implements OnInit {
     browsingLocations() : BrowsingLocation[] {
         return this._config.browsingLocations;
     }
-
 }
