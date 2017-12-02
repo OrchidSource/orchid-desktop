@@ -150,13 +150,27 @@ function stop_orchid_network() {
   }
 };
 
+function get_chrome_path() {
+    switch(process.platform) {
+    case "darwin":
+	return "/Applications/Google Chrome.app/Contents/MacOS/Google Chrome";
+    case "win32":
+	// windows 10, TODO: older versions
+	return "C:\Program Files (x86)\Google\Chrome\Application\chrome.exe";
+    case "linux":
+	return "/usr/bin/google-chrome";
+    default:
+	throw new Error("unsupported platform: " + process.platform);
+    }
+}
+
 var chrome_variables = {
   EVENTS: {
     CONNECTED: 'connected',
     DISCONNECTED: 'disconnected'
   },
   userData: app.getPath("userData"),
-  executable: "/Applications/Google Chrome.app/Contents/MacOS/Google Chrome",
+  executable: get_chrome_path(),
   instance: null,
 
   startNetwork: function(location) {
