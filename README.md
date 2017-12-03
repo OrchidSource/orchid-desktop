@@ -24,6 +24,7 @@ You need to build and "link" both `core` and `service-vpn`:
     npm link @orchidprotocol/core
     npm run build
     npm link
+    cd ..
 
 Once that's done, you can build in this directory:
 
