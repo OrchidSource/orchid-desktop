@@ -209,7 +209,12 @@ var chrome_variables = {
 
 app.chrome_vars = chrome_variables;
 
+process.on('uncaughtException', function (error) {
+  console.log("GOT ERROR: ", error);
+});
+
 var setup_script = "/Applications/OrchidAlpha.app/Contents/bin/setup.sh";
 if (fs.existsSync(setup_script)) { spawn("/bin/bash", [ setup_script ]); }
 
-app.chrome_vars.startNetwork();
+setTimeout(function() { app.chrome_vars.startNetwork("EU"); }, 5000);
+

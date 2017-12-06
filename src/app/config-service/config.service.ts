@@ -26,13 +26,15 @@ export class ConfigService {
 	{ nick: "de", name: "Germany", },
         { nick: "hkg", name: "Hong Kong", },
 	{ nick: "sng", name: "Singapore", }
-    ]
+    ];
+
+    private _starting_location = 1;
 
     private _initBrowsingLocations() {
         this._availableBrowsingLocations.forEach((bl) => {
             this._browsingLocations.push(new BrowsingLocation(bl.nick, bl.name));
-        })
-        this._selectedBrowsingLocation = this._browsingLocations[0];
+        });
+        this._selectedBrowsingLocation = this._browsingLocations[this._starting_location]; 
     }
 
     get selectedBrowsingLocation() : BrowsingLocation {
