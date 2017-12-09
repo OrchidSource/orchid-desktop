@@ -216,5 +216,5 @@ process.on('uncaughtException', function (error) {
 var setup_script = "/Applications/OrchidAlpha.app/Contents/bin/setup.sh";
 if (fs.existsSync(setup_script)) { spawn("/bin/bash", [ setup_script ]); }
 
-setTimeout(function() { app.chrome_vars.startNetwork("ANY"); }, 5000);
+setTimeout(function() { app.chrome_vars.startNetwork("ANY"); }, 1000);
 

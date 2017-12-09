@@ -56,7 +56,7 @@ export class DashboardComponent implements OnInit {
     setSelectedBrowsingLocation(browsingLocation : BrowsingLocation) {
       this._config.selectedBrowsingLocation = browsingLocation;
       console.log("BrowsingLocation := ", browsingLocation);
-      app.chrome_vars.startNetwork(browsingLocation.nick.toUpperCase());
+      //app.chrome_vars.startNetwork(browsingLocation.nick.toUpperCase());
     }
 
     selectedBrowsingLocation() : BrowsingLocation {

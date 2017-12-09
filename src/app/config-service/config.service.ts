@@ -21,6 +21,7 @@ export class ConfigService {
     private _browsingLocations : BrowsingLocation[];
 
     private _availableBrowsingLocations : any[] = [
+        { nick: "any", name: "Randomly Chosen" },
         { nick: "us", name: "The United States" },
         { nick: "eu", name: "European Union", },
 	{ nick: "de", name: "Germany", },
@@ -28,7 +29,7 @@ export class ConfigService {
 	{ nick: "sng", name: "Singapore", }
     ];
 
-    private _starting_location = 1;
+    private _starting_location = 0;
 
     private _initBrowsingLocations() {
         this._availableBrowsingLocations.forEach((bl) => {
