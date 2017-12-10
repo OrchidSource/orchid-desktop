@@ -20,6 +20,7 @@ export class DashboardComponent implements OnInit {
     timer: NodeJS.Timer = null;
     public time_connected: number = 0;
     time: Date = new Date(0,0,0,0,0,0,0);
+    public explaining: boolean = false;
 
     constructor(private _config : ConfigService, private changeDetector: ChangeDetectorRef) {
       this.connected = false;
@@ -56,6 +57,9 @@ export class DashboardComponent implements OnInit {
     setSelectedBrowsingLocation(browsingLocation : BrowsingLocation) {
       this._config.selectedBrowsingLocation = browsingLocation;
       console.log("BrowsingLocation := ", browsingLocation);
+      var that = this;
+      this.explaining = true;
+      setTimeout(() => { that.explaining = false; }, 10000);
       //app.chrome_vars.startNetwork(browsingLocation.nick.toUpperCase());
     }
 
