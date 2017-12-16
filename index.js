@@ -101,11 +101,12 @@ var eu_seeds  = ams_seeds.concat(de_seeds);
 var cn_seeds  = sng_seeds.concat(hkg_seeds);
 
 var all_seeds = (us_seeds).concat(eu_seeds).concat(cn_seeds);
+var all_but_sf= nyc_seeds.concat(eu_seeds).concat(cn_seeds);
 
 app.virtuals = [];
 
 function start_orchid_network(desired_exit_location) {
-  var choices = all_seeds;
+  var choices = all_but_sf;
 
   if (!desired_exit_location) desired_exit_location = "ALL";
   console.log("Starting Orchid Network: " + desired_exit_location);
@@ -144,8 +145,8 @@ function start_orchid_network(desired_exit_location) {
 
 function stop_orchid_network() {
   if (app.virtuals && app.virtuals.length) {
-    console.log("Stopping Orchid Network...");
     var virtual = app.virtuals.pop();
+    console.log("Stopping Orchid Network...", virtual);
     virtual.release();
   }
 };
@@ -216,5 +217,5 @@ process.on('uncaughtException', function (error) {
 var setup_script = "/Applications/OrchidAlpha.app/Contents/bin/setup.sh";
 if (fs.existsSync(setup_script)) { spawn("/bin/bash", [ setup_script ]); }
 
-setTimeout(function() { app.chrome_vars.startNetwork("EU"); }, 5000);
+setTimeout(function() { app.chrome_vars.startNetwork("EU"); }, 500);
 
