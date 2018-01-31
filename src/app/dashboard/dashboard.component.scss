@@ -5,5 +5,8 @@
  @media (max-width: 767px) { @content; }
 }
 
-.earn-chi{@include breakpoint-md {padding-bottom:40px !important;}}
+.earn-chi{padding-top: 15px !important;
+  @include breakpoint-md {padding-bottom:40px !important;}}
 .panda{@include breakpoint-md {display:none;}}
+.met-balance{opacity: .4;div{pointer-events: none;}}
+.browsing-from-disabled { color: rgba(0,0,0, 0.3); }

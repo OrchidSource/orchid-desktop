@@ -16,6 +16,9 @@ import { PurchasePaymentComponent } from './purchase/purchase-payment/purchase-p
 import { PurchaseConfirmationComponent } from './purchase/purchase-confirmation/purchase-confirmation.component';
 import { PurchaseHowToComponent } from './purchase/purchase-how-to/purchase-how-to.component';
 import { SellHowToComponent } from './sell/sell-how-to/sell-how-to.component';
+
+import { ConfigService } from "./config-service/config.service"
+
 import { PopoverModule } from 'ng2-pop-over';
 import { NgIf } from '@angular/common';
 
@@ -41,7 +44,7 @@ import { NgIf } from '@angular/common';
     PopoverModule,
     NgbModule.forRoot()
   ],
-  providers: [],
+  providers: [ConfigService],
   bootstrap: [AppComponent]
 })
 export class AppModule { }

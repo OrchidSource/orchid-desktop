@@ -1,31 +1,20 @@
-<div id="electron-titlebar" class="drag">Orchid: Access the World!<span class="badge badge-primary">465.34 CHI</span></div>
+<div id="electron-titlebar" class="drag"><img src="assets/imgs/h-logo-white.svg" style="height:18px;margin-right:10px;vertical-align:middle;"> <span>Access the World!</span></div>
 <router-outlet name="modal"></router-outlet>
 <div id="wrapper">
   <div id="sidebar-wrapper" class="row">
     <div class="sidenav col">
       <div class="navbar navbar-inverse sidebar-navbar">
-        <div class="text-center connect" [ngClass]="{'connect-on' : connected==true}" (click)="connected = !connected">
+        <div class="text-center connect" [ngClass]="{ 'connect-on' : connected }" (click)="toggleOnOff()">
+          <button></button>
       </div>
         <ul class="nav flex-column nav-pills nav-stacked">
-<!--
-          <li class="nav-item">
-            <a title="connect" class="nav-link" data-toggle="tooltip">
-              <label class='toggler__label'>
-                <input type="checkbox" hidden>
-                <div class='toggler' ng-click="connected = !connected"><div class="status"></div></div>
-              </label>
-            </a>
-          </li> -->
 
           <li class="nav-item nav-item-inverse">
             <a routerLink="/dashboard" routerLinkActive="active" class="nav-link"><span class="fa fa-area-chart"></span> Dashboard</a>
           </li>
-          <li class="nav-item">
-            <a  routerLink="/met-manager" routerLinkActive="active" class="nav-link"><span class="fa icon-chi-solid"></span> CHI Manager</a>
-          </li>
-          <li class="nav-item">
+          <!-- <li class="nav-item">
             <a routerLink="/help" routerLinkActive="active" class="nav-link"><span class="fa fa-question-circle"></span> Getting Started</a>
-          </li>
+          </li> -->
           <li class="nav-item">
             <a routerLink="/about" routerLinkActive="active" class="nav-link"><span class="fa fa-info-circle"></span> About</a>
           </li>

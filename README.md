@@ -1,7 +1,38 @@
-# MESH Electron front-end
+# Orchid Desktop
 
 This is the [Electron](https://electron.atom.io/) based HTML5 frontend for configuration and token management. The application is an [Angular2+](https://angular.io/) app that runs inside the Electron webview.
 
+## Building
+You need orchid-core and orchid-service-vpn which you can get from here:
+
+    cd ..
+    git clone https://git.orchidprotocol.org/orchid/orchid-core.git
+    git clone https://git.orchidprotocol.org/orchid/orchid-service-vpn.git
+
+You need to build and "link" both `core` and `service-vpn`:
+
+    cd orchid-core
+    ./setup
+    ./install
+    npm run build
+    npm link
+    cd ..
+
+    cd orchid-service-vpn
+    ./setup
+    ./install
+    npm link @orchidprotocol/core
+    npm run build
+    npm link
+    cd ..
+
+Once that's done, you can build in this directory:
+
+     cd orchid-desktop
+     npm link @orchidprotocol/core
+     npm link @orchidprotocol/service-vpn
+     npm install
+     
 ## Running
 
 VERY IMPORTANT: For all of the below you should have ridiculously reasonably recent node and npm versions installed. It's working for me with npm 5.3.0 and node 8.4.0. Several earlier versions of node and npm are known not to work.
