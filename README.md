@@ -9,6 +9,10 @@ You need orchid-core and orchid-service-vpn which you can get from here:
     git clone https://git.orchidprotocol.org/orchid/orchid-core.git
     git clone https://git.orchidprotocol.org/orchid/orchid-service-vpn.git
 
+Then install the build dependency dependency `json5`:
+
+    npm install -g json5
+
 You need to build and "link" both `core` and `service-vpn`:
 
     cd orchid-core
@@ -20,8 +24,8 @@ You need to build and "link" both `core` and `service-vpn`:
 
     cd orchid-service-vpn
     ./setup
-    ./install
     npm link @orchidprotocol/core
+    ./install
     npm run build
     npm link
     cd ..
@@ -32,7 +36,7 @@ Once that's done, you can build in this directory:
      npm link @orchidprotocol/core
      npm link @orchidprotocol/service-vpn
      npm install
-     
+
 ## Running
 
 VERY IMPORTANT: For all of the below you should have ridiculously reasonably recent node and npm versions installed. It's working for me with npm 5.3.0 and node 8.4.0. Several earlier versions of node and npm are known not to work.
