@@ -6,8 +6,8 @@ This is the [Electron](https://electron.atom.io/) based HTML5 frontend for confi
 You need orchid-core and orchid-service-vpn which you can get from here:
 
     cd ..
-    git clone https://git.orchidprotocol.org/orchid/orchid-core.git
-    git clone https://git.orchidprotocol.org/orchid/orchid-service-vpn.git
+    git clone https://github.com/orchidsource/orchid-core.git
+    git clone https://github.com/orchidsource/orchid-service-vpn.git
 
 Then install the build dependency dependency `json5`:
 
