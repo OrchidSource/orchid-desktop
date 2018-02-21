@@ -9,3 +9,4 @@ build/*
 .sass-cache
 dist/*
 out/*
+yarn-error.log

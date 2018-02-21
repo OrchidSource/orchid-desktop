@@ -33,9 +33,7 @@ You need to build and "link" both `core` and `service-vpn`:
 Once that's done, you can build in this directory:
 
      cd orchid-desktop
-     npm link @orchidprotocol/core
-     npm link @orchidprotocol/service-vpn
-     npm install
+     yarn
 
 ## Running
 
@@ -43,9 +41,8 @@ VERY IMPORTANT: For all of the below you should have ridiculously reasonably rec
 
 To run the electron app:
 
-    $ npm install
-    $ npm run build
-    $ npm start
+    $ yarn run build
+    $ yarn start
 
 To run the app from from the browser, first do `npm run build` or `npm run build-watch`, then run the following (note that things related to accessing the user's system won't work):
 
@@ -57,9 +54,8 @@ Then browse to the weird url http://localhost:8080/build
 
 To begin developing, run:
 
-    $ npm install
-    $ npm run build-watch &
-    $ npm start
+    $ yarn run build-watch &
+    $ yarn start
 
 Changes made to the js/ts/scss files will be detected, and the built app files will be available in the `build` directory. Doing "command-r" only very rarely updates the files in the webview, so usually when you make changes you have to stop and re-run `npm start`.
 
@@ -67,7 +63,7 @@ Changes made to the js/ts/scss files will be detected, and the built app files w
 
 To install libraries to be used by the web app, run:
 
-    $ npm install foolib@version --save
+    $ yarn add foolib@version
 
 Then either link to the files in the app/index.html file, or add the files as dependencies in the .angular-cli.json file (you probably want to do the latter if you want the files processed by a preprocessor).
 
