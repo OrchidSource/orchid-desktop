@@ -32,8 +32,10 @@ You need to build and "link" both `core` and `service-vpn`:
 
 Once that's done, you can build in this directory:
 
-     cd orchid-desktop
-     yarn
+    cd orchid-desktop
+    npm link @orchidprotocol/core
+    npm link @orchidprotocol/service-vpn
+    yarn
 
 ## Running
 
