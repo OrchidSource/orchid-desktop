@@ -9,42 +9,30 @@ You need orchid-core and orchid-service-vpn which you can get from here:
     git clone https://github.com/orchidsource/orchid-core.git
     git clone https://github.com/orchidsource/orchid-service-vpn.git
 
+In theory, any recent version of node and npm should work; in practice, you will probably have better luck if you run the same version of node and npm as Electron uses. At present, for Electron 1.8.2, that is node version 8.2.1. ([Node Version Manager (nvm)](https://github.com/creationix/nvm) provides a relatively easy way to switch between versions of node.) Once you've installed nvm, you can run the following command to install 1.8.2:
+
+    nvm install 8.2.1
+
+Then run this command whenever you want to use version 8.2.1 of node in the console.
+
+    nvm use 8.2.1
+
 Then install the build dependency dependency `json5`:
 
     npm install -g json5
 
-You need to build and "link" both `core` and `service-vpn`:
+Then run:
 
-    cd orchid-core
-    ./setup
-    ./install
-    npm run build
-    npm link
-    cd ..
+    npm install
 
-    cd orchid-service-vpn
-    ./setup
-    npm link @orchidprotocol/core
-    ./install
-    npm run build
-    npm link
-    cd ..
-
-Once that's done, you can build in this directory:
-
-    cd orchid-desktop
-    npm link @orchidprotocol/core
-    npm link @orchidprotocol/service-vpn
-    yarn
+(Note that the orchid-core and orchid-service-vpn libraries are now included via a git submodule.)
 
 ## Running
 
-VERY IMPORTANT: For all of the below you should have ridiculously reasonably recent node and npm versions installed. It's working for me with npm 5.3.0 and node 8.4.0. Several earlier versions of node and npm are known not to work.
-
 To run the electron app:
 
-    $ yarn run build
-    $ yarn start
+    $ npm run build
+    $ npm start
 
 To run the app from from the browser, first do `npm run build` or `npm run build-watch`, then run the following (note that things related to accessing the user's system won't work):
 
@@ -56,10 +44,17 @@ Then browse to the weird url http://localhost:8080/build
 
 To begin developing, run:
 
-    $ yarn run build-watch &
-    $ yarn start
+    $ npm run build-watch &
+    $ npm start
 
-Changes made to the js/ts/scss files will be detected, and the built app files will be available in the `build` directory. Doing "command-r" only very rarely updates the files in the webview, so usually when you make changes you have to stop and re-run `npm start`.
+Changes made to the js/ts/scss files will be detected, and the built app files will be available in the `build` directory. To see your changes you'll have to re-start the app with `yarn start`.
+
+### Debugging info
+
+If the app is crashing or otherwise misbehaving, adding the following to your environment may provide some information in the console:
+
+    set ELECTRON_ENABLE_LOGGING=true
+    set ELECTRON_ENABLE_STACK_DUMPING=true
 
 ### To install libraries
 

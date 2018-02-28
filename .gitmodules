@@ -1,0 +1,6 @@
+[submodule "submodules/orchid-core"]
+	path = submodules/orchid-core
+	url = git@github.com:orchidsource/orchid-core.git
+[submodule "submodules/orchid-service-vpn"]
+	path = submodules/orchid-service-vpn
+	url = git@github.com:orchidsource/orchid-service-vpn.git
