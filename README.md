@@ -60,7 +60,7 @@ If the app is crashing or otherwise misbehaving, adding the following to your en
 
 To install libraries to be used by the web app, run:
 
-    $ yarn add foolib@version
+    $ npm add foolib@version
 
 Then either link to the files in the app/index.html file, or add the files as dependencies in the .angular-cli.json file (you probably want to do the latter if you want the files processed by a preprocessor).
 

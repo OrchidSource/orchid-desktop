@@ -16,17 +16,15 @@
             <a routerLink="/help" routerLinkActive="active" class="nav-link"><span class="fa fa-question-circle"></span> Getting Started</a>
           </li> -->
           <li class="nav-item">
-            <a routerLink="/about" routerLinkActive="active" class="nav-link"><span class="fa fa-info-circle"></span> About</a>
+            <a routerLink="/about" routerLinkActive="active" class="nav-link"><span class="fa fa-info-circle"></span> <span [translate]="'SIDEBAR.ABOUT'"></span></a>
           </li>
         </ul>
 
       </div><!--/.nav-collapse -->
       <div ngbDropdown placement="top-right" class="d-inline-block">
-      <button class="btn btn-outline-secondary" id="languageSelect" ngbDropdownToggle>English</button>
+      <button class="btn btn-outline-secondary" id="languageSelect" ngbDropdownToggle>{{ selectedLanguage.native }}</button>
       <div ngbDropdownMenu aria-labelledby="languageSelect">
-        <button class="dropdown-item">العربية</button>
-        <button class="dropdown-item">中国</button>
-        <button class="dropdown-item">русский</button>
+        <button *ngFor="let language of LANGUAGES" class="dropdown-item" (click)="languageSelected(language.code)">{{ language.native }}</button>
       </div>
     </div>
   </div>
