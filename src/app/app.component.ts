@@ -14,7 +14,7 @@ const LOCAL_STORAGE_KEYS = {
 /**
  * The available languages
  */
-const LANGUAGES = [
+const LANGUAGES: Array<any> = [
   { code: 'en', native: 'English' },
   { code: 'zh', native: '中国' },
   { code: 'ar', native: 'العربية' },
@@ -31,8 +31,9 @@ const LANGUAGES = [
   styleUrls: ['./app.component.scss']
 })
 export class AppComponent {
-  title = 'app';
-  connected = false;
+  // what is this for?
+  title: string = 'app';
+  connected: boolean = false;
   // English, Chinese, Arabic, Russian, Spanish, German, Japanese, Hindi
 
   LANGUAGES = LANGUAGES;
@@ -79,9 +80,11 @@ export class AppComponent {
    * @return {void}
    */
   languageSelected(languageCode) {
-    console.log("TODO: Language is selected: ", languageCode);
-    // set language
     this.useLanguage(languageCode);
+  }
+
+  getOnOffTranslationKey(): string {
+    return this.connected ? 'STATUSES.ON' : 'STATUSES.OFF';
   }
 
   /**

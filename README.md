@@ -3,11 +3,6 @@
 This is the [Electron](https://electron.atom.io/) based HTML5 frontend for configuration and token management. The application is an [Angular2+](https://angular.io/) app that runs inside the Electron webview.
 
 ## Building
-You need orchid-core and orchid-service-vpn which you can get from here:
-
-    cd ..
-    git clone https://github.com/orchidsource/orchid-core.git
-    git clone https://github.com/orchidsource/orchid-service-vpn.git
 
 In theory, any recent version of node and npm should work; in practice, you will probably have better luck if you run the same version of node and npm as Electron uses. At present, for Electron 1.8.2, that is node version 8.2.1. ([Node Version Manager (nvm)](https://github.com/creationix/nvm) provides a relatively easy way to switch between versions of node.) Once you've installed nvm, you can run the following command to install 1.8.2:
 
@@ -25,7 +20,7 @@ Then run:
 
     npm install
 
-(Note that the orchid-core and orchid-service-vpn libraries are now included via a git submodule.)
+(Note that the orchid-core and orchid-service-vpn libraries are now included via a git submodule, and all building/linking of those libraries is handled by `npm install`.)
 
 ## Running
 
@@ -34,9 +29,7 @@ To run the electron app:
     $ npm run build
     $ npm start
 
-To run the app from from the browser, first do `npm run build` or `npm run build-watch`, then run the following (note that things related to accessing the user's system won't work):
-
-    $ npm run serve
+It is not currently possible to run the app from the browser.
 
 Then browse to the weird url http://localhost:8080/build
 
@@ -70,8 +63,7 @@ The easiest way is to use the `ng generate` command; e.g.:
 
     $ node_modules/.bin/ng generate component my-cool-new-component
 
-See https://github.com/angular/angular-cli/wiki/generate-component for details
-
+See https://github.com/angular/angular-cli/wiki/generate-component for details on the `ng generate` command.
 
 ### MacOS Icons
 

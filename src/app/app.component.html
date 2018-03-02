@@ -5,7 +5,7 @@
     <div class="sidenav col">
       <div class="navbar navbar-inverse sidebar-navbar">
         <div class="text-center connect" [ngClass]="{ 'connect-on' : connected }" (click)="toggleOnOff()">
-          <button>{{ connected?'STATUSES.OFF':'STATUSES.ON' | translate }}</button>
+          <button>{{ getOnOffTranslationKey() | translate }}</button>
       </div>
         <ul class="nav flex-column nav-pills nav-stacked">
 

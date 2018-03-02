@@ -404,10 +404,6 @@ input[type='range']::-webkit-slider-thumb {
       font-weight: 400;
       font-size: 16px;
       color: #3F414C;
-
-      // &:after {
-      //   content: 'OFF';
-      // }
     }
   }
 
@@ -419,10 +415,6 @@ input[type='range']::-webkit-slider-thumb {
     button {
       background: $brand-primary;
       color: #fff;
-
-      // &:after {
-      //   content: 'ON';
-      // }
     }
   }
 

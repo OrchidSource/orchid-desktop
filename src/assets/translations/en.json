@@ -1,7 +1,7 @@
 {
   "STATUSES": {
-    "ON": "Onnnnn",
-    "OFF": "Offfffff"
+    "ON": "On",
+    "OFF": "Off"
   },
   "SIDEBAR": {
     "ACCESS": "Access the World!",
