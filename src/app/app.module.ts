@@ -22,6 +22,7 @@ import { PurchaseHowToComponent } from './purchase/purchase-how-to/purchase-how-
 import { SellHowToComponent } from './sell/sell-how-to/sell-how-to.component';
 
 import { ConfigService } from "./config-service/config.service"
+import { InternationalizationService } from "./internationalization-service/internationalization.service"
 
 import { PopoverModule } from 'ng2-pop-over';
 import { NgIf } from '@angular/common';
@@ -61,7 +62,7 @@ export function HttpLoaderFactory(httpClient: HttpClient) {
       }
     })
   ],
-  providers: [ConfigService],
+  providers: [ConfigService, InternationalizationService],
   bootstrap: [AppComponent]
 })
 export class AppModule { }
