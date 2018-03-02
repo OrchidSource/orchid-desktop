@@ -1,5 +1,11 @@
 {
+  "STATUSES": {
+    "ON": "Onnnnn",
+    "OFF": "Offfffff"
+  },
   "SIDEBAR": {
+    "ACCESS": "Access the World!",
+    "DASHBOARD": "Dashboard",
     "ABOUT": "About"
   }
 }

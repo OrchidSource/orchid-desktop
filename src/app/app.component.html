@@ -1,16 +1,16 @@
-<div id="electron-titlebar" class="drag"><img src="assets/imgs/h-logo-white.svg" style="height:18px;margin-right:10px;vertical-align:middle;"> <span>Access the World!</span></div>
+<div id="electron-titlebar" class="drag"><img src="assets/imgs/h-logo-white.svg" style="height:18px;margin-right:10px;vertical-align:middle;"> <span [translate]="'SIDEBAR.ACCESS'"></span></div>
 <router-outlet name="modal"></router-outlet>
 <div id="wrapper">
   <div id="sidebar-wrapper" class="row">
     <div class="sidenav col">
       <div class="navbar navbar-inverse sidebar-navbar">
         <div class="text-center connect" [ngClass]="{ 'connect-on' : connected }" (click)="toggleOnOff()">
-          <button></button>
+          <button>{{ connected?'STATUSES.OFF':'STATUSES.ON' | translate }}</button>
       </div>
         <ul class="nav flex-column nav-pills nav-stacked">
 
           <li class="nav-item nav-item-inverse">
-            <a routerLink="/dashboard" routerLinkActive="active" class="nav-link"><span class="fa fa-area-chart"></span> Dashboard</a>
+            <a routerLink="/dashboard" routerLinkActive="active" class="nav-link"><span class="fa fa-area-chart"></span> <span [translate]>SIDEBAR.DASHBOARD</span></a>
           </li>
           <!-- <li class="nav-item">
             <a routerLink="/help" routerLinkActive="active" class="nav-link"><span class="fa fa-question-circle"></span> Getting Started</a>

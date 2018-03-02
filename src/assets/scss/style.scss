@@ -405,9 +405,9 @@ input[type='range']::-webkit-slider-thumb {
       font-size: 16px;
       color: #3F414C;
 
-      &:after {
-        content: 'OFF';
-      }
+      // &:after {
+      //   content: 'OFF';
+      // }
     }
   }
 
@@ -420,9 +420,9 @@ input[type='range']::-webkit-slider-thumb {
       background: $brand-primary;
       color: #fff;
 
-      &:after {
-        content: 'ON';
-      }
+      // &:after {
+      //   content: 'ON';
+      // }
     }
   }
 
