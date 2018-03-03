@@ -1,0 +1,208 @@
+@import '../assets/scss/variables';
+@import '../assets/scss/mixins';
+
+/* side nav */
+#sidebar-wrapper {
+  margin-left: -200px;
+  left: 200px;
+  width: 200px;
+  // background: #CCC;
+  background-color: $gray-dark;
+  color: $brand-primary-light;
+  position: fixed;
+  height: 100%;
+  overflow-y: hidden;
+  z-index: 1000;
+  transition: all 0.4s ease 0s;
+  @include minimized-breakpoint {
+    margin-left: -100px;
+    left: 100px;
+    width: 100px;
+  }
+
+  .connect {
+    width: 82px;
+    max-width: 84px;
+    height: 75px;
+    margin: auto auto 30px;
+    text-transform: uppercase;
+    background: url("../assets/imgs/button-not-connected.svg");
+    background-size: contain;
+    background-repeat: no-repeat;
+
+    button {
+      position: relative;
+      top: 86px;
+      padding: 5px 12px;
+      line-height: 1;
+      background: $gray-lighter;
+      border-radius: 12px;
+      border: none;
+      font-family: "Roboto";
+      font-weight: 400;
+      font-size: 16px;
+      // color: #3F414C;
+    }
+  }
+
+  .connect-on {
+    background: url("../assets/imgs/button-connected.svg");
+    background-size: contain;
+    background-repeat: no-repeat;
+
+    button {
+      background: $brand-primary;
+      // color: #fff;
+    }
+  }
+
+  .sidenav {
+    // color: #fff;
+    height: 100vh;
+    font-size: 13px;
+    @include minimized-breakpoint {
+      padding: 30px 0;
+    }
+
+    .navbar {
+      @include minimized-breakpoint {
+        padding: 0;
+      }
+    }
+
+    .nav {
+      margin-top: 30px;
+      @include minimized-breakpoint {
+        border-bottom: 1px solid $gray-lighter;
+      }
+    }
+
+    .dropup {
+      position: absolute;
+      bottom: 60px;
+      padding: 0 15px;
+      width: 170px;
+      @include minimized-breakpoint {
+        width: 100%;
+        text-align: center;
+        padding: 0;
+      }
+
+      .dropdown-menu {
+        left: auto !important;
+        top: auto !important;
+        min-width: 140px !important;
+        @include minimized-breakpoint {
+          min-width: auto !important;
+        }
+
+        .dropdown-item {
+          padding: 10px 1.1rem;
+        }
+      }
+
+      .dropdown-toggle {
+        width: 100%;
+        @include minimized-breakpoint {
+          width: 90px;
+        }
+
+        &:after {
+          float: right;
+          margin-top: 6px;
+          // color: #fff;
+        }
+      }
+    }
+  }
+
+  .nav-pills {
+    li.nav-item {
+      @include minimized-breakpoint {
+        border-top: 1px solid $gray-light;
+      }
+    }
+
+    .toggler {
+      width: 122px;
+
+      div {
+        position: absolute;
+        top: 7px;
+        left: 42px;
+        // color: $primary-text-color;
+      }
+
+      div:before {
+        content: 'Connect';
+        text-transform: uppercase;
+        // color: $primary-text-color;
+      }
+
+      &__label input:checked ~ .toggler div {
+        left: 14px;
+      }
+
+      &__label input:checked ~ .toggler div:before {
+        content: 'Connected';
+        // color: #fff !important;
+      }
+    }
+
+    a {
+      color: $gray-lighter;
+      font-family: $headers;
+      font-size: 0.9rem;
+    }
+
+    .fa {
+      font-size: 20px;
+      line-height: 20px;
+      margin-right: 20px;
+      width: 20px;
+      text-align: center;
+      vertical-align: middle;
+      @include minimized-breakpoint {
+        font-size: 36px;
+        width: 36px;
+        margin-right: 0;
+        display: block;
+        margin-bottom: 10px;
+        opacity: 0.9;
+        line-height: 36px;
+        width: 100%;
+      }
+    }
+
+    .fa-globe {
+      line-height: 36px;
+    }
+
+    .nav-link {
+      padding: 0.9rem 0;
+      @include minimized-breakpoint {
+        text-align: center;
+      }
+    }
+
+    .nav-link.active:hover {
+      a {
+        background-color: transparent;
+      }
+    }
+
+    .nav-link.active,
+    .nav-link.active:hover {
+      .fa {
+        color: $brand-primary-light;
+      }
+      background: none;
+      color: #fff;
+      @include minimized-breakpoint {
+        background: $gray-lighter;
+        color: $gray;
+        border-radius: 0;
+      }
+    }
+  }
+}

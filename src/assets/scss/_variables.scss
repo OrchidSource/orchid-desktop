@@ -105,21 +105,31 @@ $pink:   #E068C4 !default;
 $purple: #613d7c !default;
 
 // Create grayscale
-$gray-dark:                 #3F414C !default;
-$gray:                      #616161 !default;
-$gray-light:                #99A1B0 !default;
-$gray-lighter:              #E9E9E9 !default;
-$gray-lightest:             #f7f7f9 !default;
+$gray-dark:                 #51495c !default;
+$gray:                      #6b6b6b !default;
+$gray-light:                #99A1B0 !default; // undefined ???
+$gray-lighter:              #b3b5c4 !default;
+$gray-lightest:             #e9e9e9 !default;
 
 // Reassign color vars to semantic color scheme
-$brand-primary:             $blue !default;
-$brand-primary-light:       $blue-light !default;
+$brand-primary:             #462b78 !default;
+$brand-primary-light:       #f8f4fc !default;
 $brand-success:             $green !default;
 $brand-info:                $teal !default;
 $brand-warning:             $orange !default;
 $brand-danger:              $red !default;
 $brand-inverse:             $gray-dark !default;
 
+/// The orchid colors
+$primary-color: #18BECC;
+$secondary-color: #F5A623;
+$headers: 'Roboto', sans serif;
+$dark-bg-color: #616161;
+$primary-text-color: #3F414C;
+$secondary-text-color: #99A1B0;
+$light-grey-bg: #99A1B0;
+$white-text: #fff;
+$darkest-grey: #3F414C;
 
 // Options
 //

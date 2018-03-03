@@ -8,6 +8,12 @@
   }
 }
 
+@mixin minimized-breakpoint() {
+  @media (max-width: 575px) {
+    @content;
+  }
+}
+
 @mixin transition($transition...) {
   @if $enable-transitions {
     @if length($transition) == 0 {
