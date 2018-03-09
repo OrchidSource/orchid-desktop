@@ -4,9 +4,7 @@ import { BrowserModule } from "@angular/platform-browser";
 import { status } from "../app.component";
 import { ConfigService } from "../config-service/config.service";
 import { BrowsingLocation } from "../classes/browsing-location";
-
-var app = (<any>window).require('electron').remote.app;
-var ipcRenderer = (<any>window).require('electron').ipcRenderer;
+import { OrchidNetService } from "../orchid-net/orchid-net.service";
 
 @Component({
   selector: 'app-dashboard',
@@ -21,17 +19,20 @@ export class DashboardComponent implements OnInit {
     public time_connected: number = 0;
     time: Date = new Date(0,0,0,0,0,0,0);
 
-    constructor(private _config : ConfigService, private changeDetector: ChangeDetectorRef) {
+    constructor(private _config : ConfigService, private changeDetector: ChangeDetectorRef, private orchidNetService : OrchidNetService) {
       this.connected = false;
     }
 
     ngOnInit() {
-      ipcRenderer.on('connected', () => {
-        this.startTimer();
+
+      this.orchidNetService.connected.subscribe((isConnected: boolean) => {
+        if (isConnected) {
+          this.startTimer();
+        } else {
+          this.stopTimer();
+        }
       });
-      ipcRenderer.on('disconnected', () => {
-        this.stopTimer();
-      });
+
     }
 
     startTimer() {
@@ -56,7 +57,7 @@ export class DashboardComponent implements OnInit {
     setSelectedBrowsingLocation(browsingLocation : BrowsingLocation) {
       this._config.selectedBrowsingLocation = browsingLocation;
       console.log("BrowsingLocation := ", browsingLocation);
-      app.chrome_vars.startNetwork(browsingLocation.nick.toUpperCase());
+      this.orchidNetService.setBrowsingLocation(browsingLocation);
     }
 
     selectedBrowsingLocation() : BrowsingLocation {
