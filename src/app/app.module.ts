@@ -21,8 +21,9 @@ import { PurchaseConfirmationComponent } from './purchase/purchase-confirmation/
 import { PurchaseHowToComponent } from './purchase/purchase-how-to/purchase-how-to.component';
 import { SellHowToComponent } from './sell/sell-how-to/sell-how-to.component';
 
-import { ConfigService } from "./config-service/config.service"
-import { InternationalizationService } from "./internationalization-service/internationalization.service"
+import { ConfigService } from "./config-service/config.service";
+import { InternationalizationService } from "./internationalization-service/internationalization.service";
+import { OrchidNetService } from "./orchid-net/orchid-net.service";
 
 import { PopoverModule } from 'ng2-pop-over';
 import { NgIf } from '@angular/common';
@@ -62,14 +63,12 @@ export function HttpLoaderFactory(httpClient: HttpClient) {
       }
     })
   ],
-  providers: [ConfigService, InternationalizationService],
+  providers: [
+    ConfigService,
+    InternationalizationService,
+    OrchidNetService
+  ],
   bootstrap: [AppComponent]
 })
+
 export class AppModule { }
-// function MyCtrl($scope) {
-//
-//     $scope.myvalue = false;
-//     $scope.showAlert = function(){
-//       $scope.myvalue = true;
-//     };
-// }

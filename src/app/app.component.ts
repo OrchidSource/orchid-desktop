@@ -1,8 +1,7 @@
 import { Component } from '@angular/core';
 import { DashboardComponent } from './dashboard/dashboard.component';
 import { InternationalizationService } from './internationalization-service/internationalization.service';
-
-var app = (<any>window).require('electron').remote.app;
+import { OrchidNetService } from './orchid-net/orchid-net.service';
 
 @Component({
   selector: 'body',
@@ -16,7 +15,7 @@ export class AppComponent {
   LANGUAGES: Array<any>;
   selectedLanguage;
 
-  constructor(private internationalization: InternationalizationService) {
+  constructor(private internationalization: InternationalizationService, private orchidNetService: OrchidNetService) {
     this.LANGUAGES = internationalization.LANGUAGES;
     this.selectedLanguage = internationalization.selectedLanguage;
   }
@@ -55,9 +54,9 @@ export class AppComponent {
     console.log("Value of connected now: ", this.connected);
 
     if (this.connected) {
-      app.chrome_vars.startChrome();
+      this.orchidNetService.startChrome();
     } else
-      app.chrome_vars.stopChrome();
+      this.orchidNetService.stopChrome();
   }
 }
 
