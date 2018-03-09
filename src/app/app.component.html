@@ -3,10 +3,13 @@
 <div id="wrapper">
   <div id="sidebar-wrapper" class="row">
     <div class="sidenav col">
-      <div class="navbar navbar-inverse sidebar-navbar">
+      <div class="connect-container">
         <div class="text-center connect" [ngClass]="{ 'connect-on' : connected }" (click)="toggleOnOff()">
           <button>{{ getOnOffTranslationKey() | translate }}</button>
+        </div>
       </div>
+
+      <div class="navbar navbar-inverse sidebar-navbar">
         <ul class="nav flex-column nav-pills nav-stacked">
 
           <li class="nav-item nav-item-inverse">
@@ -20,17 +23,21 @@
           </li>
         </ul>
 
-      </div><!--/.nav-collapse -->
+      </div>
+      <!--/.nav-collapse -->
       <div ngbDropdown placement="top-right" class="d-inline-block">
-      <button class="btn btn-outline-secondary" id="languageSelect" ngbDropdownToggle>{{ selectedLanguage.native }}</button>
-      <div ngbDropdownMenu aria-labelledby="languageSelect">
-        <button *ngFor="let language of LANGUAGES" class="dropdown-item" (click)="languageSelected(language.code)">{{ language.native }}</button>
+        <button class="btn btn-outline-secondary" id="languageSelect" ngbDropdownToggle>{{ selectedLanguage.native }}</button>
+        <div ngbDropdownMenu aria-labelledby="languageSelect">
+          <button *ngFor="let language of LANGUAGES" class="dropdown-item" (click)="languageSelected(language.code)">{{ language.native }}</button>
+        </div>
       </div>
     </div>
   </div>
-  </div><!-- #sidebar-wrapper -->
+  <!-- #sidebar-wrapper -->
 
   <div class="col dashboard-content">
     <router-outlet></router-outlet>
-  </div> <!-- .dashboard-content-->
-</div> <!-- #wrapper -->
+  </div>
+  <!-- .dashboard-content-->
+</div>
+<!-- #wrapper -->

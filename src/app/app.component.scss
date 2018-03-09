@@ -1,3 +1,4 @@
+
 @import '../assets/scss/variables';
 @import '../assets/scss/mixins';
 
@@ -20,44 +21,49 @@
     width: 100px;
   }
 
-  .connect {
-    width: 82px;
-    max-width: 84px;
-    height: 75px;
-    margin: auto auto 30px;
-    text-transform: uppercase;
-    background: url("../assets/imgs/button-not-connected.svg");
-    background-size: contain;
-    background-repeat: no-repeat;
 
-    button {
-      position: relative;
-      top: 86px;
-      padding: 5px 12px;
-      line-height: 1;
-      background: $gray-lighter;
-      border-radius: 12px;
-      border: none;
-      font-family: "Roboto";
-      font-weight: 400;
-      font-size: 16px;
-      // color: #3F414C;
+  /* holds the connections stuff at the top */
+  .connect-container {
+    .connect {
+      width: 82px;
+      max-width: 84px;
+      height: 75px;
+      margin: auto auto 30px;
+      text-transform: uppercase;
+      background: url("../assets/imgs/button-not-connected.svg");
+      background-size: contain;
+      background-repeat: no-repeat;
+
+      button {
+        position: relative;
+        top: 86px;
+        padding: 5px 12px;
+        line-height: 1;
+        background: $gray-lighter;
+        border-radius: 12px;
+        border: none;
+        font-family: "Roboto";
+        font-weight: 400;
+        font-size: 16px;
+        // color: #3F414C;
+      }
     }
+
+    .connect-on {
+      background: url("../assets/imgs/button-connected.svg");
+      background-size: contain;
+      background-repeat: no-repeat;
+
+      button {
+        background: $brand-primary;
+        // color: #fff;
+      }
+    }
+
   }
 
-  .connect-on {
-    background: url("../assets/imgs/button-connected.svg");
-    background-size: contain;
-    background-repeat: no-repeat;
-
-    button {
-      background: $brand-primary;
-      // color: #fff;
-    }
-  }
-
+  /* holds the navigation links */
   .sidenav {
-    // color: #fff;
     height: 100vh;
     font-size: 13px;
     @include minimized-breakpoint {
