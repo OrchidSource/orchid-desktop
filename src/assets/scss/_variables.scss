@@ -114,8 +114,10 @@ $gray-lighter:              #b3b5c4 !default;
 $gray-lightest:             #e9e9e9 !default;
 
 /// The orchid colors
-$nav-background: #332058;
-$nav-foreground: #AE9DCC;
+
+// navbar colors
+$navbar-background: #332058;
+$navbar-foreground: #AE9DCC;
 
 // Reassign color vars to semantic color scheme
 
@@ -137,19 +139,6 @@ $brand-info:                $teal !default;
 $brand-warning:             $orange !default;
 $brand-danger:              $red !default;
 $brand-inverse:             $gray-dark !default;
-
-/// The orchid colors
-$nav-background: #332058;
-$nav-foreground: #AE9DCC;
-/// The orchid colors
-$nav-background: #332058;
-$nav-foreground: #AE9DCC;
-/// The orchid colors
-$nav-background: #332058;
-$nav-foreground: #AE9DCC;
-/// The orchid colors
-$nav-background: #332058;
-$nav-foreground: #AE9DCC;
 
 $primary-color: #18BECC;
 $secondary-color: #F5A623;
@@ -183,32 +172,6 @@ $enable-print-styles:       true !default;
 $spacer:   1rem !default;
 $spacer-x: $spacer !default;
 $spacer-y: $spacer !default;
-$spacers: (
-  0: (
-    x: 0,
-    y: 0
-  ),
-  1: (
-    x: ($spacer-x * .25),
-    y: ($spacer-y * .25)
-  ),
-  2: (
-    x: ($spacer-x * .5),
-    y: ($spacer-y * .5)
-  ),
-  3: (
-    x: $spacer-x,
-    y: $spacer-y
-  ),
-  4: (
-    x: ($spacer-x * 1.5),
-    y: ($spacer-y * 1.5)
-  ),
-  5: (
-    x: ($spacer-x * 3),
-    y: ($spacer-y * 3)
-  )
-) !default;
 $border-width: 1px !default;
 
 // This variable affects the `.h-*` and `.w-*` classes.
