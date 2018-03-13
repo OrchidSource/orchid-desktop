@@ -12,21 +12,15 @@
       </div>
 
       <div class="sidebar-links">
-        <ul>
-          <li>
-            <a routerLink="/dashboard" routerLinkActive="active" class="nav-link">
-              <span class="fa fa-area-chart"></span> <span [translate]>SIDEBAR.DASHBOARD</span>
-            </a>
-          </li>
-          <li>
-            <a routerLink="/wallet" routerLinkActive="active" class="nav-link">
-              <span [translate]>SIDEBAR.WALLET</span>
-            </a>
-          </li>
-          <li>
-            <a routerLink="/about" routerLinkActive="active" class="nav-link"><span class="fa fa-info-circle"></span> <span [translate]="'SIDEBAR.ABOUT'"></span></a>
-          </li>
-        </ul>
+        <a routerLink="/dashboard" routerLinkActive="active">
+          <span class="fa fa-area-chart"></span> <span [translate]>SIDEBAR.DASHBOARD</span>
+        </a>
+        <a routerLink="/wallet" routerLinkActive="active">
+          <span [translate]>SIDEBAR.WALLET</span>
+        </a>
+        <a routerLink="/about" routerLinkActive="active">
+          <span class="fa fa-info-circle"></span> <span [translate]="'SIDEBAR.ABOUT'"></span>
+        </a>
 
         <div ngbDropdown placement="top-right" class="d-inline-block">
           <button class="btn btn-outline-secondary" id="languageSelect" ngbDropdownToggle>{{ selectedLanguage.native }}</button>

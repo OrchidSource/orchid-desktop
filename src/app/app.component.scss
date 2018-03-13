@@ -101,23 +101,22 @@ $sidebar-padding: 30px;
       padding: 30px 0;
     }
 
-    ul {
-      margin-top: $sidebar-padding;
-      list-style-type: none;
+    a {
+      display: block;
+      padding-top: 20px;
+      padding-left: $sidebar-padding;
       width: 100%;
-      padding: 0;
+      height: 64px;
+      color: $navbar-foreground;
+      font-size: 12px;
+      text-transform: uppercase;
 
-      li {
-        padding-top: 20px;
-        padding-left: $sidebar-padding;
-        width: 100%;
-        height: 64px;
-        a {
-          color: $navbar-foreground;
-          font-size: 12px;
-          text-transform: uppercase;
-        }
+      &:hover, &.active {
+        color: white;
+        background-color: $brand-primary-hover;
+        text-decoration: none;
       }
+
     }
 
     .navbar {

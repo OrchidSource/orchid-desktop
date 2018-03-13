@@ -40,7 +40,7 @@ export class AppComponent {
   }
 
   getOnOffTranslationKey(): string {
-    return this.connected ? 'STATUSES.ON' : 'STATUSES.OFF';
+    return this.connected ? 'STATUSES.CONNECTED' : 'STATUSES.DISCONNECTED';
   }
 
   /**

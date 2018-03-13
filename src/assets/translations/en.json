@@ -1,7 +1,7 @@
 {
   "STATUSES": {
-    "ON": "On",
-    "OFF": "Off"
+    "CONNECTED": "Connected",
+    "DISCONNECTED": "Disconnected"
   },
   "SIDEBAR": {
     "ACCESS": "Access the World!",
