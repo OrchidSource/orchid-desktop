@@ -49,3 +49,19 @@
   font-weight: 300;
   font-style: italic;
 }
+
+// Quicksand fonts
+@font-face {
+  font-family: 'QuickSand';
+  src: url("../fonts/Quicksand-Bold.ttf") format('truetype');
+  font-weight: bold;
+  font-style: normal;
+}
+
+// Quicksand fonts
+@font-face {
+  font-family: 'QuickSand';
+  src: url("../fonts/Quicksand-Regular.ttf") format('truetype');
+  font-weight: normal;
+  font-style: normal;
+}

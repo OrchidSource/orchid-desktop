@@ -57,31 +57,30 @@ $sidebar-padding: 30px;
 
 
     .connect {
-      width: 82px;
-      max-width: 84px;
-      height: 75px;
-      margin: auto auto 30px;
-      text-transform: uppercase;
-      background: url("../assets/imgs/button-not-connected.svg");
-      background-size: contain;
-      background-repeat: no-repeat;
+      width: 100%;
+      height: 108px;
+      // background: url("../assets/imgs/button-connected.svg");
+      // background-size: contain;
+      // background-repeat: no-repeat;
 
       button {
-        position: relative;
-        top: 86px;
-        padding: 5px 12px;
+        margin: 15px auto;
+        display: block;
+        width: 120px;
+        padding-top: 5px;
+        padding-bottom: 5px;
         line-height: 1;
         background: $gray-lighter;
         border-radius: 12px;
         border: none;
-        font-family: "Roboto";
+        text-transform: uppercase;
         font-weight: 400;
-        font-size: 16px;
+        font-size: 14px;
       }
     }
 
     .connect-on {
-      background: url("../assets/imgs/button-connected.svg");
+      // background: url("../assets/imgs/button-connected.svg");
       background-size: contain;
       background-repeat: no-repeat;
 
