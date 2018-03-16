@@ -26,6 +26,8 @@ import { OrchidNetService } from "./orchid-net/orchid-net.service";
 
 import { PopoverModule } from 'ng2-pop-over';
 import { NgIf } from '@angular/common';
+import { SettingsComponent } from './settings/settings.component';
+import { WalletComponent } from './wallet/wallet.component';
 
 // Indicates where the translation files live
 export function HttpLoaderFactory(httpClient: HttpClient) {
@@ -42,7 +44,9 @@ export function HttpLoaderFactory(httpClient: HttpClient) {
     PurchaseConfirmationComponent,
     PurchaseHowToComponent,
     SellHowToComponent,
-    PurchaseStartComponent
+    PurchaseStartComponent,
+    SettingsComponent,
+    WalletComponent
   ],
   imports: [
     AppRoutingModule,
