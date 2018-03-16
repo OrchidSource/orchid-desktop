@@ -200,6 +200,10 @@ form {
   color: #fff !important;
 }
 
+.btn-lg {
+  padding: 0.75rem 1.5rem !important;
+  text-transform: uppercase;
+}
 
 .row.equal-height {
   display: flex;
@@ -232,10 +236,6 @@ form {
   }
 }
 
-.btn-lg {
-  padding: 0.75rem 1.5rem !important;
-  text-transform: uppercase;
-}
 
 .ci-met-stack {
   background: url("../imgs/met-stack.svg") no-repeat;
@@ -248,15 +248,6 @@ form {
     background-position: center;
     float: none;
   }
-}
-
-
-.h-80 {
-  height: 80% !important;
-}
-
-.h-20 {
-  height: 20% !important;
 }
 
 .dropdown {

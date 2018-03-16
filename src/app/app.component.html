@@ -24,7 +24,7 @@
           <span [translate]="'SIDEBAR.SETTINGS'"></span>
         </a>
 
-        <div ngbDropdown placement="top-right" class="d-inline-block">
+        <div ngbDropdown placement="top" class="d-inline-block dropup">
           <button class="btn btn-outline-secondary" id="languageSelect" ngbDropdownToggle>{{ selectedLanguage.native }}</button>
           <div ngbDropdownMenu aria-labelledby="languageSelect">
             <button *ngFor="let language of LANGUAGES" class="dropdown-item" (click)="languageSelected(language.code)">{{ language.native }}</button>

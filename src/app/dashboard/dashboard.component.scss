@@ -27,9 +27,12 @@
 }
 
 .browsing-location-card {
+  .browsing-location-map {
+    width: 100%;
+  }
+
   .dropdown-toggle::after {
     float: right;
     margin-top: 6px;
   }
-
 }

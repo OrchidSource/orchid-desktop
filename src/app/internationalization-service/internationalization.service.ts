@@ -40,13 +40,20 @@ export class InternationalizationService {
 
   }
 
+  /**
+   * Switch to the language indicated by the language code, and save the language
+   * in preferences
+
+   * @param  languageCode On of the codes in LANGUAGES
+   * @return {undefined}
+   */
   useLanguage(languageCode: string) {
     var languageObject = this.languageObjectForCode(languageCode);
     if (!languageObject) {
       throw `Unsupported language: "${languageCode}"`;
     }
 
-    this.selectedLanguage = this.languageObjectForCode(languageCode);
+    this.selectedLanguage = languageObject;
     localStorage.setItem(LocalStorageKeysService.LANGUAGE, languageCode);
     this.translate.use(languageCode);
   }
@@ -54,6 +61,5 @@ export class InternationalizationService {
   private languageObjectForCode(languageCode) {
     return this.LANGUAGES.find(l => l.code === languageCode);
   }
-
 
 }

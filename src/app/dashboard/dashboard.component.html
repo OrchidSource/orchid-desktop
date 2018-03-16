@@ -27,7 +27,7 @@
 
 
   <div class="col-lg-4 col-md-6 col-sm-12 last">
-    <div class="card dashboard-card ">
+    <div class="card dashboard-card connection-status-card">
       <div class="card-header">
         <span>Connection Status</span>
         <span class="card-help"><a ngbTooltip="Your security level determines how many nodes your connection will pass through. Higher security level = more nodes." placement="bottom"><img src="assets/imgs/question.svg"/></a></span>
@@ -56,7 +56,7 @@
       </div>
 
       <div class="card-body">
-        <img [src]="selectedBrowsingLocation().mapUrl">
+        <img [src]="selectedBrowsingLocation().mapUrl" class="browsing-location-map">
       </div>
 
     <div class="card-footer">
