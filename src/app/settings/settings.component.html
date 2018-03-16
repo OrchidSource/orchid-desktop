@@ -1,3 +1,13 @@
-<p>
-  settings works!
-</p>
+<div class="card">
+  <div class="card-body">
+    <div class="setting-item">
+      <span [translate]>SETTINGS.LAUNCH_STARTUP</span>
+      <input type="checkbox" [(ngModel)]="settings.LAUNCH_STARTUP">
+    </div>
+
+    <div class="setting-item">
+      <span [translate]>SETTINGS.CONNECT_ON_STARTUP</span>
+      <input type="checkbox" [(ngModel)]="settings.CONNECT_ON_STARTUP">
+    </div>
+  </div>
+</div>

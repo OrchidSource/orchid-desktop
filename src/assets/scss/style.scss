@@ -267,6 +267,9 @@ form {
 }
 /* Dashboard */
 .dashboard-content {
+
+  background-color: $content-background;
+  
   .row.equal-height {
     padding: 0 15px;
     margin-left: 0;

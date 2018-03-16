@@ -7,9 +7,15 @@ import { Component, OnInit } from '@angular/core';
 })
 export class SettingsComponent implements OnInit {
 
-  constructor() { }
+  settings: object;
+
+  constructor() {
+    console.log('todo: get settings');
+    this.settings = {};
+  }
 
   ngOnInit() {
+    console.log('init')
   }
 
 }

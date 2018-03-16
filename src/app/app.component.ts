@@ -13,7 +13,7 @@ export class AppComponent {
   title: string = 'app';
   connected: boolean = false;
   LANGUAGES: Array<any>;
-  selectedLanguage;
+  selectedLanguage: object;
 
   constructor(private internationalization: InternationalizationService, private orchidNetService: OrchidNetService) {
     this.LANGUAGES = internationalization.LANGUAGES;
