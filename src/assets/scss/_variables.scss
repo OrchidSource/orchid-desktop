@@ -78,6 +78,14 @@ $gray-lightest:             #e9e9e9 !default;
 $navbar-background: #332058;
 $navbar-foreground: #AE9DCC;
 
+$navbar-connected: #faeb4c;
+$navbar-connected-hover: #fff47d;
+$navbar-connected-active: #d9cc41;
+
+$navbar-disconnected: #9e9e9e;
+$navbar-disconnected-hover: #eoeoeo;
+$navbar-disconnected-active: #757575;
+
 // Reassign color vars to semantic color scheme
 
 $brand-primary:             #462b78 !default;

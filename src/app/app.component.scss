@@ -59,9 +59,6 @@ $sidebar-padding: 30px;
     .connect {
       width: 100%;
       height: 108px;
-      // background: url("../assets/imgs/button-connected.svg");
-      // background-size: contain;
-      // background-repeat: no-repeat;
 
       button {
         margin: 15px auto;
@@ -70,22 +67,35 @@ $sidebar-padding: 30px;
         padding-top: 5px;
         padding-bottom: 5px;
         line-height: 1;
-        background: $gray-lighter;
         border-radius: 12px;
         border: none;
         text-transform: uppercase;
         font-weight: 400;
         font-size: 14px;
+
+        background-color: $navbar-disconnected;
+        &:hover {
+          background-color: $navbar-disconnected-hover;
+        }
+        &:active {
+          background-color: $navbar-disconnected-active;
+        }
       }
     }
 
+    /* Style for when connection is active */
     .connect-on {
-      // background: url("../assets/imgs/button-connected.svg");
       background-size: contain;
       background-repeat: no-repeat;
 
       button {
-        background: $brand-primary;
+        background-color: $navbar-connected;
+        &:hover {
+          background-color: $navbar-connected-hover;
+        }
+        &:active {
+          background-color: $navbar-connected-active;
+        }
       }
     }
 
@@ -102,8 +112,9 @@ $sidebar-padding: 30px;
 
     a {
       display: block;
-      padding-top: 20px;
-      padding-left: $sidebar-padding;
+      position: relative;
+      // padding-top: 20px;
+      // padding-left: $sidebar-padding;
       width: 100%;
       height: 64px;
       color: $navbar-foreground;
@@ -114,6 +125,18 @@ $sidebar-padding: 30px;
         color: white;
         background-color: $brand-primary-hover;
         text-decoration: none;
+      }
+
+      img {
+        position: absolute;
+        height: 24px;
+        top: 20px;
+        left: 30px;
+      }
+      span {
+        display: inline-block;
+        margin-top: 24px;
+        margin-left: 64px;
       }
 
     }

@@ -4,6 +4,12 @@
 
 // FONTS
 
-$font-family-sans-serif: 'OpenSans' !default;
+$font-family-sans-serif: 'OpenSans';
 
 $headings-font-family: 'QuickSand';
+$headings-font-weight: normal;
+// need to override h1 and h2 to "bold"
+$h1-font-size: 32px;
+$h2-font-size: 21px;
+$h3-font-size: 18px;
+$h4-font-size: 18px;

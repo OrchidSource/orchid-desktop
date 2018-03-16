@@ -50,7 +50,10 @@ export class OrchidNetService {
    * Starts the chrome browser
    */
   startChrome() {
-    app.chrome_vars.startChrome();
+    console.log('TODO: resurrect startChrome');
+    if ((<any>window).require) {
+      app.chrome_vars.startChrome();
+    }
   }
 
   /**

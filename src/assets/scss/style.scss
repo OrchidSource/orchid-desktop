@@ -1,6 +1,3 @@
-// TODO: package this with the app
-@import url(http://fonts.googleapis.com/css?family=Roboto:300,400,500);
-
 @import './fonts';
 
 @import './mixins';
@@ -42,6 +39,7 @@ h4, .h4 {
 }
 
 
+// still used?
 .icon-chi-solid {
   font-family: 'ChiFont';
 
@@ -69,6 +67,7 @@ form {
   margin-top: 5px;
 }
 
+// are we killing this panda?
 .panda {
   @include minimized-breakpoint {
     display: none;
