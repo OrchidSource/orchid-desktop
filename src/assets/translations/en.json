@@ -6,7 +6,10 @@
   "SIDEBAR": {
     "ACCESS": "Access the World!",
     "DASHBOARD": "Dashboard",
-    "ABOUT": "About",
+    "SETTINGS": "Settings",
     "WALLET": "Wallet"
+  },
+  "DASHBOARD": {
+    "GB_REMAINING": "GB Remaining"
   }
 }

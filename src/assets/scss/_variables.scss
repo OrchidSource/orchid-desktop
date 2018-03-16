@@ -105,10 +105,8 @@ $brand-success:             $green !default;
 $brand-info:                $teal !default;
 $brand-warning:             $orange !default;
 $brand-danger:              $red !default;
-$brand-inverse:             $gray-dark !default;
 
-$primary-color: #18BECC;
-$secondary-color: #F5A623;
+// remove?
 $headers: 'Roboto', sans serif;
 $dark-bg-color: #616161;
 $primary-text-color: #3F414C;
@@ -116,5 +114,7 @@ $secondary-text-color: #99A1B0;
 $light-grey-bg: #99A1B0;
 $white-text: #fff;
 $darkest-grey: #3F414C;
+
+$dashboard-card-header-background: #e1e2e6;
 
 // FONTS

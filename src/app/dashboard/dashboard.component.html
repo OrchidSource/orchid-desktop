@@ -1,12 +1,12 @@
-<div class="row panda text-center hidden-md-down">
-</div>
+<!-- <div class="row panda text-center hidden-md-down">
+</div> -->
 <div class="row equal-height">
   <div class="col-lg-4 col-md-12 col-sm-12">
-    <div class="card dashboard-card met-balance inline-trigger" on-mouseover='fundPO.show($event)' on-mouseout='fundPO.hide()'>
+    <div class="card dashboard-card inline-trigger" on-mouseover='fundPO.show($event)' on-mouseout='fundPO.hide()'>
       <div class="card-header">
-        <h4 class="card-title">Balance</h4>
+        <span class="card-title" [translate]>DASHBOARD.GB_REMAINING</span>
         <span class="card-help">
-          <a ngbTooltip="You need tokens to connect!" placement="bottom"><span class="fa fa-question-circle"></span></a>
+          <a ngbTooltip="A tooltip" placement="bottom"><img src="assets/imgs/question.svg"/></a>
         </span>
       </div>
       <div class="h-100 card-block justify-content-end">

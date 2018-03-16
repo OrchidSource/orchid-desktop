@@ -3,7 +3,6 @@ import { Routes, RouterModule } from '@angular/router';
 
 import { DashboardComponent } from './dashboard/dashboard.component';
 import { MetManagerComponent } from './met-manager/met-manager.component';
-import { AboutComponent } from './about/about.component';
 import { HelpComponent } from './help/help.component';
 import { PurchaseStartComponent } from './purchase/purchase-start/purchase-start.component';
 import { PurchasePaymentComponent } from './purchase/purchase-payment/purchase-payment.component';
@@ -51,10 +50,6 @@ const routes: Routes = [
         component: PurchaseConfirmationComponent
       }
     ]
-  },
-  {
-    path: 'about',
-    component: AboutComponent
   },
   {
     path: 'help',

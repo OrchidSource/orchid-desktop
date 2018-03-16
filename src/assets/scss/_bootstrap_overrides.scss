@@ -2,6 +2,10 @@
  * Contains overrides of bootstrap defaults
  */
 
+ // colors
+
+ $primary: $brand-primary;
+
 // FONTS
 
 $font-family-sans-serif: 'OpenSans';
@@ -13,3 +17,10 @@ $h1-font-size: 32px;
 $h2-font-size: 21px;
 $h3-font-size: 18px;
 $h4-font-size: 18px;
+
+// buttons
+$btn-border-radius: 100px;
+
+// cards
+$card-border-radius: 10px;
+$card-border-width: 0px;
