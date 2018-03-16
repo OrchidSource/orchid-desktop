@@ -2,92 +2,95 @@
 </div> -->
 <div class="row equal-height">
   <div class="col-lg-4 col-md-12 col-sm-12">
-    <div class="card dashboard-card inline-trigger" on-mouseover='fundPO.show($event)' on-mouseout='fundPO.hide()'>
+    <div class="card dashboard-card inline-trigger gb-remaining-card" on-mouseover='fundPO.show($event)' on-mouseout='fundPO.hide()'>
       <div class="card-header">
-        <span class="card-title" [translate]>DASHBOARD.GB_REMAINING</span>
+        <span [translate]>DASHBOARD.GB_REMAINING</span>
         <span class="card-help">
           <a ngbTooltip="A tooltip" placement="bottom"><img src="assets/imgs/question.svg"/></a>
         </span>
       </div>
-      <div class="h-100 card-block justify-content-end">
-        <div class="card-content h-80 justify-content-end"><h3 class="card-text">0</h3></div>
-        <div class="card-action-container h-20 justify-content-end">
-          <a class="btn btn-primary btn-lg" href="#" role="button" [routerLink]="[ '/met-manager', {outlets: { 'met-manager-modal': 'purchase-how-to' } }]">Fund Account</a>
+
+      <div class="card-body text-center">
+        <div class="gb-amount">
+          <span>0</span>GB
         </div>
+        <div class="text-center" [translate]>
+          DASHBOARD.PLEASE_ADD
+        </div>
+      </div>
+
+      <div class="card-footer">
+          <a class="btn btn-primary" href="#" role="button" [routerLink]="[ '/met-manager', {outlets: { 'met-manager-modal': 'purchase-how-to' } }]">Fund Account</a>
       </div>
     </div>
   </div>
 
 
   <div class="col-lg-4 col-md-6 col-sm-12 last">
-    <div class="card dashboard-card security-level">
+    <div class="card dashboard-card ">
       <div class="card-header">
-        <h4 class="card-title">Connection Status</h4>
-        <span class="card-help"><a ngbTooltip="Your security level determines how many nodes your connection will pass through. Higher security level = more nodes." placement="bottom"><span class="fa fa-question-circle"></span></a></span>
+        <span>Connection Status</span>
+        <span class="card-help"><a ngbTooltip="Your security level determines how many nodes your connection will pass through. Higher security level = more nodes." placement="bottom"><img src="assets/imgs/question.svg"/></a></span>
       </div>
-      <div class="h-100 card-block justify-content-end" ng-controller="Ctrl" ng-app="sec-val">
-        <div class="card-content h-80 justify-content-end">
-	  <img src="assets/imgs/connection-not-connected.gif" *ngIf="!connected" align="center" />
-	  <img src="assets/imgs/connection-animation.gif" *ngIf="connected" align="center" />
-	</div>
-        <div class="card-action-container h-20 justify-content-end">
-          <h6 class="text-center" style="margin-top: 15px;text-transform:uppercase;">Secure Connection {{ connected ? 'Active' : 'Inactive' }}</h6><h3 class="text-center">{{time | date: 'HH:mm:ss'}}<!-- 01:36:12 --></h3>
-        </div>
 
+      <div class="card-body" ng-controller="Ctrl" ng-app="sec-val">
+        <h3 class="text-center">{{time | date: 'HH:mm:ss'}}</h3>
+      </div>
+
+      <div class="card-footer">
+          <div *ngIf="!connected">
+            Not connected
+          </div>
+          <div *ngIf="connected">
+            Connected to Orchid Network
+          </div>
       </div>
     </div>
   </div>
 
-  <div class="col-lg-4  col-md-6 col-sm-12">
-    <div class="card dashboard-card browsing-location">
+  <div class="col-lg-4 col-md-6 col-sm-12">
+    <div class="card dashboard-card browsing-location-card">
       <div class="card-header">
-        <h4 class="card-title">Default Browsing Location</h4><span class="card-help"><a ngbTooltip="This is where you will be browsing the internet from." placement="bottom"><span class="fa fa-question-circle"></span></a></span>
+        <span>Default Browsing Location</span>
+        <span class="card-help"><a ngbTooltip="This is where you will be browsing the internet from." placement="bottom"><img src="assets/imgs/question.svg"/></a></span>
       </div>
-      <div class="h-100 card-block justify-content-end">
-        <div class="card-content h-80 justify-content-end"><img [src]="selectedBrowsingLocation().mapUrl"></div>
-        <div class="card-action-container h-20 justify-content-end">
 
-          <div class="dropdown">
-            <div class="form-group">
-              <div ngbDropdown class="d-inline-block">
-                <button class="btn btn-secondary dropdown-toggle text-left"
-                        type="button"
-                        id="dropdownMenuButton"
-                        ngbDropdownToggle
-                        aria-haspopup="true"
-                        aria-expanded="false">
-                  <img [src]="selectedBrowsingLocation().flagUrl" class="flag" /> {{ selectedBrowsingLocation().name }}
-                </button>
-                <div ngbDropdownMenu aria-labelledby="dropdownMenuButton">
-                  <!-- <div id="custom-search-input">
-                    <div class="input-group col-md-12">
-                      <span class="input-group-btn">
-                        <button class="btn btn-primary" type="button">
-                          <i class="fa fa-search"></i>
-                        </button>
-                      </span>
-                      <input type="text" class="form-control input-lg" placeholder="Search" />
-                    </div>
-                  </div> -->
-                    <a *ngFor="let browsingLocation of browsingLocations()" class="dropdown-item" (click)="setSelectedBrowsingLocation(browsingLocation)">
-                        <img [src]="browsingLocation.flagUrl" class="flag" />
-			<span *ngIf="browsingLocation.name != 'The United States'">
-			  <span class="not-browsing-from-disabled">
-                            {{ browsingLocation.name }}
-			  </span>
-			</span>
-			<span *ngIf="browsingLocation.name == 'The United States'">
-                          {{ browsingLocation.name }}
-			</span>
-                    </a>
-                </div>
-              </div>
-            </div>
+      <div class="card-body">
+        <img [src]="selectedBrowsingLocation().mapUrl">
+      </div>
+
+    <div class="card-footer">
+      <div class="dropdown">
+        <div class="form-group">
+          <div ngbDropdown class="d-inline-block">
+            <button class="btn btn-secondary dropdown-toggle text-left"
+            type="button"
+            id="dropdownMenuButton"
+            ngbDropdownToggle
+            aria-haspopup="true"
+            aria-expanded="false">
+            <img [src]="selectedBrowsingLocation().flagUrl" class="flag" /> {{ selectedBrowsingLocation().name }}
+          </button>
+          <div ngbDropdownMenu aria-labelledby="dropdownMenuButton">
+            <a *ngFor="let browsingLocation of browsingLocations()" class="dropdown-item" (click)="setSelectedBrowsingLocation(browsingLocation)">
+              <img [src]="browsingLocation.flagUrl" class="flag" />
+              <span *ngIf="browsingLocation.name != 'The United States'">
+                <span class="not-browsing-from-disabled">
+                  {{ browsingLocation.name }}
+                </span>
+              </span>
+              <span *ngIf="browsingLocation.name == 'The United States'">
+                {{ browsingLocation.name }}
+              </span>
+            </a>
           </div>
         </div>
       </div>
+    </div><!-- .dropdown -->
+
     </div>
   </div>
+</div>
 </div>
 
 <div class="row equal-height" *ngIf="showMETMessage"> <!-- show this row after user has gone through "Earn Met" flow -->

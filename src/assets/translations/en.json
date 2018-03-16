@@ -10,6 +10,7 @@
     "WALLET": "Wallet"
   },
   "DASHBOARD": {
-    "GB_REMAINING": "GB Remaining"
+    "GB_REMAINING": "GB Remaining",
+    "PLEASE_ADD": "Please add some OCT to connect"
   }
 }

@@ -10,3 +10,26 @@
 .panda{@include breakpoint-md {display:none;}}
 .met-balance{opacity: .4;div{pointer-events: none;}}
 .browsing-from-disabled { color: rgba(0,0,0, 0.3); }
+
+// The amount that shows now much GB you have left
+.gb-remaining-card {
+  .gb-amount {
+    color: black;
+    font-size: 21px;
+    span {
+      font-size: 60px;
+    }
+  }
+}
+
+.connection-status-card {
+
+}
+
+.browsing-location-card {
+  .dropdown-toggle::after {
+    float: right;
+    margin-top: 6px;
+  }
+
+}
