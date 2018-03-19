@@ -11,7 +11,10 @@ export class SettingsComponent implements OnInit {
 
   constructor() {
     console.log('todo: get settings');
-    this.settings = {};
+    this.settings = {
+      LAUNCH_STARTUP: true,
+      CONNECT_ON_STARTUP: false
+    };
   }
 
   ngOnInit() {

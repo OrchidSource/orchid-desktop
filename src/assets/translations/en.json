@@ -11,6 +11,17 @@
   },
   "DASHBOARD": {
     "GB_REMAINING": "GB Remaining",
-    "PLEASE_ADD": "Please add some OCT to connect"
+    "PLEASE_ADD": "Please add some OCT to connect",
+    "CONNECTED": "Connected to Orchid network",
+    "NOT_CONNECTED": "Not connected"
+  },
+  "SETTINGS": {
+    "LAUNCH_STARTUP": "Launch on startup",
+    "CONNECT_ON_STARTUP": "Connect on startup",
+    "EXIT_NODE": "Run Orchid as exit node",
+    "RELAY_NODE": "Run Orchid as relay node",
+    "SOURCE_NODE": "Run Orchid as source node",
+    "BROWSERS_ONLY": "Web browsers only",
+    "NATIVE_CURRENCY": "Native currency"
   }
 }

@@ -4,7 +4,11 @@
 
  // colors
 
- $primary: $brand-primary;
+$primary: $brand-primary;
+
+// bootstrap "theme" colors
+$success: #5CB85C;
+$danger: #E3601F;
 
 // FONTS
 
@@ -22,6 +26,9 @@ $h4-font-size: 18px;
 $btn-border-radius: 100px;
 $btn-border-radius-lg: 100px;
 $btn-border-radius-sm: 100px;
+
+// try to remove focus drop shadow, which looks weird
+$input-btn-focus-box-shadow: none;
 
 // cards
 $card-border-radius: 10px;

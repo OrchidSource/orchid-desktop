@@ -18,11 +18,10 @@
       </div>
 
       <div class="card-footer">
-          <a class="btn btn-primary" href="#" role="button" [routerLink]="[ '/met-manager', {outlets: { 'met-manager-modal': 'purchase-how-to' } }]">Fund Account</a>
+        <a class="btn btn-primary" href="#" role="button" [routerLink]="[ '/met-manager', {outlets: { 'met-manager-modal': 'purchase-how-to' } }]">Fund Account</a>
       </div>
     </div>
   </div>
-
 
   <div class="col-lg-4 col-md-6 col-sm-12 last">
     <div class="card dashboard-card connection-status-card">
@@ -32,16 +31,19 @@
       </div>
 
       <div class="card-body" ng-controller="Ctrl" ng-app="sec-val">
-        <h3 class="text-center">{{time | date: 'HH:mm:ss'}}</h3>
+        <div class="clock">
+          <img src="assets/imgs/clock-black.svg"/>
+          {{time | date: 'HH:mm:ss'}}
+        </div>
       </div>
 
       <div class="card-footer">
-          <div *ngIf="!connected">
-            Not connected
-          </div>
-          <div *ngIf="connected">
-            Connected to Orchid Network
-          </div>
+        <div *ngIf="connected" class="card-connected" >
+          <span [translate]>DASHBOARD.CONNECTED</span>
+        </div>
+        <div *ngIf="!connected"class="card-not-connected">
+          <span [translate]>DASHBOARD.NOT_CONNECTED</span>
+        </div>
       </div>
     </div>
   </div>
@@ -57,34 +59,30 @@
         <img [src]="selectedBrowsingLocation().mapUrl" class="browsing-location-map">
       </div>
 
-    <div class="card-footer">
-      <div class="dropdown">
-        <div class="form-group">
-          <div ngbDropdown class="d-inline-block">
-            <button class="btn btn-secondary dropdown-toggle text-left"
-            type="button"
-            id="dropdownMenuButton"
-            ngbDropdownToggle
-            aria-haspopup="true"
-            aria-expanded="false">
-            <img [src]="selectedBrowsingLocation().flagUrl" class="flag" /> {{ selectedBrowsingLocation().name }}
-          </button>
-          <div ngbDropdownMenu aria-labelledby="dropdownMenuButton">
-            <a *ngFor="let browsingLocation of browsingLocations()" class="dropdown-item" (click)="setSelectedBrowsingLocation(browsingLocation)">
-              <img [src]="browsingLocation.flagUrl" class="flag" />
-              <span *ngIf="browsingLocation.name != 'The United States'">
-                <span class="not-browsing-from-disabled">
-                  {{ browsingLocation.name }}
-                </span>
-              </span>
-              <span *ngIf="browsingLocation.name == 'The United States'">
+      <div class="card-footer">
+        <div ngbDropdown class="d-inline-block">
+          <button class="btn btn-block btn-outline"
+          type="button"
+          id="dropdownMenuButton"
+          ngbDropdownToggle
+          aria-haspopup="true"
+          aria-expanded="false">
+          <img [src]="selectedBrowsingLocation().flagUrl" class="flag" /> {{ selectedBrowsingLocation().name }}
+        </button>
+        <div ngbDropdownMenu aria-labelledby="dropdownMenuButton">
+          <a *ngFor="let browsingLocation of browsingLocations()" class="dropdown-item" (click)="setSelectedBrowsingLocation(browsingLocation)">
+            <img [src]="browsingLocation.flagUrl" class="flag" />
+            <span *ngIf="browsingLocation.name != 'The United States'">
+              <span class="not-browsing-from-disabled">
                 {{ browsingLocation.name }}
               </span>
-            </a>
-          </div>
+            </span>
+            <span *ngIf="browsingLocation.name == 'The United States'">
+              {{ browsingLocation.name }}
+            </span>
+          </a>
         </div>
-      </div>
-    </div><!-- .dropdown -->
+      </div><!-- .dropdown -->
 
     </div>
   </div>
@@ -136,26 +134,26 @@
   </div>
 </div>
 
-  <div class="row equal-height earn-chi">
+<div class="row equal-height earn-chi">
   <div class="col-lg-4 col-md-12 col-sm-12 offset-lg-4">
     <a class="btn btn-lg btn-second-primary next-button" (click)='helpPO.show($event)'>Earn Tokens</a>
     <pop-over #helpPO [my]="'top left'" [at]="'center bottom'"  [anchor-to]="'true'" [content-class]="'po-top'">
-<div class="message">
+      <div class="message">
         Soon you will be able to earn ORCHID tokens and help to create a free and openly accessible internet.<br /><br />
         Sign up below and be among the first to participate.<br /><br />
         <form class="form-inline">
-    <div class="form-group">
-      <input type="email" class="form-control" id="email-signup" name="email-signup" placeholder="name@example.com">
-    </div>&nbsp;
-    <button type="submit" class="btn btn-primary">alert me</button>
-  </form>
-</div>
+          <div class="form-group">
+            <input type="email" class="form-control" id="email-signup" name="email-signup" placeholder="name@example.com">
+          </div>&nbsp;
+          <button type="submit" class="btn btn-primary">alert me</button>
+        </form>
+      </div>
     </pop-over>
 
     <pop-over #fundPO [my]="'top left'" [at]="'right middle'"  [anchor-to]="'true'" [content-class]="'po-right'">
-<div class="message">
+      <div class="message">
         Coming Soon
-</div>
+      </div>
     </pop-over>
 
   </div>

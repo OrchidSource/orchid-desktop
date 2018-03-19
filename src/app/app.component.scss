@@ -103,7 +103,8 @@ $sidebar-padding: 30px;
 
   /* holds the navigation links */
   .sidebar-links {
-    height: calc(100vh - 168px);
+    height: calc(100vh - 204px);
+    position:relative;
     font-size: 13px;
     padding: 0;
     @include minimized-breakpoint {
@@ -147,14 +148,19 @@ $sidebar-padding: 30px;
 
     .dropup {
       position: absolute;
-      bottom: 60px;
+      // bottom: 36px;
+      bottom: 0px;
       padding: 0;
       width: 100%;
       background-color: $navbar-background;
-      
+
       .btn {
         width: 100%;
         border: 0;
+        border-radius: 0px;
+        // &:hover, &:focus {
+        //   border-radius: 0px !important;
+        // }
       }
     }
   }

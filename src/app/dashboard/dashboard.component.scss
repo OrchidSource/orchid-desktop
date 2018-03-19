@@ -1,3 +1,6 @@
+@import '../../assets/scss/variables';
+@import '../../assets/scss/bootstrap_overrides';
+
 @mixin minimized-breakpoint(){
  @media (max-width: 575px) { @content; }
 }
@@ -24,15 +27,45 @@
 
 .connection-status-card {
 
+  .clock {
+    color: black;
+    text-align: center;
+    font-size: 38px;
+    margin-top: 58px;
+  }
+
+  .card-footer {
+    font-size: 12px;
+    text-align: center;
+    .card-connected {
+      color: $success;
+
+    }
+    .card-not-connected {
+      color: $danger;
+    }
+  }
 }
 
 .browsing-location-card {
   .browsing-location-map {
     width: 100%;
+    max-height: 120px
   }
 
   .dropdown-toggle::after {
     float: right;
     margin-top: 6px;
+  }
+
+  .dropdown {
+    width: 100%;
+  }
+
+  .btn {
+    &:focus {
+      box-shadow: none;
+      color: inherit;
+    }
   }
 }

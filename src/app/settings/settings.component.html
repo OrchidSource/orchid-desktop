@@ -2,12 +2,45 @@
   <div class="card-body">
     <div class="setting-item">
       <span [translate]>SETTINGS.LAUNCH_STARTUP</span>
-      <input type="checkbox" [(ngModel)]="settings.LAUNCH_STARTUP">
+      <ui-toggle [(isSelected)]="settings.LAUNCH_STARTUP"></ui-toggle>
     </div>
 
     <div class="setting-item">
       <span [translate]>SETTINGS.CONNECT_ON_STARTUP</span>
-      <input type="checkbox" [(ngModel)]="settings.CONNECT_ON_STARTUP">
+      <ui-toggle [(isSelected)]="settings.CONNECT_ON_STARTUP"></ui-toggle>
+    </div>
+
+    <div class="setting-item">
+      <span [translate]>SETTINGS.EXIT_NODE</span>
+      <ui-toggle [(isSelected)]="settings.EXIT_NODE"></ui-toggle>
+    </div>
+
+    <div class="setting-item">
+      <span [translate]>SETTINGS.RELAY_NODE</span>
+      <ui-toggle [(isSelected)]="settings.RELAY_NODE"></ui-toggle>
+    </div>
+
+    <div class="setting-item">
+      <span [translate]>SETTINGS.SOURCE_NODE</span>
+      <ui-toggle [(isSelected)]="settings.SOURCE_NODE"></ui-toggle>
+    </div>
+  </div>
+</div>
+
+<div class="card">
+  <div class="card-body">
+    <div class="setting-item">
+      <span [translate]>SETTINGS.BROWSERS_ONLY</span>
+      <ui-toggle [(isSelected)]="settings.BROWSERS_ONLY"></ui-toggle>
+    </div>
+  </div>
+</div>
+
+<div class="card">
+  <div class="card-body">
+    <div class="setting-item">
+      <span [translate]>SETTINGS.NATIVE_CURRENCY</span>
+      <ui-toggle [(isSelected)]="settings.NATIVE_CURRENCY"></ui-toggle>
     </div>
   </div>
 </div>

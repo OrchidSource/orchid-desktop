@@ -28,6 +28,7 @@ import { PopoverModule } from 'ng2-pop-over';
 import { NgIf } from '@angular/common';
 import { SettingsComponent } from './settings/settings.component';
 import { WalletComponent } from './wallet/wallet.component';
+import { UiModule } from './ui/ui.module';
 
 // Indicates where the translation files live
 export function HttpLoaderFactory(httpClient: HttpClient) {
@@ -52,8 +53,8 @@ export function HttpLoaderFactory(httpClient: HttpClient) {
     AppRoutingModule,
     BrowserModule,
     ChartsModule,
-    HttpClientModule,
     FormsModule,
+    HttpClientModule,
     NgbModule.forRoot(),
     PopoverModule,
     ReactiveFormsModule,
@@ -63,7 +64,8 @@ export function HttpLoaderFactory(httpClient: HttpClient) {
         useFactory: HttpLoaderFactory,
         deps: [HttpClient]
       }
-    })
+    }),
+    UiModule
   ],
   providers: [
     ConfigService,
