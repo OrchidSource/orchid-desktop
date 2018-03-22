@@ -191,13 +191,17 @@ form {
   }
 }
 
-.btn-second-primary:hover {
-  background-color: #ffb335;
-  border-color: #eccb93;
+.btn-primary {
+  &:hover {
+    background-color: $brand-primary-hover;
+  }
+  &:active {
+    background-color: $brand-primary-clicked;
+  }
 }
 
-.btn-second-primary {
-  color: #fff !important;
+.btn-secondary {
+  color: white;
 }
 
 .btn-lg {
@@ -269,7 +273,7 @@ form {
 .dashboard-content {
 
   background-color: $content-background;
-  
+
   .row.equal-height {
     padding: 0 15px;
     margin-left: 0;
@@ -302,13 +306,8 @@ form {
 
 
   .dashboard-card {
-    // padding-bottom: 10px;
-      // border-radius: 10px;
 
     .card-header {
-      // border-radius: 10px 10px 0 0;
-      // padding: 15px 10px 15px 10px;
-      // font-family: OpenSans-Semibold;
       text-transform: uppercase;
       font-family: OpenSans;
       font-size: 12px;
@@ -348,6 +347,7 @@ form {
       }
     }
 
+    // needed?
     .show {
       .btn-secondary.dropdown-toggle {
         background-color: transparent;
@@ -358,24 +358,6 @@ form {
         width: 100%;
       }
     }
-
-    // .card-action-container {
-    //   padding: 5px 15px;
-    //   display: flex;
-    //   flex-direction: column;
-    //
-    //   .btn,
-    //   .btn-group,
-    //   .dropdown,
-    //   input {
-    //     width: 100%;
-    //   }
-    //
-    //   h3 {
-    //     font-size: 36px;
-    //     letter-spacing: normal;
-    //   }
-    // }
 
     .card-content {
       width: 100%;

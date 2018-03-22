@@ -1,0 +1,46 @@
+.wallet-top-area {
+  display: flex;
+  flex-direction: row;
+  justify-content: space-between;
+  padding-bottom: 46px;
+
+  .wallet-balance {
+    width: 33%;
+    text-align: center;
+    text-transform: uppercase;
+    .wallet-balance-number {
+      font-size: 40px;
+    }
+  }
+
+  .wallet-actions {
+    width: 66%;
+
+    .wallet-backup {
+      > .btn {
+        float: right;
+        width: 65%;
+        margin-bottom: 15px; //???
+        border-top-right-radius: 0;
+        border-bottom-right-radius: 0;
+      }
+    }
+
+    .wallet-button-row {
+      width: 100%;
+      display: flex;
+      flex-direction: row;
+      justify-content: space-around;
+      .btn {
+        width: 30%;
+      }
+    }
+  }
+}
+
+.wallet-transactions {
+  .wallet-transaction-head {
+    height: 106px;
+    background-color: white;
+  }
+}

@@ -13,7 +13,17 @@
     "GB_REMAINING": "GB Remaining",
     "PLEASE_ADD": "Please add some OCT to connect",
     "CONNECTED": "Connected to Orchid network",
-    "NOT_CONNECTED": "Not connected"
+    "NOT_CONNECTED": "Not connected",
+    "TOTAL_EARNINGS": "Total earnings",
+    "EARN_MORE": "Earn more"
+  },
+  "WALLET": {
+    "CURRENT_BALANCE": "Current balance",
+    "PLEASE_BACKUP": "Please backup your wallet",
+    "SHARE": "Share Orchid",
+    "SEND": "Send",
+    "RECEIVE": "Receive",
+    "HISTORY": "Transaction History"
   },
   "SETTINGS": {
     "LAUNCH_STARTUP": "Launch on startup",

@@ -87,51 +87,22 @@
     </div>
   </div>
 </div>
+<div class="col-sm-8"><!--  *ngIf="showMETMessage" ...show this row after user has gone through "Earn Met" flow -->
+  <div class="card dashboard-card">
+    <div class="card-body">
+      <div [translate]>DASHBOARD.TOTAL_EARNINGS</div>
+      <div class="card-content h-80 justify-content-end"><img src="assets/imgs/chart-placeholder.svg" style="max-height: 100px"></div>
+    </div>
+  </div>
 </div>
-
-<div class="row equal-height" *ngIf="showMETMessage"> <!-- show this row after user has gone through "Earn Met" flow -->
-  <div class="col-sm-4">
-    <div class="card dashboard-card">
-      <div class="card-header">
-        <h4 class="card-title">Usage Summary</h4>
-        <span class="card-help"><a href="#" class=""><span class="fa fa-question-circle"></span></a></span>
-      </div>
-      <div class="h-100 card-block justify-content-end">
-        <div class="card-content h-80 justify-content-end"><img src="assets/imgs/chart-placeholder.svg"><hr/></div>
-        <div class="card-action-container h-20 justify-content-end">
-          <span style="float: left;">65%</span><span style="float: right;">43%</span>
-        </div>
-      </div>
+<div class="col-sm-4">
+  <div class="card dashboard-card">
+    <div class="card-body">
+      LOREM etc.
     </div>
   </div>
-
-  <div class="col-sm-4">
-    <div class="card dashboard-card">
-      <div class="card-header">
-        <h4 class="card-title">Bandwidth</h4>
-        <span class="card-help"><a href="#" class=""><span class="fa fa-question-circle"></span></a></span>
-      </div>
-      <div class="h-100 card-block justify-content-end">
-        <div class="card-content h-80 justify-content-end"><img src="assets/imgs/ograph-placeholder.svg"></div>
-        <div class="card-action-container h-20 justify-content-end">
-          <strong>Usage</strong><br />How much bandwidth
-        </div>
-      </div>
-    </div>
-  </div>
-
-  <div class="col-sm-4">
-    <div class="card dashboard-card">
-      <div class="card-header"><h4 class="card-title">ORCHID tokens Earned</h4><span class="card-help"><a href="#" class=""><span class="fa fa-question-circle"></span></a></span></div>
-      <div class="h-100 card-block justify-content-end">
-        <div class="card-content h-80 justify-content-end"><img src="assets/imgs/bgraph-placeholder.svg"></div>
-        <div class="card-action-container h-20 justify-content-end">
-          <strong>ORCHID tokens Earned</strong><br />ORCHID tokens earned over time
-        </div>
-      </div>
-
-    </div>
-  </div>
+  <div class="btn btn-secondary" [translate] style="margin-bottom: 25px;">DASHBOARD.EARN_MORE</div>
+</div>
 </div>
 
 <div class="row equal-height earn-chi">
