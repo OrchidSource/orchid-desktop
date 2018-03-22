@@ -29,6 +29,7 @@ import { NgIf } from '@angular/common';
 import { SettingsComponent } from './settings/settings.component';
 import { WalletComponent } from './wallet/wallet.component';
 import { UiModule } from './ui/ui.module';
+import { MainNavigationComponent } from './main-navigation/main-navigation.component';
 
 // Indicates where the translation files live
 export function HttpLoaderFactory(httpClient: HttpClient) {
@@ -47,7 +48,8 @@ export function HttpLoaderFactory(httpClient: HttpClient) {
     SellHowToComponent,
     PurchaseStartComponent,
     SettingsComponent,
-    WalletComponent
+    WalletComponent,
+    MainNavigationComponent
   ],
   imports: [
     AppRoutingModule,

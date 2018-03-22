@@ -1,43 +1,6 @@
 <div id="electron-titlebar" class="drag"><img src="assets/imgs/h-logo-white.svg" style="height:18px;margin-right:10px;vertical-align:middle;"> <span [translate]="'SIDEBAR.ACCESS'"></span></div>
 
+<!-- maybe this belongs in main-navigation? -->
 <router-outlet name="modal"></router-outlet>
 
-<div id="wrapper">
-  <div id="sidebar-wrapper">
-    <div>
-      <div class="connect-container">
-        <div class="text-center connect" [ngClass]="{ 'connect-on' : connected }" (click)="toggleOnOff()">
-          <img src="assets/imgs/button-connected.svg" [hidden]="!connected">
-          <img src="assets/imgs/button-not-connected.svg" [hidden]="connected">
-          <button>{{ getOnOffTranslationKey() | translate }}</button>
-        </div>
-      </div>
-
-      <div class="sidebar-links">
-        <a routerLink="/dashboard" routerLinkActive="active">
-          <img src="assets/imgs/dashboard.svg"/> <span [translate]>SIDEBAR.DASHBOARD</span>
-        </a>
-        <a routerLink="/wallet" routerLinkActive="active">
-          <span [translate]>SIDEBAR.WALLET</span>
-        </a>
-        <a routerLink="/settings" routerLinkActive="active">
-          <span [translate]="'SIDEBAR.SETTINGS'"></span>
-        </a>
-
-        <div ngbDropdown placement="top" class="d-inline-block dropup">
-          <button class="btn btn-outline-primary" id="languageSelect" ngbDropdownToggle>{{ selectedLanguage.native }}</button>
-          <div ngbDropdownMenu aria-labelledby="languageSelect">
-            <button *ngFor="let language of LANGUAGES" class="dropdown-item" (click)="languageSelected(language.code)">{{ language.native }}</button>
-          </div>
-        </div>
-      </div>
-    </div>
-  </div>
-  <!-- #sidebar-wrapper -->
-
-  <div class="col dashboard-content">
-    <router-outlet></router-outlet>
-  </div>
-  <!-- .dashboard-content-->
-</div>
-<!-- #wrapper -->
+<router-outlet></router-outlet>

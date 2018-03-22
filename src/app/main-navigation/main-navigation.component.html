@@ -1,0 +1,39 @@
+<div id="wrapper">
+  <div id="sidebar-wrapper">
+    <div>
+      <div class="connect-container">
+        <div class="text-center connect" [ngClass]="{ 'connect-on' : connected }" (click)="toggleOnOff()">
+          <img src="assets/imgs/button-connected.svg" [hidden]="!connected">
+          <img src="assets/imgs/button-not-connected.svg" [hidden]="connected">
+          <button>{{ getOnOffTranslationKey() | translate }}</button>
+        </div>
+      </div>
+
+      <div class="sidebar-links">
+        <a routerLink="/main/dashboard" routerLinkActive="active">
+          <img src="assets/imgs/dashboard.svg"/> <span [translate]>SIDEBAR.DASHBOARD</span>
+        </a>
+        <a routerLink="/main/wallet" routerLinkActive="active">
+          <span [translate]>SIDEBAR.WALLET</span>
+        </a>
+        <a routerLink="/main/settings" routerLinkActive="active">
+          <span [translate]="'SIDEBAR.SETTINGS'"></span>
+        </a>
+
+        <div ngbDropdown placement="top" class="d-inline-block dropup">
+          <button class="btn btn-outline-primary" id="languageSelect" ngbDropdownToggle>{{ selectedLanguage.native }}</button>
+          <div ngbDropdownMenu aria-labelledby="languageSelect">
+            <button *ngFor="let language of LANGUAGES" class="dropdown-item" (click)="languageSelected(language.code)">{{ language.native }}</button>
+          </div>
+        </div>
+      </div>
+    </div>
+  </div>
+  <!-- #sidebar-wrapper -->
+
+  <div class="col dashboard-content">
+    <router-outlet></router-outlet>
+  </div>
+  <!-- .dashboard-content-->
+</div>
+<!-- #wrapper -->

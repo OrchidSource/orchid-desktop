@@ -11,12 +11,31 @@ import { PurchasePaymentComponent } from './purchase/purchase-payment/purchase-p
 import { PurchaseConfirmationComponent } from './purchase/purchase-confirmation/purchase-confirmation.component';
 import { PurchaseHowToComponent } from './purchase/purchase-how-to/purchase-how-to.component';
 import { SellHowToComponent } from './sell/sell-how-to/sell-how-to.component';
+import { MainNavigationComponent } from './main-navigation/main-navigation.component';
 
 const routes: Routes = [
   {
     path: '',
-    redirectTo: 'dashboard',
+    redirectTo: 'main/dashboard',
     pathMatch: 'full'
+  },
+  {
+    path: 'main',
+    component: MainNavigationComponent,
+    children: [
+      {
+        path: 'dashboard',
+        component: DashboardComponent
+      },
+      {
+        path: 'wallet',
+        component: WalletComponent
+      },
+      {
+        path: 'settings',
+        component: SettingsComponent
+      },
+    ]
   },
   {
     path: 'dashboard',
@@ -65,9 +84,9 @@ const routes: Routes = [
     path: 'help',
     component: HelpComponent
   },
-  {
+{
     path: '**',
-    redirectTo: 'dashboard',
+    redirectTo: 'main/dashboard',
     pathMatch: 'full'
   }
 ];
