@@ -1,0 +1,44 @@
+.first-launch-container {
+  height: calc(100vh - 36px); // full height minus topbar
+  display: flex;
+  flex-direction: row;
+
+  .next-prev {
+    width: 80px;
+  }
+
+  .first-launch-content {
+
+    width: calc(100% - 160px);
+    position: relative;
+
+    .launch-content {
+      display: flex;
+      flex-direction: row;
+      height: calc(100% - 80px);
+
+      .first-launch-image {
+        width: 50%;
+        background-color: gray;
+      }
+      .first-launch-text {
+        width: 50%;
+        background-color: purple;
+      }
+
+    }
+    .first-launch-buttons {
+      position: absolute;
+      bottom: 0;
+      right: 0;
+      width: 50%;
+      .btn {
+        width: 180px;
+      }
+    }
+
+    .first-launch-dots {
+      text-align: center;
+    }
+  }
+}

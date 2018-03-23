@@ -1,4 +1,11 @@
 {
+  "FIRST_LAUNCH": {
+    "TEXT_1": "Welcome to the Orchid network, where the internet belongs to US",
+    "TEXT_2": "Connect to the entire internet safely and securely from anywhere in the world. Your data is your own, not somebody else’s",
+    "TEXT_3": "Save, share, trade or exchange Orchid tokens for local or digital currency or to purchase bandwidth from other users on the Orchid network.",
+    "LEARN_BUTTON": "Learn more",
+    "GET_STARTED_BUTTON": "Get started"
+  },
   "STATUSES": {
     "CONNECTED": "Connected",
     "DISCONNECTED": "Disconnected"

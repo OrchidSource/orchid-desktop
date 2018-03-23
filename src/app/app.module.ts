@@ -30,6 +30,7 @@ import { SettingsComponent } from './settings/settings.component';
 import { WalletComponent } from './wallet/wallet.component';
 import { UiModule } from './ui/ui.module';
 import { MainNavigationComponent } from './main-navigation/main-navigation.component';
+import { FirstLaunchComponent } from './first-launch/first-launch.component';
 
 // Indicates where the translation files live
 export function HttpLoaderFactory(httpClient: HttpClient) {
@@ -49,7 +50,8 @@ export function HttpLoaderFactory(httpClient: HttpClient) {
     PurchaseStartComponent,
     SettingsComponent,
     WalletComponent,
-    MainNavigationComponent
+    MainNavigationComponent,
+    FirstLaunchComponent
   ],
   imports: [
     AppRoutingModule,

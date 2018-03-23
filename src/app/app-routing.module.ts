@@ -12,6 +12,7 @@ import { PurchaseConfirmationComponent } from './purchase/purchase-confirmation/
 import { PurchaseHowToComponent } from './purchase/purchase-how-to/purchase-how-to.component';
 import { SellHowToComponent } from './sell/sell-how-to/sell-how-to.component';
 import { MainNavigationComponent } from './main-navigation/main-navigation.component';
+import { FirstLaunchComponent } from './first-launch/first-launch.component';
 
 const routes: Routes = [
   {
@@ -38,16 +39,8 @@ const routes: Routes = [
     ]
   },
   {
-    path: 'dashboard',
-    component: DashboardComponent
-  },
-  {
-    path: 'wallet',
-    component: WalletComponent
-  },
-  {
-    path: 'settings',
-    component: SettingsComponent
+    path: 'first-launch',
+    component: FirstLaunchComponent
   },
   {
     path: 'met-manager',

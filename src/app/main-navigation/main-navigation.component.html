@@ -19,6 +19,9 @@
         <a routerLink="/main/settings" routerLinkActive="active">
           <span [translate]="'SIDEBAR.SETTINGS'"></span>
         </a>
+        <a routerLink="/first-launch" routerLinkActive="active">
+          <span>first launch</span>
+        </a>
 
         <div ngbDropdown placement="top" class="d-inline-block dropup">
           <button class="btn btn-outline-primary" id="languageSelect" ngbDropdownToggle>{{ selectedLanguage.native }}</button>

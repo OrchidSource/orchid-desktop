@@ -1,0 +1,42 @@
+<div class="first-launch-container">
+  <div (click)="page = page - 1" class="next-prev">
+    <div *ngIf="page != 1">PREV</div>
+  </div>
+  <div class="first-launch-content">
+    <div class="launch-content launch-1" *ngIf="page === 1">
+      <div class="first-launch-image">
+        IMG1
+      </div>
+      <div class="first-launch-text">
+        <div [translate]>FIRST_LAUNCH.TEXT_1</div>
+      </div>
+    </div>
+
+    <div class="launch-content launch-2" *ngIf="page === 2">
+      <div class="first-launch-image">
+        IMG2
+      </div>
+      <div class="first-launch-text">
+        <div [translate]>FIRST_LAUNCH.TEXT_2</div>
+      </div>
+    </div>
+
+    <div class="launch-content launch-3" *ngIf="page === 3">
+      <div class="first-launch-image">
+        IMG3
+      </div>
+      <div class="first-launch-text">
+        <div [translate]>FIRST_LAUNCH.TEXT_3</div>
+      </div>
+    </div>
+
+    <div class="first-launch-buttons">
+      <span class="btn btn-outline" [translate]>FIRST_LAUNCH.LEARN_BUTTON</span>
+      <span class="btn btn-primary" [translate]>FIRST_LAUNCH.GET_STARTED_BUTTON</span>
+    </div>
+    <div class="first-launch-dots">DOTS: {{ page }}</div>
+  </div>
+  <div (click)="page = page + 1" class="next-prev">
+    <div *ngIf="page < 3">NEXT</div>
+  </div>
+</div>
