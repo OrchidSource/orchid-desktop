@@ -4,6 +4,7 @@ import { Routes, RouterModule } from '@angular/router';
 import { DashboardComponent } from './dashboard/dashboard.component';
 import { SettingsComponent } from './settings/settings.component';
 import { WalletComponent } from './wallet/wallet.component';
+import { WalletSetupBeginComponent } from './wallet/wallet-setup-begin/wallet-setup-begin.component';
 import { MetManagerComponent } from './met-manager/met-manager.component';
 import { HelpComponent } from './help/help.component';
 import { PurchaseStartComponent } from './purchase/purchase-start/purchase-start.component';
@@ -41,6 +42,11 @@ const routes: Routes = [
   {
     path: 'first-launch',
     component: FirstLaunchComponent
+  },
+  {
+    path: 'wallet-setup-begin',
+    component: WalletSetupBeginComponent,
+    outlet: 'modal'
   },
   {
     path: 'met-manager',

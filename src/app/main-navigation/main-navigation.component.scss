@@ -1,7 +1,6 @@
 @import '../../assets/scss/variables';
 @import '../../assets/scss/mixins';
 
-
 $sidebar-width: 200px;
 $sidebar-padding: 30px;
 
@@ -15,7 +14,7 @@ $sidebar-padding: 30px;
   position: fixed;
   height: 100%;
   overflow-y: hidden;
-  z-index: 1000;
+  // z-index: 1000;
   transition: all 0.4s ease 0s;
 
   @include minimized-breakpoint {
@@ -136,9 +135,6 @@ $sidebar-padding: 30px;
         border: 0;
         border-radius: 0px;
         color: $gray-light;
-        // &:hover, &:focus {
-        //   border-radius: 0px !important;
-        // }
       }
     }
   }

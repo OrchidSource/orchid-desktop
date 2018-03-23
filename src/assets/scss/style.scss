@@ -270,7 +270,10 @@ form {
   }
 }
 /* Dashboard */
+// todo: this belongs in main-navigation.scss
 .dashboard-content {
+  height: 100vh;
+  overflow-y: scroll;
 
   background-color: $content-background;
 
@@ -279,8 +282,6 @@ form {
     margin-left: 0;
     margin-right: 0;
   }
-
-  height: 100vh;
 
   .last {
     .tooltip {
@@ -300,8 +301,7 @@ form {
 
   /*all cards*/
   .card {
-    box-shadow: 0 2px 4px 0 rgba(35,36,37,0.30);
-    // border: 0;
+    box-shadow: $default-shadow;
   }
 
 
@@ -468,43 +468,36 @@ input[type="number"]::-webkit-inner-spin-button {
     padding-bottom: 0;
   }
 }
-/* some modal utility things
-*/
-.modal {
-  // We use the h1 for the modal title; this brings it closer to the top.
-  .modal-body {
-    padding-top: 0;
 
-    .steps-row {
-      margin-top: 20px;
-    }
+/*
+ * The style for components put in the "modal" outlet
+ */
+.routed-modal-container {
+  height: 100%;
+  width: 100%;
+  position: fixed;
+  z-index: 10;
+  display: inline-flex;
+  background-color: $background-transparency;
 
-    .payment-container {
-      margin-top: 30px;
-    }
+  /** The modal body */
+  .routed-modal {
+    background-color: white;
+    border-radius: $card-border-radius;
 
-    h1 {
-      margin-top: 0;
-      text-align: center;
-    }
-
-    label {
-      margin-bottom: 0.2rem;
-    }
-
-    .input-group {
-      input[type='number'] {
-        height: 52px;
-      }
-
-      .input-group-addon {
-        width: 56px;
-      }
-    }
+    // override these to change the size
+    width: 50%;
+    height: 50%;
+    margin: auto auto;
+    box-shadow: $default-shadow;
   }
-  // put on the modal-title if you want it to be as small as possible; e.g. if you just want enough space for a "close" button
-  .modal-header-sm {
-    padding: 10px 3px 0;
-    border: 0;
+}
+
+// Style for modal dialogs with left- and right-hand sides
+.routed-modal.divided-dialog {
+  display: flex;
+  > div {
+    width: 50%;
+    padding: 15px;
   }
 }

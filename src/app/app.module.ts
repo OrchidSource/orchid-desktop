@@ -28,6 +28,7 @@ import { PopoverModule } from 'ng2-pop-over';
 import { NgIf } from '@angular/common';
 import { SettingsComponent } from './settings/settings.component';
 import { WalletComponent } from './wallet/wallet.component';
+import { WalletSetupBeginComponent } from './wallet/wallet-setup-begin/wallet-setup-begin.component';
 import { UiModule } from './ui/ui.module';
 import { MainNavigationComponent } from './main-navigation/main-navigation.component';
 import { FirstLaunchComponent } from './first-launch/first-launch.component';
@@ -51,7 +52,8 @@ export function HttpLoaderFactory(httpClient: HttpClient) {
     SettingsComponent,
     WalletComponent,
     MainNavigationComponent,
-    FirstLaunchComponent
+    FirstLaunchComponent,
+    WalletSetupBeginComponent
   ],
   imports: [
     AppRoutingModule,
