@@ -8,9 +8,18 @@
   }
 }
 
+$minimize-breakpoint: 575px;
+
 @mixin minimized-breakpoint() {
-  @media (max-width: 575px) {
+  @media (max-width: $minimize-breakpoint) {
     @content;
+  }
+}
+
+/** Add to hide when below the minimize breakpoint */
+@mixin hide-minimized() {
+  @media (max-width: $minimize-breakpoint) {
+    display: none;
   }
 }
 

@@ -4,6 +4,18 @@
 $sidebar-width: 200px;
 $sidebar-padding: 30px;
 
+#wrapper {
+  padding-left: 200px;
+  width: 100%;
+  display: flex;
+  flex-direction: column;
+  min-height: 100vh;
+  @include minimized-breakpoint {
+    padding-left: 100px;
+  }
+}
+
+
 /* side nav */
 #sidebar-wrapper {
   margin-left: -$sidebar-width;
@@ -14,23 +26,21 @@ $sidebar-padding: 30px;
   position: fixed;
   height: 100%;
   overflow-y: hidden;
-  // z-index: 1000;
   transition: all 0.4s ease 0s;
 
   @include minimized-breakpoint {
-    margin-left: -100px;
-    left: 100px;
-    width: 100px;
+    height: 45px;
+    width: 100%;
   }
 
   /* holds the connections stuff at the top */
   .connect-container {
+    @include hide-minimized();
     padding-top: $sidebar-padding;
     width: 100%;
     height: 168px;
     background-color: $navbar-background;
     color: $navbar-foreground;
-
 
     .connect {
       width: 100%;
@@ -109,6 +119,7 @@ $sidebar-padding: 30px;
         left: 30px;
       }
       span {
+        @include hide-minimized();
         display: inline-block;
         margin-top: 24px;
         margin-left: 64px;
@@ -138,4 +149,14 @@ $sidebar-padding: 30px;
       }
     }
   }
+}
+
+#main-content {
+  height: 100vh;
+  overflow-y: scroll;
+  background-color: $content-background;
+  flex: 0 1;
+  padding-top: 30px;
+  padding-right: 0;
+  padding-left: 0;
 }

@@ -1,0 +1,25 @@
+
+<svg width="12px" height="22px" viewBox="0 0 12 22" version="1.1" xmlns="http://www.w3.org/2000/svg" xmlns:xlink="http://www.w3.org/1999/xlink">
+    <!-- Generator: Sketch 49.1 (51147) - http://www.bohemiancoding.com/sketch -->
+    <desc>Created with Sketch.</desc>
+    <defs>
+        <path d="M6,12.8786797 L-1.93933983,4.93933983 C-2.52512627,4.35355339 -3.47487373,4.35355339 -4.06066017,4.93933983 C-4.64644661,5.52512627 -4.64644661,6.47487373 -4.06066017,7.06066017 L4.93933983,16.0606602 C5.52512627,16.6464466 6.47487373,16.6464466 7.06066017,16.0606602 L16.0606602,7.06066017 C16.6464466,6.47487373 16.6464466,5.52512627 16.0606602,4.93933983 C15.4748737,4.35355339 14.5251263,4.35355339 13.9393398,4.93933983 L6,12.8786797 Z" id="path-1"></path>
+    </defs>
+    <g id="Style-Guides" stroke="none" stroke-width="1" fill="none" fill-rule="evenodd">
+        <g id="ORCHID---Icons" transform="translate(-416.000000, -882.000000)">
+            <g id="Icons/Arrow-left" transform="translate(404.000000, 875.000000)">
+                <g id="Icons/Chevron-down" transform="translate(12.000000, 7.500000)">
+                    <mask id="mask-2" fill="white">
+                        <use xlink:href="#path-1"></use>
+                    </mask>
+                    <use id="Shape" fill="#000000" fill-rule="nonzero" transform="translate(6.000000, 10.500000) rotate(-270.000000) translate(-6.000000, -10.500000) " xlink:href="#path-1"></use>
+                    <g id="Colors/Grey/90%" mask="url(#mask-2)" fill="#212121">
+                        <g transform="translate(-12.000000, -7.500000)" id="Rectangle-2-Copy-6">
+                            <rect x="0" y="0" width="36" height="36"></rect>
+                        </g>
+                    </g>
+                </g>
+            </g>
+        </g>
+    </g>
+</svg>

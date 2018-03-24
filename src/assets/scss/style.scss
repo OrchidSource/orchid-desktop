@@ -209,6 +209,21 @@ form {
   text-transform: uppercase;
 }
 
+/** the button with a gray border */
+.btn-border {
+  color: $gray-light;
+  border-color: $gray-light;
+  &:hover {
+    color: $gray-lighter;
+    border-color: $gray-lighter;
+  }
+  &:active {
+    color: $gray;
+    border-color: $gray;
+  }
+
+}
+
 .row.equal-height {
   display: flex;
   flex-wrap: wrap;
@@ -227,17 +242,6 @@ form {
 .row .col {
   padding-top: 30px;
   padding-bottom: 30px;
-}
-
-#wrapper {
-  padding-left: 200px;
-  width: 100%;
-  display: flex;
-  flex-direction: column;
-  min-height: 100vh;
-  @include minimized-breakpoint {
-    padding-left: 100px;
-  }
 }
 
 
@@ -271,120 +275,6 @@ form {
 }
 /* Dashboard */
 // todo: this belongs in main-navigation.scss
-.dashboard-content {
-  height: 100vh;
-  overflow-y: scroll;
-
-  background-color: $content-background;
-
-  .row.equal-height {
-    padding: 0 15px;
-    margin-left: 0;
-    margin-right: 0;
-  }
-
-  .last {
-    .tooltip {
-      margin-left: -140px;
-
-      .tooltip-inner {
-        &:before {
-          left: 97%;
-        }
-      }
-    }
-  }
-  flex: 0 1;
-  padding-top: 30px;
-  padding-right: 0;
-  padding-left: 0;
-
-  /*all cards*/
-  .card {
-    box-shadow: $default-shadow;
-  }
-
-
-  .dashboard-card {
-
-    .card-header {
-      text-transform: uppercase;
-      font-family: OpenSans;
-      font-size: 12px;
-      color: #757575;
-      line-height: 18px;
-      background-color: $dashboard-card-header-background;
-    }
-
-    .card-block {
-      padding: 0.2rem 0 0;
-
-      p.card-desc {
-        color: $primary-text-color;
-        margin-bottom: -5px;
-      }
-
-      .dropdown-toggle {
-        border: none;
-
-        &:hover {
-          background: none;
-        }
-
-        &:active,
-        &:focus {
-          background-color: transparent;
-          border: none;
-        }
-      }
-    }
-
-    .card-footer {
-      background-color: inherit;
-      padding-bottom: 10px 15px 25px 10px;
-      .btn {
-        width: 100%;
-      }
-    }
-
-    // needed?
-    .show {
-      .btn-secondary.dropdown-toggle {
-        background-color: transparent;
-        border: none;
-      }
-
-      .dropdown-menu {
-        width: 100%;
-      }
-    }
-
-    .card-content {
-      width: 100%;
-      text-align: center;
-      padding: 10px;
-
-      h3 {
-        text-align: center;
-        margin: auto;
-      }
-
-      img {
-        width: 100%;
-      }
-    }
-    color: $secondary-text-color;
-
-    .card-help {
-      position: absolute;
-      top: 10px;
-      right: 10px;
-      img {
-        height: 14px; // ???
-      }
-    }
-  }
-}
 /* End Dashboard Content*/
 .secondary-text {
   color: $secondary-text-color;
@@ -498,6 +388,6 @@ input[type="number"]::-webkit-inner-spin-button {
   display: flex;
   > div {
     width: 50%;
-    padding: 15px;
+    padding: 30px;
   }
 }

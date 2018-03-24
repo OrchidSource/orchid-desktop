@@ -1,19 +1,6 @@
 @import '../../assets/scss/variables';
 @import '../../assets/scss/bootstrap_overrides';
 
-@mixin minimized-breakpoint(){
- @media (max-width: 575px) { @content; }
-}
-@mixin breakpoint-md{
- @media (max-width: 767px) { @content; }
-}
-
-.earn-chi{padding-top: 15px !important;
-  @include breakpoint-md {padding-bottom:40px !important;}}
-.panda{@include breakpoint-md {display:none;}}
-.met-balance{opacity: .4;div{pointer-events: none;}}
-.browsing-from-disabled { color: rgba(0,0,0, 0.3); }
-
 // The amount that shows now much GB you have left
 .gb-remaining-card {
   .gb-amount {
@@ -66,6 +53,111 @@
     &:focus {
       box-shadow: none;
       color: inherit;
+    }
+  }
+}
+
+
+// stuff that goes inside the dashboard
+.row.equal-height {
+  padding: 0 15px;
+  margin-left: 0;
+  margin-right: 0;
+}
+
+.last {
+  .tooltip {
+    margin-left: -140px;
+
+    .tooltip-inner {
+      &:before {
+        left: 97%;
+      }
+    }
+  }
+}
+
+/*all cards*/
+.card {
+  box-shadow: $default-shadow;
+}
+
+.dashboard-card {
+
+  .card-header {
+    text-transform: uppercase;
+    font-family: OpenSans;
+    font-size: 12px;
+    color: #757575;
+    line-height: 18px;
+    background-color: $dashboard-card-header-background;
+  }
+
+  .card-block {
+    padding: 0.2rem 0 0;
+
+    p.card-desc {
+      color: $primary-text-color;
+      margin-bottom: -5px;
+    }
+
+    .dropdown-toggle {
+      border: none;
+
+      &:hover {
+        background: none;
+      }
+
+      &:active,
+      &:focus {
+        background-color: transparent;
+        border: none;
+      }
+    }
+  }
+
+  .card-footer {
+    background-color: inherit;
+    padding-bottom: 10px 15px 25px 10px;
+    .btn {
+      width: 100%;
+    }
+  }
+
+  // needed?
+  .show {
+    .btn-secondary.dropdown-toggle {
+      background-color: transparent;
+      border: none;
+    }
+
+    .dropdown-menu {
+      width: 100%;
+    }
+  }
+
+  .card-content {
+    width: 100%;
+    text-align: center;
+    padding: 10px;
+
+    h3 {
+      text-align: center;
+      margin: auto;
+    }
+
+    img {
+      width: 100%;
+    }
+  }
+  color: $secondary-text-color;
+
+  .card-help {
+    position: absolute;
+    top: 10px;
+    right: 10px;
+    img {
+      height: 14px; // ???
     }
   }
 }

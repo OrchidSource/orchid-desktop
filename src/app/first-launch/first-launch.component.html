@@ -1,6 +1,8 @@
 <div class="first-launch-container">
-  <div (click)="page = page - 1" class="next-prev">
-    <div *ngIf="page != 1">PREV</div>
+  <div class="next-prev">
+    <div (click)="page = page - 1" *ngIf="page != 1">
+      <img src="assets/imgs/icons/caret-left.svg" aria-label="back">
+    </div>
   </div>
   <div class="first-launch-content">
     <div class="launch-content launch-1" *ngIf="page === 1">
@@ -8,6 +10,7 @@
         IMG1
       </div>
       <div class="first-launch-text">
+        <img src="assets/imgs/h-logo-purple.svg" alt="Orchid">
         <div [translate]>FIRST_LAUNCH.TEXT_1</div>
       </div>
     </div>
@@ -31,12 +34,17 @@
     </div>
 
     <div class="first-launch-buttons">
-      <span class="btn btn-outline" [translate]>FIRST_LAUNCH.LEARN_BUTTON</span>
-      <span class="btn btn-primary" [translate]>FIRST_LAUNCH.GET_STARTED_BUTTON</span>
+      <!-- TODO: Where do these links go? -->
+      <a class="btn btn-border" routerLink="/main/dashboard" [translate]>FIRST_LAUNCH.LEARN_BUTTON</a>
+      <a class="btn btn-primary" routerLink="/main/dashboard" [translate]>FIRST_LAUNCH.GET_STARTED_BUTTON</a>
     </div>
-    <div class="first-launch-dots">DOTS: {{ page }}</div>
+    <div class="first-launch-dots">
+      <img [src]="'assets/imgs/first-launch-dots-' + page + '.svg'" alt="dots">
+    </div>
   </div>
-  <div (click)="page = page + 1" class="next-prev">
-    <div *ngIf="page < 3">NEXT</div>
+  <div class="next-prev">
+    <div (click)="page = page + 1" *ngIf="page < 3">
+      <img src="assets/imgs/icons/caret-right.svg" aria-label="next">
+    </div>
   </div>
 </div>
