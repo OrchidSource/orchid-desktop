@@ -1,4 +1,5 @@
-import { Component, HostBinding, OnInit } from '@angular/core';
+import { Component, OnInit } from '@angular/core';
+import { Router } from '@angular/router';
 
 @Component({
   selector: 'app-wallet-setup-begin',
@@ -6,13 +7,17 @@ import { Component, HostBinding, OnInit } from '@angular/core';
   styleUrls: ['./wallet-setup-begin.component.scss']
 })
 export class WalletSetupBeginComponent implements OnInit {
-  // @HostBinding('@routeAnimation') routeAnimation = true;
-  @HostBinding('style.display')   display = 'block';
-  @HostBinding('style.position')  position = 'absolute';
 
-  constructor() { }
+  constructor(private router: Router) { }
 
   ngOnInit() {
+  }
+
+  conditionalClose($event) {
+    // only close if clicking on the backdrop
+    if ($event.target.classList.contains('routed-modal-container')) {
+      this.router.navigate(['', {outlets: {modal: null}}]);
+    }
   }
 
 }

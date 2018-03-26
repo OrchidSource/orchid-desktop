@@ -40,5 +40,11 @@
     "SOURCE_NODE": "Run Orchid as source node",
     "BROWSERS_ONLY": "Web browsers only",
     "NATIVE_CURRENCY": "Native currency"
+  },
+  "GENERAL": {
+    "USERNAME": "Username",
+    "PASSWORD": "Password",
+    "PASSWORD_CONFIRM": "Confirm password",
+    "NEXT": "Next"
   }
 }

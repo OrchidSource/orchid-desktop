@@ -18,6 +18,7 @@ a small {
 
 h1, h2, .h1, .h2 {
   font-weight: bold;
+  text-transform: uppercase;
 }
 
 h1, .h1 {
@@ -30,23 +31,16 @@ h2, .h2 {
 
 h3, .h3 {
   line-height: 30px;
+  text-transform: uppercase;
 }
 
 h4, .h4 {
   font-family: 'OpenSans';
+  text-transform: uppercase;
   line-height: 32px;
   font-weight: bold;
 }
 
-
-// still used?
-.icon-chi-solid {
-  font-family: 'ChiFont';
-
-  &:before {
-    content: "\e903";
-  }
-}
 
 form {
   .form-group {
@@ -375,9 +369,9 @@ input[type="number"]::-webkit-inner-spin-button {
     background-color: white;
     border-radius: $card-border-radius;
 
-    // override these to change the size
+    // set these to change the size
     width: 50%;
-    height: 50%;
+    // height: 50%;
     margin: auto auto;
     box-shadow: $default-shadow;
   }
@@ -389,5 +383,8 @@ input[type="number"]::-webkit-inner-spin-button {
   > div {
     width: 50%;
     padding: 30px;
+  }
+  > div:first-child {
+    border-right: 1px solid $gray-light;
   }
 }
