@@ -7,29 +7,45 @@
   <div class="first-launch-content">
     <div class="launch-content launch-1" *ngIf="page === 1">
       <div class="first-launch-image">
-        IMG1
+        <img src="assets/imgs/first-launch/intro-1.png" alt="Panda">
       </div>
       <div class="first-launch-text">
-        <img src="assets/imgs/h-logo-purple.svg" alt="Orchid">
-        <div [translate]>FIRST_LAUNCH.TEXT_1</div>
+        <div>
+          <img src="assets/imgs/h-logo-purple.svg" alt="Orchid">
+          <div [translate]>FIRST_LAUNCH.TEXT_1</div>
+        </div>
       </div>
     </div>
 
     <div class="launch-content launch-2" *ngIf="page === 2">
       <div class="first-launch-image">
-        IMG2
+        <img src="assets/imgs/first-launch/intro-2.png" alt="Panda">
       </div>
       <div class="first-launch-text">
-        <div [translate]>FIRST_LAUNCH.TEXT_2</div>
+        <div>
+          <h4>
+            <img src="assets/imgs/wifi.svg" aria-hidden>
+            <span [translate]>FIRST_LAUNCH.TEXT_2_TITLE</span>
+          </h4>
+          <div class="subtitle "[translate]>FIRST_LAUNCH.TEXT_2_SUBTITLE</div>
+          <div class="text-container" [translate]>FIRST_LAUNCH.TEXT_2</div>
+        </div>
       </div>
     </div>
 
     <div class="launch-content launch-3" *ngIf="page === 3">
       <div class="first-launch-image">
-        IMG3
+        <img src="assets/imgs/first-launch/intro-3.png" alt="Panda">
       </div>
       <div class="first-launch-text">
-        <div [translate]>FIRST_LAUNCH.TEXT_3</div>
+        <div>
+          <h4>
+            <img src="assets/imgs/token.svg" aria-hidden>
+            <span [translate]>FIRST_LAUNCH.TEXT_3_TITLE</span>
+          </h4>
+          <div class="subtitle" [translate]>FIRST_LAUNCH.TEXT_3_SUBTITLE</div>
+          <div class="text-container" [translate]>FIRST_LAUNCH.TEXT_3</div>
+        </div>
       </div>
     </div>
 

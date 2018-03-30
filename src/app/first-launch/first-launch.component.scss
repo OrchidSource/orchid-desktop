@@ -1,3 +1,5 @@
+@import '../../assets/scss/variables';
+
 .first-launch-container {
   height: calc(100vh - 36px); // full height minus topbar
   display: flex;
@@ -28,19 +30,43 @@
       flex-direction: row;
       height: calc(100% - 80px);
 
-      .first-launch-image {
-        width: 50%;
-        padding: 15px;
-      }
-      .first-launch-text {
-        width: 50%;
-        padding: 15px;
-
+      > div {
         // room for the buttons:
         margin-bottom: 80px;
       }
 
+      .first-launch-image {
+        width: 50%;
+        padding: 15px;
+        display: flex;
+        align-items: center;
+        img {
+          width: 100%
+        }
+      }
+
+      .first-launch-text {
+        width: 50%;
+        padding: 15px;
+        display: flex;
+        align-items: center;
+        .subtitle {
+          margin-bottom: 10px;
+          text-transform: uppercase;
+          font-size: 21px;
+        }
+        .text-container {
+          color: $gray;
+        }
+      }
+
+      &.launch-1 {
+        img {
+          margin-bottom: 30px;
+        }
+      }
     }
+
 
     .first-launch-buttons {
       position: absolute;
