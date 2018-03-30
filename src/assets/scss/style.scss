@@ -61,38 +61,6 @@ form {
   margin-top: 5px;
 }
 
-// are we killing this panda?
-.panda {
-  @include minimized-breakpoint {
-    display: none;
-  }
-  background: url("../imgs/panda-placeholder.png") no-repeat;
-  background-size: 100%;
-  background-position: bottom;
-  margin-top: 30px;
-  flex: 1 1;
-  position: absolute;
-  width: 100%;
-  height: 100%;
-  margin-left: 0;
-  margin-right: 0;
-  bottom: 0;
-  z-index: 0;
-  opacity: 0.5;
-}
-
-.panda-flip {
-  background: url("../imgs/panda-placeholder-flip.png") no-repeat;
-  background-size: 100%;
-  background-position: bottom;
-}
-
-.panda-chi {
-  background: url("../imgs/panda-coins.png") no-repeat;
-  background-size: 100%;
-  background-position: bottom;
-}
-
 .help-text {
   text-decoration: underline;
 }
@@ -239,19 +207,6 @@ form {
 }
 
 
-.ci-met-stack {
-  background: url("../imgs/met-stack.svg") no-repeat;
-  height: 20px;
-  float: left;
-  @include minimized-breakpoint {
-    width: 36px;
-    height: 36px;
-    background-size: 36px;
-    background-position: center;
-    float: none;
-  }
-}
-
 .dropdown {
   .flag {
     width: 20px;
@@ -267,9 +222,7 @@ form {
     border: 2px dashed #79E2F5;
   }
 }
-/* Dashboard */
-// todo: this belongs in main-navigation.scss
-/* End Dashboard Content*/
+
 .secondary-text {
   color: $secondary-text-color;
 }
