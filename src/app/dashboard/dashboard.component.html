@@ -18,7 +18,7 @@
       </div>
 
       <div class="card-footer">
-        <a class="btn btn-primary" href="#" role="button" [routerLink]="[ '/met-manager', {outlets: { 'met-manager-modal': 'purchase-how-to' } }]">Fund Account</a>
+        <a class="btn btn-primary" href="#" role="button" [routerLink]="[ '/met-manager', {outlets: { 'met-manager-modal': 'purchase-how-to' } }]" [translate]>DASHBOARD.FUND_ACCOUNT</a>
       </div>
     </div>
   </div>
@@ -51,7 +51,7 @@
   <div class="col-lg-4 col-md-6 col-sm-12">
     <div class="card dashboard-card browsing-location-card">
       <div class="card-header">
-        <span>Default Browsing Location</span>
+        <span [translate]>DASHBOARD.DEFAULT_LOCATION</span>
         <span class="card-help"><a ngbTooltip="This is where you will be browsing the internet from." placement="bottom"><img src="assets/imgs/question.svg"/></a></span>
       </div>
 
@@ -97,12 +97,19 @@
 </div>
 <div class="col-sm-12 col-md-6 col-lg-4">
   <div class="card dashboard-card">
+      <div class="card-header">
+        <span [translate]>DASHBOARD.CONNECTIONS_SERVED</span>
+        <span class="card-help"></span>
+      </div>
     <div class="card-body">
-      LOREM etc.
+      <div [translate]>DASHBOARD.ORCHID_TOTAL</div>
+      <div class="number">123,123</div>
+      <hr>
+      <div [translate]>DASHBOARD.YOUR_TOTAL</div>
+      <div class="number">123</div>
       <a [routerLink]="['', {outlets: {modal:'wallet-setup-begin'}}]">Wallet setup begin</a>
       <!-- <a [routerLink]="[ '/met-manager', {outlets: { 'met-manager-modal': 'purchase-how-to' } }]">Fund Account</a> -->
     </div>
   </div>
   <div class="btn btn-secondary" [translate] style="margin-bottom: 25px;">DASHBOARD.EARN_MORE</div>
-</div>
 </div>

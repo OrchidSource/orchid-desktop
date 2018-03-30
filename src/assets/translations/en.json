@@ -18,11 +18,16 @@
   },
   "DASHBOARD": {
     "GB_REMAINING": "GB Remaining",
+    "DEFAULT_LOCATION": "Default location",
     "PLEASE_ADD": "Please add some OCT to connect",
     "CONNECTED": "Connected to Orchid network",
     "NOT_CONNECTED": "Not connected",
     "TOTAL_EARNINGS": "Total earnings",
-    "EARN_MORE": "Earn more"
+    "EARN_MORE": "Earn more",
+    "CONNECTIONS_SERVED": "Connections served",
+    "FUND_ACCOUNT": "Fund account",
+    "ORCHID_TOTAL": "Orchid network total",
+    "YOUR_TOTAL": "Your total"
   },
   "WALLET": {
     "CURRENT_BALANCE": "Current balance",

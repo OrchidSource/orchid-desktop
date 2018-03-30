@@ -84,6 +84,11 @@
 
 .dashboard-card {
 
+  /** style for blocks with numbers in them */
+  .number {
+    color: black;
+  }
+
   .card-header {
     text-transform: uppercase;
     font-family: OpenSans;
