@@ -1,0 +1,30 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<svg width="22px" height="24px" viewBox="0 0 22 24" version="1.1" xmlns="http://www.w3.org/2000/svg" xmlns:xlink="http://www.w3.org/1999/xlink">
+    <!-- Generator: Sketch 49.2 (51160) - http://www.bohemiancoding.com/sketch -->
+    <title>Icons/Dashboard</title>
+    <desc>Created with Sketch.</desc>
+    <defs>
+        <path d="M15.4,21.8181818 L18.7,21.8181818 C19.3075132,21.8181818 19.8,21.3297652 19.8,20.7272727 L19.8,9.2608187 L11,2.47293991 L2.2,9.2608187 L2.2,20.7272727 C2.2,21.3297652 2.69248678,21.8181818 3.3,21.8181818 L6.6,21.8181818 L6.6,12 C6.6,11.3975075 7.09248678,10.9090909 7.7,10.9090909 L14.3,10.9090909 C14.9075132,10.9090909 15.4,11.3975075 15.4,12 L15.4,21.8181818 Z M13.2,21.8181818 L13.2,13.0909091 L8.8,13.0909091 L8.8,21.8181818 L13.2,21.8181818 Z M0.424665325,7.86616122 L10.3246653,0.229797581 C10.7218869,-0.0765991937 11.2781131,-0.0765991937 11.6753347,0.229797581 L21.5753347,7.86616122 C21.8432799,8.07284071 22,8.39062862 22,8.72727273 L22,20.7272727 C22,22.5347501 20.5225397,24 18.7,24 L3.3,24 C1.47746033,24 0,22.5347501 0,20.7272727 L0,8.72727273 C0,8.39062862 0.156720128,8.07284071 0.424665325,7.86616122 Z" id="path-1"></path>
+    </defs>
+    <g id="Symbols" stroke="none" stroke-width="1" fill="none" fill-rule="evenodd">
+        <g id="Side-menu/Navigation-Settings" transform="translate(-31.000000, -188.000000)">
+            <g id="Side-menu-/-nav-menu">
+                <g id="dashboard" transform="translate(30.000000, 188.000000)">
+                    <g id="Icons/Dashboard">
+                        <g transform="translate(1.000000, 0.000000)">
+                            <mask id="mask-2" fill="white">
+                                <use xlink:href="#path-1"></use>
+                            </mask>
+                            <use id="Combined-Shape" fill="#000000" fill-rule="nonzero" xlink:href="#path-1"></use>
+                            <g id="Colors/Primary/Nav/Nav-Names" mask="url(#mask-2)" fill="#AE9DCC">
+                                <g transform="translate(-1.000000, 0.000000)" id="Rectangle-2-Copy-2">
+                                    <rect x="0" y="0" width="24" height="24"></rect>
+                                </g>
+                            </g>
+                        </g>
+                    </g>
+                </g>
+            </g>
+        </g>
+    </g>
+</svg>

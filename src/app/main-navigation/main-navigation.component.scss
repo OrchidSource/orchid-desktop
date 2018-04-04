@@ -130,19 +130,38 @@ $sidebar-padding: 30px;
       font-size: 12px;
       text-transform: uppercase;
 
+      background-repeat: no-repeat;
+      background-position-x: 30px;
+      background-position-y: 20px;
+
+      &.link-dashboard {
+        background-image: url('../../assets/imgs/main-nav/dashboard-inactive.svg');
+      }
+      &.link-wallet {
+        background-image: url('../../assets/imgs/main-nav/wallet-inactive.svg');
+      }
+      &.link-settings {
+        background-image: url('../../assets/imgs/main-nav/settings-inactive.svg');
+      }
+      &:hover, &.active {
+        &.link-dashboard {
+          background-image: url('../../assets/imgs/main-nav/dashboard-active.svg');
+        }
+        &.link-wallet {
+          background-image: url('../../assets/imgs/main-nav/wallet-active.svg');
+        }
+        &.link-settings {
+          background-image: url('../../assets/imgs/main-nav/settings-active.svg');
+        }
+      }
+
       &:hover, &.active {
         color: white;
         background-color: $brand-primary-hover;
         text-decoration: none;
       }
 
-      img {
-        position: absolute;
-        height: 24px;
-        top: 20px;
-        left: 30px;
-      }
-      span {
+      span.link-text {
         @include hide-minimized();
         display: inline-block;
         margin-top: 24px;
@@ -184,18 +203,12 @@ $sidebar-padding: 30px;
         width: 33%;
         height: 45px;
         text-align: center;
-        img {
-          position: initial;
-          height: 20px;
-          margin-top: 12px;
-        }
+        background-position: center;
       }
 
       .dropup {
         bottom: -38px;
-
       }
-
     }
   }
 
