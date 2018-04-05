@@ -1,5 +1,6 @@
 @import '../../../assets/scss/variables';
 @import '../../../assets/scss/bootstrap_overrides';
+@import '../../../assets/scss/mixins';
 
 $height: 30px;
 
@@ -28,8 +29,8 @@ label {
   .slider:before {
     position: absolute;
     content: "";
-    height: 23px;
-    width: 23px;
+    height: 22px;
+    width: 22px;
     left: 4px;
     bottom: 4px;
     background-color: white;
@@ -41,7 +42,7 @@ label {
   }
 
   input:checked + .slider:before {
-    transform: translateX(29px);
+    transform: translateX(30px);
   }
 
   /* Rounded sliders */
@@ -51,5 +52,12 @@ label {
 
   .slider:before {
     border-radius: 50%;
+  }
+  // minimized styling
+  @include minimized-breakpoint {
+      width: $height;
+      input + .slider:before, input:checked + .slider:before {
+        transform: none;
+      }
   }
 }
