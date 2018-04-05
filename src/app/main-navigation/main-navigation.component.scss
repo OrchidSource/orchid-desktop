@@ -131,7 +131,7 @@ $sidebar-padding: 30px;
       text-transform: uppercase;
 
       background-repeat: no-repeat;
-      background-position-x: 30px;
+      background-position-x: $sidebar-padding;
       background-position-y: 20px;
 
       &.link-dashboard {
@@ -184,11 +184,38 @@ $sidebar-padding: 30px;
       width: 100%;
       background-color: $navbar-background;
 
+
+      // The language open button
       .btn {
         width: 100%;
         border: 0;
         border-radius: 0px;
+        text-align: left;
+        padding-left: $sidebar-padding;
         color: $gray-light;
+        img {
+          position: absolute;
+          right: $sidebar-padding;
+          top: 15px;
+          transform: rotateX(180deg);
+          transition: transform 200ms;
+          &.opened {
+            transform: rotateX(0deg);
+          }
+        }
+      }
+
+      button.language-dropdown-item {
+        height: 35px;
+        background-color: white;
+        padding-left: $sidebar-padding;
+        font-size: 12px;
+        color: $gray;
+        text-align: left;
+        line-height: 13px;
+        &:hover {
+          background-color: $gray-lighter;
+        }
       }
     }
   }

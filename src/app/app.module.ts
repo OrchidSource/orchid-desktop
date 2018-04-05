@@ -7,6 +7,7 @@ import { ChartsModule } from 'ng2-charts/ng2-charts';
 import { TranslateModule, TranslateLoader } from '@ngx-translate/core';
 import { TranslateHttpLoader } from '@ngx-translate/http-loader';
 import { HttpClientModule, HttpClient } from '@angular/common/http';
+import { BrowserAnimationsModule } from '@angular/platform-browser/animations';
 
 import { AppRoutingModule } from './app-routing.module';
 import { AppComponent } from './app.component';
@@ -58,6 +59,7 @@ export function HttpLoaderFactory(httpClient: HttpClient) {
   imports: [
     AppRoutingModule,
     BrowserModule,
+    BrowserAnimationsModule,
     ChartsModule,
     FormsModule,
     HttpClientModule,

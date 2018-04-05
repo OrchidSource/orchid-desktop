@@ -32,16 +32,18 @@
 
       <div class="card-body" ng-controller="Ctrl" ng-app="sec-val">
         <div class="clock">
-          <img src="assets/imgs/clock-black.svg"/>
+          <img src="assets/imgs/clock-black.svg" aria-disabled>
           {{time | date: 'HH:mm:ss'}}
         </div>
       </div>
 
       <div class="card-footer">
-        <div *ngIf="connected" class="card-connected" >
+        <div *ngIf="connected" class="card-connected">
+          <img src="assets/imgs/icons/check-green.svg" aria-disabled>
           <span [translate]>DASHBOARD.CONNECTED</span>
         </div>
-        <div *ngIf="!connected"class="card-not-connected">
+        <div *ngIf="!connected" class="card-not-connected">
+          <img src="assets/imgs/icons/x-red.svg" aria-disabled>
           <span [translate]>DASHBOARD.NOT_CONNECTED</span>
         </div>
       </div>

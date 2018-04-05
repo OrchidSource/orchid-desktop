@@ -23,9 +23,11 @@
         </a>
 
         <div ngbDropdown placement="top" class="d-inline-block dropup">
-          <button class="btn btn-outline-primary" id="languageSelect" ngbDropdownToggle>{{ selectedLanguage.native }}</button>
-          <div ngbDropdownMenu aria-labelledby="languageSelect">
-            <button *ngFor="let language of LANGUAGES" class="dropdown-item" (click)="languageSelected(language.code)">{{ language.native }}</button>
+          <button class="btn btn-outline-primary" id="languageSelect" (click)="languageMenuOpened = !languageMenuOpened">
+            {{ selectedLanguage.native }} <img src="assets/imgs/icons/down-v-gray.svg" [ngClass]="{opened: languageMenuOpened}" aria-disabled>
+          </button>
+          <div *ngIf="languageMenuOpened" [@slideInOut]>
+            <button class="btn language-dropdown-item" *ngFor="let language of LANGUAGES" (click)="languageSelected(language.code)">{{ language.native }}</button>
           </div>
         </div>
       </div>

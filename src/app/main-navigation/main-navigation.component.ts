@@ -5,15 +5,29 @@
 import { Component, OnInit } from '@angular/core';
 import { InternationalizationService } from '../internationalization-service/internationalization.service';
 import { OrchidNetService } from '../orchid-net/orchid-net.service';
+import { trigger, transition, animate, style } from '@angular/animations'
 
 @Component({
   selector: 'app-main-navigation',
   templateUrl: './main-navigation.component.html',
-  styleUrls: ['./main-navigation.component.scss']
+  styleUrls: ['./main-navigation.component.scss'],
+  animations: [
+    trigger('slideInOut', [
+      transition(':enter', [
+        style({'margin-bottom': '-280px'}), // 280px is a magic number that will need to change whenever we add or remove languages
+        animate('200ms ease-in', style({ 'margin-bottom': '0px'}))
+      ]),
+      transition(':leave', [
+        animate('200ms ease-in', style({'margin-bottom': '-280px'}))
+      ])
+    ])
+  ]
 })
 export class MainNavigationComponent implements OnInit {
 
   connected: boolean = false;
+  /** Set to true to open the list of languages */
+  languageMenuOpened: boolean = false;
   LANGUAGES: Array<any>;
   selectedLanguage: object;
 
@@ -42,6 +56,7 @@ export class MainNavigationComponent implements OnInit {
    */
   languageSelected(languageCode) {
     this.useLanguage(languageCode);
+    this.languageMenuOpened = false;
   }
 
   getOnOffTranslationKey(): string {
