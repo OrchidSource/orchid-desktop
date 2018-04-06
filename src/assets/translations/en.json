@@ -39,7 +39,12 @@
     "SHARE": "Share Orchid",
     "SEND": "Send",
     "RECEIVE": "Receive",
-    "HISTORY": "Transaction History"
+    "HISTORY": "Transaction History",
+    "FROM": "From",
+    "TO": "To",
+    "STATUS": "Status",
+    "AMOUNT": "Amount",
+    "DATE": "Date"
   },
   "SETTINGS": {
     "LAUNCH_STARTUP": "Launch on startup",

@@ -1,3 +1,5 @@
+@import '../../assets/scss/variables';
+
 .wallet-top-area {
   display: flex;
   flex-direction: row;
@@ -5,7 +7,7 @@
   padding-bottom: 46px;
 
   .wallet-balance {
-    width: 33%;
+    // width: 33%;
     text-align: center;
     text-transform: uppercase;
     .wallet-balance-number {
@@ -14,7 +16,7 @@
   }
 
   .wallet-actions {
-    width: 66%;
+    // width: 66%;
 
     .wallet-backup {
       > .btn {
@@ -39,8 +41,22 @@
 }
 
 .wallet-transactions {
-  .wallet-transaction-head {
+  background-color: white;
+  .wallet-transactions-head {
+    padding: 40px;
     height: 106px;
-    background-color: white;
+  }
+
+  table {
+    thead {
+      background-color: $gray-lightest;
+      th {
+        text-transform: uppercase;
+        border: 0px;
+      }
+    }
+    td {
+      border-color: $gray-lightest;
+    }
   }
 }

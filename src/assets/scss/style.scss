@@ -1,3 +1,6 @@
+/**
+ * Holds general styles used throughout the app
+*/
 @import './fonts';
 
 @import './mixins';
@@ -164,6 +167,11 @@ form {
 
 .btn-secondary {
   color: white;
+}
+
+// an element inside a .btn with .btn-img will be placed at the left-hand side of the button
+.btn > .btn-img {
+  float: left;
 }
 
 .btn-lg {

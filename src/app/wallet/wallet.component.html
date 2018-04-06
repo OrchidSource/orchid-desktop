@@ -1,29 +1,79 @@
-<div class="wallet-top-area">
-  <div class="wallet-balance">
+<div class="wallet-top-area row">
+  <div class="wallet-balance col-md-4">
     <div [translate]>WALLET.CURRENT_BALANCE</div>
     <div>
       <span class="wallet-balance-number">0.0</span> OCT ($0.00)
     </div>
   </div>
-  <div class="wallet-actions">
+  <div class="wallet-actions col-md-8">
     <div class="wallet-backup">
       <div class="btn btn-warning">
-        <span [translate]>WALLET.PLEASE_BACKUP</span>
+        <img src="assets/imgs/icons/alert-circle.svg" class="btn-img" aria-disabled> <span [translate]>WALLET.PLEASE_BACKUP</span>
       </div>
     </div>
     <div class="wallet-button-row">
-      <span class="btn btn-primary"> <span [translate]>WALLET.SHARE</span></span>
-      <span class="btn btn-secondary"> <span [translate]>WALLET.SEND</span></span>
+      <span class="btn btn-primary">
+        <span [translate]>WALLET.SHARE</span>
+      </span>
+      <span class="btn btn-secondary">
+        <img src="assets/imgs/icons/send.svg" class="btn-img" aria-disabled>
+        <span [translate]>WALLET.SEND</span>
+      </span>
       <span class="btn btn-secondary"> <span [translate]>WALLET.RECEIVE</span></span>
     </div>
   </div>
 </div>
 
 <div class="wallet-transactions">
-  <div class="wallet-transaction-head">
-    <h2 [translate]>WALLET.HISTORY</h2>
-    <div>
-      <input type="text" />
+  <div class="row wallet-transactions-head">
+    <div class="col-lg-6">
+      <h2 [translate]>WALLET.HISTORY</h2>
+    </div>
+    <div class="col-lg-6">
+      <div class="input-group">
+        <input type="text" class="form-control" placeholder="search"  />
+      </div>
     </div>
   </div>
+
+  <table class="table">
+    <thead>
+      <tr>
+        <th scope="col">
+          <span [translate]>WALLET.FROM</span>
+        </th>
+        <th scope="col"><span [translate]>WALLET.TO</span></th>
+        <th scope="col"><span [translate]>WALLET.STATUS</span></th>
+        <th scope="col">
+          <span [translate]>WALLET.AMOUNT</span>
+        </th>
+        <th scope="col">
+          <span [translate]>WALLET.DATE</span>
+        </th>
+      </tr>
+    </thead>
+    <tbody>
+      <tr>
+        <td>awiefjalwefijwelfij</td>
+        <td>awiefjalwefijwelfij</td>
+        <td>RECEIVED</td>
+        <td>3.234</td>
+        <td>4/1/18</td>
+      </tr>
+      <tr>
+        <td>awiefjalwefijwelfij</td>
+        <td>awiefjalwefijwelfij</td>
+        <td>RECEIVED</td>
+        <td>3.234</td>
+        <td>4/1/18</td>
+      </tr>
+      <tr>
+        <td>awiefjalwefijwelfij</td>
+        <td>awiefjalwefijwelfij</td>
+        <td>RECEIVED</td>
+        <td>3.234</td>
+        <td>4/1/18</td>
+      </tr>
+    </tbody>
+  </table>
 </div>
