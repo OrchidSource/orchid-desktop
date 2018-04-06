@@ -44,7 +44,9 @@
     "TO": "To",
     "STATUS": "Status",
     "AMOUNT": "Amount",
-    "DATE": "Date"
+    "DATE": "Date",
+    "SENT": "Sent",
+    "RECEIVED": "Received"
   },
   "SETTINGS": {
     "LAUNCH_STARTUP": "Launch on startup",
@@ -59,6 +61,7 @@
     "USERNAME": "Username",
     "PASSWORD": "Password",
     "PASSWORD_CONFIRM": "Confirm password",
-    "NEXT": "Next"
+    "NEXT": "Next",
+    "SEARCH": "Search"
   }
 }

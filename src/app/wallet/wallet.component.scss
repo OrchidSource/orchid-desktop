@@ -57,6 +57,13 @@
     }
     td {
       border-color: $gray-lightest;
+      text-transform: uppercase;
+      &.transaction-status-received {
+        color: $brand-success;
+      }
+      &.transaction-status-sent {
+        color: $brand-warning
+      }
     }
   }
 }

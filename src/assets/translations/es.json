@@ -4,5 +4,9 @@
     "DASHBOARD": "Tablero",
     "SETTINGS": "Ajustes",
     "WALLET": "Billetera"
+  },
+  "WALLET": {
+    "SENT": "Expedido",
+    "RECEIVED": "Recibido"
   }
 }

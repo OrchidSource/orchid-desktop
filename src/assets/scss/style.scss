@@ -169,9 +169,15 @@ form {
   color: white;
 }
 
-// an element inside a .btn with .btn-img will be placed at the left-hand side of the button
-.btn > .btn-img {
-  float: left;
+// an img or .img element inside a .btn.btn-img with .btn-img will be placed at the left-hand side of the button
+.btn.btn-img {
+  img, .img {
+    float: left;
+  }
+  // offset text to put it back in center; we're assuming the image is 18px wide
+  span {
+    margin-right: 18px;
+  }
 }
 
 .btn-lg {
@@ -251,9 +257,20 @@ input[type="number"]::-webkit-inner-spin-button {
   right: 0;
   bottom: 0;
 }
+
+
+/** Put a magnifying glass on the right side of the input box */
+input[type=text].input-search {
+  background-color: purple;
+  &:before {
+    content: url(../imgs/icons/search.svg);
+    width: 30px;
+    height: 30px;
+  }
+}
+
 // Put a "chiclet" on the left of a button.
 // To use, put .btn-chiclet on the .btn element, and put a .chiclet div inside the button
-
 .btn-chiclet {
   padding-left: 55px;
 
