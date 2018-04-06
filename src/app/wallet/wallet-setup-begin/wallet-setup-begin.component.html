@@ -1,0 +1,35 @@
+<div class="routed-modal-container" (click)="conditionalClose($event)">
+  <div class="routed-modal divided-dialog">
+    <div>
+      <h3>Enter a username &amp; password</h3>
+      <div>
+        This username and password will enrypt the access keys to your wallet. Please make sure to write down your password and save it in a secure location. You will not be able to recover it if you loose it.
+      </div>
+    </div>
+
+    <div>
+      <div class="input-group mb-2 mr-sm-2">
+        <div class="input-group-prepend">
+          <div class="input-group-text">@@</div>
+        </div>
+        <input type="text" class="form-control" placeholder="{{ 'GENERAL.USERNAME' | translate}}">
+      </div>
+
+      <div class="input-group mb-2 mr-sm-2">
+        <div class="input-group-prepend">
+          <div class="input-group-text">??</div>
+        </div>
+        <input type="password" class="form-control" placeholder="{{ 'GENERAL.PASSWORD' | translate}}">
+      </div>
+
+      <div class="input-group mb-2 mr-sm-2">
+        <div class="input-group-prepend">
+          <div class="input-group-text">??</div>
+        </div>
+        <input type="password" class="form-control" placeholder="{{ 'GENERAL.PASSWORD_CONFIRM' | translate}}">
+      </div>
+      <button class="btn btn-primary" [translate]>GENERAL.NEXT</button>
+
+    </div>
+  </div>
+</div>

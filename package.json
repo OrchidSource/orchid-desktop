@@ -10,7 +10,7 @@
     "develop": "ng build --watch --output-path=build | electron .",
     "build": "ng build --output-path=build",
     "build-watch": "ng build --watch --output-path=build",
-    "serve": "node_modules/.bin/http-server",
+    "serve": "node_modules/.bin/http-server -c-1",
     "test": "ng test",
     "lint": "ng lint",
     "build-mac-executable": "npm run build && node_modules/.bin/electron-builder --mac",

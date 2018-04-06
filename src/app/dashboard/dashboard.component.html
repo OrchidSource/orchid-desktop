@@ -1,161 +1,117 @@
-<div class="row panda text-center hidden-md-down">
-</div>
 <div class="row equal-height">
   <div class="col-lg-4 col-md-12 col-sm-12">
-    <div class="card dashboard-card met-balance inline-trigger" on-mouseover='fundPO.show($event)' on-mouseout='fundPO.hide()'>
+    <div class="card dashboard-card inline-trigger gb-remaining-card">
       <div class="card-header">
-        <h4 class="card-title">Balance</h4>
+        <span [translate]>DASHBOARD.GB_REMAINING</span>
         <span class="card-help">
-          <a ngbTooltip="You need tokens to connect!" placement="bottom"><span class="fa fa-question-circle"></span></a>
+          <a ngbTooltip="A tooltip" placement="bottom"><img src="assets/imgs/question.svg"/></a>
         </span>
       </div>
-      <div class="h-100 card-block justify-content-end">
-        <div class="card-content h-80 justify-content-end"><h3 class="card-text">0</h3></div>
-        <div class="card-action-container h-20 justify-content-end">
-          <a class="btn btn-primary btn-lg" href="#" role="button" [routerLink]="[ '/met-manager', {outlets: { 'met-manager-modal': 'purchase-how-to' } }]">Fund Account</a>
+
+      <div class="card-body text-center">
+        <div class="gb-amount">
+          <span>0</span>GB
         </div>
+        <div class="text-center" [translate]>
+          DASHBOARD.PLEASE_ADD
+        </div>
+      </div>
+
+      <div class="card-footer">
+        <a class="btn btn-primary" href="#" role="button" [routerLink]="[ '/met-manager', {outlets: { 'met-manager-modal': 'purchase-how-to' } }]" [translate]>DASHBOARD.FUND_ACCOUNT</a>
       </div>
     </div>
   </div>
-
 
   <div class="col-lg-4 col-md-6 col-sm-12 last">
-    <div class="card dashboard-card security-level">
+    <div class="card dashboard-card connection-status-card">
       <div class="card-header">
-        <h4 class="card-title">Connection Status</h4>
-        <span class="card-help"><a ngbTooltip="Your security level determines how many nodes your connection will pass through. Higher security level = more nodes." placement="bottom"><span class="fa fa-question-circle"></span></a></span>
+        <span>Connection Status</span>
+        <span class="card-help"><a ngbTooltip="Your security level determines how many nodes your connection will pass through. Higher security level = more nodes." placement="bottom"><img src="assets/imgs/question.svg"/></a></span>
       </div>
-      <div class="h-100 card-block justify-content-end" ng-controller="Ctrl" ng-app="sec-val">
-        <div class="card-content h-80 justify-content-end">
-	  <img src="assets/imgs/connection-not-connected.gif" *ngIf="!connected" align="center" />
-	  <img src="assets/imgs/connection-animation.gif" *ngIf="connected" align="center" />
-	</div>
-        <div class="card-action-container h-20 justify-content-end">
-          <h6 class="text-center" style="margin-top: 15px;text-transform:uppercase;">Secure Connection {{ connected ? 'Active' : 'Inactive' }}</h6><h3 class="text-center">{{time | date: 'HH:mm:ss'}}<!-- 01:36:12 --></h3>
-        </div>
 
-      </div>
-    </div>
-  </div>
-
-  <div class="col-lg-4  col-md-6 col-sm-12">
-    <div class="card dashboard-card browsing-location">
-      <div class="card-header">
-        <h4 class="card-title">Default Browsing Location</h4><span class="card-help"><a ngbTooltip="This is where you will be browsing the internet from." placement="bottom"><span class="fa fa-question-circle"></span></a></span>
-      </div>
-      <div class="h-100 card-block justify-content-end">
-        <div class="card-content h-80 justify-content-end"><img [src]="selectedBrowsingLocation().mapUrl"></div>
-        <div class="card-action-container h-20 justify-content-end">
-
-          <div class="dropdown">
-            <div class="form-group">
-              <div ngbDropdown class="d-inline-block">
-                <button class="btn btn-secondary dropdown-toggle text-left"
-                        type="button"
-                        id="dropdownMenuButton"
-                        ngbDropdownToggle
-                        aria-haspopup="true"
-                        aria-expanded="false">
-                  <img [src]="selectedBrowsingLocation().flagUrl" class="flag" /> {{ selectedBrowsingLocation().name }}
-                </button>
-                <div ngbDropdownMenu aria-labelledby="dropdownMenuButton">
-                  <!-- <div id="custom-search-input">
-                    <div class="input-group col-md-12">
-                      <span class="input-group-btn">
-                        <button class="btn btn-primary" type="button">
-                          <i class="fa fa-search"></i>
-                        </button>
-                      </span>
-                      <input type="text" class="form-control input-lg" placeholder="Search" />
-                    </div>
-                  </div> -->
-                    <a *ngFor="let browsingLocation of browsingLocations()" class="dropdown-item" (click)="setSelectedBrowsingLocation(browsingLocation)">
-                        <img [src]="browsingLocation.flagUrl" class="flag" />
-			<span *ngIf="browsingLocation.name != 'The United States'">
-			  <span class="not-browsing-from-disabled">
-                            {{ browsingLocation.name }}
-			  </span>
-			</span>
-			<span *ngIf="browsingLocation.name == 'The United States'">
-                          {{ browsingLocation.name }}
-			</span>
-                    </a>
-                </div>
-              </div>
-            </div>
-          </div>
+      <div class="card-body" ng-controller="Ctrl" ng-app="sec-val">
+        <div class="clock">
+          <img src="assets/imgs/clock-black.svg" aria-disabled>
+          {{time | date: 'HH:mm:ss'}}
         </div>
       </div>
-    </div>
-  </div>
-</div>
 
-<div class="row equal-height" *ngIf="showMETMessage"> <!-- show this row after user has gone through "Earn Met" flow -->
-  <div class="col-sm-4">
-    <div class="card dashboard-card">
-      <div class="card-header">
-        <h4 class="card-title">Usage Summary</h4>
-        <span class="card-help"><a href="#" class=""><span class="fa fa-question-circle"></span></a></span>
-      </div>
-      <div class="h-100 card-block justify-content-end">
-        <div class="card-content h-80 justify-content-end"><img src="assets/imgs/chart-placeholder.svg"><hr/></div>
-        <div class="card-action-container h-20 justify-content-end">
-          <span style="float: left;">65%</span><span style="float: right;">43%</span>
+      <div class="card-footer">
+        <div *ngIf="connected" class="card-connected">
+          <img src="assets/imgs/icons/check-green.svg" aria-disabled>
+          <span [translate]>DASHBOARD.CONNECTED</span>
+        </div>
+        <div *ngIf="!connected" class="card-not-connected">
+          <img src="assets/imgs/icons/x-red.svg" aria-disabled>
+          <span [translate]>DASHBOARD.NOT_CONNECTED</span>
         </div>
       </div>
     </div>
   </div>
 
-  <div class="col-sm-4">
-    <div class="card dashboard-card">
+  <div class="col-lg-4 col-md-6 col-sm-12">
+    <div class="card dashboard-card browsing-location-card">
       <div class="card-header">
-        <h4 class="card-title">Bandwidth</h4>
-        <span class="card-help"><a href="#" class=""><span class="fa fa-question-circle"></span></a></span>
+        <span [translate]>DASHBOARD.DEFAULT_LOCATION</span>
+        <span class="card-help"><a ngbTooltip="This is where you will be browsing the internet from." placement="bottom"><img src="assets/imgs/question.svg"/></a></span>
       </div>
-      <div class="h-100 card-block justify-content-end">
-        <div class="card-content h-80 justify-content-end"><img src="assets/imgs/ograph-placeholder.svg"></div>
-        <div class="card-action-container h-20 justify-content-end">
-          <strong>Usage</strong><br />How much bandwidth
-        </div>
-      </div>
-    </div>
-  </div>
 
-  <div class="col-sm-4">
-    <div class="card dashboard-card">
-      <div class="card-header"><h4 class="card-title">ORCHID tokens Earned</h4><span class="card-help"><a href="#" class=""><span class="fa fa-question-circle"></span></a></span></div>
-      <div class="h-100 card-block justify-content-end">
-        <div class="card-content h-80 justify-content-end"><img src="assets/imgs/bgraph-placeholder.svg"></div>
-        <div class="card-action-container h-20 justify-content-end">
-          <strong>ORCHID tokens Earned</strong><br />ORCHID tokens earned over time
-        </div>
+      <div class="card-body">
+        <img [src]="selectedBrowsingLocation().mapUrl" class="browsing-location-map">
       </div>
+
+      <div class="card-footer">
+        <div ngbDropdown class="d-inline-block">
+          <button class="btn btn-block btn-outline"
+          type="button"
+          id="dropdownMenuButton"
+          ngbDropdownToggle
+          aria-haspopup="true"
+          aria-expanded="false">
+          <img [src]="selectedBrowsingLocation().flagUrl" class="flag" /> {{ selectedBrowsingLocation().name }}
+        </button>
+        <div ngbDropdownMenu aria-labelledby="dropdownMenuButton">
+          <a *ngFor="let browsingLocation of browsingLocations()" class="dropdown-item" (click)="setSelectedBrowsingLocation(browsingLocation)">
+            <img [src]="browsingLocation.flagUrl" class="flag" />
+            <span *ngIf="browsingLocation.name != 'The United States'">
+              <span class="not-browsing-from-disabled">
+                {{ browsingLocation.name }}
+              </span>
+            </span>
+            <span *ngIf="browsingLocation.name == 'The United States'">
+              {{ browsingLocation.name }}
+            </span>
+          </a>
+        </div>
+      </div><!-- .dropdown -->
 
     </div>
   </div>
 </div>
-
-  <div class="row equal-height earn-chi">
-  <div class="col-lg-4 col-md-12 col-sm-12 offset-lg-4">
-    <a class="btn btn-lg btn-second-primary next-button" (click)='helpPO.show($event)'>Earn Tokens</a>
-    <pop-over #helpPO [my]="'top left'" [at]="'center bottom'"  [anchor-to]="'true'" [content-class]="'po-top'">
-<div class="message">
-        Soon you will be able to earn ORCHID tokens and help to create a free and openly accessible internet.<br /><br />
-        Sign up below and be among the first to participate.<br /><br />
-        <form class="form-inline">
-    <div class="form-group">
-      <input type="email" class="form-control" id="email-signup" name="email-signup" placeholder="name@example.com">
-    </div>&nbsp;
-    <button type="submit" class="btn btn-primary">alert me</button>
-  </form>
-</div>
-    </pop-over>
-
-    <pop-over #fundPO [my]="'top left'" [at]="'right middle'"  [anchor-to]="'true'" [content-class]="'po-right'">
-<div class="message">
-        Coming Soon
-</div>
-    </pop-over>
-
+<div class="col-sm-12 col-md-6 col-lg-8"><!--  *ngIf="showMETMessage" ...show this row after user has gone through "Earn Met" flow -->
+  <div class="card dashboard-card">
+    <div class="card-body">
+      <div [translate]>DASHBOARD.TOTAL_EARNINGS</div>
+      <div class="card-content h-80 justify-content-end"><img src="assets/imgs/chart-placeholder.svg" style="max-height: 100px"></div>
+    </div>
   </div>
+</div>
+<div class="col-sm-12 col-md-6 col-lg-4">
+  <div class="card dashboard-card">
+      <div class="card-header">
+        <span [translate]>DASHBOARD.CONNECTIONS_SERVED</span>
+        <span class="card-help"></span>
+      </div>
+    <div class="card-body">
+      <div [translate]>DASHBOARD.ORCHID_TOTAL</div>
+      <div class="number">123,123</div>
+      <hr>
+      <div [translate]>DASHBOARD.YOUR_TOTAL</div>
+      <div class="number">123</div>
+      <a [routerLink]="['', {outlets: {modal:'wallet-setup-begin'}}]">Wallet setup begin</a>
+      <!-- <a [routerLink]="[ '/met-manager', {outlets: { 'met-manager-modal': 'purchase-how-to' } }]">Fund Account</a> -->
+    </div>
+  </div>
+  <div class="btn btn-secondary" [translate] style="margin-bottom: 25px;">DASHBOARD.EARN_MORE</div>
 </div>

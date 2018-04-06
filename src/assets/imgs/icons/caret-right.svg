@@ -1,0 +1,19 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<svg width="8px" height="14px" viewBox="0 0 8 14" version="1.1" xmlns="http://www.w3.org/2000/svg" xmlns:xlink="http://www.w3.org/1999/xlink">
+    <!-- Generator: Sketch 49.3 (51167) - http://www.bohemiancoding.com/sketch -->
+    <title>Shape</title>
+    <desc>Created with Sketch.</desc>
+    <defs>
+        <path d="M4,8.58578644 L-1.29289322,3.29289322 C-1.68341751,2.90236893 -2.31658249,2.90236893 -2.70710678,3.29289322 C-3.09763107,3.68341751 -3.09763107,4.31658249 -2.70710678,4.70710678 L3.29289322,10.7071068 C3.68341751,11.0976311 4.31658249,11.0976311 4.70710678,10.7071068 L10.7071068,4.70710678 C11.0976311,4.31658249 11.0976311,3.68341751 10.7071068,3.29289322 C10.3165825,2.90236893 9.68341751,2.90236893 9.29289322,3.29289322 L4,8.58578644 Z" id="path-1"></path>
+    </defs>
+    <g id="Symbols" stroke="none" stroke-width="1" fill="none" fill-rule="evenodd">
+        <g id="Icons/Arrow-right" transform="translate(-8.000000, -5.000000)">
+            <g id="Icons/Chevron-down" transform="translate(8.000000, 5.000000)">
+                <mask id="mask-2" fill="white">
+                    <use xlink:href="#path-1"></use>
+                </mask>
+                <use id="Shape" fill="#000000" fill-rule="nonzero" transform="translate(4.000000, 7.000000) scale(-1, 1) rotate(-270.000000) translate(-4.000000, -7.000000) " xlink:href="#path-1"></use>
+            </g>
+        </g>
+    </g>
+</svg>

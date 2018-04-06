@@ -7,13 +7,13 @@ import { ChartsModule } from 'ng2-charts/ng2-charts';
 import { TranslateModule, TranslateLoader } from '@ngx-translate/core';
 import { TranslateHttpLoader } from '@ngx-translate/http-loader';
 import { HttpClientModule, HttpClient } from '@angular/common/http';
+import { BrowserAnimationsModule } from '@angular/platform-browser/animations';
 
 import { AppRoutingModule } from './app-routing.module';
 import { AppComponent } from './app.component';
 import { NgbModule } from '@ng-bootstrap/ng-bootstrap';
 import { DashboardComponent } from './dashboard/dashboard.component';
 import { MetManagerComponent } from './met-manager/met-manager.component';
-import { AboutComponent } from './about/about.component';
 import { HelpComponent } from './help/help.component';
 import { PurchaseStartComponent } from './purchase/purchase-start/purchase-start.component';
 import { PurchasePaymentComponent } from './purchase/purchase-payment/purchase-payment.component';
@@ -27,6 +27,12 @@ import { OrchidNetService } from "./orchid-net/orchid-net.service";
 
 import { PopoverModule } from 'ng2-pop-over';
 import { NgIf } from '@angular/common';
+import { SettingsComponent } from './settings/settings.component';
+import { WalletComponent } from './wallet/wallet.component';
+import { WalletSetupBeginComponent } from './wallet/wallet-setup-begin/wallet-setup-begin.component';
+import { UiModule } from './ui/ui.module';
+import { MainNavigationComponent } from './main-navigation/main-navigation.component';
+import { FirstLaunchComponent } from './first-launch/first-launch.component';
 
 // Indicates where the translation files live
 export function HttpLoaderFactory(httpClient: HttpClient) {
@@ -39,19 +45,24 @@ export function HttpLoaderFactory(httpClient: HttpClient) {
     DashboardComponent,
     HelpComponent,
     MetManagerComponent,
-    AboutComponent,
     PurchasePaymentComponent,
     PurchaseConfirmationComponent,
     PurchaseHowToComponent,
     SellHowToComponent,
-    PurchaseStartComponent
+    PurchaseStartComponent,
+    SettingsComponent,
+    WalletComponent,
+    MainNavigationComponent,
+    FirstLaunchComponent,
+    WalletSetupBeginComponent
   ],
   imports: [
     AppRoutingModule,
     BrowserModule,
+    BrowserAnimationsModule,
     ChartsModule,
-    HttpClientModule,
     FormsModule,
+    HttpClientModule,
     NgbModule.forRoot(),
     PopoverModule,
     ReactiveFormsModule,
@@ -61,7 +72,8 @@ export function HttpLoaderFactory(httpClient: HttpClient) {
         useFactory: HttpLoaderFactory,
         deps: [HttpClient]
       }
-    })
+    }),
+    UiModule
   ],
   providers: [
     ConfigService,

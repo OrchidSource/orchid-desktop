@@ -1,142 +1,56 @@
-// TODO: package this with the app
-@import url(http://fonts.googleapis.com/css?family=Roboto:300,400,500);
-// The turquiose color
-$primary-color: #18BECC; // The orange color
-$secondary-color: #F5A623;
-$headers: 'Roboto', sans serif;
-$dark-bg-color: #616161;
-$primary-text-color: #3F414C;
-$secondary-text-color: #99A1B0;
-$light-grey-bg: #99A1B0;
-$white-text: #fff;
-$darkest-grey: #3F414C;
-/* Order matter! */
+/**
+ * Holds general styles used throughout the app
+*/
+@import './fonts';
+
 @import './mixins';
 @import './variables';
-@import './alert';
-@import './alert';
-@import './badge';
-@import './code';
-@import './input-group';
-@import './images';
-@import './responsive-embed';
-@import './reboot';
-@import './breadcrumb';
-@import './jumbotron';
-@import './tables';
-@import './button-group';
-@import './list-group';
-@import './tooltip';
-@import './toggle';
-@import './buttons';
-@import './media';
-@import './transitions';
-@import './card';
-@import './type';
-@import './carousel';
-@import './modal';
-@import './utilities';
-@import './close';
-@import './nav';
-@import './navbar';
-@import './custom-forms';
-@import './normalize';
-@import './custom';
-@import './pagination';
-@import './dropdown';
-@import './popover';
-@import './forms';
-@import './print';
-@import './grid';
-@import './progress';
-@mixin minimized-breakpoint() {
-  @media (max-width: 575px) {
-    @content;
-  }
-}
-@font-face {
-  font-family: 'ChiFont';
-  src: url("../fonts/ChiFont.eot?tws7d0");
-  src: url("../fonts/ChiFont.eot?tws7d0#iefix") format('embedded-opentype'), url("../fonts/ChiFont.ttf?tws7d0") format('truetype'), url("../fonts/ChiFont.woff?tws7d0") format('woff'), url("../fonts/ChiFont.svg?tws7d0#icomoon") format('svg');
-  font-weight: normal;
-  font-style: normal;
-}
+@import './bootstrap_overrides';
+@import '~bootstrap/scss/bootstrap.scss';
+
 /*common */
 html {
   font-size: 16px;
   overflow: hidden;
 }
 
-#electron-titlebar {
-  -webkit-app-region: drag;
-
-  #title-bar-btns {
-    float: left;
-    -webkit-app-region: no-drag;
-  }
-
-  span {
-    float: right;
-    font-size: 12px;
-    font-weight: normal;
-  }
-  padding: 8px 30px;
-  background: $darkest-grey;
-  border-radius: 10px 10px 0 0;
-  text-align: center;
-  color: #fff;
-  font-size: 13px;
-  text-transform: uppercase;
-}
 
 a small {
-  color: $primary-color !important;
+  color: $brand-primary !important;
 }
 
-h2 {
-  /* 1.3 MET: */
-  font-size: 24px;
-  color: #000000;
-  line-height: 24px;
-}
-
-h3 {
-  font-size: 70px;
-  font-weight: 400;
-  color: $secondary-text-color;
-  letter-spacing: -3px;
-}
-
-h3 span {
-  color: $primary-text-color;
-  font-size: 18px;
-  font-weight: normal;
-  margin-left: 5px;
-  letter-spacing: 0;
-}
-
-h4 {
+h1, h2, .h1, .h2 {
+  font-weight: bold;
   text-transform: uppercase;
-  color: $secondary-text-color;
-  font-family: $headers;
-  font-size: 12px;
-  display: inline;
 }
 
-.icon-chi-solid {
-  font-family: 'ChiFont';
-
-  &:before {
-    content: "\e903";
-  }
+h1, .h1 {
+  line-height: 48px;
 }
+
+h2, .h2 {
+  line-height: 32px;
+}
+
+h3, .h3 {
+  line-height: 30px;
+  text-transform: uppercase;
+}
+
+h4, .h4 {
+  font-family: 'OpenSans';
+  text-transform: uppercase;
+  line-height: 32px;
+  font-weight: bold;
+}
+
 
 form {
   .form-group {
     .form-control {
       &:focus {
-        border: 1px solid $brand-primary;
-        box-shadow: 0 1px 6px $brand-primary-light;
+        // border: 1px solid $brand-primary;
+        // box-shadow: 0 1px 6px $brand-primary-light;
       }
     }
   }
@@ -148,37 +62,6 @@ form {
 
 .back-link {
   margin-top: 5px;
-}
-
-.panda {
-  @include minimized-breakpoint {
-    display: none;
-  }
-  background: url("../imgs/panda-placeholder.png") no-repeat;
-  background-size: 100%;
-  background-position: bottom;
-  margin-top: 30px;
-  flex: 1 1;
-  position: absolute;
-  width: 100%;
-  height: 100%;
-  margin-left: 0;
-  margin-right: 0;
-  bottom: 0;
-  z-index: 0;
-  opacity: 0.5;
-}
-
-.panda-flip {
-  background: url("../imgs/panda-placeholder-flip.png") no-repeat;
-  background-size: 100%;
-  background-position: bottom;
-}
-
-.panda-chi {
-  background: url("../imgs/panda-coins.png") no-repeat;
-  background-size: 100%;
-  background-position: bottom;
 }
 
 .help-text {
@@ -258,23 +141,63 @@ form {
   }
 }
 
-.btn-second-primary:hover {
-  background-color: #ffb335;
-  border-color: #eccb93;
-}
-
-.btn-second-primary {
-  color: #fff !important;
-}
+// btns
 
 .btn {
   padding: 8px 0.7rem;
-  font-family: Roboto, "Helvetica Neue", Arial, sans-serif !important;
+  font-family: 'OpenSans';
   font-weight: 300;
+  font-size: 14px;
+
+  text-transform: uppercase;
 
   &:focus {
     color: #fff;
   }
+}
+
+.btn-primary {
+  &:hover {
+    background-color: $brand-primary-hover;
+  }
+  &:active {
+    background-color: $brand-primary-clicked;
+  }
+}
+
+.btn-secondary {
+  color: white;
+}
+
+// an img or .img element inside a .btn.btn-img with .btn-img will be placed at the left-hand side of the button
+.btn.btn-img {
+  img, .img {
+    float: left;
+  }
+  // offset text to put it back in center; we're assuming the image is 18px wide
+  span {
+    margin-right: 18px;
+  }
+}
+
+.btn-lg {
+  padding: 0.75rem 1.5rem !important;
+  text-transform: uppercase;
+}
+
+/** the button with a gray border */
+.btn-border {
+  color: $gray-light;
+  border-color: $gray-light;
+  &:hover {
+    color: $gray-lighter;
+    border-color: $gray-lighter;
+  }
+  &:active {
+    color: $gray;
+    border-color: $gray;
+  }
+
 }
 
 .row.equal-height {
@@ -297,277 +220,12 @@ form {
   padding-bottom: 30px;
 }
 
-#wrapper {
-  padding-left: 200px;
-  width: 100%;
-  display: flex;
-  flex-direction: column;
-  min-height: 100vh;
-  @include minimized-breakpoint {
-    padding-left: 100px;
-  }
-}
-
-.btn-primary {
-  background-color: $primary-color;
-  border-color: $primary-color;
-}
-
-.btn-lg {
-  padding: 0.75rem 1.5rem !important;
-  text-transform: uppercase;
-}
-
-.ci-met-stack {
-  background: url("../imgs/met-stack.svg") no-repeat;
-  height: 20px;
-  float: left;
-  @include minimized-breakpoint {
-    width: 36px;
-    height: 36px;
-    background-size: 36px;
-    background-position: center;
-    float: none;
-  }
-}
-
-input[type="range"] {
-  -webkit-appearance: none;
-  -moz-apperance: none;
-  border-radius: 6px;
-  height: 12px;
-  background-color: $primary-color;
-}
-
-input[type='range']::-webkit-slider-thumb {
-  -webkit-appearance: none !important;
-  background-color: $primary-color;
-  /* Oval: */
-  background: $primary-color;
-  box-shadow: 0 2px 4px 0 rgba(0,0,0,0.50);
-  border-radius: 50%;
-  height: 22px;
-  width: 22px;
-}
-
-.h-80 {
-  height: 80% !important;
-}
-
-.h-20 {
-  height: 20% !important;
-}
 
 .dropdown {
   .flag {
     width: 20px;
     height: 15px;
     margin-right: 5px;
-  }
-}
-/* side nav */
-#sidebar-wrapper {
-  margin-left: -200px;
-  left: 200px;
-  width: 200px;
-  background: #CCC;
-  position: fixed;
-  height: 100%;
-  overflow-y: hidden;
-  z-index: 1000;
-  transition: all 0.4s ease 0s;
-  @include minimized-breakpoint {
-    margin-left: -100px;
-    left: 100px;
-    width: 100px;
-  }
-
-  .connect {
-    width: 82px;
-    max-width: 84px;
-    height: 75px;
-    margin: auto auto 30px;
-    text-transform: uppercase;
-    background: url("../imgs/button-not-connected.svg");
-    background-size: contain;
-    background-repeat: no-repeat;
-
-    button {
-      position: relative;
-      top: 86px;
-      padding: 5px 12px;
-      line-height: 1;
-      background: $gray-lighter;
-      border-radius: 12px;
-      border: none;
-      font-family: "Roboto";
-      font-weight: 400;
-      font-size: 16px;
-      color: #3F414C;
-    }
-  }
-
-  .connect-on {
-    background: url("../imgs/button-connected.svg");
-    background-size: contain;
-    background-repeat: no-repeat;
-
-    button {
-      background: $brand-primary;
-      color: #fff;
-    }
-  }
-
-  .sidenav {
-    background-color: $dark-bg-color;
-    color: $white-text;
-    color: #fff;
-    height: 100vh;
-    font-size: 13px;
-    @include minimized-breakpoint {
-      padding: 30px 0;
-    }
-
-    .navbar {
-      @include minimized-breakpoint {
-        padding: 0;
-      }
-    }
-
-    .nav {
-      margin-top: 30px;
-      @include minimized-breakpoint {
-        border-bottom: 1px solid $gray-lighter;
-      }
-    }
-
-    .dropup {
-      position: absolute;
-      bottom: 60px;
-      padding: 0 15px;
-      width: 170px;
-      @include minimized-breakpoint {
-        width: 100%;
-        text-align: center;
-        padding: 0;
-      }
-
-      .dropdown-menu {
-        left: auto !important;
-        top: auto !important;
-        min-width: 140px !important;
-        @include minimized-breakpoint {
-          min-width: auto !important;
-        }
-
-        .dropdown-item {
-          padding: 10px 1.1rem;
-        }
-      }
-
-      .dropdown-toggle {
-        width: 100%;
-        @include minimized-breakpoint {
-          width: 90px;
-        }
-
-        &:after {
-          float: right;
-          margin-top: 6px;
-          color: #fff;
-        }
-      }
-    }
-  }
-
-  .nav-pills {
-    li.nav-item {
-      @include minimized-breakpoint {
-        border-top: 1px solid $gray-light;
-      }
-    }
-
-    .toggler {
-      width: 122px;
-
-      div {
-        position: absolute;
-        top: 7px;
-        left: 42px;
-        color: $primary-text-color;
-      }
-
-      div:before {
-        content: 'Connect';
-        text-transform: uppercase;
-        color: $primary-text-color;
-      }
-
-      &__label input:checked ~ .toggler div {
-        left: 14px;
-      }
-
-      &__label input:checked ~ .toggler div:before {
-        content: 'Connected';
-        color: #fff !important;
-      }
-    }
-
-    a {
-      color: $gray-lighter;
-      font-family: $headers;
-      font-size: 0.9rem;
-    }
-
-    .fa {
-      font-size: 20px;
-      line-height: 20px;
-      margin-right: 20px;
-      width: 20px;
-      text-align: center;
-      vertical-align: middle;
-      @include minimized-breakpoint {
-        font-size: 36px;
-        width: 36px;
-        margin-right: 0;
-        display: block;
-        margin-bottom: 10px;
-        opacity: 0.9;
-        line-height: 36px;
-        width: 100%;
-      }
-    }
-
-    .fa-globe {
-      line-height: 36px;
-    }
-
-    .nav-link {
-      padding: 0.9rem 0;
-      @include minimized-breakpoint {
-        text-align: center;
-      }
-    }
-
-    .nav-link.active:hover {
-      a {
-        background-color: transparent;
-      }
-    }
-
-    .nav-link.active,
-    .nav-link.active:hover {
-      .fa {
-        color: $brand-primary;
-      }
-      background: none;
-      color: #fff;
-      @include minimized-breakpoint {
-        background: $gray-lighter;
-        color: $gray;
-        border-radius: 0;
-      }
-    }
   }
 }
 
@@ -578,164 +236,7 @@ input[type='range']::-webkit-slider-thumb {
     border: 2px dashed #79E2F5;
   }
 }
-/* Dashboard */
-.dashboard-content {
-  .row.equal-height {
-    padding: 0 15px;
-    margin-left: 0;
-    margin-right: 0;
-  }
 
-  .fa-question-circle {
-    color: $primary-color;
-  }
-  height: 100vh;
-
-  .last {
-    .tooltip {
-      margin-left: -140px;
-
-      .tooltip-inner {
-        &:before {
-          left: 97%;
-        }
-      }
-    }
-  }
-  flex: 0 1;
-  padding-top: 30px;
-  padding-right: 0;
-  padding-left: 0;
-  /*all cards*/
-  .card {
-    box-shadow: 0 2px 4px 0 rgba(35,36,37,0.30);
-  }
-
-  .dashboard-card {
-    padding-bottom: 10px;
-
-    .card-header {
-      padding: 0.3rem 10px;
-      font-family: Roboto-Regular;
-      font-size: 12px;
-      color: #99A1B0;
-      letter-spacing: 0.5px;
-
-      .card-title-data {
-        color: $primary-text-color;
-        padding-left: 5px;
-      }
-    }
-
-    .card-block {
-      padding: 0.2rem 0 0;
-
-      p.card-desc {
-        color: $primary-text-color;
-        margin-bottom: -5px;
-      }
-
-      .btn-lg {
-        font-weight: 300;
-        font-size: 20px;
-        line-height: 25px;
-      }
-
-      .dropdown-toggle {
-        border: none;
-
-        &:hover {
-          background: none;
-        }
-
-        &:active,
-        &:focus {
-          background-color: transparent;
-          border: none;
-        }
-      }
-    }
-
-    .show {
-      .btn-secondary.dropdown-toggle {
-        background-color: transparent;
-        border: none;
-      }
-
-      .dropdown-menu {
-        width: 100%;
-      }
-    }
-
-    .card-action-container {
-      padding: 5px 15px;
-      display: flex;
-      flex-direction: column;
-
-      .btn,
-      .btn-group,
-      .dropdown,
-      input {
-        width: 100%;
-      }
-
-      h3 {
-        font-size: 36px;
-        letter-spacing: normal;
-      }
-    }
-
-    .card-content {
-      width: 100%;
-      text-align: center;
-      padding: 10px;
-
-      h3 {
-        text-align: center;
-        margin: auto;
-      }
-
-      img {
-        width: 100%;
-      }
-    }
-    color: $secondary-text-color;
-
-    .card-help {
-      position: absolute;
-      top: 5px;
-      right: 10px;
-    }
-  }
-  /*MET balance*/
-  .met-balance {
-    .card-content {
-      display: flex;
-    }
-  }
-
-  .security-level {
-    .card-content {
-      img {
-        width: 90%;
-      }
-    }
-  }
-  /*Usage Summary*/
-  .usage-summary {
-    hr {
-      margin-bottom: 0;
-    }
-  }
-  /*Browsing location*/
-  .browsing-location {
-    .dropdown-toggle::after {
-      float: right;
-      margin-top: 6px;
-    }
-  }
-}
-/* End Dashboard Content*/
 .secondary-text {
   color: $secondary-text-color;
 }
@@ -756,9 +257,20 @@ input[type="number"]::-webkit-inner-spin-button {
   right: 0;
   bottom: 0;
 }
+
+
+/** Put a magnifying glass on the right side of the input box */
+input[type=text].input-search {
+  background-color: purple;
+  &:before {
+    content: url(../imgs/icons/search.svg);
+    width: 30px;
+    height: 30px;
+  }
+}
+
 // Put a "chiclet" on the left of a button.
 // To use, put .btn-chiclet on the .btn element, and put a .chiclet div inside the button
-
 .btn-chiclet {
   padding-left: 55px;
 
@@ -769,7 +281,7 @@ input[type="number"]::-webkit-inner-spin-button {
     top: 0;
     bottom: 0;
     border-radius: 0.25rem 0 0 0.25rem;
-    background-color: $primary-color;
+    // background-color: $primary-color;
     color: white;
     width: 40px;
     // centers contained divs
@@ -800,7 +312,7 @@ input[type="number"]::-webkit-inner-spin-button {
   }
 
   &.active span {
-    background-color: $secondary-color;
+    // background-color: $secondary-color;
   }
 
   &.complete {
@@ -818,43 +330,39 @@ input[type="number"]::-webkit-inner-spin-button {
     padding-bottom: 0;
   }
 }
-/* some modal utility things
-*/
-.modal {
-  // We use the h1 for the modal title; this brings it closer to the top.
-  .modal-body {
-    padding-top: 0;
 
-    .steps-row {
-      margin-top: 20px;
-    }
+/*
+ * The style for components put in the "modal" outlet
+ */
+.routed-modal-container {
+  height: 100%;
+  width: 100%;
+  position: fixed;
+  z-index: 10;
+  display: inline-flex;
+  background-color: $background-transparency;
 
-    .payment-container {
-      margin-top: 30px;
-    }
+  /** The modal body */
+  .routed-modal {
+    background-color: white;
+    border-radius: $card-border-radius;
 
-    h1 {
-      margin-top: 0;
-      text-align: center;
-    }
-
-    label {
-      margin-bottom: 0.2rem;
-    }
-
-    .input-group {
-      input[type='number'] {
-        height: 52px;
-      }
-
-      .input-group-addon {
-        width: 56px;
-      }
-    }
+    // set these to change the size
+    width: 50%;
+    // height: 50%;
+    margin: auto auto;
+    box-shadow: $default-shadow;
   }
-  // put on the modal-title if you want it to be as small as possible; e.g. if you just want enough space for a "close" button
-  .modal-header-sm {
-    padding: 10px 3px 0;
-    border: 0;
+}
+
+// Style for modal dialogs with left- and right-hand sides
+.routed-modal.divided-dialog {
+  display: flex;
+  > div {
+    width: 50%;
+    padding: 30px;
+  }
+  > div:first-child {
+    border-right: 1px solid $gray-light;
   }
 }

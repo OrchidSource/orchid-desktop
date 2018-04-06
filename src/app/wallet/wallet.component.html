@@ -1,0 +1,66 @@
+<div class="wallet-top-area row">
+  <div class="wallet-balance col-md-4">
+    <div [translate]>WALLET.CURRENT_BALANCE</div>
+    <div>
+      <span class="wallet-balance-number">0.0</span> OCT ($0.00)
+    </div>
+  </div>
+  <div class="wallet-actions col-md-8">
+    <div class="wallet-backup">
+      <div class="btn btn-img btn-warning">
+        <img src="assets/imgs/icons/alert-circle.svg" aria-disabled>
+        <span [translate]>WALLET.PLEASE_BACKUP</span>
+      </div>
+    </div>
+    <div class="wallet-button-row">
+      <span class="btn btn-primary">
+        <span [translate]>WALLET.SHARE</span>
+      </span>
+      <span class="btn btn-img btn-secondary">
+        <img src="assets/imgs/icons/send.svg" aria-disabled>
+        <span [translate]>WALLET.SEND</span>
+      </span>
+      <span class="btn btn-secondary"> <span [translate]>WALLET.RECEIVE</span></span>
+    </div>
+  </div>
+</div>
+
+<div class="wallet-transactions">
+  <div class="row wallet-transactions-head">
+    <div class="col-lg-6">
+      <h2 [translate]>WALLET.HISTORY</h2>
+    </div>
+    <div class="col-lg-6">
+      <div class="input-group">
+        <input type="text" class="form-control input-search" [placeholder]="'GENERAL.SEARCH' | translate" />
+      </div>
+    </div>
+  </div>
+
+  <table class="table">
+    <thead>
+      <tr>
+        <th scope="col">
+          <span [translate]>WALLET.FROM</span>
+        </th>
+        <th scope="col"><span [translate]>WALLET.TO</span></th>
+        <th scope="col"><span [translate]>WALLET.STATUS</span></th>
+        <th scope="col">
+          <span [translate]>WALLET.AMOUNT</span>
+        </th>
+        <th scope="col">
+          <span [translate]>WALLET.DATE</span>
+        </th>
+      </tr>
+    </thead>
+    <tbody>
+      <tr *ngFor="let transaction of transactions">
+        <td>{{ transaction.from }}</td>
+        <td>{{ transaction.to }}</td>
+        <td [ngClass]="'transaction-status-' + transaction.status">{{ 'WALLET.' + transaction.status.toUpperCase() | translate  }}</td>
+        <td>{{ transaction.amount | number: '1.3'}}</td>
+        <td>{{ transaction.date | date: 'shortDate' }}</td>
+      </tr>
+    </tbody>
+  </table>
+</div>

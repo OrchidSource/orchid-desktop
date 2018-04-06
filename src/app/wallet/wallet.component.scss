@@ -1,0 +1,69 @@
+@import '../../assets/scss/variables';
+
+.wallet-top-area {
+  display: flex;
+  flex-direction: row;
+  justify-content: space-between;
+  padding-bottom: 46px;
+
+  .wallet-balance {
+    // width: 33%;
+    text-align: center;
+    text-transform: uppercase;
+    .wallet-balance-number {
+      font-size: 40px;
+    }
+  }
+
+  .wallet-actions {
+    // width: 66%;
+
+    .wallet-backup {
+      > .btn {
+        float: right;
+        width: 65%;
+        margin-bottom: 15px; //???
+        border-top-right-radius: 0;
+        border-bottom-right-radius: 0;
+      }
+    }
+
+    .wallet-button-row {
+      width: 100%;
+      display: flex;
+      flex-direction: row;
+      justify-content: space-around;
+      .btn {
+        width: 30%;
+      }
+    }
+  }
+}
+
+.wallet-transactions {
+  background-color: white;
+  .wallet-transactions-head {
+    padding: 40px;
+    height: 106px;
+  }
+
+  table {
+    thead {
+      background-color: $gray-lightest;
+      th {
+        text-transform: uppercase;
+        border: 0px;
+      }
+    }
+    td {
+      border-color: $gray-lightest;
+      text-transform: uppercase;
+      &.transaction-status-received {
+        color: $brand-success;
+      }
+      &.transaction-status-sent {
+        color: $brand-warning
+      }
+    }
+  }
+}

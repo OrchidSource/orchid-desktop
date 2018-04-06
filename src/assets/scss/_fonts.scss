@@ -1,0 +1,58 @@
+// we'll use SemiBold as the "normal" OpenSans font
+@font-face {
+  font-family: 'OpenSans';
+  src: url("../fonts/OpenSans-SemiBold.ttf") format('truetype');
+  font-weight: bold;
+  font-style: normal;
+}
+
+@font-face {
+  font-family: 'OpenSans';
+  src: url("../fonts/OpenSans-SemiBoldItalic.ttf") format('truetype');
+  font-weight: bold;
+  font-style: italic;
+}
+
+@font-face {
+  font-family: 'OpenSans';
+  src: url("../fonts/OpenSans-Regular.ttf") format('truetype');
+  font-weight: normal;
+  font-style: normal;
+}
+
+@font-face {
+  font-family: 'OpenSans';
+  src: url("../fonts/OpenSans-Italic.ttf") format('truetype');
+  font-weight: normal;
+  font-style: italic;
+}
+
+@font-face {
+  font-family: 'OpenSans';
+  src: url("../fonts/OpenSans-Light.ttf") format('truetype');
+  font-weight: 300;
+  font-style: normal;
+}
+
+@font-face {
+  font-family: 'OpenSans';
+  src: url("../fonts/OpenSans-LightItalic.ttf") format('truetype');
+  font-weight: 300;
+  font-style: italic;
+}
+
+// Quicksand fonts
+@font-face {
+  font-family: 'QuickSand';
+  src: url("../fonts/Quicksand-Bold.ttf") format('truetype');
+  font-weight: bold;
+  font-style: normal;
+}
+
+// Quicksand fonts
+@font-face {
+  font-family: 'QuickSand';
+  src: url("../fonts/Quicksand-Regular.ttf") format('truetype');
+  font-weight: normal;
+  font-style: normal;
+}

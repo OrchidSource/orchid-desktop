@@ -1,11 +1,67 @@
 {
+  "FIRST_LAUNCH": {
+    "TEXT_1": "Welcome to the Orchid network, where the internet belongs to US",
+    "TEXT_2_TITLE": "Access the internet",
+    "TEXT_2_SUBTITLE": "Private. Secure. Reliable. Decentralized.",
+    "TEXT_2": "Connect to the entire internet safely and securely from anywhere in the world. Your data is your own, not somebody else’s",
+    "TEXT_3_TITLE": "Earn tokens",
+    "TEXT_3_SUBTITLE": "Earn extra income while helping to build a freer, more open society.",
+    "TEXT_3": "Save, share, trade or exchange Orchid tokens for local or digital currency or to purchase bandwidth from other users on the Orchid network.",
+    "LEARN_BUTTON": "Learn more",
+    "GET_STARTED_BUTTON": "Get started"
+  },
   "STATUSES": {
-    "ON": "On",
-    "OFF": "Off"
+    "CONNECTED": "Connected",
+    "DISCONNECTED": "Disconnected"
   },
   "SIDEBAR": {
     "ACCESS": "Access the World!",
     "DASHBOARD": "Dashboard",
-    "ABOUT": "About"
+    "SETTINGS": "Settings",
+    "WALLET": "Wallet"
+  },
+  "DASHBOARD": {
+    "GB_REMAINING": "GB Remaining",
+    "DEFAULT_LOCATION": "Default location",
+    "PLEASE_ADD": "Please add some OCT to connect",
+    "CONNECTED": "Connected to Orchid network",
+    "NOT_CONNECTED": "Not connected",
+    "TOTAL_EARNINGS": "Total earnings",
+    "EARN_MORE": "Earn more",
+    "CONNECTIONS_SERVED": "Connections served",
+    "FUND_ACCOUNT": "Fund account",
+    "ORCHID_TOTAL": "Orchid network total",
+    "YOUR_TOTAL": "Your total"
+  },
+  "WALLET": {
+    "CURRENT_BALANCE": "Current balance",
+    "PLEASE_BACKUP": "Please backup your wallet",
+    "SHARE": "Share Orchid",
+    "SEND": "Send",
+    "RECEIVE": "Receive",
+    "HISTORY": "Transaction History",
+    "FROM": "From",
+    "TO": "To",
+    "STATUS": "Status",
+    "AMOUNT": "Amount",
+    "DATE": "Date",
+    "SENT": "Sent",
+    "RECEIVED": "Received"
+  },
+  "SETTINGS": {
+    "LAUNCH_STARTUP": "Launch on startup",
+    "CONNECT_ON_STARTUP": "Connect on startup",
+    "EXIT_NODE": "Run Orchid as exit node",
+    "RELAY_NODE": "Run Orchid as relay node",
+    "SOURCE_NODE": "Run Orchid as source node",
+    "BROWSERS_ONLY": "Web browsers only",
+    "NATIVE_CURRENCY": "Native currency"
+  },
+  "GENERAL": {
+    "USERNAME": "Username",
+    "PASSWORD": "Password",
+    "PASSWORD_CONFIRM": "Confirm password",
+    "NEXT": "Next",
+    "SEARCH": "Search"
   }
 }

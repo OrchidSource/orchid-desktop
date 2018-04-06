@@ -1,0 +1,255 @@
+@import '../../assets/scss/variables';
+@import '../../assets/scss/mixins';
+
+$sidebar-width: 200px;
+$sidebar-padding: 30px;
+
+#wrapper {
+  padding-left: 200px;
+  width: 100%;
+  display: flex;
+  flex-direction: column;
+  min-height: 100vh;
+  @include minimized-breakpoint {
+    padding-left: 0;
+  }
+}
+
+
+/* side nav */
+#sidebar-wrapper {
+  margin-left: -$sidebar-width;
+  left: $sidebar-width;
+  width: $sidebar-width;
+  background-color: $brand-primary;
+  color: $brand-primary-light;
+  position: fixed;
+  height: 100%;
+  overflow-y: hidden;
+
+  @include minimized-breakpoint {
+    width: 100%;
+    height: 120px;
+  }
+
+  /* holds the connections stuff at the top */
+  .connect-container {
+    padding-top: $sidebar-padding;
+    width: 100%;
+    height: 168px;
+    background-color: $navbar-background;
+    color: $navbar-foreground;
+
+    .connect {
+      width: 100%;
+      height: 108px;
+      img {
+        @include hide-minimized();
+      }
+
+      button {
+        margin: 15px auto;
+        display: block;
+        width: 120px;
+        padding-top: 5px;
+        padding-bottom: 5px;
+        line-height: 1;
+        border-radius: 12px;
+        border: none;
+        text-transform: uppercase;
+        font-weight: 400;
+        font-size: 14px;
+
+        background-color: $gray-light;
+        &:hover {
+          background-color: $gray-lighter;
+        }
+        &:active {
+          background-color: $gray;
+        }
+      }
+
+    }
+
+    /* Style for when connection is active */
+    .connect-on {
+      background-size: contain;
+      background-repeat: no-repeat;
+
+      button {
+        background-color: $navbar-connected;
+        &:hover {
+          background-color: $navbar-connected-hover;
+        }
+        &:active {
+          background-color: $navbar-connected-active;
+        }
+      }
+    }
+  }
+
+  @include minimized-breakpoint {
+    .connect-container {
+      position: absolute;
+      bottom: 0;
+      height: 40px;
+
+      .connect {
+        position: absolute;
+        height: 40px;
+        bottom: 0;
+        button {
+          position: absolute;
+          top: 0;
+          width: 100%;
+          border-radius: 0;
+          height: 40px;
+          margin: 0;
+        }
+      }
+
+    }
+  }
+
+  /* holds the navigation links */
+  .sidebar-links {
+    height: calc(100vh - 204px);
+    position:relative;
+    font-size: 13px;
+    padding: 0;
+    @include minimized-breakpoint {
+      padding: 30px 0;
+    }
+
+    a {
+      display: block;
+      position: relative;
+      width: 100%;
+      height: 64px;
+      color: $navbar-foreground;
+      font-size: 12px;
+      text-transform: uppercase;
+
+      background-repeat: no-repeat;
+      background-position-x: $sidebar-padding;
+      background-position-y: 20px;
+
+      &.link-dashboard {
+        background-image: url('../../assets/imgs/main-nav/dashboard-inactive.svg');
+      }
+      &.link-wallet {
+        background-image: url('../../assets/imgs/main-nav/wallet-inactive.svg');
+      }
+      &.link-settings {
+        background-image: url('../../assets/imgs/main-nav/settings-inactive.svg');
+      }
+      &:hover, &.active {
+        &.link-dashboard {
+          background-image: url('../../assets/imgs/main-nav/dashboard-active.svg');
+        }
+        &.link-wallet {
+          background-image: url('../../assets/imgs/main-nav/wallet-active.svg');
+        }
+        &.link-settings {
+          background-image: url('../../assets/imgs/main-nav/settings-active.svg');
+        }
+      }
+
+      &:hover, &.active {
+        color: white;
+        background-color: $brand-primary-hover;
+        text-decoration: none;
+      }
+
+      span.link-text {
+        @include hide-minimized();
+        display: inline-block;
+        margin-top: 24px;
+        margin-left: 64px;
+      }
+
+    }
+
+    .navbar {
+      @include minimized-breakpoint {
+        padding: 0;
+      }
+    }
+
+    .dropup {
+      position: absolute;
+      // bottom: 36px;
+      bottom: 0px;
+      padding: 0;
+      width: 100%;
+      background-color: $navbar-background;
+
+
+      // The language open button
+      .btn {
+        width: 100%;
+        border: 0;
+        border-radius: 0px;
+        text-align: left;
+        padding-left: $sidebar-padding;
+        color: $gray-light;
+        img {
+          position: absolute;
+          right: $sidebar-padding;
+          top: 15px;
+          transform: rotateX(180deg);
+          transition: transform 200ms;
+          &.opened {
+            transform: rotateX(0deg);
+          }
+        }
+      }
+
+      button.language-dropdown-item {
+        height: 35px;
+        background-color: white;
+        padding-left: $sidebar-padding;
+        font-size: 12px;
+        color: $gray;
+        text-align: left;
+        line-height: 13px;
+        &:hover {
+          background-color: $gray-lighter;
+        }
+      }
+    }
+  }
+
+  @include minimized-breakpoint {
+    .sidebar-links {
+      height: 45px;
+      padding: 0;
+      display: flex;
+      flex-direction: row;
+      > a {
+        width: 33%;
+        height: 45px;
+        text-align: center;
+        background-position: center;
+      }
+
+      .dropup {
+        bottom: -38px;
+      }
+    }
+  }
+
+}
+
+#main-content {
+  height: 100vh;
+  overflow-y: scroll;
+  background-color: $content-background;
+  flex: 0 1;
+  padding-top: 30px;
+  padding-right: 0;
+  padding-left: 0;
+  @include minimized-breakpoint {
+    margin-top: 115px;
+  }
+}

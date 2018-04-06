@@ -1,0 +1,63 @@
+@import '../../../assets/scss/variables';
+@import '../../../assets/scss/bootstrap_overrides';
+@import '../../../assets/scss/mixins';
+
+$height: 30px;
+
+label {
+  position: relative;
+  display: inline-block;
+  width: 60px;
+  height: $height;
+
+  input {
+    display: none;
+  }
+
+  .slider {
+    position: absolute;
+    cursor: pointer;
+    top: 0;
+    left: 0;
+    right: 0;
+    bottom: 0;
+    background-color: $gray-default;
+    -webkit-transition: .4s;
+    transition: .4s;
+  }
+
+  .slider:before {
+    position: absolute;
+    content: "";
+    height: 22px;
+    width: 22px;
+    left: 4px;
+    bottom: 4px;
+    background-color: white;
+    transition: .4s;
+  }
+
+  input:checked + .slider {
+    background-color: $success;
+  }
+
+  input:checked + .slider:before {
+    transform: translateX(30px);
+  }
+
+  /* Rounded sliders */
+  .slider {
+    border-radius: $height;
+  }
+
+  .slider:before {
+    border-radius: 50%;
+  }
+  // minimized styling
+  @include minimized-breakpoint {
+      width: $height;
+      input + .slider:before, input:checked + .slider:before {
+        transform: none;
+      }
+  }
+}

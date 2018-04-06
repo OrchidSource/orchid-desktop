@@ -1,0 +1,47 @@
+/**
+ * Contains overrides of bootstrap defaults
+ */
+
+ // colors
+
+$primary: $brand-primary;
+$secondary: $brand-secondary;
+
+// bootstrap "theme" colors
+$success: #5CB85C;
+$danger: #E3601F;
+$warning: #d6692f;
+
+// FONTS
+
+$font-family-sans-serif: 'OpenSans';
+
+$headings-font-family: 'QuickSand';
+$headings-font-weight: normal;
+// need to override h1 and h2 to "bold"
+$h1-font-size: 32px;
+$h2-font-size: 21px;
+$h3-font-size: 18px;
+$h4-font-size: 18px;
+
+// buttons
+$btn-border-radius: 100px;
+$btn-border-radius-lg: 100px;
+$btn-border-radius-sm: 100px;
+
+// inputs
+$input-border-color: $gray-lighter;
+$input-border-radius: 100px;
+$input-border-radius-lg: 100px;
+$input-border-radius-sm: 100px;
+
+$input-group-addon-bg: white;
+$input-group-addon-color: $gray-light;
+$input-group-addon-border-color: $gray-light;
+
+// try to remove focus drop shadow, which looks weird
+$input-btn-focus-box-shadow: none;
+
+// cards
+$card-border-radius: 10px;
+$card-border-width: 0px;

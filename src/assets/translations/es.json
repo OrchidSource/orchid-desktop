@@ -1,6 +1,12 @@
 {
   "SIDEBAR": {
-    "ACCESS": "Access the World!",
-    "ABOUT": "About in Spanish"
+    "ACCESS": "Access el mundo!",
+    "DASHBOARD": "Tablero",
+    "SETTINGS": "Ajustes",
+    "WALLET": "Billetera"
+  },
+  "WALLET": {
+    "SENT": "Expedido",
+    "RECEIVED": "Recibido"
   }
 }

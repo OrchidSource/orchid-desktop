@@ -85,7 +85,7 @@ Building can take a very long time, especially the first time you do it; be pati
 
 All executables are built using the [electron-builder](https://www.electron.build/) tool; see the options for that tool to see how to modify the generated executables (e.g. sign them or change the app icon).
 
-#### Mac OX
+#### MacOS
 
 It is only possible to build a Mac executable from a Mac computer.
 
