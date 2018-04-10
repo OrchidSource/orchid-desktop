@@ -1,18 +1,22 @@
 export class BrowsingLocation {
 
-    constructor(nick, name) {
-        this.update(nick, name);
+    constructor(code, name) {
+        this.update(code, name);
     }
 
     private _flagUrl : string;
     private _mapUrl : string;
-    private _nick : string;
+
+    /**
+     *  the ISO 3166 country code
+     */
+    private _code : string;
     private _name : string;
 
-    update(nick: string, name: string) {
-        this._flagUrl = "assets/imgs/icons/flags/" + nick + ".svg";
-        this._mapUrl = "assets/imgs/map-" + nick + ".svg";
-        this._nick = nick;
+    update(code: string, name: string) {
+        this._flagUrl = "assets/imgs/icons/flags/" + code + ".svg";
+        this._mapUrl = "assets/imgs/map-" + code + ".svg";
+        this._code = code;
         this._name = name;
     }
 
@@ -28,8 +32,8 @@ export class BrowsingLocation {
         return this._mapUrl;
     }
 
-    get nick() : string {
-        return this._nick;
+    get code() : string {
+        return this._code;
     }
 
     get name() : string {
@@ -44,7 +48,7 @@ export class BrowsingLocation {
         this._notAllowed();
     }
 
-    set nick(nick : string) {
+    set code(code : string) {
         this._notAllowed();
     }
 

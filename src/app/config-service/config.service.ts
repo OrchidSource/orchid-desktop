@@ -21,20 +21,20 @@ export class ConfigService {
     private _browsingLocations : BrowsingLocation[];
 
     private _availableBrowsingLocations : any[] = [
-        { nick: "us", name: "The United States" },
-        { nick: "eu", name: "European Union", },
-	{ nick: "de", name: "Germany", },
-        { nick: "hkg", name: "Hong Kong", },
-	{ nick: "sng", name: "Singapore", }
+        { code: "us", name: "The United States" },
+        // { code: "eu", name: "European Union", },
+        { code: "de", name: "Germany", },
+        { code: "hkg", name: "Hong Kong", },
+        { code: "sng", name: "Singapore", }
     ];
 
-    private _starting_location = 1;
+    private _starting_location =  0;
 
     private _initBrowsingLocations() {
         this._availableBrowsingLocations.forEach((bl) => {
-            this._browsingLocations.push(new BrowsingLocation(bl.nick, bl.name));
+            this._browsingLocations.push(new BrowsingLocation(bl.code, bl.name));
         });
-        this._selectedBrowsingLocation = this._browsingLocations[this._starting_location]; 
+        this._selectedBrowsingLocation = this._browsingLocations[this._starting_location];
     }
 
     get selectedBrowsingLocation() : BrowsingLocation {
@@ -53,7 +53,7 @@ export class ConfigService {
     }
 
     set selectedBrowsingLocation(browsingLocation : BrowsingLocation) {
-        this._selectedBrowsingLocation = browsingLocation; 
+        this._selectedBrowsingLocation = browsingLocation;
     }
 
     set connected(connected : boolean) {

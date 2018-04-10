@@ -1,0 +1,12 @@
+@import '../../../assets/scss/variables';
+.world-map {
+  fill: white;
+}
+[cc] {
+  fill: $gray-lighter;
+  stroke: #555;
+  stroke-width: 0px;
+  &.world-map-selected {
+    fill: $brand-primary;
+  }
+}

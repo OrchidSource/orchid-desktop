@@ -43,7 +43,7 @@ export class OrchidNetService {
    * Sets the browsing location
    */
   setBrowsingLocation(browsingLocation: BrowsingLocation) {
-    app.chrome_vars.startNetwork(browsingLocation.nick.toUpperCase());
+    app.chrome_vars.startNetwork(browsingLocation.code.toUpperCase());
   }
 
   /**
