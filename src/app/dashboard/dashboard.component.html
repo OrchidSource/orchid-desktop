@@ -59,8 +59,7 @@
       </div>
 
       <div class="card-body">
-        <world-map [countryCode]="selectedBrowsingLocation().code"></world-map>
-        <!-- <img [src]="selectedBrowsingLocation().mapUrl" class="browsing-location-map"> -->
+        <world-map [countryCode]="selectedBrowsingLocation.code"></world-map>
       </div>
 
       <div class="card-footer">
@@ -71,7 +70,7 @@
           ngbDropdownToggle
           aria-haspopup="true"
           aria-expanded="false">
-          <img [src]="selectedBrowsingLocation().flagUrl" class="flag" /> {{ selectedBrowsingLocation().name }}
+          <img [src]="selectedBrowsingLocation.flagUrl" class="flag" /> {{ selectedBrowsingLocation.name }}
         </button>
         <div ngbDropdownMenu aria-labelledby="dropdownMenuButton">
           <a *ngFor="let browsingLocation of browsingLocations()" class="dropdown-item" (click)="setSelectedBrowsingLocation(browsingLocation)">

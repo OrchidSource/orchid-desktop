@@ -19,24 +19,30 @@ export class WorldMapComponent implements OnChanges {
   @Input() countryCode: string;
 
   /** a reference to the currently selected element */
-  private selectedElement: any = false;
+  private selectedElements: any = false;
 
   public className: string;
 
-  constructor(private renderer: Renderer2, private elementRef : ElementRef) {
+  constructor(private renderer: Renderer2, private elementRef: ElementRef) {
   }
 
   ngOnChanges() {
-    console.log('changes:', arguments);
-    if (this.selectedElement) {
-      this.renderer.removeClass(this.selectedElement, SELECTED_CLASS);
+    if (this.selectedElements) {
+      for (let i = 0; i < this.selectedElements.length; i++) {
+        this.renderer.removeClass(this.selectedElements.item(i), SELECTED_CLASS);
+      }
     }
-    this.selectedElement = this.elementRef.nativeElement.querySelector("[cc='" + this.countryCode + "']");
-    if (!this.selectedElement) {
+
+    this.selectedElements = this.elementRef.nativeElement.getElementsByClassName(this.countryCode.toLowerCase());
+
+    if (!this.selectedElements) {
       console.warn(`Could not find element for country code '${this.countryCode}'`);
       return;
     }
-    this.renderer.addClass(this.selectedElement, SELECTED_CLASS);
+
+    for (let i = 0; i < this.selectedElements.length; i++) {
+      this.renderer.addClass(this.selectedElements.item(i), SELECTED_CLASS);
+    }
   }
 
 }

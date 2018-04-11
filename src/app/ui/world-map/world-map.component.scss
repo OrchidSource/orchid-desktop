@@ -2,11 +2,11 @@
 .world-map {
   fill: white;
 }
-[cc] {
+
+.landxx {
   fill: $gray-lighter;
-  stroke: #555;
   stroke-width: 0px;
-  &.world-map-selected {
-    fill: $brand-primary;
-  }
+}
+.world-map-selected {
+  fill: $brand-primary;
 }

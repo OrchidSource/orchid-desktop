@@ -18,6 +18,7 @@ export class DashboardComponent implements OnInit {
     timer: NodeJS.Timer = null;
     public time_connected: number = 0;
     time: Date = new Date(0,0,0,0,0,0,0);
+    selectedBrowsingLocation: BrowsingLocation;
 
     constructor(private _config : ConfigService, private changeDetector: ChangeDetectorRef, private orchidNetService : OrchidNetService) {
       this.connected = false;
@@ -32,6 +33,10 @@ export class DashboardComponent implements OnInit {
           this.stopTimer();
         }
       });
+
+      this.selectedBrowsingLocation = BrowsingLocation.getLocations().find(bl => {
+        return bl.code == this._config.selectedBrowsingLocation;
+      })
 
     }
 
@@ -55,16 +60,13 @@ export class DashboardComponent implements OnInit {
     }
 
     setSelectedBrowsingLocation(browsingLocation : BrowsingLocation) {
-      this._config.selectedBrowsingLocation = browsingLocation;
+      this.selectedBrowsingLocation = browsingLocation;
+      // this._config.selectedBrowsingLocation = browsingLocation.code;
       console.log("BrowsingLocation := ", browsingLocation);
       this.orchidNetService.setBrowsingLocation(browsingLocation);
     }
 
-    selectedBrowsingLocation() : BrowsingLocation {
-        return this._config.selectedBrowsingLocation;
-    }
-
     browsingLocations() : BrowsingLocation[] {
-        return this._config.browsingLocations;
+        return BrowsingLocation.getLocations();
     }
 }
