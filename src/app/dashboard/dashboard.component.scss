@@ -40,23 +40,41 @@
     max-height: 120px
   }
 
-  .dropdown-toggle::after {
-    float: right;
-    margin-top: 6px;
+  .flag {
+    height: 20px;
+    margin-right: 5px;
+    border-radius: 2px;
   }
 
-  .dropdown {
-    width: 100%;
-  }
 
-  .btn {
-    &:focus {
-      box-shadow: none;
-      color: inherit;
+  .card-footer {
+    // position: relative;
+    .selected-country {
+      border-radius: 5px;
+      padding: 6px 12px;
+
+      color: black;
+      &:hover {
+        cursor: pointer;
+        background-color: $gray-lighter;
+      }
+
+      .select-arrow {
+        float: right;
+        padding-top: 7px;
+      }
+
+    }
+
+    input {
+      border-radius: 5px;
+      border: 0;
+      &:focus {
+        background-color: $gray-lighter;
+      }
     }
   }
 }
-
 
 // stuff that goes inside the dashboard
 .row.equal-height {

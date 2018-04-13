@@ -62,31 +62,28 @@
         <world-map [countryCode]="selectedBrowsingLocation.code"></world-map>
       </div>
 
-      <div class="card-footer">
-        <div ngbDropdown class="d-inline-block">
-          <button class="btn btn-block btn-outline"
-          type="button"
-          id="dropdownMenuButton"
-          ngbDropdownToggle
-          aria-haspopup="true"
-          aria-expanded="false">
-          <img [src]="selectedBrowsingLocation.flagUrl" class="flag" /> {{ selectedBrowsingLocation.name }}
-        </button>
-        <div ngbDropdownMenu aria-labelledby="dropdownMenuButton">
-          <a *ngFor="let browsingLocation of browsingLocations()" class="dropdown-item" (click)="setSelectedBrowsingLocation(browsingLocation)">
-            <img [src]="browsingLocation.flagUrl" class="flag" />
-            <span *ngIf="browsingLocation.name != 'The United States'">
-              <span class="not-browsing-from-disabled">
-                {{ browsingLocation.name }}
-              </span>
-            </span>
-            <span *ngIf="browsingLocation.name == 'The United States'">
-              {{ browsingLocation.name }}
-            </span>
-          </a>
-        </div>
-      </div><!-- .dropdown -->
 
+      <div class="card-footer">
+        <div class="selected-country" *ngIf="!typeaheadOpen" (click)="focusBrowseLocationInput()">
+          <img [src]="selectedBrowsingLocation.flagUrl" *ngIf="selectedBrowsingLocation.flagUrl" class="flag" />
+          {{ selectedBrowsingLocation.name }}
+          <img class="select-arrow" src="assets/imgs/icons/select-arrow.svg" aria-disabled />
+        </div>
+
+        <input #browseLocationInput type="text"
+                [hidden]="!typeaheadOpen"
+                class="form-control"
+                [inputFormatter]="browsingLocationInputFormatter"
+                [(ngModel)]="typeaheadBrowsingLocation"
+                [resultTemplate]="countrySelectTemplate"
+                [ngbTypeahead]="searchBrowsingLocations"
+                (click)="focusBrowseLocationInput()"
+                (selectItem)="browseLocationSelected($event)"
+                (blur)="browseLocationInputBlured()"/>
+        <!-- template for browsing location search results -->
+        <ng-template #countrySelectTemplate let-r="result" let-t="term">
+          <img [src]="r.flagUrl" class="flag" />{{ r.name}}
+        </ng-template>
     </div>
   </div>
 </div>

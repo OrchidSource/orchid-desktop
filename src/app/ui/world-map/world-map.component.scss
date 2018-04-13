@@ -9,4 +9,9 @@
 }
 .world-map-selected {
   fill: $brand-primary;
+  opacity: 1;
+  &.circlexx {
+    stroke-width: 16px;
+    stroke: $brand-primary;
+  }
 }

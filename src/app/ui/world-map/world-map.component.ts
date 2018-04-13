@@ -33,6 +33,10 @@ export class WorldMapComponent implements OnChanges {
       }
     }
 
+    if (!this.countryCode) {
+      return;
+    }
+
     this.selectedElements = this.elementRef.nativeElement.getElementsByClassName(this.countryCode.toLowerCase());
 
     if (!this.selectedElements) {
