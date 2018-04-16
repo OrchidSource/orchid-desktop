@@ -1,5 +1,6 @@
 @import '../../assets/scss/variables';
 @import '../../assets/scss/bootstrap_overrides';
+@import '../../assets/scss/mixins';
 
 // The amount that shows now much GB you have left
 .gb-remaining-card {
@@ -183,4 +184,42 @@
       height: 14px; // ???
     }
   }
+}
+
+// begin styling for minimized version
+@include minimized-breakpoint {
+  .row.equal-height {
+    padding: 0;
+    & > * {
+      padding: 0;
+    }
+    .card, .card-header, .card-footer {
+      border-radius: unset;
+      box-shadow: none;
+    }
+    .card-header {
+      background-color: white;
+      text-align: center;
+      .card-help {
+        position: relative;
+        top: -1px;
+        right: auto;
+        padding-left: 1px;
+      }
+    }
+
+    div.total-earnings-container {
+      display: none;
+    }
+
+    .browsing-location-card {
+      .card-header, .card-body {
+        display: none;
+      }
+    }
+    div.connections-served-container {
+      display: none;
+    }
+  }
+
 }
