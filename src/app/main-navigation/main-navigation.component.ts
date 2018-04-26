@@ -7,20 +7,32 @@ import { InternationalizationService } from '../internationalization-service/int
 import { OrchidNetService } from '../orchid-net/orchid-net.service';
 import { trigger, transition, animate, style } from '@angular/animations'
 
+// magic number; will have to be changed if the number of languages changes
+const LANGUAGE_LIST_HEIGHT = "280px";
+const LANGUAGE_LIST_TRANSITION = "200ms ease-in";
+
 @Component({
   selector: 'app-main-navigation',
   templateUrl: './main-navigation.component.html',
   styleUrls: ['./main-navigation.component.scss'],
   animations: [
-    trigger('slideInOut', [
+    trigger('languageSlideOpen', [
       transition(':enter', [
-        style({'margin-bottom': '-280px'}), // 280px is a magic number that will need to change whenever we add or remove languages
-        animate('200ms ease-in', style({ 'margin-bottom': '0px'}))
+        style({
+           'height': '0px',
+           'overflow': 'hidden'
+         }),
+        animate(LANGUAGE_LIST_TRANSITION, style({ 'height': LANGUAGE_LIST_HEIGHT}))
       ]),
       transition(':leave', [
-        animate('200ms ease-in', style({'margin-bottom': '-280px'}))
+        style({
+           'height': '280px',
+           'overflow': 'hidden'
+         }),
+        animate(LANGUAGE_LIST_TRANSITION, style({'height': LANGUAGE_LIST_HEIGHT}))
       ])
-    ])
+    ]),
+
   ]
 })
 export class MainNavigationComponent implements OnInit {

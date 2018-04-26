@@ -1,6 +1,8 @@
-<div id="electron-titlebar" class="drag"><img src="assets/imgs/h-logo-white.svg" style="height:18px;margin-right:10px;vertical-align:middle;"> <span [translate]="'SIDEBAR.ACCESS'"></span></div>
+<div id="electron-titlebar" class="drag"><img src="assets/imgs/h-logo-white.svg" style="height:18px;margin-right:10px;vertical-align:middle;">
+  <span [translate]="'SIDEBAR.ACCESS'"></span>
+</div>
 
 <!-- maybe this belongs in main-navigation? -->
 <router-outlet name="modal"></router-outlet>
 
-<router-outlet></router-outlet>
+<router-outlet id="main-router"></router-outlet>

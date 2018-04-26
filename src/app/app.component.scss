@@ -2,6 +2,8 @@
 @import '../assets/scss/mixins';
 
 #electron-titlebar {
+  position: relative;
+  z-index: 10;
   -webkit-app-region: drag;
 
   #title-bar-btns {
@@ -21,4 +23,8 @@
   color: #fff;
   font-size: 13px;
   text-transform: uppercase;
+}
+
+#main-router {
+  z-index: 1;
 }

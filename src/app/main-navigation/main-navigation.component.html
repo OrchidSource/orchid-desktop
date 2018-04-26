@@ -9,24 +9,26 @@
       </div>
 
       <div class="sidebar-links">
-        <a routerLink="/main/dashboard" class="link-dashboard" routerLinkActive="active">
-          <span class="link-text" [translate]>SIDEBAR.DASHBOARD</span>
-        </a>
-        <a routerLink="/main/wallet" class="link-wallet" routerLinkActive="active">
-          <span class="link-text" [translate]>SIDEBAR.WALLET</span>
-        </a>
-        <a routerLink="/main/settings" class="link-settings" routerLinkActive="active">
-          <span class="link-text" [translate]="'SIDEBAR.SETTINGS'"></span>
-        </a>
-        <a routerLink="/first-launch" routerLinkActive="active">
-          <span>first launch</span>
-        </a>
+        <div class="links">
+          <a routerLink="/main/dashboard" class="link-dashboard" routerLinkActive="active">
+            <span class="link-text" [translate]>SIDEBAR.DASHBOARD</span>
+          </a>
+          <a routerLink="/main/wallet" class="link-wallet" routerLinkActive="active">
+            <span class="link-text" [translate]>SIDEBAR.WALLET</span>
+          </a>
+          <a routerLink="/main/settings" class="link-settings" routerLinkActive="active">
+            <span class="link-text" [translate]="'SIDEBAR.SETTINGS'"></span>
+          </a>
+          <a routerLink="/first-launch" routerLinkActive="active">
+            <span>first launch</span>
+          </a>
+        </div>
 
-        <div ngbDropdown placement="top" class="d-inline-block dropup">
-          <button class="btn btn-outline-primary" id="languageSelect" (click)="languageMenuOpened = !languageMenuOpened">
+        <div class="dropup">
+          <button class="btn btn-outline-primary" (click)="languageMenuOpened = !languageMenuOpened">
             {{ selectedLanguage.native }} <img src="assets/imgs/icons/down-v-gray.svg" [ngClass]="{opened: languageMenuOpened}" aria-disabled>
           </button>
-          <div *ngIf="languageMenuOpened" [@slideInOut]>
+          <div class="language-list" *ngIf="languageMenuOpened" [@languageSlideOpen]>
             <button class="btn language-dropdown-item" *ngFor="let language of LANGUAGES" (click)="languageSelected(language.code)">{{ language.native }}</button>
           </div>
         </div>

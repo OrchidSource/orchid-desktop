@@ -25,10 +25,11 @@ export class DashboardComponent implements OnInit {
   public time_connected: number = 0;
   time: Date = new Date(0, 0, 0, 0, 0, 0, 0);
   selectedBrowsingLocation: BrowsingLocation;
+
   /**
    * Model that typeahead binds to. Different from selectedBrowsingLocation because
    * typeahead doesn't provide us an easy way to tell when a user left the typeahead
-   * without making a selection. If null, indicates that the typeahead is closed
+   * without making a selection. If null, indicates that the typeahead is closed.
    */
   typeaheadBrowsingLocation: BrowsingLocation|string|boolean = false;
   typeaheadOpen: boolean = false;
