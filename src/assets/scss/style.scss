@@ -222,10 +222,14 @@ form {
 
 
 .tooltip {
+  .arrow::before {
+    border-bottom-color: $gray-dark;
+  }
   .tooltip-inner {
     width: 300px;
-    box-shadow: 0 0 0 2px #FFF;
-    border: 2px dashed #79E2F5;
+    background-color: $gray-dark;
+    box-shadow: 0 0 0 1px $gray-lightest;
+    border-radius: 10px;
   }
 }
 

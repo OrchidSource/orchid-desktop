@@ -31,7 +31,10 @@
     "CONNECTIONS_SERVED": "Connections served",
     "FUND_ACCOUNT": "Fund account",
     "ORCHID_TOTAL": "Orchid network total",
-    "YOUR_TOTAL": "Your total"
+    "YOUR_TOTAL": "Your total",
+    "TOOLTIP_CONNECTION": "Your security level determines how many nodes your connection will pass through. Higher security level = more nodes.",
+    "TOOLTIP_GB_REMAINING": "Shows the amount of network traffic you have purchased.",
+    "TOOLTIP_LOCATION": "This is where you will be browsing the internet from"
   },
   "WALLET": {
     "CURRENT_BALANCE": "Current balance",

@@ -5,7 +5,7 @@
       <div class="card-header">
         <span [translate]>DASHBOARD.GB_REMAINING</span>
         <span class="card-help">
-          <a ngbTooltip="A tooltip" placement="bottom"><img src="assets/imgs/question.svg"/></a>
+          <a ngbTooltip="{{ 'DASHBOARD.TOOLTIP_GB_REMAINING' | translate }}" placement="bottom"><img src="assets/imgs/question.svg"/></a>
         </span>
       </div>
 
@@ -28,7 +28,7 @@
     <div class="card dashboard-card connection-status-card">
       <div class="card-header">
         <span>Connection Status</span>
-        <span class="card-help"><a ngbTooltip="Your security level determines how many nodes your connection will pass through. Higher security level = more nodes." placement="bottom"><img src="assets/imgs/question.svg"/></a></span>
+        <span class="card-help"><a ngbTooltip="{{ 'DASHBOARD.TOOLTIP_CONNECTION' | translate }}" placement="bottom"><img src="assets/imgs/question.svg"/></a></span>
       </div>
 
       <div class="card-body" ng-controller="Ctrl" ng-app="sec-val">
@@ -55,7 +55,7 @@
     <div class="card dashboard-card browsing-location-card">
       <div class="card-header">
         <span [translate]>DASHBOARD.DEFAULT_LOCATION</span>
-        <span class="card-help"><a ngbTooltip="This is where you will be browsing the internet from." placement="bottom"><img src="assets/imgs/question.svg"/></a></span>
+        <span class="card-help"><a ngbTooltip="{{ 'DASHBOARD.TOOLTIP_LOCATION' | translate }}" placement="bottom"><img src="assets/imgs/question.svg"/></a></span>
       </div>
 
       <div class="card-body">
