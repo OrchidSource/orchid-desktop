@@ -74,6 +74,16 @@
         background-color: $gray-lighter;
       }
     }
+
+    // typeahead styling
+    ::ng-deep .dropdown-menu {
+      width: 100%;
+      overflow: hidden;
+      .dropdown-item {
+        overflow: hidden;
+        text-overflow: ellipsis;
+      }
+    }
   }
 }
 
