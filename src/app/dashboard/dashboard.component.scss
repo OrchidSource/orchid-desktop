@@ -68,7 +68,13 @@
 
     input {
       border-radius: 5px;
+      padding-left: 57px;
       border: 0;
+      background-image: url('../../assets/imgs/icons/search.svg');
+      background-repeat: no-repeat;
+      background-position-x: 31px;
+      background-position-y: center;
+
       &:focus {
         background-color: $gray-lighter;
       }
