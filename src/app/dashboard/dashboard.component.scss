@@ -47,17 +47,23 @@
     border-radius: 2px;
   }
 
-
   .card-footer {
-    // position: relative;
     .selected-country {
       border-radius: 5px;
       padding: 6px 12px;
+      white-space: nowrap;
+      overflow-x: hidden;
+      text-overflow: ellipsis;
+      background-image: url(../../assets/imgs/icons/select-arrow.svg);
+      background-color: $gray-lighter;
+      background-repeat: no-repeat;
+      background-position-y: center;
+      background-position-x: calc(100% - 12px);
+      padding-right: 30px;
 
       color: black;
       &:hover {
         cursor: pointer;
-        background-color: $gray-lighter;
       }
 
       .select-arrow {
@@ -87,6 +93,37 @@
       .dropdown-item {
         overflow: hidden;
         text-overflow: ellipsis;
+      }
+    }
+  }
+}
+
+.earnings-card {
+  .chart-header {
+    margin-bottom: 16px;
+  }
+
+  .time-span-container {
+    float: right;
+
+    .time-span {
+      border: 1px solid $gray;
+      border-radius: 3px;
+      font-size: 12px;
+      color: $gray;
+      letter-spacing: 0.5px;
+      padding: 0 5px;
+      display: inline-block;
+      text-align: center;
+      min-width: 40px;
+
+      &:hover {
+        cursor: pointer;
+      }
+
+      &.time-span-selected {
+        color: $brand-secondary;
+        border-color: $brand-secondary;
       }
     }
   }

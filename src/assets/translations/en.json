@@ -34,7 +34,13 @@
     "YOUR_TOTAL": "Your total",
     "TOOLTIP_CONNECTION": "Your security level determines how many nodes your connection will pass through. Higher security level = more nodes.",
     "TOOLTIP_GB_REMAINING": "Shows the amount of network traffic you have purchased.",
-    "TOOLTIP_LOCATION": "This is where you will be browsing the internet from"
+    "TOOLTIP_LOCATION": "This is where you will be browsing the internet from.",
+    "EARNING_SPAN_HOUR": "1H",
+    "EARNING_SPAN_DAY": "1D",
+    "EARNING_SPAN_WEEK": "1W",
+    "EARNING_SPAN_YEAR": "1Y",
+    "EARNING_SPAN_ALL": "All"
+
   },
   "WALLET": {
     "CURRENT_BALANCE": "Current balance",

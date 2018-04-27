@@ -39,8 +39,12 @@ $input-group-addon-bg: white;
 $input-group-addon-color: $gray-light;
 $input-group-addon-border-color: $gray-light;
 
+$input-box-shadow: none;
+$input-focus-border-color: $gray;
+
 // try to remove focus drop shadow, which looks weird
 $input-btn-focus-box-shadow: none;
+
 
 // cards
 $card-border-radius: 10px;

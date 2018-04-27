@@ -26,10 +26,10 @@ const LANGUAGE_LIST_TRANSITION = "200ms ease-in";
       ]),
       transition(':leave', [
         style({
-           'height': '280px',
+           'height': LANGUAGE_LIST_HEIGHT,
            'overflow': 'hidden'
          }),
-        animate(LANGUAGE_LIST_TRANSITION, style({'height': LANGUAGE_LIST_HEIGHT}))
+        animate(LANGUAGE_LIST_TRANSITION, style({'height': '0px'}))
       ])
     ]),
 

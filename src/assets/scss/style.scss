@@ -156,12 +156,16 @@ form {
   }
 }
 
-.btn-primary {
+.btn.btn-primary, .btn-primary {
   &:hover {
     background-color: $brand-primary-hover;
+    border-color: $brand-primary-hover;
   }
   &:active {
     background-color: $brand-primary-clicked;
+  }
+  &:active:focus:not(:disabled):not(.disabled), &:focus {
+    box-shadow: none;
   }
 }
 
@@ -197,7 +201,6 @@ form {
     color: $gray;
     border-color: $gray;
   }
-
 }
 
 .row.equal-height {
@@ -257,12 +260,11 @@ input[type="number"]::-webkit-inner-spin-button {
 
 /** Put a magnifying glass on the right side of the input box */
 input[type=text].input-search {
-  background-color: purple;
-  &:before {
-    content: url(../imgs/icons/search.svg);
-    width: 30px;
-    height: 30px;
-  }
+  background-image: url(../imgs/icons/search.svg);
+  background-repeat: no-repeat;
+  background-position-x: calc(100% - 20px);
+  background-position-y: center;
+  padding-right: 45px; // to prevent the text from overlapping the search icon
 }
 
 // Put a "chiclet" on the left of a button.

@@ -11,11 +11,6 @@
     -webkit-app-region: no-drag;
   }
 
-  span {
-    float: right;
-    font-size: 12px;
-    font-weight: normal;
-  }
   padding: 8px 30px;
   background-color: $navbar-background;
   border-radius: 10px 10px 0 0;
@@ -23,6 +18,32 @@
   color: #fff;
   font-size: 13px;
   text-transform: uppercase;
+
+  .orchid-logo {
+    height: 20px;
+    margin-right: 10px;
+    margin-top: -3px;
+    vertical-align: middle;
+  }
+
+  .titlebar-blurb {
+    @include hide-minimized();
+    font-size: 12px;
+    font-weight: normal;
+  }
+
+  .orc-balance {
+    float: right;
+    height: 20px;
+    padding: 2px 18px;
+
+    background-color: $gray-default;
+    border-radius: 5px;
+    font-size: 12px;
+    color: $gray-dark;
+    text-align: center;
+    line-height: 15px;
+  }
 }
 
 #main-router {

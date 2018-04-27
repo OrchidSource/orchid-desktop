@@ -67,7 +67,7 @@
         <div class="selected-country" *ngIf="!typeaheadOpen" (click)="focusBrowseLocationInput()">
           <img [src]="selectedBrowsingLocation.flagUrl" *ngIf="selectedBrowsingLocation.flagUrl" class="flag" />
           {{ selectedBrowsingLocation.name }}
-          <img class="select-arrow" src="assets/imgs/icons/select-arrow.svg" aria-disabled />
+          <!-- <img class="select-arrow" src="assets/imgs/icons/select-arrow.svg" aria-disabled /> -->
         </div>
 
         <input #browseLocationInput type="text"
@@ -88,10 +88,22 @@
   </div>
 </div>
 <div class="col-sm-12 col-md-6 col-lg-8 total-earnings-container">
-  <div class="card dashboard-card">
+  <div class="card dashboard-card earnings-card">
     <div class="card-body">
-      <div [translate]>DASHBOARD.TOTAL_EARNINGS</div>
-      <div>chart goes here</div>
+      <div class="chart-header">
+        <span [translate]>DASHBOARD.TOTAL_EARNINGS</span>
+        {{ octEarned }} (OCT)
+        <div class="time-span-container">
+          <span class="time-span" [ngClass]="{'time-span-selected': earningsSpan==='1h'}" (click)="changeSpan('1h')" [translate]>DASHBOARD.EARNING_SPAN_HOUR</span>
+          <span class="time-span" [ngClass]="{'time-span-selected': earningsSpan==='1d'}" (click)="changeSpan('1d')" [translate]>DASHBOARD.EARNING_SPAN_DAY</span>
+          <span class="time-span" [ngClass]="{'time-span-selected': earningsSpan==='1w'}" (click)="changeSpan('1w')" [translate]>DASHBOARD.EARNING_SPAN_WEEK</span>
+          <span class="time-span" [ngClass]="{'time-span-selected': earningsSpan==='1y'}" (click)="changeSpan('1y')" [translate]>DASHBOARD.EARNING_SPAN_YEAR</span>
+          <span class="time-span" [ngClass]="{'time-span-selected': earningsSpan==='all'}" (click)="changeSpan('all')" [translate]>DASHBOARD.EARNING_SPAN_ALL</span>
+        </div>
+      </div>
+      <div>
+        <canvas id="dashboardEarningsChart">{{ earningsChart }}</canvas>
+      </div>
     </div>
   </div>
 </div>
