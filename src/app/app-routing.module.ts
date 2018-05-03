@@ -6,7 +6,6 @@ import { SettingsComponent } from './settings/settings.component';
 import { WalletComponent } from './wallet/wallet.component';
 import { WalletSetupBeginComponent } from './wallet/wallet-setup-begin/wallet-setup-begin.component';
 import { MetManagerComponent } from './met-manager/met-manager.component';
-import { HelpComponent } from './help/help.component';
 import { PurchaseStartComponent } from './purchase/purchase-start/purchase-start.component';
 import { PurchasePaymentComponent } from './purchase/purchase-payment/purchase-payment.component';
 import { PurchaseConfirmationComponent } from './purchase/purchase-confirmation/purchase-confirmation.component';
@@ -78,10 +77,6 @@ const routes: Routes = [
         component: PurchaseConfirmationComponent
       }
     ]
-  },
-  {
-    path: 'help',
-    component: HelpComponent
   },
 {
     path: '**',
