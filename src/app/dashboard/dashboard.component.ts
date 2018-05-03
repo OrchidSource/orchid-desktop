@@ -24,7 +24,7 @@ const CHART_OPTIONS = {
     }],
     yAxes: [{
       gridLines: {
-        borderDash: [10,5]
+        display: false
       }
     }]
   },

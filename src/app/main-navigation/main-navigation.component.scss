@@ -15,6 +15,7 @@ $sidebar-padding: 30px;
   }
 }
 
+$minimized-link-height: 45px;
 
 /* side nav */
 #sidebar-wrapper {
@@ -29,7 +30,7 @@ $sidebar-padding: 30px;
 
   @include minimized-breakpoint {
     width: 100%;
-    height: 120px;
+    height: $minimized-link-height;
     z-index: 1;
     overflow-y: visible; // to make language drop-down visible
   }
@@ -90,29 +91,6 @@ $sidebar-padding: 30px;
     }
   }
 
-  @include minimized-breakpoint {
-    .connect-container {
-      position: absolute;
-      bottom: 0;
-      height: 40px;
-
-      .connect {
-        position: absolute;
-        height: 40px;
-        bottom: 0;
-        button {
-          position: absolute;
-          top: 0;
-          width: 100%;
-          border-radius: 0;
-          height: 40px;
-          margin: 0;
-        }
-      }
-
-    }
-  }
-
   /* holds the navigation links */
   .sidebar-links {
     height: calc(100vh - 204px);
@@ -123,31 +101,18 @@ $sidebar-padding: 30px;
       padding: 30px 0;
     }
 
-    a {
-      display: block;
-      position: relative;
-      width: 100%;
-      height: 64px;
-      color: $navbar-foreground;
-      font-size: 12px;
-      text-transform: uppercase;
-
-      background-color: $brand-primary;
-
-      background-repeat: no-repeat;
-      background-position-x: $sidebar-padding;
-      background-position-y: 20px;
-
-      &.link-dashboard {
-        background-image: url('../../assets/imgs/main-nav/dashboard-inactive.svg');
+    .links {
+      > a, > div {
+        display: block;
+        position: relative;
+        width: 100%;
+        height: 64px;
+        background-repeat: no-repeat;
+        background-position-x: $sidebar-padding;
+        background-position-y: 20px;
       }
-      &.link-wallet {
-        background-image: url('../../assets/imgs/main-nav/wallet-inactive.svg');
-      }
-      &.link-settings {
-        background-image: url('../../assets/imgs/main-nav/settings-inactive.svg');
-      }
-      &:hover, &.active {
+
+      a:hover, &.active {
         &.link-dashboard {
           background-image: url('../../assets/imgs/main-nav/dashboard-active.svg');
         }
@@ -157,6 +122,32 @@ $sidebar-padding: 30px;
         &.link-settings {
           background-image: url('../../assets/imgs/main-nav/settings-active.svg');
         }
+      }
+    }
+
+    div.connection-status {
+      background-color: $navbar-background;
+      background-image: url('../../assets/imgs/button-connected.svg');
+      background-size: 22px;
+      &.connected {
+        background-image: url('../../assets/imgs/icons/internet-status-connected.svg');
+      }
+    }
+
+    a {
+      color: $navbar-foreground;
+      font-size: 12px;
+      text-transform: uppercase;
+      background-color: $brand-primary;
+
+      &.link-dashboard {
+        background-image: url('../../assets/imgs/main-nav/dashboard-inactive.svg');
+      }
+      &.link-wallet {
+        background-image: url('../../assets/imgs/main-nav/wallet-inactive.svg');
+      }
+      &.link-settings {
+        background-image: url('../../assets/imgs/main-nav/settings-inactive.svg');
       }
 
       &:hover, &.active {
@@ -227,35 +218,17 @@ $sidebar-padding: 30px;
       padding-top: 0;
       height: unset;
       > .links {
-        height: 45px;
+        height: $minimized-link-height;
         padding: 0;
         display: flex;
         flex-direction: row;
-        > a {
-          width: 33%;
-          height: 45px;
+        > a, > div {
+          width: 25%;
+          height: $minimized-link-height;
           text-align: center;
           background-position: center;
           z-index: 1;
         }
-      }
-
-      .dropup {
-        position: relative;
-
-        .btn > img {
-          transform: rotateX(0deg);
-          &.opened {
-            transform: rotateX(180deg);
-          }
-
-        }
-      }
-      // .dropup.dropup-opened {
-      //   bottom: -317px;
-      // }
-      .language-list {
-        position: relative;
       }
     }
   }
@@ -270,6 +243,7 @@ $sidebar-padding: 30px;
   padding-right: 0;
   padding-left: 0;
   @include minimized-breakpoint {
-    margin-top: 115px;
+    // TODO:
+    margin-top: 70px;
   }
 }

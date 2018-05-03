@@ -364,3 +364,8 @@ input[type=text].input-search {
     border-right: 1px solid $gray-light;
   }
 }
+
+/** Hide when minimized */
+.hide-minimized {
+  @include hide-minimized();
+}

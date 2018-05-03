@@ -1,7 +1,7 @@
 <div id="wrapper">
   <div id="sidebar-wrapper">
-      <div class="connect-container">
-        <div class="text-center connect" [ngClass]="{ 'connect-on' : connected }" (click)="toggleOnOff()">
+      <div class="connect-container hide-minimized">
+        <div class="text-center connect hide-minimized" [ngClass]="{ 'connect-on' : connected }" (click)="toggleOnOff()">
           <img src="assets/imgs/button-connected.svg" [hidden]="!connected">
           <img src="assets/imgs/button-not-connected.svg" [hidden]="connected">
           <button>{{ getOnOffTranslationKey() | translate }}</button>
@@ -10,6 +10,7 @@
 
       <div class="sidebar-links">
         <div class="links">
+          <div class="connection-status" [ngClass]="{ 'connected' : connected }"></div>
           <a routerLink="/main/dashboard" class="link-dashboard" routerLinkActive="active">
             <span class="link-text" [translate]>SIDEBAR.DASHBOARD</span>
           </a>
@@ -24,7 +25,7 @@
           </a>
         </div>
 
-        <div class="dropup">
+        <div class="dropup hide-minimized">
           <button class="btn btn-outline-primary" (click)="languageMenuOpened = !languageMenuOpened">
             {{ selectedLanguage.native }} <img src="assets/imgs/icons/down-v-gray.svg" [ngClass]="{opened: languageMenuOpened}" aria-disabled>
           </button>

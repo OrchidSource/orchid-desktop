@@ -19,7 +19,14 @@ $minimize-breakpoint: 575px;
 /** Add to hide when below the minimize breakpoint */
 @mixin hide-minimized() {
   @media (max-width: $minimize-breakpoint) {
-    display: none;
+    display: none !important;
+  }
+}
+
+/** Add to show when above the minimize breakpoint */
+@mixin hide-maximized() {
+  @media (min-width: $minimize-breakpoint) {
+    display: none !important;
   }
 }
 
