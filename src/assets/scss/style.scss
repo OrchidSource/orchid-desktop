@@ -365,7 +365,12 @@ input[type=text].input-search {
   }
 }
 
-/** Hide when minimized */
+/** Hide when in narrow version */
 .hide-minimized {
   @include hide-minimized();
+}
+
+/** hide when in wide version */
+.hide-maximized {
+  @include hide-maximized();
 }

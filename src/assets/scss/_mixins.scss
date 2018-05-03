@@ -23,7 +23,7 @@ $minimize-breakpoint: 575px;
   }
 }
 
-/** Add to show when above the minimize breakpoint */
+/** Add to hide when above the minimize breakpoint */
 @mixin hide-maximized() {
   @media (min-width: $minimize-breakpoint) {
     display: none !important;

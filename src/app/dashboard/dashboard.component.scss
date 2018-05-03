@@ -55,7 +55,6 @@
       overflow-x: hidden;
       text-overflow: ellipsis;
       background-image: url(../../assets/imgs/icons/select-arrow.svg);
-      background-color: $gray-lighter;
       background-repeat: no-repeat;
       background-position-y: center;
       background-position-x: calc(100% - 12px);
@@ -245,7 +244,10 @@
     & > * {
       padding: 0;
     }
-    .card, .card-header, .card-footer {
+    .card {
+      box-shadow: 0 5px 10px 0 rgba(116, 116, 128, 0.15);
+    }
+    .card-header, .card-footer {
       border-radius: unset;
       box-shadow: none;
     }
@@ -259,18 +261,11 @@
         padding-left: 1px;
       }
     }
+  }
 
-    div.total-earnings-container {
-      display: none;
-    }
-
-    .browsing-location-card {
-      .card-header, .card-body {
-        display: none;
-      }
-    }
-    div.connections-served-container {
-      display: none;
+  .connection-status-card {
+    .clock {
+      margin-top: unset;
     }
   }
 

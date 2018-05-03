@@ -58,7 +58,7 @@
         <span class="card-help"><a ngbTooltip="{{ 'DASHBOARD.TOOLTIP_LOCATION' | translate }}" placement="bottom"><img src="assets/imgs/question.svg"/></a></span>
       </div>
 
-      <div class="card-body">
+      <div class="card-body hide-minimized">
         <world-map [countryCode]="selectedBrowsingLocation.code"></world-map>
       </div>
 
@@ -87,7 +87,7 @@
     </div>
   </div>
 </div>
-<div class="col-sm-12 col-md-6 col-lg-8 total-earnings-container">
+<div class="col-sm-12 col-md-6 col-lg-8 total-earnings-container hide-minimized">
   <div class="card dashboard-card earnings-card">
     <div class="card-body">
       <div class="chart-header">
@@ -107,7 +107,7 @@
     </div>
   </div>
 </div>
-<div class="col-sm-12 col-md-6 col-lg-4 connections-served-container">
+<div class="col-sm-12 col-md-6 col-lg-4 connections-served-container hide-minimized">
   <div class="card dashboard-card">
       <div class="card-header">
         <span [translate]>DASHBOARD.CONNECTIONS_SERVED</span>

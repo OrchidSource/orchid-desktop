@@ -97,9 +97,6 @@ $minimized-link-height: 45px;
     position:relative;
     font-size: 13px;
     padding: 0;
-    @include minimized-breakpoint {
-      padding: 30px 0;
-    }
 
     .links {
       > a, > div {
@@ -243,7 +240,7 @@ $minimized-link-height: 45px;
   padding-right: 0;
   padding-left: 0;
   @include minimized-breakpoint {
-    // TODO:
-    margin-top: 70px;
+    padding-top: 0px;
+    margin-top: 45px;
   }
 }

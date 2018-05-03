@@ -22,7 +22,7 @@
   },
   "DASHBOARD": {
     "GB_REMAINING": "GB Remaining",
-    "DEFAULT_LOCATION": "Default location",
+    "DEFAULT_LOCATION": "Browsing location",
     "PLEASE_ADD": "Please add some OCT to connect",
     "CONNECTED": "Connected to Orchid network",
     "NOT_CONNECTED": "Not connected",
