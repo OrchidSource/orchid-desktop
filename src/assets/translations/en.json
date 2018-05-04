@@ -62,6 +62,15 @@
     "SENT": "Sent",
     "RECEIVED": "Received"
   },
+  "WALLET_SETUP": {
+    "TITLE": "Time to fund your account",
+    "ADDRESS": "Wallet address",
+    "TRANSFER_COPY": "Transfer some Orchid tokens to your wallet to start using Orchid",
+    "WHERE": "Where can I get Orchid tokens?",
+    "HOW": "How do I transfer tokens to my wallet?",
+    "LEARN_MORE": "Learn more",
+    "DO_LATER": "I'll do this later"
+  },
   "SETTINGS": {
     "LAUNCH_STARTUP": "Launch on startup",
     "CONNECT_ON_STARTUP": "Connect on startup",
@@ -76,6 +85,7 @@
     "PASSWORD": "Password",
     "PASSWORD_CONFIRM": "Confirm password",
     "NEXT": "Next",
-    "SEARCH": "Search"
+    "SEARCH": "Search",
+    "DONE": "Done"
   }
 }

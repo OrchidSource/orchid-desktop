@@ -1,35 +1,26 @@
 <div class="routed-modal-container" (click)="conditionalClose($event)">
-  <div class="routed-modal divided-dialog">
-    <div>
-      <h3>Enter a username &amp; password</h3>
-      <div>
-        This username and password will enrypt the access keys to your wallet. Please make sure to write down your password and save it in a secure location. You will not be able to recover it if you loose it.
+  <div class="routed-modal">
+    <h2 [translate]>WALLET_SETUP.TITLE</h2>
+
+    <div class="address-header" [translate]>WALLET_SETUP.ADDRESS</div>
+
+    <div class="input-group">
+      <input type="text" disabled class="form-control" [value]="wallet_address">
+      <div class="input-group-append">
+        <span class="input-group-text">copy</span>
+        <span class="input-group-text input-group-text-other">other</span>
       </div>
     </div>
 
-    <div>
-      <div class="input-group mb-2 mr-sm-2">
-        <div class="input-group-prepend">
-          <div class="input-group-text">@@</div>
-        </div>
-        <input type="text" class="form-control" placeholder="{{ 'GENERAL.USERNAME' | translate}}">
-      </div>
+    <div class="spaced" [translate]>WALLET_SETUP.TRANSFER_COPY</div>
 
-      <div class="input-group mb-2 mr-sm-2">
-        <div class="input-group-prepend">
-          <div class="input-group-text">??</div>
-        </div>
-        <input type="password" class="form-control" placeholder="{{ 'GENERAL.PASSWORD' | translate}}">
-      </div>
+    <a href="#" class="spaced" [translate]>WALLET_SETUP.WHERE</a>
+    <a href="#" class="spaced" [translate]>WALLET_SETUP.HOW</a>
+    <a href="#"><span [translate]>WALLET_SETUP.LEARN_MORE</span>&gt;</a>
 
-      <div class="input-group mb-2 mr-sm-2">
-        <div class="input-group-prepend">
-          <div class="input-group-text">??</div>
-        </div>
-        <input type="password" class="form-control" placeholder="{{ 'GENERAL.PASSWORD_CONFIRM' | translate}}">
-      </div>
-      <button class="btn btn-primary" [translate]>GENERAL.NEXT</button>
-
+    <div class="bottom-controls">
+      <a class="btn btn-lg btn-link" [routerLink]="['', {outlets: {modal:null}}]" [translate]>WALLET_SETUP.DO_LATER</a>
+      <button class="btn btn-lg btn-primary" [translate]>GENERAL.DONE</button>
     </div>
   </div>
 </div>

@@ -7,7 +7,7 @@
   </div>
   <div class="wallet-actions col-md-8">
     <div class="wallet-backup">
-      <div class="btn btn-img btn-warning">
+      <div class="btn btn-img btn-warning" [routerLink]="['', {outlets: {modal:'wallet-backup'}}]">
         <img src="assets/imgs/icons/alert-circle.svg" aria-disabled>
         <span [translate]>WALLET.PLEASE_BACKUP</span>
       </div>

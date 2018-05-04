@@ -68,6 +68,7 @@ form {
   text-decoration: underline;
 }
 
+// maybe not needed anymore?
 .pop-over-content {
   z-index: 3000;
 
@@ -337,7 +338,7 @@ input[type=text].input-search {
   height: 100%;
   width: 100%;
   position: fixed;
-  z-index: 10;
+  z-index: 100;
   display: inline-flex;
   background-color: $background-transparency;
 
@@ -345,6 +346,7 @@ input[type=text].input-search {
   .routed-modal {
     background-color: white;
     border-radius: $card-border-radius;
+    padding: $orchid-gutter-width;
 
     // set these to change the size
     width: 50%;
@@ -352,19 +354,21 @@ input[type=text].input-search {
     margin: auto auto;
     box-shadow: $default-shadow;
   }
+
+  // Style for modal dialogs with left- and right-hand sides
+  .routed-modal.divided-dialog {
+    padding: 0;
+    display: flex;
+    > div {
+      width: 50%;
+      padding: $orchid-gutter-width;
+    }
+    > div:first-child {
+      border-right: 1px solid $gray-light;
+    }
+  }
 }
 
-// Style for modal dialogs with left- and right-hand sides
-.routed-modal.divided-dialog {
-  display: flex;
-  > div {
-    width: 50%;
-    padding: 30px;
-  }
-  > div:first-child {
-    border-right: 1px solid $gray-light;
-  }
-}
 
 /** Hide when in narrow version */
 .hide-minimized {

@@ -1,3 +1,41 @@
+@import '../../../assets/scss/variables';
 
-.routed-modal {
+input {
+  border-top-left-radius: 5px;
+  border-bottom-left-radius: 5px;
+  border-color: $gray-light;
+}
+
+.spaced {
+  margin-bottom: 20px;
+  display: block;
+  color: $secondary-text-color;
+  &a {
+    text-decoration: underline;
+  }
+}
+
+// Not sure if this is a style that shows up elsewhere
+.address-header {
+  font-size: 17px;
+  text-transform: uppercase;
+  border-color: $gray-light;
+  padding-bottom: 10px
+}
+
+.input-group {
+  padding-bottom: 20px;
+  .input-group-text-other {
+    border-top-right-radius: 5px;
+    border-bottom-right-radius: 5px
+  }
+}
+
+.bottom-controls {
+  display: flex;
+  flex-direction: row;
+  justify-content: flex-end;
+  button {
+    min-width: 160px;
+  }
 }
