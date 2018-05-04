@@ -39,7 +39,12 @@
     "EARNING_SPAN_DAY": "1D",
     "EARNING_SPAN_WEEK": "1W",
     "EARNING_SPAN_YEAR": "1Y",
-    "EARNING_SPAN_ALL": "All"
+    "EARNING_SPAN_ALL": "All",
+    "TIP_LOCATION_TITLE": "Select browsing location",
+    "TIP_LOCATION_CONTENT": "Select the default location for your internet connection. This is where you will appear to be connecting to the internet from.",
+    "TIP_FUND_TITLE": "Time to fund your account",
+    "TIP_FUND_CONTENT": "You will need to add some Orchid tokens (OCT) to your wallet in order to use the Orchid Network.",
+    "TIP_OK": "Got it"
 
   },
   "WALLET": {

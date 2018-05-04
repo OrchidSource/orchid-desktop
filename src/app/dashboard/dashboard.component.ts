@@ -38,6 +38,14 @@ const CHART_OPTIONS = {
   }
 };
 
+/**
+ * Names of the tip states. Go through these in this order on first-run
+ */
+const TIP_STATES: string[]  = [
+  'FUND_ACCOUNT_TIP',
+  'BROWSING_LOCATION_TIP'
+];
+
 @Component({
   selector: 'app-dashboard',
   templateUrl: './dashboard.component.html',
@@ -53,6 +61,8 @@ export class DashboardComponent implements OnInit {
   public earningsChart: Chart;
   /** Time span to show in the chart */
   public earningsSpan: string = '1w';
+
+  public tip_state: string = TIP_STATES[0];
 
   /**
    * Model that typeahead binds to. Different from selectedBrowsingLocation because
@@ -148,7 +158,21 @@ export class DashboardComponent implements OnInit {
             return bl.name.toLowerCase().includes(t.toLowerCase());
           }).slice(0, 10);
       })
+  }
 
+  /**
+   * Call when the user clicks "got it" on a tool tip
+   * @param  tip_name one of TIP_STATES
+   */
+  tipConfirm(tip_name) {
+    console.log("tipConfirm: " + tip_name);
+
+    var next_tip_index = TIP_STATES.indexOf(tip_name);
+    if (next_tip_index != -1) {
+      this.tip_state = TIP_STATES[next_tip_index + 1];
+    } else {
+      this.tip_state = null;
+    }
   }
 
   setSelectedBrowsingLocation(browsingLocation: BrowsingLocation) {
@@ -162,6 +186,10 @@ export class DashboardComponent implements OnInit {
     return BrowsingLocation.getLocations();
   }
 
+  /**
+   * Change the timespan shown in the earnings graph
+   * @param  span the span to show
+   */
   changeSpan(span) {
     this.earningsSpan = span;
   }

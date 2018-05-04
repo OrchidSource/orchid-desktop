@@ -268,5 +268,81 @@
       margin-top: unset;
     }
   }
+}
 
+// styles for the first-run experience
+.tip-overlay {
+  position: fixed;
+  top: 0;
+  bottom: 0;
+  left: 0;
+  right: 0;
+  background: rgba(15,6,30,0.80);
+  z-index: 1;
+}
+.tip-container {
+  top: 0;
+  padding-top: 30px;
+  z-index: 10;
+  position: absolute;
+  width: 100%;
+  .card {
+    $caret-size: 11px;
+
+    h1 {
+      color: $gray-dark;
+      // font-size: 21px;
+      // line-height: 32px;
+    }
+    button {
+      min-width: 160px;
+    }
+    .tip-content-container {
+      display: flex;
+      flex-direction: row;
+      .tip-content-left {
+        width: 33%;
+        img {
+          width: 80%;
+        }
+      }
+      .tip-content-right {
+        width: 66%;
+      }
+    }
+
+    &.browsing-location-card-tip {
+      &::after {
+        position: absolute;
+        right: -$caret-size;
+        top: 25px;
+        border-top: $caret-size solid transparent;
+        border-bottom: $caret-size solid transparent;
+        border-left: $caret-size solid white;
+        content: '';
+      }
+
+    }
+
+    &.gb-remaining-card-tip {
+
+      &::after {
+        position: absolute;
+        left: -$caret-size;
+        top: 25px;
+        border-top: $caret-size solid transparent;
+        border-bottom: $caret-size solid transparent;
+        border-right: $caret-size solid white;
+        content: '';
+      }
+    }
+  }
+
+  .tip-caret-left {
+  }
+}
+
+/** put on a card to make it the "focus" of the active tooltip */
+.tip-focus {
+  z-index: 20;
 }

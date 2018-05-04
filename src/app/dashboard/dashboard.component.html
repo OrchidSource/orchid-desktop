@@ -1,6 +1,5 @@
-<div class="overlay"></div>
 <div class="row equal-height">
-  <div class="col-lg-4 col-md-12 col-sm-12">
+  <div class="col-lg-4 col-md-12 col-sm-12" [ngClass]="{'tip-focus': tip_state === 'FUND_ACCOUNT_TIP' }">
     <div class="card dashboard-card inline-trigger gb-remaining-card">
       <div class="card-header">
         <span [translate]>DASHBOARD.GB_REMAINING</span>
@@ -51,7 +50,7 @@
     </div>
   </div>
 
-  <div class="col-lg-4 col-md-6 col-sm-12">
+  <div class="col-lg-4 col-md-6 col-sm-12" [ngClass]="{'tip-focus': tip_state === 'BROWSING_LOCATION_TIP' }">
     <div class="card dashboard-card browsing-location-card">
       <div class="card-header">
         <span [translate]>DASHBOARD.DEFAULT_LOCATION</span>
@@ -67,61 +66,105 @@
         <div class="selected-country" *ngIf="!typeaheadOpen" (click)="focusBrowseLocationInput()">
           <img [src]="selectedBrowsingLocation.flagUrl" *ngIf="selectedBrowsingLocation.flagUrl" class="flag" />
           {{ selectedBrowsingLocation.name }}
-          <!-- <img class="select-arrow" src="assets/imgs/icons/select-arrow.svg" aria-disabled /> -->
         </div>
 
         <input #browseLocationInput type="text"
-                [hidden]="!typeaheadOpen"
-                class="form-control"
-                [inputFormatter]="browsingLocationInputFormatter"
-                [(ngModel)]="typeaheadBrowsingLocation"
-                [resultTemplate]="countrySelectTemplate"
-                [ngbTypeahead]="searchBrowsingLocations"
-                (click)="focusBrowseLocationInput()"
-                (selectItem)="browseLocationSelected($event)"
-                (blur)="browseLocationInputBlured()"/>
+        [hidden]="!typeaheadOpen"
+        class="form-control"
+        [inputFormatter]="browsingLocationInputFormatter"
+        [(ngModel)]="typeaheadBrowsingLocation"
+        [resultTemplate]="countrySelectTemplate"
+        [ngbTypeahead]="searchBrowsingLocations"
+        (click)="focusBrowseLocationInput()"
+        (selectItem)="browseLocationSelected($event)"
+        (blur)="browseLocationInputBlured()"/>
         <!-- template for browsing location search results -->
         <ng-template #countrySelectTemplate let-r="result" let-t="term">
           <img [src]="r.flagUrl" class="flag" />{{ r.name}}
         </ng-template>
+      </div>
     </div>
   </div>
-</div>
-<div class="col-sm-12 col-md-6 col-lg-8 total-earnings-container hide-minimized">
-  <div class="card dashboard-card earnings-card">
-    <div class="card-body">
-      <div class="chart-header">
-        <span [translate]>DASHBOARD.TOTAL_EARNINGS</span>
-        {{ octEarned }} (OCT)
-        <div class="time-span-container">
-          <span class="time-span" [ngClass]="{'time-span-selected': earningsSpan==='1h'}" (click)="changeSpan('1h')" [translate]>DASHBOARD.EARNING_SPAN_HOUR</span>
-          <span class="time-span" [ngClass]="{'time-span-selected': earningsSpan==='1d'}" (click)="changeSpan('1d')" [translate]>DASHBOARD.EARNING_SPAN_DAY</span>
-          <span class="time-span" [ngClass]="{'time-span-selected': earningsSpan==='1w'}" (click)="changeSpan('1w')" [translate]>DASHBOARD.EARNING_SPAN_WEEK</span>
-          <span class="time-span" [ngClass]="{'time-span-selected': earningsSpan==='1y'}" (click)="changeSpan('1y')" [translate]>DASHBOARD.EARNING_SPAN_YEAR</span>
-          <span class="time-span" [ngClass]="{'time-span-selected': earningsSpan==='all'}" (click)="changeSpan('all')" [translate]>DASHBOARD.EARNING_SPAN_ALL</span>
+  <div class="col-sm-12 col-md-6 col-lg-8 total-earnings-container hide-minimized">
+    <div class="card dashboard-card earnings-card">
+      <div class="card-body">
+        <div class="chart-header">
+          <span [translate]>DASHBOARD.TOTAL_EARNINGS</span>
+          {{ octEarned }} (OCT)
+          <div class="time-span-container">
+            <span class="time-span" [ngClass]="{'time-span-selected': earningsSpan==='1h'}" (click)="changeSpan('1h')" [translate]>DASHBOARD.EARNING_SPAN_HOUR</span>
+            <span class="time-span" [ngClass]="{'time-span-selected': earningsSpan==='1d'}" (click)="changeSpan('1d')" [translate]>DASHBOARD.EARNING_SPAN_DAY</span>
+            <span class="time-span" [ngClass]="{'time-span-selected': earningsSpan==='1w'}" (click)="changeSpan('1w')" [translate]>DASHBOARD.EARNING_SPAN_WEEK</span>
+            <span class="time-span" [ngClass]="{'time-span-selected': earningsSpan==='1y'}" (click)="changeSpan('1y')" [translate]>DASHBOARD.EARNING_SPAN_YEAR</span>
+            <span class="time-span" [ngClass]="{'time-span-selected': earningsSpan==='all'}" (click)="changeSpan('all')" [translate]>DASHBOARD.EARNING_SPAN_ALL</span>
+          </div>
+        </div>
+        <div>
+          <canvas id="dashboardEarningsChart">{{ earningsChart }}</canvas>
         </div>
       </div>
-      <div>
-        <canvas id="dashboardEarningsChart">{{ earningsChart }}</canvas>
-      </div>
     </div>
   </div>
-</div>
-<div class="col-sm-12 col-md-6 col-lg-4 connections-served-container hide-minimized">
-  <div class="card dashboard-card">
+  <div class="col-sm-12 col-md-6 col-lg-4 connections-served-container hide-minimized">
+    <div class="card dashboard-card">
       <div class="card-header">
         <span [translate]>DASHBOARD.CONNECTIONS_SERVED</span>
         <span class="card-help"></span>
       </div>
-    <div class="card-body">
-      <div [translate]>DASHBOARD.ORCHID_TOTAL</div>
-      <div class="number">123,123</div>
-      <hr>
-      <div [translate]>DASHBOARD.YOUR_TOTAL</div>
-      <div class="number">123</div>
-      <a [routerLink]="['', {outlets: {modal:'wallet-setup-begin'}}]">Wallet setup begin</a>
-      <!-- <a [routerLink]="[ '/met-manager', {outlets: { 'met-manager-modal': 'purchase-how-to' } }]">Fund Account</a> -->
+      <div class="card-body">
+        <div [translate]>DASHBOARD.ORCHID_TOTAL</div>
+        <div class="number">123,123</div>
+        <hr>
+        <div [translate]>DASHBOARD.YOUR_TOTAL</div>
+        <div class="number">123</div>
+        <a [routerLink]="['', {outlets: {modal:'wallet-setup-begin'}}]">Wallet setup begin</a>
+      </div>
+    </div>
+    <div class="btn btn-secondary" [translate] style="margin-bottom: 25px;">DASHBOARD.EARN_MORE</div>
+  </div>
+</div>
+
+<div class="tip-overlay" *ngIf="tip_state"></div>
+
+<div class="tip-container" *ngIf="tip_state == 'BROWSING_LOCATION_TIP'">
+  <div class="row equal-height">
+    <div class="col-lg-8 col-md-12 col-sm-12">
+      <div class="card dashboard-card browsing-location-card-tip">
+        <div class="card-body">
+          <img src="assets/imgs/first-launch/intro-2.png" alt="Panda">
+          <h1 [translate]>DASHBOARD.TIP_LOCATION_TITLE</h1>
+          <div [translate]>DASHBOARD.TIP_LOCATION_CONTENT</div>
+          <div class="btn btn-lg btn-secondary" [translate] (click)="tipConfirm('BROWSING_LOCATION_TIP')">DASHBOARD.TIP_OK</div>
+        </div>
+      </div>
     </div>
   </div>
-  <div class="btn btn-secondary" [translate] style="margin-bottom: 25px;">DASHBOARD.EARN_MORE</div>
+</div>
+
+<div class="tip-container" *ngIf="tip_state == 'FUND_ACCOUNT_TIP'">
+  <div class="row equal-height">
+    <div class="col-lg-4 col-md-12 col-sm-12">
+    </div>
+    <div class="col-lg-8 col-md-12 col-sm-12">
+      <div class="card dashboard-card gb-remaining-card-tip">
+        <div class="tip-caret-left"></div>
+        <div class="card-body">
+          <h1 [translate]>DASHBOARD.TIP_FUND_TITLE</h1>
+          <div class="tip-content-container">
+            <div class="tip-content-left">
+              <img src="assets/imgs/zen_panda.png" alt="Panda">
+            </div>
+            <div class="tip-content-right">
+              <div [translate]>DASHBOARD.TIP_FUND_CONTENT</div>
+              <div class="btn btn-lg btn-secondary" (click)="tipConfirm('FUND_ACCOUNT_TIP')">
+
+                <img src="assets/imgs/icons/check-white.svg" aria-disabled>
+                <span [translate]>DASHBOARD.TIP_OK</span>
+              </div>
+            </div>
+          </div>
+        </div>
+      </div>
+    </div>
+  </div>
 </div>
