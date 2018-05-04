@@ -131,10 +131,19 @@
     <div class="col-lg-8 col-md-12 col-sm-12">
       <div class="card dashboard-card browsing-location-card-tip">
         <div class="card-body">
-          <img src="assets/imgs/first-launch/intro-2.png" alt="Panda">
-          <h1 [translate]>DASHBOARD.TIP_LOCATION_TITLE</h1>
-          <div [translate]>DASHBOARD.TIP_LOCATION_CONTENT</div>
-          <div class="btn btn-lg btn-secondary" [translate] (click)="tipConfirm('BROWSING_LOCATION_TIP')">DASHBOARD.TIP_OK</div>
+          <div class="tip-content-container">
+
+            <div class="tip-content-left">
+              <img src="assets/imgs/first-launch/intro-2.png" alt="Panda">
+            </div>
+
+            <div class="tip-content-right">
+              <h2 [translate]>DASHBOARD.TIP_LOCATION_TITLE</h2>
+              <div [translate]>DASHBOARD.TIP_LOCATION_CONTENT</div>
+              <div class="btn btn-lg btn-secondary" [translate] (click)="tipConfirm('BROWSING_LOCATION_TIP')">DASHBOARD.TIP_OK</div>
+            </div>
+
+          </div>
         </div>
       </div>
     </div>
@@ -149,7 +158,7 @@
       <div class="card dashboard-card gb-remaining-card-tip">
         <div class="tip-caret-left"></div>
         <div class="card-body">
-          <h1 [translate]>DASHBOARD.TIP_FUND_TITLE</h1>
+          <h2 [translate]>DASHBOARD.TIP_FUND_TITLE</h2>
           <div class="tip-content-container">
             <div class="tip-content-left">
               <img src="assets/imgs/zen_panda.png" alt="Panda">

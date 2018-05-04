@@ -144,15 +144,22 @@ form {
 // btns
 
 .btn {
-  padding: 8px 0.7rem;
+  padding: 6px 0.7rem;
   font-family: 'OpenSans';
   font-weight: 300;
   font-size: 14px;
-
+  height: 35px;
   &:focus {
     color: #fff;
   }
 }
+
+.btn-lg {
+  padding: 0.75rem 1.5rem !important;
+  line-height: 1.4;
+  height: 45px;
+}
+
 
 .btn.btn-primary, .btn-primary {
   &:hover {
@@ -182,9 +189,6 @@ form {
   }
 }
 
-.btn-lg {
-  padding: 0.75rem 1.5rem !important;
-}
 
 /** the button with a gray border */
 .btn-border {
