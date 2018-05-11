@@ -1,10 +1,9 @@
 <div id="electron-titlebar" class="drag">
   <img class="orchid-logo" src="assets/imgs/h-logo-white.svg">
   <span class="titlebar-blurb" [translate]="'SIDEBAR.ACCESS'"></span>
-  <span class="orc-balance">{{ orcs }} OC</span>
+  <span class="orc-balance">{{ orcBalance }} ORC</span>
 </div>
 
-<!-- maybe this belongs in main-navigation? -->
 <router-outlet name="modal"></router-outlet>
 
 <router-outlet id="main-router"></router-outlet>

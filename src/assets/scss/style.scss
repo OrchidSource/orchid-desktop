@@ -45,6 +45,13 @@ h4, .h4 {
 }
 
 
+.paragraph { // also p?
+  font-family: 'OpenSans';
+  font-weight: bold;
+  font-size: 16px
+}
+
+
 form {
   .form-group {
     .form-control {
@@ -213,6 +220,17 @@ form {
   &:active {
     color: $gray;
     border-color: $gray;
+  }
+}
+
+/** put on a container that contains items that should be aligned right and speced transparent
+(e.g. the rows of action buttons at the bottom of modals)
+*/
+.row-actions {
+  text-align: right;
+  padding-top: 10px;
+  > * {
+    margin-left: 24px;
   }
 }
 

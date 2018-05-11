@@ -20,6 +20,7 @@ import { PurchaseHowToComponent } from './purchase/purchase-how-to/purchase-how-
 import { SellHowToComponent } from './sell/sell-how-to/sell-how-to.component';
 
 import { ConfigService } from "./config-service/config.service";
+import { WalletService } from "./wallet.service";
 import { InternationalizationService } from "./internationalization-service/internationalization.service";
 import { OrchidNetService } from "./orchid-net/orchid-net.service";
 
@@ -33,6 +34,7 @@ import { MainNavigationComponent } from './main-navigation/main-navigation.compo
 import { FirstLaunchComponent } from './first-launch/first-launch.component';
 import { WalletBackupComponent } from './wallet/wallet-backup/wallet-backup.component';
 import { WalletSendComponent } from './wallet/wallet-send/wallet-send.component';
+import { WalletShareComponent } from './wallet/wallet-share/wallet-share.component';
 
 // Indicates where the translation files live
 export function HttpLoaderFactory(httpClient: HttpClient) {
@@ -54,7 +56,8 @@ export function HttpLoaderFactory(httpClient: HttpClient) {
     FirstLaunchComponent,
     WalletSetupBeginComponent,
     WalletBackupComponent,
-    WalletSendComponent
+    WalletSendComponent,
+    WalletShareComponent
   ],
   imports: [
     AppRoutingModule,
@@ -78,7 +81,8 @@ export function HttpLoaderFactory(httpClient: HttpClient) {
   providers: [
     ConfigService,
     InternationalizationService,
-    OrchidNetService
+    OrchidNetService,
+    WalletService
   ],
   bootstrap: [AppComponent]
 })

@@ -40,10 +40,6 @@ export class WalletSetupBeginComponent implements OnInit {
     document.execCommand('Copy');
   }
 
-  // showQR() {
-  //   console.log('show QR');
-  // }
-
   /**
    * Closes modal and navigates to the wallet page.
    * Work-around for this issue: https://github.com/angular/angular/issues/15338

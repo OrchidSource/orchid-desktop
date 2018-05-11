@@ -1,0 +1,33 @@
+<div class="routed-modal-container" (click)="conditionalClose($event)">
+  <div class="routed-modal">
+    <h2>
+      <span [translate]>WALLET_SHARE.TITLE</span>
+      <img src="assets/imgs/icons/x-gray.svg" class="pull-right" alt="Close" [routerLink]="['', {outlets: {modal:null}}]">
+    </h2>
+    <div class="underlined-row">
+      <div class="paragraph" [translate]>WALLET_SHARE.CURRENT_BALANCE</div>
+    </div>
+    <div class="underlined-row">
+      <div class="paragraph" [translate]>GENERAL.SEND</div>
+    </div>
+    <div class="underlined-row">
+      <div>
+        <span class="paragraph" [translate]>WALLET_SHARE.COPY_LINK</span>
+        <span class="" [translate]>WALLET_SHARE.COPY_LINK_DETAILS</span>
+      </div>
+      <div>
+        TODO: put link here
+      </div>
+    </div>
+    <div class="row-actions">
+      <button class="btn btn-wide btn-border btn-lg" [translate]>WALLET_SHARE.SHARE_MORE</button>
+      <button class="btn btn-wide btn-primary btn-lg " [translate]>GENERAL.DONE</button>
+    </div>
+    <div class="row-actions">
+        <a href="http://www.orchid.com/" class="btn btn-link btn-wide">
+          <span [translate]>WALLET_SHARE.LEARN_MORE</span><img src="assets/imgs/icons/arrow-right-gray.svg" aria-hidden>
+        </a>
+    </div>
+  </div>
+
+</div>

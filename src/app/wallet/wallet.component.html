@@ -2,7 +2,7 @@
   <div class="wallet-balance col-md-4">
     <div [translate]>WALLET.CURRENT_BALANCE</div>
     <div>
-      <span class="wallet-balance-number">0.0</span> OCT ($0.00)
+      <span class="wallet-balance-number" [textContent]="orcBalance"></span> OCT (${{ usdBalance}})
     </div>
   </div>
   <div class="wallet-actions col-md-8">
@@ -13,7 +13,7 @@
       </div>
     </div>
     <div class="wallet-button-row">
-      <span class="btn btn-primary">
+      <span class="btn btn-primary" [routerLink]="['', {outlets: {modal:'wallet-share'}}]">
         <span [translate]>WALLET.SHARE</span>
       </span>
       <span class="btn btn-img btn-secondary" [routerLink]="['', {outlets: {modal: 'wallet-send'}}]">

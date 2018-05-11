@@ -12,6 +12,7 @@ import { status } from "../app.component";
 import { ConfigService } from "../config-service/config.service";
 import { BrowsingLocation } from "../classes/browsing-location";
 import { OrchidNetService } from "../orchid-net/orchid-net.service";
+import { WalletService } from "../wallet.service";
 
 
 const CHART_OPTIONS = {
@@ -62,6 +63,8 @@ export class DashboardComponent implements OnInit {
   /** Time span to show in the chart */
   public earningsSpan: string = '1w';
 
+  public gbRemaining: number;
+
   public tip_state: string = TIP_STATES[0];
 
   /**
@@ -72,7 +75,7 @@ export class DashboardComponent implements OnInit {
   typeaheadBrowsingLocation: BrowsingLocation|string|boolean = false;
   typeaheadOpen: boolean = false;
 
-  constructor(private _config: ConfigService, private changeDetector: ChangeDetectorRef, private orchidNetService: OrchidNetService, private renderer : Renderer2) {
+  constructor(private _config: ConfigService, private changeDetector: ChangeDetectorRef, private orchidNetService: OrchidNetService, private renderer : Renderer2, private walletService: WalletService) {
     this.connected = false;
   }
 
@@ -89,6 +92,8 @@ export class DashboardComponent implements OnInit {
     this.selectedBrowsingLocation = BrowsingLocation.getLocations().find(bl => {
       return bl.code == this._config.selectedBrowsingLocation;
     })
+
+    this.gbRemaining = this.walletService.getGBRemaining();
 
     this.initializeChart()
   }

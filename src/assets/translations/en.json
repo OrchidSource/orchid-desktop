@@ -73,7 +73,15 @@
   },
   "WALLET_SEND": {
     "TITLE": "Send OCT",
-    "SEND": "Send OCT"
+    "SEND": "Send OCT",
+    "CURRENT_BALANCE": "Current balance"
+  },
+  "WALLET_SHARE": {
+    "TITLE": "Share Orchid",
+    "SHARE_MORE": "Share more",
+    "LEARN_MORE": "Learn more",
+    "COPY_LINK": "Copy link",
+    "COPY_LINK_DETAILS": "(Share the link to share Orchid)"
   },
   "SETTINGS": {
     "LAUNCH_STARTUP": "Launch on startup",
@@ -90,6 +98,7 @@
     "PASSWORD_CONFIRM": "Confirm password",
     "NEXT": "Next",
     "SEARCH": "Search",
-    "DONE": "Done"
+    "DONE": "Done",
+    "SEND": "Send"
   }
 }
