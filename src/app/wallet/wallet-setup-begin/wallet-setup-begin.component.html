@@ -4,23 +4,34 @@
 
     <div class="address-header" [translate]>WALLET_SETUP.ADDRESS</div>
 
+    <!-- For copying -->
+    <input type="text" id="wallet-setup-begin-address" [value]="wallet_address" style="position: fixed; top: -100px">
     <div class="input-group">
       <input type="text" disabled class="form-control" [value]="wallet_address">
       <div class="input-group-append">
-        <span class="input-group-text">copy</span>
-        <span class="input-group-text input-group-text-other">other</span>
+        <span class="input-group-text" (click)="copyAddress()"><img src="assets/imgs/icons/copy-gray.svg" aria-hidden></span>
+        <span class="input-group-text input-group-text-qr" (click)="showQR = !showQR"><img src="assets/imgs/icons/qr-code-gray.svg" aria-hidden></span>
       </div>
     </div>
 
     <div class="spaced" [translate]>WALLET_SETUP.TRANSFER_COPY</div>
 
-    <a href="#" class="spaced" [translate]>WALLET_SETUP.WHERE</a>
-    <a href="#" class="spaced" [translate]>WALLET_SETUP.HOW</a>
-    <a href="#"><span [translate]>WALLET_SETUP.LEARN_MORE</span>&gt;</a>
+    <a href="http://www.orchid.com/" class="spaced" [translate]>WALLET_SETUP.WHERE</a>
+    <a href="http://www.orchid.com/" class="spaced" [translate]>WALLET_SETUP.HOW</a>
+    <a href="http://www.orchid.com/" class="spaced">
+      <span [translate]>WALLET_SETUP.LEARN_MORE</span><img src="assets/imgs/icons/arrow-right-gray.svg" aria-hidden>
+    </a>
 
     <div class="bottom-controls">
       <a class="btn btn-lg btn-link" [routerLink]="['', {outlets: {modal:null}}]" [translate]>WALLET_SETUP.DO_LATER</a>
-      <button class="btn btn-lg btn-primary" [translate]>GENERAL.DONE</button>
+      <button (click)="navigateToWallet()" class="btn btn-lg btn-primary" [translate]>GENERAL.DONE</button>
     </div>
+  </div>
+</div>
+
+<div class="qr" *ngIf="showQR" [@qrSlideOpen]>
+  <div (click)="showQR = false" class="close"><img src="assets/imgs/icons/x.svg"></div>
+  <div class="qr-container">
+    <ui-wallet-qr [walletAddress]="wallet_address"></ui-wallet-qr>
   </div>
 </div>

@@ -64,6 +64,12 @@ form {
   margin-top: 5px;
 }
 
+.btn.btn-link {
+  color: $gray;
+  color: $secondary-text-color;
+  text-decoration: underline;
+}
+
 .help-text {
   text-decoration: underline;
 }
