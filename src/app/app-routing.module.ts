@@ -6,6 +6,7 @@ import { SettingsComponent } from './settings/settings.component';
 import { WalletComponent } from './wallet/wallet.component';
 import { WalletSetupBeginComponent } from './wallet/wallet-setup-begin/wallet-setup-begin.component';
 import { WalletBackupComponent } from './wallet/wallet-backup/wallet-backup.component';
+import { WalletSendComponent } from './wallet/wallet-send/wallet-send.component';
 import { PurchaseStartComponent } from './purchase/purchase-start/purchase-start.component';
 import { PurchasePaymentComponent } from './purchase/purchase-payment/purchase-payment.component';
 import { PurchaseConfirmationComponent } from './purchase/purchase-confirmation/purchase-confirmation.component';
@@ -50,6 +51,11 @@ const routes: Routes = [
   {
     path: 'wallet-backup',
     component: WalletBackupComponent,
+    outlet: 'modal'
+  },
+  {
+    path: 'wallet-send',
+    component: WalletSendComponent,
     outlet: 'modal'
   },
   {

@@ -16,7 +16,7 @@
       <span class="btn btn-primary">
         <span [translate]>WALLET.SHARE</span>
       </span>
-      <span class="btn btn-img btn-secondary">
+      <span class="btn btn-img btn-secondary" [routerLink]="['', {outlets: {modal: 'wallet-send'}}]">
         <img src="assets/imgs/icons/send.svg" aria-disabled>
         <span [translate]>WALLET.SEND</span>
       </span>

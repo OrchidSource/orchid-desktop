@@ -32,6 +32,7 @@ import { UiModule } from './ui/ui.module';
 import { MainNavigationComponent } from './main-navigation/main-navigation.component';
 import { FirstLaunchComponent } from './first-launch/first-launch.component';
 import { WalletBackupComponent } from './wallet/wallet-backup/wallet-backup.component';
+import { WalletSendComponent } from './wallet/wallet-send/wallet-send.component';
 
 // Indicates where the translation files live
 export function HttpLoaderFactory(httpClient: HttpClient) {
@@ -52,7 +53,8 @@ export function HttpLoaderFactory(httpClient: HttpClient) {
     MainNavigationComponent,
     FirstLaunchComponent,
     WalletSetupBeginComponent,
-    WalletBackupComponent
+    WalletBackupComponent,
+    WalletSendComponent
   ],
   imports: [
     AppRoutingModule,

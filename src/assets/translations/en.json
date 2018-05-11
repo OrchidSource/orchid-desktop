@@ -32,9 +32,9 @@
     "FUND_ACCOUNT": "Fund account",
     "ORCHID_TOTAL": "Orchid network total",
     "YOUR_TOTAL": "Your total",
-    "TOOLTIP_CONNECTION": "Your security level determines how many nodes your connection will pass through. Higher security level = more nodes.",
-    "TOOLTIP_GB_REMAINING": "Shows the amount of network traffic you have purchased.",
-    "TOOLTIP_LOCATION": "This is where you will be browsing the internet from.",
+    "TOOLTIP_CONNECTION": "Connect or disconnect to the Orchid Network at any time. Through the Orchid Network, you can connect to the internet safely and privately.",
+    "TOOLTIP_GB_REMAINING": "This an estimate of how much data (in gigabytes) you can use. This number goes up or down with the funds in your account and is likely to decrease faster when you’re using more data (ex. streaming video) and other network factors.",
+    "TOOLTIP_LOCATION": "As a Buyer, you can choose a browsing location in any country in the dropdown list. For example, to experience BBC news as a resident of the United Kingdom would, just select the UK as your browsing location. This is where you’ll appear to be located when browsing the Internet and the IP address used for your session will belong to a UK-based device.",
     "EARNING_SPAN_HOUR": "1H",
     "EARNING_SPAN_DAY": "1D",
     "EARNING_SPAN_WEEK": "1W",
@@ -70,6 +70,10 @@
     "HOW": "How do I transfer tokens to my wallet?",
     "LEARN_MORE": "Learn more",
     "DO_LATER": "I'll do this later"
+  },
+  "WALLET_SEND": {
+    "TITLE": "Send OCT",
+    "SEND": "Send OCT"
   },
   "SETTINGS": {
     "LAUNCH_STARTUP": "Launch on startup",

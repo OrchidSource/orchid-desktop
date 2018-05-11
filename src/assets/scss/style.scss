@@ -197,6 +197,11 @@ form {
 }
 
 
+.btn.btn-wide {
+  min-width: 160px;
+}
+
+
 /** the button with a gray border */
 .btn-border {
   color: $gray-light;
