@@ -1,35 +1,29 @@
 <div class="routed-modal-container" (click)="conditionalClose($event)">
-  <div class="routed-modal divided-dialog">
-    <div>
-      <h3>Enter a username &amp; password</h3>
+  <form novalidate [formGroup]="walletSetupBeginForm" #walletSetupForm="ngForm" (submit)="walletSetupBeginSubmit()" class="routed-modal divided-dialog">
       <div>
-        This username and password will enrypt the access keys to your wallet. Please make sure to write down your password and save it in a secure location. You will not be able to recover it if you loose it.
-      </div>
-    </div>
-
-    <div>
-      <div class="input-group mb-2 mr-sm-2">
-        <div class="input-group-prepend">
-          <div class="input-group-text">@@</div>
+        <h2>Enter a username &amp; password</h2>
+        <div>
+          This username and password will enrypt the access keys to your wallet. Please make sure to write down your password and save it in a secure location. You will not be able to recover it if you loose it.
         </div>
-        <input type="text" class="form-control" placeholder="{{ 'GENERAL.USERNAME' | translate}}">
       </div>
 
-      <div class="input-group mb-2 mr-sm-2">
-        <div class="input-group-prepend">
-          <div class="input-group-text">??</div>
+      <div>
+        <div class="input-group user-input-group mb-2 mr-sm-2">
+          <input type="text" id="username" class="form-control" ngModel formControlName="username" placeholder="{{ 'GENERAL.USERNAME' | translate}}">
         </div>
-        <input type="password" class="form-control" placeholder="{{ 'GENERAL.PASSWORD' | translate}}">
-      </div>
-
-      <div class="input-group mb-2 mr-sm-2">
-        <div class="input-group-prepend">
-          <div class="input-group-text">??</div>
+        <div *ngIf="walletSetupBeginForm.controls.username.errors">
+          ERR: {{ walletSetupBeginForm.controls.username.errors }}
         </div>
-        <input type="password" class="form-control" placeholder="{{ 'GENERAL.PASSWORD_CONFIRM' | translate}}">
-      </div>
-      <button class="btn btn-primary" [translate]>GENERAL.NEXT</button>
 
-    </div>
-  </div>
+        <div class="input-group password-input-group mb-2 mr-sm-2">
+          <input type="password" class="form-control"  ngModel formControlName="password" placeholder="{{ 'GENERAL.PASSWORD' | translate}}">
+        </div>
+
+        <div class="input-group password-input-group mb-2 mr-sm-2">
+          <input type="password" class="form-control"  ngModel formControlName="passwordConfirm" placeholder="{{ 'GENERAL.PASSWORD_CONFIRM' | translate}}">
+        </div>
+        <button type="submit" class="btn btn-lg btn-block btn-primary" [disabled]="!walletSetupForm.form.valid" [translate]>GENERAL.NEXT</button>
+
+      </div>
+    </form>
 </div>

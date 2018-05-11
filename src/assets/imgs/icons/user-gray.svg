@@ -1,0 +1,26 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<svg width="28px" height="30px" viewBox="0 0 28 30" version="1.1" xmlns="http://www.w3.org/2000/svg" xmlns:xlink="http://www.w3.org/1999/xlink">
+    <!-- Generator: Sketch 50 (54983) - http://www.bohemiancoding.com/sketch -->
+    <title>Icons/User</title>
+    <desc>Created with Sketch.</desc>
+    <defs>
+        <path d="M27,28.5 C27,29.3284271 26.3284271,30 25.5,30 C24.6715729,30 24,29.3284271 24,28.5 L24,25.5 C24,23.0147186 21.9852814,21 19.5,21 L7.5,21 C5.01471863,21 3,23.0147186 3,25.5 L3,28.5 C3,29.3284271 2.32842712,30 1.5,30 C0.671572875,30 0,29.3284271 0,28.5 L0,25.5 C0,21.3578644 3.35786438,18 7.5,18 L19.5,18 C23.6421356,18 27,21.3578644 27,25.5 L27,28.5 Z M13.5,15 C9.35786438,15 6,11.6421356 6,7.5 C6,3.35786438 9.35786438,0 13.5,0 C17.6421356,0 21,3.35786438 21,7.5 C21,11.6421356 17.6421356,15 13.5,15 Z M13.5,12 C15.9852814,12 18,9.98528137 18,7.5 C18,5.01471863 15.9852814,3 13.5,3 C11.0147186,3 9,5.01471863 9,7.5 C9,9.98528137 11.0147186,12 13.5,12 Z" id="path-1"></path>
+    </defs>
+    <g id="--------------------" stroke="none" stroke-width="1" fill="none" fill-rule="evenodd">
+        <g id="ORCHID---Icons" transform="translate(-520.000000, -646.000000)">
+            <g id="Icons/User" transform="translate(520.000000, 646.000000)">
+                <g transform="translate(0.500000, 0.000000)">
+                    <mask id="mask-2" fill="white">
+                        <use xlink:href="#path-1"></use>
+                    </mask>
+                    <use id="Combined-Shape" fill="#9E9E9E" fill-rule="nonzero" xlink:href="#path-1"></use>
+                    <g id="Colors/BG/White_Dashboard-Card-BG" mask="url(#mask-2)" fill="#9E9E9E">
+                        <g transform="translate(-4.500000, -3.000000)" id="Rectangle-2-Copy-6">
+                            <rect x="0" y="0" width="36" height="36"></rect>
+                        </g>
+                    </g>
+                </g>
+            </g>
+        </g>
+    </g>
+</svg>
