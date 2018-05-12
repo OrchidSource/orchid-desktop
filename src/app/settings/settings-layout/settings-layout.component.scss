@@ -3,7 +3,15 @@
 .settings-tab-container {
   margin: 0 $orchid-gutter-width $orchid-gutter-width $orchid-gutter-width;
   color: $gray;
+
   .active {
     color: $brand-primary;
+  }
+
+  > *:focus {
+    outline: none;
+  }
+  > span {
+    cursor: pointer;
   }
 }

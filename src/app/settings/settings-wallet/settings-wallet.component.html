@@ -1,3 +1,14 @@
-<p>
-  settings-wallet works!
-</p>
+<div class="card">
+  <div class="card-body">
+    <div class="setting-item">
+      <span class="small" [translate]>SETTINGS.NATIVE_CURRENCY</span>
+      <ui-toggle [(isSelected)]="settings.NATIVE_CURRENCY"></ui-toggle>
+    </div>
+
+    <div class="setting-item">
+      <span class="small" [translate]>SETTINGS.AUTO_TRANSFER</span>
+      <a ngbTooltip="{{ 'SETTINGS.AUTO_TRANSFER' | translate }}" placement="bottom"><img src="assets/imgs/question.svg"/></a>
+      <ui-toggle [(isSelected)]="settings.AUTO_TRANSFER"></ui-toggle>
+    </div>
+  </div>
+</div>

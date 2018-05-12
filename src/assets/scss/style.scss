@@ -51,6 +51,9 @@ h4, .h4 {
   font-size: 16px
 }
 
+.small {
+  font-size: 14px;
+}
 
 form {
   .form-group {
@@ -254,19 +257,6 @@ form {
   padding-bottom: 30px;
 }
 
-
-.tooltip {
-  .arrow::before {
-    border-bottom-color: $gray-dark;
-  }
-  .tooltip-inner {
-    width: 300px;
-    background-color: $gray-dark;
-    box-shadow: 0 0 0 1px $gray-lightest;
-    border-radius: 10px;
-  }
-}
-
 .secondary-text {
   color: $secondary-text-color;
 }
@@ -401,6 +391,11 @@ input[type=text].input-search {
   .routed-modal.paddingless {
     padding: 0;
   }
+}
+
+/** tooltip icon */
+a > img[src='assets/imgs/question.svg'] {
+  width: 14px;
 }
 
 

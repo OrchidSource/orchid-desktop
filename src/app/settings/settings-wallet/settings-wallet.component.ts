@@ -7,6 +7,8 @@ import { Component, OnInit } from '@angular/core';
 })
 export class SettingsWalletComponent implements OnInit {
 
+  settings: object = {};
+
   constructor() { }
 
   ngOnInit() {

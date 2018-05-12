@@ -135,17 +135,6 @@
   margin-right: 0;
 }
 
-.last {
-  .tooltip {
-    margin-left: -140px;
-
-    .tooltip-inner {
-      &:before {
-        left: 97%;
-      }
-    }
-  }
-}
 
 /*all cards*/
 .card {
