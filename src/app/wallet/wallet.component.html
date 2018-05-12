@@ -20,7 +20,7 @@
         <img src="assets/imgs/icons/send.svg" aria-disabled>
         <span [translate]>WALLET.SEND</span>
       </span>
-      <span class="btn btn-secondary"> <span [translate]>WALLET.RECEIVE</span></span>
+      <span class="btn btn-secondary" [routerLink]="['', {outlets: {modal:'wallet-receive'}}]"> <span [translate]>WALLET.RECEIVE</span></span>
     </div>
   </div>
 </div>

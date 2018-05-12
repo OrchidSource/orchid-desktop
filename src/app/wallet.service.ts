@@ -2,8 +2,11 @@ import { Injectable } from '@angular/core';
 import { Observable } from 'rxjs/Observable';
 
 
+// stub testing values
 const orcGbRatio: number = 0.5;
 const orcUSDRatio: number = 0.25;
+const WALLET_ADDRESS: string = '0x177b46f8fCf57C5CA32747ecf57ed359481b16eD';
+
 /**
 * Service for handling a user's wallet.
 * Currently just a mock
@@ -12,6 +15,7 @@ const orcUSDRatio: number = 0.25;
 export class WalletService {
 
   private orcBalance: number = 173.4;
+  private
 
   constructor() { }
 
@@ -30,6 +34,10 @@ export class WalletService {
 
   getUSDBalance(): number {
     return this.orcBalance * orcUSDRatio;
+  }
+
+  getWalletAddress(): string {
+    return WALLET_ADDRESS;
   }
 
   /**

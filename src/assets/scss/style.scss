@@ -396,6 +396,11 @@ input[type=text].input-search {
       border-right: 1px solid $gray-light;
     }
   }
+
+  /* because we've got lots of modal styles */
+  .routed-modal.paddingless {
+    padding: 0;
+  }
 }
 
 

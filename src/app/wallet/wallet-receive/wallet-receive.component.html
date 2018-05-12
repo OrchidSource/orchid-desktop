@@ -1,0 +1,20 @@
+<div class="routed-modal-container" (click)="conditionalClose($event)">
+  <div class="routed-modal paddingless">
+    <h2>
+      <span [translate]>WALLET_RECEIVE.TITLE</span>
+      <img src="assets/imgs/icons/x-gray.svg" class="pull-right" alt="Close" [routerLink]="['', {outlets: {modal:null}}]">
+    </h2>
+
+    <div class="qr-container">
+      <ui-wallet-qr [walletAddress]="walletAddress"></ui-wallet-qr>
+    </div>
+
+    <div class="address-container" [textContent]="walletAddress">
+    </div>
+
+    <div class="copy-container">
+      <button class="btn btn-border btn-lg btn-wide" [translate]>GENERAL.COPY</button>
+    </div>
+
+  </div>
+</div>

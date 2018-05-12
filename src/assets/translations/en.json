@@ -83,6 +83,9 @@
     "COPY_LINK": "Copy link",
     "COPY_LINK_DETAILS": "(Share the link to share Orchid)"
   },
+  "WALLET_RECEIVE": {
+    "TITLE": "Share Orchid"
+  },
   "SETTINGS": {
     "LAUNCH_STARTUP": "Launch on startup",
     "CONNECT_ON_STARTUP": "Connect on startup",
@@ -99,6 +102,7 @@
     "NEXT": "Next",
     "SEARCH": "Search",
     "DONE": "Done",
-    "SEND": "Send"
+    "SEND": "Send",
+    "COPY": "Copy"
   }
 }

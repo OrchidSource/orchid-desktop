@@ -1,0 +1,24 @@
+@import '../../../assets/scss/variables';
+
+h2 {
+  padding: $orchid-gutter-width;
+  border-bottom: 2px solid $gray-lighter;
+}
+
+.qr-container {
+  max-width: 200px;
+  margin: auto;
+  padding: 20px;
+}
+
+.address-container {
+  background-color: $gray-lightest;
+  text-align: center;
+  padding: 10px;
+}
+
+
+.copy-container {
+  text-align: center;
+  padding: $orchid-gutter-width;
+}

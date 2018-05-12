@@ -8,6 +8,7 @@ import { WalletSetupBeginComponent } from './wallet/wallet-setup-begin/wallet-se
 import { WalletBackupComponent } from './wallet/wallet-backup/wallet-backup.component';
 import { WalletSendComponent } from './wallet/wallet-send/wallet-send.component';
 import { WalletShareComponent } from './wallet/wallet-share/wallet-share.component';
+import { WalletReceiveComponent } from './wallet/wallet-receive/wallet-receive.component';
 import { PurchaseStartComponent } from './purchase/purchase-start/purchase-start.component';
 import { PurchasePaymentComponent } from './purchase/purchase-payment/purchase-payment.component';
 import { PurchaseConfirmationComponent } from './purchase/purchase-confirmation/purchase-confirmation.component';
@@ -62,6 +63,11 @@ const routes: Routes = [
   {
     path: 'wallet-share',
     component: WalletShareComponent,
+    outlet: 'modal'
+  },
+  {
+    path: 'wallet-receive',
+    component: WalletReceiveComponent,
     outlet: 'modal'
   },
   {
