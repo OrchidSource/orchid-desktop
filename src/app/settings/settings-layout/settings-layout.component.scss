@@ -1,0 +1,9 @@
+@import '../../../assets/scss/variables';
+
+.settings-tab-container {
+  margin: 0 $orchid-gutter-width $orchid-gutter-width $orchid-gutter-width;
+  color: $gray;
+  .active {
+    color: $brand-primary;
+  }
+}

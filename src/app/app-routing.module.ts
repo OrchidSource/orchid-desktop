@@ -2,7 +2,10 @@ import { NgModule } from '@angular/core';
 import { Routes, RouterModule } from '@angular/router';
 
 import { DashboardComponent } from './dashboard/dashboard.component';
-import { SettingsComponent } from './settings/settings.component';
+import { SettingsLayoutComponent } from './settings/settings-layout/settings-layout.component';
+import { SettingsConnectionComponent } from './settings/settings-connection/settings-connection.component';
+import { SettingsWalletComponent } from './settings/settings-wallet/settings-wallet.component';
+import { SettingsAdvancedComponent } from './settings/settings-advanced/settings-advanced.component';
 import { WalletComponent } from './wallet/wallet.component';
 import { WalletSetupBeginComponent } from './wallet/wallet-setup-begin/wallet-setup-begin.component';
 import { WalletBackupComponent } from './wallet/wallet-backup/wallet-backup.component';
@@ -37,7 +40,26 @@ const routes: Routes = [
       },
       {
         path: 'settings',
-        component: SettingsComponent
+        redirectTo: 'main/settings/connection',
+        pathMatch: 'full'
+      },
+      {
+        path: 'settings',
+        component: SettingsLayoutComponent,
+        children: [
+          {
+            path: 'connection',
+            component: SettingsConnectionComponent
+          },
+          {
+            path: 'wallet',
+            component: SettingsWalletComponent
+          },
+          {
+            path: 'advanced',
+            component: SettingsAdvancedComponent
+            }
+        ]
       },
     ]
   },

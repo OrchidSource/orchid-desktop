@@ -16,9 +16,7 @@
   },
   "SIDEBAR": {
     "ACCESS": "Access the World!",
-    "DASHBOARD": "Dashboard",
-    "SETTINGS": "Settings",
-    "WALLET": "Wallet"
+    "DASHBOARD": "Dashboard"
   },
   "DASHBOARD": {
     "GB_REMAINING": "GB Remaining",
@@ -84,9 +82,12 @@
     "COPY_LINK_DETAILS": "(Share the link to share Orchid)"
   },
   "WALLET_RECEIVE": {
-    "TITLE": "Share Orchid"
+    "TITLE": "OCT wallet address"
   },
+
   "SETTINGS": {
+    "CONNECTION": "Connection",
+    "ADVANCED": "Advanced",
     "LAUNCH_STARTUP": "Launch on startup",
     "CONNECT_ON_STARTUP": "Connect on startup",
     "EXIT_NODE": "Run Orchid as exit node",
@@ -103,6 +104,8 @@
     "SEARCH": "Search",
     "DONE": "Done",
     "SEND": "Send",
-    "COPY": "Copy"
+    "COPY": "Copy",
+    "WALLET": "Wallet",
+    "SETTINGS": "Settings"
   }
 }

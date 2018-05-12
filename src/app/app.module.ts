@@ -26,7 +26,6 @@ import { OrchidNetService } from "./orchid-net/orchid-net.service";
 
 import { PopoverModule } from 'ng2-pop-over';
 import { NgIf } from '@angular/common';
-import { SettingsComponent } from './settings/settings.component';
 import { WalletComponent } from './wallet/wallet.component';
 import { WalletSetupBeginComponent } from './wallet/wallet-setup-begin/wallet-setup-begin.component';
 import { UiModule } from './ui/ui.module';
@@ -36,6 +35,10 @@ import { WalletBackupComponent } from './wallet/wallet-backup/wallet-backup.comp
 import { WalletSendComponent } from './wallet/wallet-send/wallet-send.component';
 import { WalletShareComponent } from './wallet/wallet-share/wallet-share.component';
 import { WalletReceiveComponent } from './wallet/wallet-receive/wallet-receive.component';
+import { SettingsLayoutComponent } from './settings/settings-layout/settings-layout.component';
+import { SettingsConnectionComponent } from './settings/settings-connection/settings-connection.component';
+import { SettingsWalletComponent } from './settings/settings-wallet/settings-wallet.component';
+import { SettingsAdvancedComponent } from './settings/settings-advanced/settings-advanced.component';
 
 // Indicates where the translation files live
 export function HttpLoaderFactory(httpClient: HttpClient) {
@@ -51,7 +54,6 @@ export function HttpLoaderFactory(httpClient: HttpClient) {
     PurchaseHowToComponent,
     SellHowToComponent,
     PurchaseStartComponent,
-    SettingsComponent,
     WalletComponent,
     MainNavigationComponent,
     FirstLaunchComponent,
@@ -59,7 +61,11 @@ export function HttpLoaderFactory(httpClient: HttpClient) {
     WalletBackupComponent,
     WalletSendComponent,
     WalletShareComponent,
-    WalletReceiveComponent
+    WalletReceiveComponent,
+    SettingsLayoutComponent,
+    SettingsConnectionComponent,
+    SettingsWalletComponent,
+    SettingsAdvancedComponent
   ],
   imports: [
     AppRoutingModule,
