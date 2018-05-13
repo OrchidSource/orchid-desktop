@@ -3,6 +3,7 @@ import { NgModule } from '@angular/core';
 import { Component } from '@angular/core';
 import { FormsModule, ReactiveFormsModule } from '@angular/forms';
 import * as Chart from 'chart.js';
+// import * as currency_codes from 'currency-codes';
 import { ChartsModule } from 'ng2-charts/ng2-charts';
 import { TranslateModule, TranslateLoader } from '@ngx-translate/core';
 import { TranslateHttpLoader } from '@ngx-translate/http-loader';

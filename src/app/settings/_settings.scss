@@ -16,11 +16,22 @@
       border-style: solid;
       text-transform: uppercase;
 
+      &.setting-item-contains-input {
+        height: 58px;
+        .small, a {
+          position: relative;
+          top: 6px;
+        }
+        ui-toggle {
+          top: 14px;
+        }
+      }
+
       &:last-of-type {
         border-width: 0
       }
 
-      ui-toggle {
+      ui-toggle, .setting-value {
         position: absolute;
         right: 0;
         top: 8px;

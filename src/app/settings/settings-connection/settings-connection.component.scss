@@ -1,1 +1,17 @@
-@import '../settings'
+@import '../settings';
+
+.limit-bandwidth {
+  .small {
+    padding-left: $orchid-gutter-width;
+  }
+
+  .amount-container {
+    position: absolute;
+    right: 100px;
+    input {
+      width: 100px;
+      display: inline-block;
+      margin-right: 20px;
+    }
+  }
+}

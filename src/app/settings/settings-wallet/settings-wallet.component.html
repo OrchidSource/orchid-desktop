@@ -2,7 +2,12 @@
   <div class="card-body">
     <div class="setting-item">
       <span class="small" [translate]>SETTINGS.NATIVE_CURRENCY</span>
-      <ui-toggle [(isSelected)]="settings.NATIVE_CURRENCY"></ui-toggle>
+      <div class="form-group setting-value">
+        <!-- <label></label> -->
+        <select>
+          <option *ngFor="let c of currencies" [ngValue]="settings.currency">{{c.code}}</option>
+        </select>
+      </div>
     </div>
 
     <div class="setting-item">
@@ -11,4 +16,9 @@
       <ui-toggle [(isSelected)]="settings.AUTO_TRANSFER"></ui-toggle>
     </div>
   </div>
+</div>
+
+<div class="row-actions">
+  <button class="btn btn-outline-warning btn-wide btn-lg" [translate]>SETTINGS.BUTTON_NEW_WALLET</button>
+  <button class="btn btn-outline-success btn-wide btn-lg" [translate]>SETTINGS.BUTTON_UNLINK_WALLET</button>
 </div>
