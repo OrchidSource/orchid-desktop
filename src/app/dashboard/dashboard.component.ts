@@ -36,7 +36,8 @@ const CHART_OPTIONS = {
       boxWidth: 80,
       fontColor: 'black'
     }
-  }
+  },
+  maintainAspectRatio: false
 };
 
 /**

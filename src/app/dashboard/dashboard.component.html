@@ -85,7 +85,7 @@
       </div>
     </div>
   </div>
-  <div class="col-sm-12 col-md-6 col-lg-8 total-earnings-container hide-minimized">
+  <div class="col-lg-12 total-earnings-container hide-minimized">
     <div class="card dashboard-card earnings-card">
       <div class="card-body">
         <div class="chart-header">
@@ -99,27 +99,11 @@
             <span class="time-span" [ngClass]="{'time-span-selected': earningsSpan==='all'}" (click)="changeSpan('all')" [translate]>DASHBOARD.EARNING_SPAN_ALL</span>
           </div>
         </div>
-        <div>
+        <div class="chart-container">
           <canvas id="dashboardEarningsChart">{{ earningsChart }}</canvas>
         </div>
       </div>
     </div>
-  </div>
-  <div class="col-sm-12 col-md-6 col-lg-4 connections-served-container hide-minimized">
-    <div class="card dashboard-card">
-      <div class="card-header">
-        <span [translate]>DASHBOARD.CONNECTIONS_SERVED</span>
-        <span class="card-help"></span>
-      </div>
-      <div class="card-body">
-        <div [translate]>DASHBOARD.ORCHID_TOTAL</div>
-        <div class="number">123,123</div>
-        <hr>
-        <div [translate]>DASHBOARD.YOUR_TOTAL</div>
-        <div class="number">123</div>
-      </div>
-    </div>
-    <div class="btn btn-secondary" [translate] style="margin-bottom: 25px;">DASHBOARD.EARN_MORE</div>
   </div>
 </div>
 
