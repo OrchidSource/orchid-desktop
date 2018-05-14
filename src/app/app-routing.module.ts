@@ -40,13 +40,13 @@ const routes: Routes = [
       },
       {
         path: 'settings',
-        redirectTo: 'main/settings/connection',
-        pathMatch: 'full'
-      },
-      {
-        path: 'settings',
         component: SettingsLayoutComponent,
         children: [
+          {
+            path: '',
+            redirectTo: 'connection',
+            pathMatch: 'full'
+          },
           {
             path: 'connection',
             component: SettingsConnectionComponent

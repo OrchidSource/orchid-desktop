@@ -27,22 +27,37 @@
     <div class="setting-item setting-item-contains-input limit-bandwidth" *ngIf="settings.RELAY_NODE">
       <span class="small" [translate]>SETTINGS.LIMIT_BANDWIDTH</span>
       <a ngbTooltip="{{ 'SETTINGS.TOOLTIP_LIMIT_BANDWIDTH' | translate }}" placement="bottom"><img src="assets/imgs/question.svg"/></a>
-      <span class="amount-container">
+      <span class="amount-container" [hidden]="!settings.TOOLTIP_LIMIT_BANDWIDTH">
         <input type="number" class="form-control" [(ngModel)]="settings.LIMIT_BANDWIDTH_AMOUNT">GB/{{ 'GENERAL.MONTH_ABBREVIATION' | translate}}
       </span>
       <ui-toggle [(isSelected)]="settings.TOOLTIP_LIMIT_BANDWIDTH"></ui-toggle>
     </div>
 
     <div class="setting-item">
-      <span class="small" [translate]>SETTINGS.ALL_CONNECTIONS</span>
-      <a ngbTooltip="{{ 'SETTINGS.TOOLTIP_ALL_CONNECTIONS' | translate }}" placement="bottom"><img src="assets/imgs/question.svg"/></a>
-      <ui-toggle [(isSelected)]="settings.ALL_CONNECTIONS"></ui-toggle>
-    </div>
-
-    <div class="setting-item">
-      <span class="small" [translate]>SETTINGS.BROWSERS_ONLY</span>
-      <a ngbTooltip="{{ 'SETTINGS.TOOLTIP_BROWSERS_ONLY' | translate }}" placement="bottom"><img src="assets/imgs/question.svg"/></a>
-      <ui-toggle [(isSelected)]="settings.BROWSERS_ONLY"></ui-toggle>
+      <table class="radio-container">
+        <tr>
+          <td>
+            <span class="small" [translate]>SETTINGS.ALL_CONNECTIONS</span>
+          </td>
+          <td>
+            <ui-radio value="all" [(model)]="settings.LIMIT_CONNECTIONS"></ui-radio>
+          </td>
+          <td>
+            <a ngbTooltip="{{ 'SETTINGS.TOOLTIP_ALL_CONNECTIONS' | translate }}" placement="bottom"><img src="assets/imgs/question.svg"/></a>
+          </td>
+        </tr>
+        <tr>
+          <td>
+            <span class="small" [translate]>SETTINGS.BROWSERS_ONLY</span>
+          </td>
+          <td>
+            <ui-radio value="browser" [(model)]="settings.LIMIT_CONNECTIONS"></ui-radio>
+          </td>
+          <td>
+            <a ngbTooltip="{{ 'SETTINGS.TOOLTIP_BROWSERS_ONLY' | translate }}" placement="bottom"><img src="assets/imgs/question.svg"/></a>
+          </td>
+        </tr>
+      </table>
     </div>
 
   </div>

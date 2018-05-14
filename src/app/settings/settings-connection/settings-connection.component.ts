@@ -7,7 +7,9 @@ import { Component, OnInit } from '@angular/core';
 })
 export class SettingsConnectionComponent implements OnInit {
 
-  settings: object = {};
+  settings: object = {
+    LIMIT_CONNECTIONS: "browser"
+  };
 
   constructor() { }
 

@@ -1,0 +1,39 @@
+@import '../../../assets/scss/variables';
+@import '../../../assets/scss/bootstrap_overrides';
+
+.ui-radio-container {
+  height: 24px;
+  width: 24px;
+  border-radius: 100px; // just bigger than 12px;
+  border: 2px solid $gray-lighter;
+  position: relative;
+  display: inline-block;
+
+  transition: all 200ms ease;
+
+  .ui-radio-dot {
+      width: 16px;
+      height: 16px;
+      position: relative;
+      top: 2px;
+      left: 2px;
+
+      display: block;
+      border-radius: 100px;
+      transition: all 400ms;
+  }
+}
+
+.ui-radio-container:not(.ui-radio-selected):hover {
+  cursor: pointer;
+  border-color: $gray-lightest;
+}
+
+.ui-radio-container.ui-radio-selected {
+  border-color: $success;
+
+  .ui-radio-dot {
+    background-color: $success;
+  }
+
+}

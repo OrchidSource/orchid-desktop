@@ -38,5 +38,12 @@
       }
     }
   }
+}
 
+// narrow styling
+@include minimized-breakpoint {
+  .card {
+    margin: 0;
+    border-radius: 0;
+  }
 }
