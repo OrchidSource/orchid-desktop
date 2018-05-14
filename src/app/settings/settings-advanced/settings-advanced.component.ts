@@ -7,8 +7,11 @@ import { Component, OnInit } from '@angular/core';
 })
 export class SettingsAdvancedComponent implements OnInit {
 
-  setings: object = {};
-  
+  settings: object = {
+    PRICE_GB_USED: 0.569423,
+    PRICE_GB_SHARED: 0.76942
+  };
+
   constructor() { }
 
   ngOnInit() {

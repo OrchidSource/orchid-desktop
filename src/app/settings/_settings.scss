@@ -1,5 +1,6 @@
 /** Common css for all the settings-* components */
 @import '../../assets/scss/variables';
+@import '../../assets/scss/mixins';
 
 .card {
   margin: 0 $orchid-gutter-width $orchid-gutter-width $orchid-gutter-width;

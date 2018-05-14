@@ -261,6 +261,11 @@ form {
   color: $secondary-text-color;
 }
 
+/** Add to inputs for rounded corner styling */
+input.input-rounded {
+  border-radius: 100px;
+}
+
 input[type=number]::-webkit-inner-spin-button {
   opacity: 1;
 }

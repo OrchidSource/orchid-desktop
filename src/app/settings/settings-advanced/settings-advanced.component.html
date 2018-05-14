@@ -1,3 +1,38 @@
-<p>
-  settings-advanced works!
-</p>
+<div class="card">
+  <div class="card-body">
+    <div class="setting-item row">
+      <div class="col-lg-6 p-2">
+        <div class="row">
+          <div class="col-sm-6 small">
+            <span [translate]>SETTINGS.PRICE_GB_SHARED</span>
+            <a ngbTooltip="{{ 'SETTINGS.TOOLTIP_PRICE_GB_SHARED' | translate }}" placement="bottom"><img src="assets/imgs/question.svg"/></a>
+          </div>
+          <div class="col-sm-6">
+            <div class="input-group">
+              <input type="number" class="form-control" [(ngModel)]="settings.PRICE_GB_SHARED">
+              <div class="input-group-append">
+                <span class="input-group-text">OCT</span>
+              </div>
+            </div>
+          </div>
+        </div>
+      </div>
+      <div class="col-lg-6 p-2">
+        <div class="row">
+          <div class="col-sm-6 small">
+            <span [translate]>SETTINGS.PRICE_GB_USED</span>
+            <a ngbTooltip="{{ 'SETTINGS.TOOLTIP_PRICE_GB_USED' | translate }}" placement="bottom"><img src="assets/imgs/question.svg"/></a>
+          </div>
+          <div class="col-sm-6">
+            <div class="input-group">
+              <input type="number" class="form-control" [(ngModel)]="settings.PRICE_GB_USED">
+              <div class="input-group-append">
+                <span class="input-group-text">OCT</span>
+              </div>
+            </div>
+          </div>
+        </div>
+      </div>
+    </div>
+  </div>
+</div>
