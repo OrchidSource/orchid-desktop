@@ -26,6 +26,10 @@ const CHART_OPTIONS = {
     yAxes: [{
       gridLines: {
         display: false
+      },
+      ticks: {
+        beginAtZero: true,
+        suggestedMax: 10
       }
     }]
   },
@@ -62,12 +66,12 @@ export class DashboardComponent implements OnInit {
   selectedBrowsingLocation: BrowsingLocation;
   public earningsChart: Chart;
   /** Time span to show in the chart */
-  public earningsSpan: string = '1w';
+  public earningsSpan: string = '1y';
 
   public gbRemaining: number;
 
-  // public tip_state: string = TIP_STATES[0];
-  public tip_state: string;
+  public tip_state: string = TIP_STATES[0];
+  // public tip_state: string;
 
   /**
    * Model that typeahead binds to. Different from selectedBrowsingLocation because
@@ -204,10 +208,11 @@ export class DashboardComponent implements OnInit {
   initializeChart() {
     // mock data
     var earningsData = {
-      labels: ["Mar", "Apr", "May", "Jun", "Jul", "Aug"],
+      // TODO: internationalize
+      labels: ['Jun', 'Jul', 'Aug', 'Sep', 'Oct', 'Nov', 'Dec', 'Jan', 'Feb', 'Mar', 'Apr', 'May'],
       datasets: [{
         label: "ORCHID tokens Earned",
-        data: [0, '5.9', '7.5', '2.0', '20', '5.5'],
+        data: (Array(12).fill(0)), // TODO: use real data
         fill: true,
         borderColor: '#553591',
         pointBorderColor: '#553591',

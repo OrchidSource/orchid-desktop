@@ -197,12 +197,17 @@ form {
 
 // an img or .img element inside a .btn.btn-img with .btn-img will be placed at the left-hand side of the button
 .btn.btn-img {
+  position: relative;
   img, .img {
-    float: left;
+    position: absolute;
+    max-height: 14px;
+    width: 18px;
+    left: 14px;
+    top: 50%;
+    transform: translateY(-50%);
   }
-  // offset text to put it back in center; we're assuming the image is 18px wide
   span {
-    margin-right: 18px;
+    padding: 0 18px; // To prevent overlapping with image when text gets long
   }
 }
 
