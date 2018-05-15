@@ -14,7 +14,7 @@ export class WalletShareComponent implements OnInit {
   constructor(private router: Router, private walletService: WalletService) { }
 
   ngOnInit() {
-    this.balance = this.walletService.getOrcBalance()
+    this.balance = this.walletService.getOctBalance()
   }
 
   conditionalClose($event) {

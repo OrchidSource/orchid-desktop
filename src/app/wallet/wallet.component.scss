@@ -1,4 +1,5 @@
 @import '../../assets/scss/variables';
+@import '../../assets/scss/mixins';
 
 .wallet-top-area {
   display: flex;
@@ -33,7 +34,7 @@
       display: flex;
       flex-direction: row;
       justify-content: space-around;
-      .btn {
+      span {
         width: 30%;
       }
     }
@@ -63,6 +64,20 @@
       }
       &.transaction-status-sent {
         color: $brand-warning
+      }
+    }
+  }
+}
+
+/// begin narrow version styling
+@include minimized-breakpoint {
+  .wallet-top-area {
+    padding-bottom: 0;
+
+    .wallet-actions .wallet-backup {
+      .btn {
+        width: 100%;
+        border-radius: 0;
       }
     }
   }

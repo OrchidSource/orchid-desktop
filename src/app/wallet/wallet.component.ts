@@ -16,25 +16,13 @@ export class WalletComponent implements OnInit {
 
   ngOnInit() {
     this.getTransactions();
-    this.orcBalance = this.walletService.getOrcBalance();
+    this.orcBalance = this.walletService.getOctBalance();
     this.usdBalance = this.walletService.getUSDBalance();
   }
 
-  getTransactions() {
+  getTransactions(): object[] {
     // mock up transaction data for now
-
-    var today = new Date();
-
-    for (let i = 0; i < 10; i ++) {
-      this.transactions.push({
-        from: 'X09HS7GHFFIDXIANGIA',
-        to: 'F10HW40HFFIGXIACQIA',
-        status: (i % 2) ? 'sent' : 'received',
-        amount: 1 + i * 10.25,
-        date: new Date(today.getFullYear(), today.getUTCMonth(), today.getUTCDay() - i)
-      })
-    }
-
+    return this.walletService.getTransactions();
   }
 
 }

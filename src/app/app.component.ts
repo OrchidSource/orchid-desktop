@@ -12,7 +12,7 @@ export class AppComponent implements OnInit {
   }
 
   ngOnInit() {
-    this.orcBalance = this.walletService.getOrcBalance();
+    this.orcBalance = this.walletService.getOctBalance();
   }
 }
 

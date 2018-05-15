@@ -230,10 +230,25 @@ form {
 (e.g. the rows of action buttons at the bottom of modals)
 */
 .row-actions {
-  text-align: right;
-  padding-top: 10px;
+  // text-align: right;
+  // padding-top: 10px;
+  display: flex;
+  flex-direction: row;
+  justify-content: flex-end;
   > * {
     margin-left: 24px;
+  }
+}
+@include minimized-breakpoint {
+  .row-actions {
+    display: flex;
+    flex-direction: column;
+    justify-content: unset;
+    > * {
+      margin-left: 0px;
+      margin-top: $orchid-gutter-width / 2;
+      margin-bottom: $orchid-gutter-width / 2;
+    }
   }
 }
 
@@ -395,6 +410,19 @@ input[type=text].input-search {
   /* because we've got lots of modal styles */
   .routed-modal.paddingless {
     padding: 0;
+  }
+}
+
+// narrow modal styling
+
+@include minimized-breakpoint {
+  .routed-modal-container {
+    .routed-modal {
+      margin-left: 0;
+      margin-right: 0;
+      border-radius: 0;
+      width: 100%;
+      }
   }
 }
 

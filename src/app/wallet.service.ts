@@ -14,17 +14,15 @@ const WALLET_ADDRESS: string = '0x177b46f8fCf57C5CA32747ecf57ed359481b16eD';
 @Injectable()
 export class WalletService {
 
-  private orcBalance: number = 173.4;
-  private
+  private orcBalance: number = 0;
 
   constructor() { }
 
   /**
-  * [getOrcBalance description]
   * TODO: return as observable
   * @return [description]
   */
-  getOrcBalance(): number {
+  getOctBalance(): number {
     return this.orcBalance;
   }
 
@@ -38,6 +36,31 @@ export class WalletService {
 
   getWalletAddress(): string {
     return WALLET_ADDRESS;
+  }
+
+  /// Mock; holds transactions
+  private  transactions: object[] = [];
+
+  /** get a list of getTransactions
+   * TODO: create transaction type
+   * TODO: this will need parameters
+  */
+  getTransactions(): object[] {
+    return this.transactions;
+  }
+
+  mockSomeTransaction(): void {
+    var today = new Date();
+
+    for (let i = 0; i < 10; i ++) {
+      this.transactions.push({
+        from: 'X09HS7GHFFIDXIANGIA',
+        to: 'F10HW40HFFIGXIACQIA',
+        status: (i % 2) ? 'sent' : 'received',
+        amount: 1 + i * 10.25,
+        date: new Date(today.getFullYear(), today.getUTCMonth(), today.getUTCDay() - i)
+      })
+    }
   }
 
   /**

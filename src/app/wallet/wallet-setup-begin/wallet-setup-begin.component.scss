@@ -17,7 +17,12 @@ input {
   margin-bottom: 20px;
   display: block;
   color: $secondary-text-color;
+  img {
+    height: 14px;
+    padding: 0 8px;
+  }
 }
+
 a.spaced {
     text-decoration: underline;
 }
@@ -38,14 +43,14 @@ a.spaced {
   }
 }
 
-.bottom-controls {
-  display: flex;
-  flex-direction: row;
-  justify-content: flex-end;
-  button {
-    min-width: 160px;
-  }
-}
+// .bottom-controls {
+//   display: flex;
+//   flex-direction: row;
+//   justify-content: flex-end;
+//   button {
+//     min-width: 160px;
+//   }
+// }
 
 /** pop-out div that shows the QR */
 $qr-width: 180px;
