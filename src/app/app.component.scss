@@ -13,7 +13,8 @@
 
   padding: 8px 30px;
   background-color: $navbar-background;
-  border-radius: 10px 10px 0 0;
+  // OS chrome should round corners for us
+  // border-radius: 10px 10px 0 0;
   text-align: center;
   color: #fff;
   font-size: 13px;

@@ -40,6 +40,7 @@ import { SettingsLayoutComponent } from './settings/settings-layout/settings-lay
 import { SettingsConnectionComponent } from './settings/settings-connection/settings-connection.component';
 import { SettingsWalletComponent } from './settings/settings-wallet/settings-wallet.component';
 import { SettingsAdvancedComponent } from './settings/settings-advanced/settings-advanced.component';
+import { FirstRunGuardService } from './first-run-guard.service';
 
 // Indicates where the translation files live
 export function HttpLoaderFactory(httpClient: HttpClient) {
@@ -91,7 +92,8 @@ export function HttpLoaderFactory(httpClient: HttpClient) {
     ConfigService,
     InternationalizationService,
     OrchidNetService,
-    WalletService
+    WalletService,
+    FirstRunGuardService
   ],
   bootstrap: [AppComponent]
 })

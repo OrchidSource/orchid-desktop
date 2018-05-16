@@ -19,7 +19,8 @@
 
 @include minimized-breakpoint {
   .settings-tab-container {
-    margin: $orchid-gutter-width;
+    margin: $orchid-gutter-width-narrow;
     text-align: center;
+    font-size: 14px;
   }
 }

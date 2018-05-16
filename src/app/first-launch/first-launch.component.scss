@@ -12,6 +12,9 @@
       text-align: center;
       width: 100%;
       margin: auto auto;
+      &:hover {
+        cursor: pointer;
+      }
 
       img {
         width: 40px;

@@ -4,8 +4,8 @@
       <span class="small" [translate]>SETTINGS.NATIVE_CURRENCY</span>
       <div class="form-group setting-value">
         <!-- <label></label> -->
-        <select>
-          <option *ngFor="let c of currencies" [ngValue]="settings.currency">{{c.code}}</option>
+        <select [ngModel]="settings.currency">
+          <option *ngFor="let c of currencies" [ngValue]="c.code">{{c.code}}</option>
         </select>
       </div>
     </div>

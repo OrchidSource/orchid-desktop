@@ -4,6 +4,10 @@ const url = require('url');
 const fs = require('fs');
 const {spawn} = require('child_process');
 
+
+const NARROW_WIDTH = 285;
+const WIDE_WIDTH = 1200;
+
 // Keep a global reference of the window object, if you don't, the window will
 // be closed automatically when the JavaScript object is garbage collected.
 let win;
@@ -11,7 +15,8 @@ let win;
 // the system tray thing
 let tray = null;
 
-function createWindow() {
+function createWindow(width) {
+  width = width || WIDE_WIDTH;
   // Create the browser window.
 
   // TODO I think this is a bug with how electron handles icons in linux
@@ -19,12 +24,12 @@ function createWindow() {
   let _appIcon = nativeImage.createFromPath(__dirname + "/build/icons/icon_128x128.png");
 
   win = new BrowserWindow({
-    width: 1200,
+    width: width,
     height: 800,
-    minWidth: 410,
+    minWidth: NARROW_WIDTH,
     minHeight: 410,
     icon: _appIcon,
-    titleBarStyle: 'hidden',
+    titleBarStyle: 'hidden'
   });
 
   // and load the index.html of the app.
@@ -38,7 +43,7 @@ function createWindow() {
   // only happen when developing
   if (process.defaultApp) {
     // Open the DevTools.
-    win.webContents.openDevTools();
+    // win.webContents.openDevTools();
   }
 
   win.onbeforeunload = function() {
@@ -55,11 +60,31 @@ function createWindow() {
 
   // Emitted when the window is closed.
   win.on('closed', () => {
+    console.log('closed');
     // Dereference the window object, usually you would store windows
     // in an array if your app supports multi windows, this is the time
     // when you should delete the corresponding element.
+
+    // If the window was closed, remove from dock. The user can get back to the UI
+    // by clicking the tray icon
+    app.dock.hide();
+
     win = null;
   });
+
+  win.on('minimize', () => {
+    console.log('minimize');
+    app.dock.show();
+  });
+
+  win.on('maximize', () => {
+    console.log('minimize');
+    app.dock.show();
+  });
+
+
+  // Show the icon in the dock; it may have been hidden if the user previously closed the window
+  app.dock.show();
 }
 
 
@@ -69,8 +94,11 @@ function createTray() {
   tray.setToolTip('Orchid VPN');
 
   tray.on('click', function(event) {
+    console.log('tray click');
     if (win == null) {
-      createWindow();
+      createWindow(NARROW_WIDTH);
+    } else {
+      win.focusOnWebView();
     }
   });
 
@@ -86,6 +114,7 @@ app.on('ready', function() {
 
 // Quit when all windows are closed.
 app.on('window-all-closed', () => {
+  console.log('window-all-closed');
   // On macOS it is common for applications and their menu bar
   // to stay active until the user quits explicitly with Cmd + Q
   if (process.platform !== 'darwin') {

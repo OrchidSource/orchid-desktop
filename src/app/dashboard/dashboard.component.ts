@@ -224,7 +224,7 @@ export class DashboardComponent implements OnInit {
     };
 
     this.earningsChart = new Chart('dashboardEarningsChart', {
-      type: 'line',
+      type: 'bar',
       data: earningsData,
       options: CHART_OPTIONS
     });

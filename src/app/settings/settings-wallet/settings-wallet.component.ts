@@ -11,7 +11,9 @@ const currency_codes_data = require('currency-codes/data');
 })
 export class SettingsWalletComponent implements OnInit {
 
-  settings: object = {};
+  settings: object = {
+    currency: 'USD'
+  };
 
   currencies: object[];
 
