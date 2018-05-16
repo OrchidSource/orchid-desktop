@@ -24,7 +24,10 @@
 
     <div class="row-actions">
       <a class="btn btn-lg btn-wide btn-link" [routerLink]="['', {outlets: {modal:null}}]" [translate]>WALLET_SETUP.DO_LATER</a>
-      <button (click)="navigateToWallet()" class="btn btn-lg btn-primary" [translate]>GENERAL.DONE</button>
+      <button (click)="navigateToWallet()" class="btn btn-lg btn-primary btn-img btn-wide">
+        <img src="assets/imgs/icons/check-white.png" aria-disabled>
+        <span [translate]>GENERAL.DONE</span>
+      </button>
     </div>
   </div>
 </div>

@@ -1,7 +1,8 @@
 @import '../../assets/scss/variables';
 @import '../../assets/scss/mixins';
 
-.wallet-top-area {
+// Styling for the wide version of the top area
+.wallet-top-area-wide {
   display: flex;
   flex-direction: row;
   justify-content: space-between;
@@ -45,7 +46,6 @@
   background-color: white;
   .wallet-transactions-head {
     padding: 40px;
-    height: 106px;
   }
 
   table {
@@ -69,21 +69,58 @@
   }
 }
 
+.no-transactions {
+  padding: $orchid-gutter-width;
+  text-align: center;
+}
+
+
+
 /// begin narrow version styling
 @include minimized-breakpoint {
-  .wallet-top-area {
-    padding-bottom: 0;
-
-    .wallet-actions .wallet-backup {
-      .btn {
-        width: 100%;
-        border-radius: 0;
+  .wallet-transactions {
+    box-shadow: $card-shadow-narrow;
+    .wallet-transactions-head {
+      padding: $orchid-gutter-width-narrow;
+      h2 {
+        font-size: 14px;
       }
+    }
+
+    .no-transactions {
+      padding: $orchid-gutter-width-narrow;
     }
   }
 }
 
-.no-transactions {
-  padding: $orchid-gutter-width;
-  text-align: center;
+.wallet-top-area-narrow {
+  .backup-button {
+    width: 100%;
+    border-radius: 0;
+  }
+
+  .wallet-balance {
+    padding: $orchid-gutter-width-narrow;
+    background-color: white;
+    box-shadow: $card-shadow-narrow;
+
+    .small {
+      font-weight: bold;
+      text-transform: uppercase;
+    }
+
+    .wallet-balance-number {
+      font-size: 38px;
+    }
+  }
+
+  .wallet-button-row {
+    padding: $orchid-gutter-width-narrow;
+    display: flex;
+    justify-content: space-between;
+    > span {
+      width: calc(50% - (#{$orchid-gutter-width-narrow} / 2));
+    }
+
+  }
 }

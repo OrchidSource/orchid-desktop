@@ -1,4 +1,4 @@
-<div class="wallet-top-area row">
+<div class="wallet-top-area-wide row hide-narrow">
   <div class="wallet-balance col-md-4">
     <div [translate]>WALLET.CURRENT_BALANCE</div>
     <div>
@@ -6,7 +6,7 @@
     </div>
   </div>
   <div class="wallet-actions col-md-8">
-    <div class="wallet-backup">
+    <div class="wallet-backup" *ngIf="!walletBackedUp">
       <div class="btn btn-img btn-warning" [routerLink]="['', {outlets: {modal:'wallet-backup'}}]">
         <img src="assets/imgs/icons/alert-circle.svg" aria-disabled>
         <span [translate]>WALLET.PLEASE_BACKUP</span>
@@ -17,11 +17,11 @@
         <span [translate]>WALLET.SHARE</span>
       </span> -->
       <span></span>
-      <span class="btn btn-img btn-secondary hide-minimized" [routerLink]="['', {outlets: {modal: 'wallet-send'}}]">
+      <span class="btn btn-img btn-secondary" [routerLink]="['', {outlets: {modal: 'wallet-send'}}]">
         <img src="assets/imgs/icons/send.svg" aria-disabled>
         <span [translate]>WALLET.SEND</span>
       </span>
-      <span class="btn btn-img btn-border hide-minimized" [routerLink]="['', {outlets: {modal:'wallet-receive'}}]">
+      <span class="btn btn-img btn-border" [routerLink]="['', {outlets: {modal:'wallet-receive'}}]">
         <img src="assets/imgs/icons/qr-code-gray.svg" aria-disabled>
         <span [translate]>WALLET.RECEIVE</span>
       </span>
@@ -29,13 +29,43 @@
   </div>
 </div>
 
+<div class="wallet-top-area-narrow hide-wide">
+  <div class="btn btn-img btn-warning backup-button" [routerLink]="['', {outlets: {modal:'wallet-backup'}}]" *ngIf="!walletBackedUp">
+    <img src="assets/imgs/icons/alert-circle.svg" aria-disabled>
+    <span [translate]>WALLET.PLEASE_BACKUP</span>
+  </div>
+
+  <div class="wallet-balance">
+    <div class="small" [translate]>WALLET.CURRENT_BALANCE</div>
+    <div>
+      <span class="wallet-balance-number" [textContent]="orcBalance"></span><span>OCT (${{ usdBalance}})</span>
+    </div>
+  </div>
+
+  <div class="wallet-button-row">
+    <!-- <span class="btn btn-primary" [routerLink]="['', {outlets: {modal:'wallet-share'}}]">
+      <span [translate]>WALLET.SHARE</span>
+    </span> -->
+    <span class="btn btn-img btn-secondary" [routerLink]="['', {outlets: {modal: 'wallet-send'}}]">
+      <img src="assets/imgs/icons/send.svg" aria-disabled>
+      <span [translate]>WALLET.SEND</span>
+    </span>
+    <span class="btn btn-img btn-border" [routerLink]="['', {outlets: {modal:'wallet-receive'}}]">
+      <img src="assets/imgs/icons/qr-code-gray.svg" aria-disabled>
+      <span [translate]>WALLET.RECEIVE</span>
+    </span>
+  </div>
+
+</div>
+
+
 <div class="wallet-transactions">
   <div class="row wallet-transactions-head">
-    <div class="col-lg-6">
+    <div class="col-sm-6">
       <h2 [translate]>WALLET.HISTORY</h2>
     </div>
-    <div class="col-lg-6">
-      <div class="input-group hide-minimized">
+    <div class="col-sm-6">
+      <div class="input-group">
         <input type="text" class="form-control input-rounded input-search" [placeholder]="'GENERAL.SEARCH' | translate" />
       </div>
     </div>

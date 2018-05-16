@@ -11,6 +11,7 @@ export class WalletComponent implements OnInit {
   transactions: Array<object> = [];
   orcBalance: number;
   usdBalance: number;
+  walletBackedUp: boolean = false;
 
   constructor(private walletService: WalletService) {}
 
@@ -18,6 +19,7 @@ export class WalletComponent implements OnInit {
     this.getTransactions();
     this.orcBalance = this.walletService.getOctBalance();
     this.usdBalance = this.walletService.getUSDBalance();
+    // todo: set backed up state;
   }
 
   getTransactions(): object[] {

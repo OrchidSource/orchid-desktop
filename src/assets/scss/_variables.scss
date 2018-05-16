@@ -27,6 +27,9 @@
 }
 
 $orchid-gutter-width: 30px;
+// gutter width when in narrrow version
+$orchid-gutter-width-narrow: 20px;
+$btn-lg-height: 45px;
 
 
 // General variable structure
@@ -111,3 +114,6 @@ $dashboard-card-header-background: #e1e2e6;
 
 // FONTS
 $default-shadow: 0 2px 4px 0 rgba(35,36,37,0.30);
+
+/// Shadow behind cards in narrow version
+$card-shadow-narrow: 0 5px 10px 0 rgba(116, 116, 128, 0.15);

@@ -61,16 +61,6 @@ h4, .h4 {
   font-size: 14px;
 }
 
-form {
-  .form-group {
-    .form-control {
-      &:focus {
-        // border: 1px solid $brand-primary;
-        // box-shadow: 0 1px 6px $brand-primary-light;
-      }
-    }
-  }
-}
 
 .hidden {
   display: none !important;
@@ -180,7 +170,7 @@ form {
 .btn-lg {
   padding: 0.75rem 1.5rem !important;
   line-height: 1.4;
-  height: 45px;
+  height: $btn-lg-height;
 }
 
 
@@ -443,12 +433,13 @@ a > img[src='assets/imgs/question.svg'] {
 }
 
 
+// TODO: we should use "narrow" and "wide" instead of "minimized" and "maximized"
 /** Hide when in narrow version */
-.hide-minimized {
+.hide-minimized, .hide-narrow {
   @include hide-minimized();
 }
 
 /** hide when in wide version */
-.hide-maximized {
+.hide-maximized, .hide-wide {
   @include hide-maximized();
 }

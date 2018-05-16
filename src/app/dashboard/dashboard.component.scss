@@ -238,7 +238,7 @@
       padding: 0;
     }
     .card {
-      box-shadow: 0 5px 10px 0 rgba(116, 116, 128, 0.15);
+      box-shadow: $card-shadow-narrow;
     }
     .card-header, .card-footer {
       border-radius: unset;

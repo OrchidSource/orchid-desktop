@@ -70,8 +70,8 @@ export class DashboardComponent implements OnInit {
 
   public gbRemaining: number;
 
-  public tip_state: string = TIP_STATES[0];
-  // public tip_state: string;
+  // public tip_state: string = TIP_STATES[0];
+  public tip_state: string;
 
   /**
    * Model that typeahead binds to. Different from selectedBrowsingLocation because

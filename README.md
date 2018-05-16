@@ -4,7 +4,7 @@ This is the [Electron](https://electron.atom.io/) based HTML5 frontend for confi
 
 ## Building
 
-In theory, any recent version of node and npm should work; in practice, you will probably have better luck if you run the same version of node and npm as Electron uses. At present, for Electron 1.8.2, that is node version 8.2.1. ([Node Version Manager (nvm)](https://github.com/creationix/nvm) provides a relatively easy way to switch between versions of node.) Once you've installed nvm, you can run the following command to install 1.8.2:
+In theory, any recent version of node and npm should work; in practice, you will probably have better luck if you run the same version of node and npm as Electron uses. At present, for Electron 1.8.2, that is node version 8.2.1. ([Node Version Manager (nvm)](https://github.com/creationix/nvm) provides a relatively easy way to switch between versions of node, and is the recommended way to get the correct node version for building the application. Once you've installed nvm, you can run the following command to install 1.8.2:
 
     nvm install 8.2.1
 
