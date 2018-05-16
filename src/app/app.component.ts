@@ -1,5 +1,6 @@
 import { Component, OnInit } from '@angular/core';
 import { WalletService } from "./wallet.service";
+import { NgbTooltipConfig } from '@ng-bootstrap/ng-bootstrap';
 
 @Component({
   selector: 'body',
@@ -8,7 +9,10 @@ import { WalletService } from "./wallet.service";
 })
 export class AppComponent implements OnInit {
   public orcBalance: number;
-  constructor(private walletService: WalletService) {
+  constructor(private walletService: WalletService, private ngbTooltipConfig: NgbTooltipConfig ) {
+    // Uncomment to keep the tooltip open to make make styling the tooltips easier
+    // ngbTooltipConfig.triggers = 'click';
+    ngbTooltipConfig.container = 'body';
   }
 
   ngOnInit() {

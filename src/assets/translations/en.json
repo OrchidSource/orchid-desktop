@@ -55,7 +55,8 @@
     "AMOUNT": "Amount",
     "DATE": "Date",
     "SENT": "Sent",
-    "RECEIVED": "Received"
+    "RECEIVED": "Received",
+    "NO_TRANSACTIONS": "No transactions at this time."
   },
   "WALLET_SETUP": {
     "TITLE": "Time to fund your account",
@@ -79,7 +80,7 @@
     "COPY_LINK_DETAILS": "(Share the link to share Orchid)"
   },
   "WALLET_BACKUP": {
-    "TITLE": "Enter a username &amp; password",
+    "TITLE": "Enter a username & password",
     "EXPLANATION": "This username and password will enrypt the access keys to your wallet. Please make sure to write down your password and save it in a secure location. You will not be able to recover it if you loose it."
   },
   "WALLET_RECEIVE": {

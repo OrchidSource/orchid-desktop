@@ -31,9 +31,6 @@ $btn-border-radius-sm: 100px;
 
 // inputs
 $input-border-color: $gray-lighter;
-// $input-border-radius: 100px;
-// $input-border-radius-lg: 100px;
-// $input-border-radius-sm: 100px;
 
 $input-group-addon-bg: white;
 $input-group-addon-color: $gray-light;
@@ -45,7 +42,9 @@ $input-focus-border-color: $gray;
 // try to remove focus drop shadow, which looks weird
 $input-btn-focus-box-shadow: none;
 
-
 // cards
 $card-border-radius: 10px;
 $card-border-width: 0px;
+
+// tooltips
+$tooltip-max-width: 400px;
