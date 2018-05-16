@@ -1,4 +1,4 @@
-var {app, BrowserWindow, nativeImage} = require('electron');
+var {app, BrowserWindow, nativeImage, Tray} = require('electron');
 const path = require('path');
 const url = require('url');
 const fs = require('fs');
@@ -7,6 +7,9 @@ const {spawn} = require('child_process');
 // Keep a global reference of the window object, if you don't, the window will
 // be closed automatically when the JavaScript object is garbage collected.
 let win;
+
+// the system tray thing
+let tray = null;
 
 function createWindow() {
   // Create the browser window.
@@ -38,6 +41,18 @@ function createWindow() {
     win.webContents.openDevTools();
   }
 
+  win.onbeforeunload = function() {
+    console.log('onbeforeunload');
+    win.hide();
+
+    // Unlike usual browsers that a message box will be prompted to users, returning
+    // a non-void value will silently cancel the close.
+    // It is recommended to use the dialog API to let the user confirm closing the
+    // application.
+    // e.returnValue = false // equivalent to `return false` but not recommended
+    return false;
+  };
+
   // Emitted when the window is closed.
   win.on('closed', () => {
     // Dereference the window object, usually you would store windows
@@ -46,10 +61,28 @@ function createWindow() {
     win = null;
   });
 }
+
+
+function createTray() {
+  tray = new Tray(__dirname + "/icons/orchid.iconset/icon_22x22.png");
+
+  tray.setToolTip('Orchid VPN');
+
+  tray.on('click', function(event) {
+    if (win == null) {
+      createWindow();
+    }
+  });
+
+}
+
 // This method will be called when Electron has finished
 // initialization and is ready to create browser windows.
 // Some APIs can only be used after this event occurs.
-app.on('ready', createWindow);
+app.on('ready', function() {
+  createTray();
+  createWindow();
+});
 
 // Quit when all windows are closed.
 app.on('window-all-closed', () => {
@@ -83,7 +116,6 @@ async function filter(host) {
   console.log("FILTER CALLED");
   return true;
 }
-;
 
 const port = 1323;
 
@@ -157,7 +189,6 @@ function stop_orchid_network() {
     virtual.release();
   }
 }
-;
 
 function get_chrome_path() {
   switch (process.platform) {
