@@ -1,9 +1,10 @@
-import { ChangeDetectorRef, Component, ElementRef, NgModule, OnInit, Renderer2, ViewChild } from '@angular/core';
+import { ChangeDetectorRef, Component, ElementRef, NgModule, OnDestroy, OnInit, Renderer2, ViewChild } from '@angular/core';
 import { platformBrowserDynamic } from "@angular/platform-browser-dynamic";
 import { BrowserModule } from "@angular/platform-browser";
 import { Chart } from "chart.js";
 
 import { Observable } from 'rxjs/Observable';
+import { Subscription } from 'rxjs/Subscription';
 import 'rxjs/add/operator/debounceTime';
 import 'rxjs/add/operator/distinctUntilChanged';
 import 'rxjs/add/operator/map';
@@ -57,7 +58,7 @@ const TIP_STATES: string[]  = [
   templateUrl: './dashboard.component.html',
   styleUrls: ['./dashboard.component.scss']
 })
-export class DashboardComponent implements OnInit {
+export class DashboardComponent implements OnInit, OnDestroy {
   @ViewChild("browseLocationInput") browseLocationInput: ElementRef;
   public connected: boolean = false;
   timer: NodeJS.Timer = null;
@@ -70,6 +71,8 @@ export class DashboardComponent implements OnInit {
 
   public gbRemaining: number;
   public tip_state: string;
+
+  public connectedSubscription: Subscription;
 
   /**
    * Model that typeahead binds to. Different from selectedBrowsingLocation because
@@ -90,13 +93,14 @@ export class DashboardComponent implements OnInit {
       this.tip_state = TIP_STATES[0];
     }
 
-    this.orchidNetService.connected.subscribe((isConnected: boolean) => {
+    this.connectedSubscription = this.orchidNetService.connectedObservable.subscribe((isConnected: boolean) => {
       if (isConnected) {
         this.startTimer();
       } else {
         this.stopTimer();
       }
     });
+
 
     this.selectedBrowsingLocation = BrowsingLocation.getLocations().find(bl => {
       return bl.code == this._config.selectedBrowsingLocation;
@@ -105,13 +109,25 @@ export class DashboardComponent implements OnInit {
     this.gbRemaining = this.walletService.getGBRemaining();
 
     this.initializeChart()
+
+    // This needs to be last
+    if (this.orchidNetService.isConnected) {
+        this.startTimer();
+    }
+  }
+
+  ngOnDestroy() {
+    if (this.timer) {
+      clearInterval(this.timer);
+    }
+    this.connectedSubscription.unsubscribe();
   }
 
   startTimer() {
     this.connected = true;
     this.changeDetector.detectChanges();
     this.timer = setInterval(() => {
-      this.time_connected += 1000;
+      this.time_connected = Date.now() - this.orchidNetService.connectionStartTime;
       this.time = new Date(0, 0, 0, 0, 0, 0, this.time_connected);
       this.changeDetector.detectChanges();
     }, 1000);
@@ -119,13 +135,14 @@ export class DashboardComponent implements OnInit {
 
   stopTimer() {
     this.connected = false;
+    this.time_connected = 0;
+    this.time = new Date(0, 0, 0, 0, 0, 0, 0);
     this.changeDetector.detectChanges();
     if (this.timer) {
       clearInterval(this.timer);
       this.timer = null;
     }
   }
-
 
   /**
    * Puts focus on the browse location input, and clears the input for input

@@ -20,24 +20,33 @@ export class OrchidNetService {
    * observable that fires true when the connection is started, and false
     when the connection has been disconnected
    */
-  public connected: Observable<boolean>;
+  public connectedObservable: Observable<boolean>;
+  public isConnected: boolean  = false;
+
+  /**
+   * Time the current connection started
+   */
+  public connectionStartTime: number  = null;
 
   constructor() {
 
-    this.connected = new Observable(observer => {
+    this.connectedObservable = new Observable(observer => {
       if ((<any>window).require) {
         var app = (<any>window).require('electron').remote.app;
         ipcRenderer.on('connected', () => {
+          this.connectionStartTime = Date.now();
+          this.isConnected = true;
           observer.next(true);
         });
         ipcRenderer.on('disconnected', () => {
+          this.connectionStartTime = null;
+          this.isConnected = false;
           observer.next(false);
         });
       }
-
     })
-
   }
+
 
   /**
    * Sets the browsing location
