@@ -1,5 +1,5 @@
 import { Injectable, NgModule } from '@angular/core';
-import { ActivatedRouteSnapshot, CanActivate, Router, Routes, RouterModule, RouterStateSnapshot } from '@angular/router';
+import { Routes, RouterModule } from '@angular/router';
 
 import { DashboardComponent } from './dashboard/dashboard.component';
 import { SettingsLayoutComponent } from './settings/settings-layout/settings-layout.component';
@@ -21,32 +21,6 @@ import { MainNavigationComponent } from './main-navigation/main-navigation.compo
 import { FirstLaunchComponent } from './first-launch/first-launch.component';
 import { FirstRunGuardService } from './first-run-guard.service';
 
-
-/**
- * CanActivate to determine whether to show the first-launch screens
- */
-//  @Injectable({
-//     providedIn: 'root'
-//  })
-// class FirstRunService implements CanActivate {
-//
-//   constructor(
-//     private router: Router
-//   ) {}
-//
-//
-//   canActivate(route: ActivatedRouteSnapshot, state: RouterStateSnapshot): boolean {
-//     console.log('firstRun?????')
-//     /* TODO: use proper settings location */
-//     const  firstRunRan = window.localStorage.getItem('FIRST_RUN_RAN');
-//     if (firstRunRan) {
-//       return true;
-//     } else {
-//       this.router.navigate(['/first-launch']);
-//       return false;
-//     }
-//   }
-// }
 
 const routes: Routes = [
   {

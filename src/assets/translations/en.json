@@ -1,12 +1,10 @@
 {
   "FIRST_LAUNCH": {
-    "TEXT_1": "Welcome to the Orchid network, where the internet belongs to US",
-    "TEXT_2_TITLE": "Access the internet",
-    "TEXT_2_SUBTITLE": "Private. Secure. Reliable. Decentralized.",
-    "TEXT_2": "Connect to the entire internet safely and securely from anywhere in the world. Your data is your own, not somebody else’s",
-    "TEXT_3_TITLE": "Earn tokens",
-    "TEXT_3_SUBTITLE": "Earn extra income while helping to build a freer, more open society.",
-    "TEXT_3": "Save, share, trade or exchange Orchid tokens for local or digital currency or to purchase bandwidth from other users on the Orchid network.",
+    "TEXT_1": "Welcome to the Orchid network, where the internet belongs to you.",
+    "TEXT_2_TITLE": "Access the internet safely & securely",
+    "TEXT_2": "Private, secure, reliable and decentralized. Connect to the entire internet safely and securely from anywhere in the world. Your data belongs to you.",
+    "TEXT_3_TITLE": "Share your extra bandwidth and earn orchid tokens",
+    "TEXT_3": "Save, share, trade or exchange Orchid tokens (OCT) for local or digital currency.",
     "LEARN_BUTTON": "Learn more",
     "GET_STARTED_BUTTON": "Get started"
   },
@@ -15,7 +13,7 @@
     "DISCONNECTED": "Disconnected"
   },
   "SIDEBAR": {
-    "ACCESS": "Access the World!",
+    "ACCESS": "Access the World",
     "DASHBOARD": "Dashboard"
   },
   "DASHBOARD": {
