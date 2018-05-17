@@ -124,6 +124,7 @@
     "COPY": "Copy",
     "WALLET": "Wallet",
     "SETTINGS": "Settings",
-    "MONTH_ABBREVIATION": "Mo"
+    "MONTH_ABBREVIATION": "Mo",
+    "INSUFFICIENT_FUNDS": "Insufficient funds"
   }
 }

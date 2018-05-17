@@ -2,15 +2,23 @@
   <div id="sidebar-wrapper">
       <div class="connect-container hide-minimized">
         <div class="text-center connect hide-minimized" [ngClass]="{ 'connect-on' : connected }" (click)="toggleOnOff()">
-          <img src="assets/imgs/button-connected.svg" [hidden]="!connected">
-          <img src="assets/imgs/button-not-connected.svg" [hidden]="connected">
-          <button>{{ getOnOffTranslationKey() | translate }}</button>
+          <img class="connection-button" src="assets/imgs/button-connected.svg" [hidden]="!connected">
+          <img class="connection-button" src="assets/imgs/button-not-connected.svg" [hidden]="connected">
+          <button>
+            {{ getOnOffTranslationKey() | translate }}
+            <span class="you-need-oct" *ngIf="!((octBalanceSubject | async) > 0)">
+              <img src="assets/imgs/icons/exclamation-white.png">
+            </span>
+            <span class="you-need-oct-text" *ngIf="!((octBalanceSubject | async) > 0)">
+              {{ 'GENERAL.INSUFFICIENT_FUNDS' | translate}}
+            </span>
+          </button>
         </div>
       </div>
 
       <div class="sidebar-links">
         <div class="links">
-          <div class="connection-status hide-maximized" [ngClass]="{ 'connected' : connected }"></div>
+          <div class="connection-status hide-maximized" [ngClass]="{ 'connect-on' : connected }" (click)="toggleOnOff()"></div>
           <a routerLink="/main/dashboard" class="link-dashboard" routerLinkActive="active">
             <span class="link-text" [translate]>SIDEBAR.DASHBOARD</span>
           </a>

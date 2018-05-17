@@ -5,7 +5,9 @@
 import { Component, OnInit } from '@angular/core';
 import { InternationalizationService } from '../internationalization-service/internationalization.service';
 import { OrchidNetService } from '../orchid-net/orchid-net.service';
+import { WalletService } from "../wallet.service";
 import { trigger, transition, animate, style } from '@angular/animations'
+import {BehaviorSubject } from 'rxjs/BehaviorSubject';
 
 // magic number; will have to be changed if the number of languages changes
 const LANGUAGE_LIST_HEIGHT = "280px";
@@ -43,12 +45,15 @@ export class MainNavigationComponent implements OnInit {
   LANGUAGES: Array<any>;
   selectedLanguage: object;
 
-  constructor(private internationalization: InternationalizationService, private orchidNetService: OrchidNetService) {
+  octBalanceSubject: BehaviorSubject<number>;
+
+  constructor(private internationalization: InternationalizationService, private orchidNetService: OrchidNetService, private walletService: WalletService) {
     this.LANGUAGES = internationalization.LANGUAGES;
     this.selectedLanguage = internationalization.selectedLanguage;
   }
 
   ngOnInit() {
+    this.octBalanceSubject = this.walletService.octBalanceBehaviorSubject;
   }
 
   /**
@@ -81,14 +86,16 @@ export class MainNavigationComponent implements OnInit {
    * @return {void}
    */
   toggleOnOff() {
-    console.log("Value of connected: ", this.connected);
+    // Don't let the user connect if she has no ORCs
+    if ( !(this.walletService.getOctBalance() > 0) && !this.connected) {
+      return;
+    }
+
     this.connected = !this.connected;
-    console.log("Value of connected now: ", this.connected);
 
     if (this.connected) {
       this.orchidNetService.startChrome();
     } else
       this.orchidNetService.stopChrome();
   }
-
 }

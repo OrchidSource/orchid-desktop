@@ -1,5 +1,5 @@
 import { Injectable } from '@angular/core';
-import { Observable } from 'rxjs/Observable';
+import {BehaviorSubject } from 'rxjs/BehaviorSubject';
 
 
 const gbOrcRatio: number = 5.899;
@@ -15,10 +15,13 @@ export class WalletService {
 
   private orcBalance: number = 0;
 
-  constructor() { }
+  public octBalanceBehaviorSubject: BehaviorSubject<number>;
+
+  constructor() {
+    this.octBalanceBehaviorSubject = new BehaviorSubject(this.orcBalance);
+  }
 
   /**
-  * TODO: return as observable
   * @return [description]
   */
   getOctBalance(): number {
@@ -86,11 +89,13 @@ export class WalletService {
 
     this.orcBalance = this.orcBalance - amount;
     this.mockTransaction(amount, 'sent');
+    this.octBalanceBehaviorSubject.next(this.orcBalance);
     return Promise.resolve('')
   }
 
   creditOrc(amount: number): Promise<string> {
     this.orcBalance += amount;
+    this.octBalanceBehaviorSubject.next(this.orcBalance);
     this.mockTransaction(amount, 'received');
     return Promise.resolve('');
   }
