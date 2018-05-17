@@ -21,7 +21,7 @@
     <div class="setting-item">
       <span class="small" [translate]>SETTINGS.RELAY_NODE</span>
       <a ngbTooltip="{{ 'SETTINGS.TOOLTIP_RELAY_NODE' | translate }}" placement="bottom"><img src="assets/imgs/question.svg"/></a>
-      <ui-toggle [(isSelected)]="settings.RELAY_NODE"></ui-toggle>
+      <ui-toggle [(isSelected)]="settings.RELAY_NODE" isSelectedChange="settingsChanged()"></ui-toggle>
     </div>
 
     <div class="setting-item setting-item-contains-input limit-bandwidth" *ngIf="settings.RELAY_NODE">

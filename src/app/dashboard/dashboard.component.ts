@@ -69,8 +69,6 @@ export class DashboardComponent implements OnInit {
   public earningsSpan: string = '1y';
 
   public gbRemaining: number;
-
-  // public tip_state: string = TIP_STATES[0];
   public tip_state: string;
 
   /**
@@ -86,6 +84,11 @@ export class DashboardComponent implements OnInit {
   }
 
   ngOnInit() {
+    var firstRunRan = window.localStorage.getItem('DASHBOARD_FIRST_RUN_RAN');
+    if (!firstRunRan) {
+      window.localStorage.setItem('DASHBOARD_FIRST_RUN_RAN', '1');
+      this.tip_state = TIP_STATES[0];
+    }
 
     this.orchidNetService.connected.subscribe((isConnected: boolean) => {
       if (isConnected) {
@@ -203,6 +206,15 @@ export class DashboardComponent implements OnInit {
    */
   changeSpan(span) {
     this.earningsSpan = span;
+  }
+
+  /**
+   * easter egg function to reset the settings.
+   * click on the "OCT" after "Total Earnings" to call
+   */
+  resetSettings() {
+    console.log('settings reset');
+    window.localStorage.clear();
   }
 
   initializeChart() {

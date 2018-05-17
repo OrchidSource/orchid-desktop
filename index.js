@@ -1,4 +1,4 @@
-var {app, BrowserWindow, nativeImage, Tray} = require('electron');
+var {app, BrowserWindow, Menu, MenuItem, nativeImage, Tray} = require('electron');
 const path = require('path');
 const url = require('url');
 const fs = require('fs');
@@ -90,18 +90,44 @@ function createWindow(width) {
 
 function createTray() {
   tray = new Tray(__dirname + "/icons/orchid.iconset/icon_22x22.png");
+  const trayMenu = new Menu();
+  trayMenu.append(new MenuItem({
+    label: 'Open',
+    click() {
+      console.log('Open clicked');
+      if (win == null) {
+        createWindow(NARROW_WIDTH);
+      } else {
+        // win.focusOnWebView();
+        win.restore();
+      }
+    }
+  }));
+
+  trayMenu.append(new MenuItem({
+    type: 'separator'
+  }));
+
+  trayMenu.append(new MenuItem({
+    label: 'Exit Orchid',
+    click() {
+      console.log('Exit clicked');
+      app.quit();
+    }
+  }));
+
+  tray.setContextMenu(trayMenu);
 
   tray.setToolTip('Orchid VPN');
 
-  tray.on('click', function(event) {
-    console.log('tray click');
-    if (win == null) {
-      createWindow(NARROW_WIDTH);
-    } else {
-      win.focusOnWebView();
-    }
-  });
-
+// tray.on('click', function(event) {
+//   console.log('tray click');
+//   if (win == null) {
+//     createWindow(NARROW_WIDTH);
+//   } else {
+//     win.focusOnWebView();
+//   }
+// });
 }
 
 // This method will be called when Electron has finished
@@ -115,11 +141,7 @@ app.on('ready', function() {
 // Quit when all windows are closed.
 app.on('window-all-closed', () => {
   console.log('window-all-closed');
-  // On macOS it is common for applications and their menu bar
-  // to stay active until the user quits explicitly with Cmd + Q
-  if (process.platform !== 'darwin') {
-    app.quit();
-  }
+// do nothing; keep open in tray
 });
 
 app.on('activate', () => {

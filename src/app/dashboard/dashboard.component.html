@@ -90,7 +90,7 @@
       <div class="card-body">
         <div class="chart-header">
           <span [translate]>DASHBOARD.TOTAL_EARNINGS</span>
-          {{ octEarned }} (OCT)
+          {{ octEarned }} (<span (click)="resetSettings()">OCT</span>)
           <div class="time-span-container">
             <span class="time-span" [ngClass]="{'time-span-selected': earningsSpan==='1h'}" (click)="changeSpan('1h')" [translate]>DASHBOARD.EARNING_SPAN_HOUR</span>
             <span class="time-span" [ngClass]="{'time-span-selected': earningsSpan==='1d'}" (click)="changeSpan('1d')" [translate]>DASHBOARD.EARNING_SPAN_DAY</span>
