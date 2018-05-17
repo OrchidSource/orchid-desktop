@@ -16,15 +16,10 @@ export class WalletComponent implements OnInit {
   constructor(private walletService: WalletService) {}
 
   ngOnInit() {
-    this.getTransactions();
+    this.transactions = this.walletService.getTransactions();
     this.orcBalance = this.walletService.getOctBalance();
     this.usdBalance = this.walletService.getUSDBalance();
     // todo: set backed up state;
-  }
-
-  getTransactions(): object[] {
-    // mock up transaction data for now
-    return this.walletService.getTransactions();
   }
 
 }

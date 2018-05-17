@@ -2,7 +2,7 @@
   <div class="wallet-balance col-md-4">
     <div [translate]>WALLET.CURRENT_BALANCE</div>
     <div>
-      <span class="wallet-balance-number" [textContent]="orcBalance"></span> OCT (${{ usdBalance}})
+      <span class="wallet-balance-number" [textContent]="orcBalance | number: '1.3'"></span> OCT (${{ usdBalance | number: '1.2'}})
     </div>
   </div>
   <div class="wallet-actions col-md-8">
@@ -38,7 +38,7 @@
   <div class="wallet-balance">
     <div class="small" [translate]>WALLET.CURRENT_BALANCE</div>
     <div>
-      <span class="wallet-balance-number" [textContent]="orcBalance"></span><span>OCT (${{ usdBalance}})</span>
+      <span class="wallet-balance-number" [textContent]="orcBalance"></span><span>OCT (${{ usdBalance | number: '1.2'}})</span>
     </div>
   </div>
 

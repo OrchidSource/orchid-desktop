@@ -6,7 +6,8 @@ const {spawn} = require('child_process');
 
 
 const NARROW_WIDTH = 285;
-const WIDE_WIDTH = 1200;
+const WIDE_WIDTH = 1024;
+const WIDE_HEIGHT = 618;
 
 // Keep a global reference of the window object, if you don't, the window will
 // be closed automatically when the JavaScript object is garbage collected.
@@ -25,7 +26,7 @@ function createWindow(width) {
 
   win = new BrowserWindow({
     width: width,
-    height: 800,
+    height: WIDE_HEIGHT,
     minWidth: NARROW_WIDTH,
     minHeight: 410,
     icon: _appIcon,
@@ -43,7 +44,7 @@ function createWindow(width) {
   // only happen when developing
   if (process.defaultApp) {
     // Open the DevTools.
-    // win.webContents.openDevTools();
+    win.webContents.openDevTools();
   }
 
   win.onbeforeunload = function() {

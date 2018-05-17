@@ -1,6 +1,7 @@
 import { Component, OnInit } from '@angular/core';
 import { Router } from '@angular/router';
 import { trigger, transition, animate, style } from '@angular/animations'
+import { WalletService } from "../../wallet.service";
 
 
 @Component({
@@ -25,7 +26,7 @@ export class WalletSetupBeginComponent implements OnInit {
   public wallet_address: String = '0x177b46f8fCf57C5CA32747ecf57ed359481b16eD';
   public showQr: boolean = false;
 
-  constructor(private router: Router) { }
+  constructor(private router: Router, private walletService: WalletService) { }
 
   ngOnInit() {
   }
@@ -44,11 +45,12 @@ export class WalletSetupBeginComponent implements OnInit {
    * Closes modal and navigates to the wallet page.
    * Work-around for this issue: https://github.com/angular/angular/issues/15338
    */
-  navigateToWallet() {
-    this.router.navigate([{ outlets: { modal: null } }])
-           .then(() => this.router.navigate(['/main/wallet']));
-
-  }
+   navigateToWallet() {
+     this.walletService.creditOrc(0.712).then(() => {
+       this.router.navigate([{ outlets: { modal: null } }])
+         .then(() => this.router.navigate(['/main/wallet']));
+     });
+   }
 
   conditionalClose($event) {
     // only close if clicking on the backdrop

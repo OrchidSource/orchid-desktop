@@ -2,9 +2,8 @@ import { Injectable } from '@angular/core';
 import { Observable } from 'rxjs/Observable';
 
 
-// stub testing values
-const orcGbRatio: number = 0.5;
-const orcUSDRatio: number = 0.25;
+const gbOrcRatio: number = 5.899;
+const usdOrcRatio: number = 6.685;
 const WALLET_ADDRESS: string = '0x177b46f8fCf57C5CA32747ecf57ed359481b16eD';
 
 /**
@@ -27,11 +26,11 @@ export class WalletService {
   }
 
   getGBRemaining(): number {
-    return this.orcBalance * orcGbRatio;
+    return this.orcBalance * gbOrcRatio;
   }
 
   getUSDBalance(): number {
-    return this.orcBalance * orcUSDRatio;
+    return this.orcBalance * usdOrcRatio;
   }
 
   getWalletAddress(): string {
@@ -63,6 +62,17 @@ export class WalletService {
     }
   }
 
+  mockTransaction(amount: number, status: string): void {
+      this.transactions.push({
+        from: 'X09HS7GHFFIDXIANGIA',
+        to: WALLET_ADDRESS,
+        status: status,
+        amount: amount,
+        date: new Date()
+      })
+
+  }
+
   /**
   * Debits the specified amount from the user's wallet
   * TODO: mock function
@@ -75,11 +85,13 @@ export class WalletService {
     }
 
     this.orcBalance = this.orcBalance - amount;
+    this.mockTransaction(amount, 'sent');
     return Promise.resolve('')
   }
 
   creditOrc(amount: number): Promise<string> {
     this.orcBalance += amount;
+    this.mockTransaction(amount, 'received');
     return Promise.resolve('');
   }
 }
