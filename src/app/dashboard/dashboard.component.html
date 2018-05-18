@@ -63,11 +63,13 @@
 
 
       <div class="card-footer">
-        <div class="selected-country" *ngIf="!typeaheadOpen" (click)="focusBrowseLocationInput()">
+        <!-- Disable the search for now; it has issues -->
+        <!-- <div class="selected-country" *ngIf="!typeaheadOpen" (click)="focusBrowseLocationInput()">
           <img [src]="selectedBrowsingLocation.flagUrl" *ngIf="selectedBrowsingLocation.flagUrl" class="flag" />
           {{ selectedBrowsingLocation.name }}
-        </div>
+        </div> -->
 
+        <!--
         <input #browseLocationInput type="text"
         [hidden]="!typeaheadOpen"
         class="form-control"
@@ -79,9 +81,24 @@
         (selectItem)="browseLocationSelected($event)"
         (blur)="browseLocationInputBlured()"/>
         <!-- template for browsing location search results -->
-        <ng-template #countrySelectTemplate let-r="result" let-t="term">
+        <!-- <ng-template #countrySelectTemplate let-r="result" let-t="term">
           <img [src]="r.flagUrl" class="flag" />{{ r.name}}
-        </ng-template>
+        </ng-template> -->
+
+        <div ngbDropdown class="">
+          <button  class="btn" id="dropdownBasic1" ngbDropdownToggle>
+            <img [src]="selectedBrowsingLocation.flagUrl" *ngIf="selectedBrowsingLocation.flagUrl" class="flag" />
+            {{ selectedBrowsingLocation.name }}
+            <span class="caret"></span>
+          </button>
+          <div ngbDropdownMenu aria-labelledby="dropdownBasic1">
+            <button class="dropdown-item" *ngFor="let bl of browsingLocations()" (click)="selectedBrowsingLocation = bl">
+              <img [src]="bl.flagUrl" *ngIf="bl.flagUrl" class="flag" />
+              {{ bl.name }}
+            </button>
+          </div>
+        </div>
+
       </div>
     </div>
   </div>

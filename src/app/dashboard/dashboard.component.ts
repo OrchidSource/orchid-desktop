@@ -214,7 +214,9 @@ export class DashboardComponent implements OnInit, OnDestroy {
   }
 
   browsingLocations(): BrowsingLocation[] {
-    return BrowsingLocation.getLocations();
+    return BrowsingLocation.getLocations().filter((bl) => {
+      return['US', 'CA', 'DE', 'JP', 'AU', 'MX'].includes(bl.code);
+    });
   }
 
   /**
