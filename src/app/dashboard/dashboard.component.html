@@ -4,7 +4,8 @@
       <div class="card-header">
         <span [translate]>DASHBOARD.GB_REMAINING</span>
         <span class="card-help">
-          <a ngbTooltip="{{ 'DASHBOARD.TOOLTIP_GB_REMAINING' | translate }}" placement="bottom"><img src="assets/imgs/question.svg"/></a>
+          <a ngbTooltip="{{ 'DASHBOARD.TOOLTIP_GB_REMAINING' | translate }}" placement="right" class="hide-narrow"><img src="assets/imgs/question.svg"/></a>
+          <a ngbTooltip="{{ 'DASHBOARD.TOOLTIP_GB_REMAINING' | translate }}" placement="bottom" class="hide-wide"><img src="assets/imgs/question.svg"/></a>
         </span>
       </div>
 
@@ -54,7 +55,8 @@
     <div class="card dashboard-card browsing-location-card">
       <div class="card-header">
         <span [translate]>DASHBOARD.DEFAULT_LOCATION</span>
-        <span class="card-help"><a ngbTooltip="{{ 'DASHBOARD.TOOLTIP_LOCATION' | translate }}" placement="bottom"><img src="assets/imgs/question.svg"/></a></span>
+        <span class="card-help"><a ngbTooltip="{{ 'DASHBOARD.TOOLTIP_LOCATION' | translate }}" placement="left" class="hide-narrow"><img src="assets/imgs/question.svg"/></a></span>
+        <span class="card-help"><a ngbTooltip="{{ 'DASHBOARD.TOOLTIP_LOCATION' | translate }}" placement="top" class="hide-wide"><img src="assets/imgs/question.svg"/></a></span>
       </div>
 
       <div class="card-body hide-minimized">
@@ -86,14 +88,14 @@
         </ng-template> -->
 
         <div ngbDropdown class="">
-          <button  class="btn" id="dropdownBasic1" ngbDropdownToggle>
-            <img [src]="selectedBrowsingLocation.flagUrl" *ngIf="selectedBrowsingLocation.flagUrl" class="flag" />
+          <button  class="btn" id="dropdownBasic1" ngbDropdownToggle style="background-color: white;">
+            <!-- <img [src]="selectedBrowsingLocation.flagUrl" *ngIf="selectedBrowsingLocation.flagUrl" class="flag" /> -->
             {{ selectedBrowsingLocation.name }}
             <span class="caret"></span>
           </button>
           <div ngbDropdownMenu aria-labelledby="dropdownBasic1">
             <button class="dropdown-item" *ngFor="let bl of browsingLocations()" (click)="selectedBrowsingLocation = bl">
-              <img [src]="bl.flagUrl" *ngIf="bl.flagUrl" class="flag" />
+              <!-- <img [src]="bl.flagUrl" *ngIf="bl.flagUrl" class="flag" /> -->
               {{ bl.name }}
             </button>
           </div>

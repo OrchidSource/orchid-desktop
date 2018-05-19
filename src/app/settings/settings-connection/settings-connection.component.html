@@ -2,13 +2,15 @@
   <div class="card-body">
     <div class="setting-item">
       <span class="small" [translate]>SETTINGS.LAUNCH_STARTUP</span>
-      <a ngbTooltip="{{ 'SETTINGS.TOOLTIP_LAUNCH_STARTUP' | translate }}" placement="bottom"><img src="assets/imgs/question.svg"/></a>
+      <a ngbTooltip="{{ 'SETTINGS.TOOLTIP_LAUNCH_STARTUP' | translate }}" placement="right"  class="hide-narrow"><img src="assets/imgs/question.svg"/></a>
+      <a ngbTooltip="{{ 'SETTINGS.TOOLTIP_LAUNCH_STARTUP' | translate }}" placement="bottom" class="hide-wide"><img src="assets/imgs/question.svg"/></a>
       <ui-toggle [(isSelected)]="settings.LAUNCH_STARTUP"></ui-toggle>
     </div>
 
     <div class="setting-item">
       <span class="small" [translate]>SETTINGS.CONNECT_ON_STARTUP</span>
-      <a ngbTooltip="{{ 'SETTINGS.TOOLTIP_CONNECT_ON_STARTUP' | translate }}" placement="bottom"><img src="assets/imgs/question.svg"/></a>
+      <a ngbTooltip="{{ 'SETTINGS.TOOLTIP_CONNECT_ON_STARTUP' | translate }}" placement="right" class="hide-narrow"><img src="assets/imgs/question.svg"/></a>
+      <a ngbTooltip="{{ 'SETTINGS.TOOLTIP_CONNECT_ON_STARTUP' | translate }}" placement="bottom" class="hide-wide"><img src="assets/imgs/question.svg"/></a>
       <ui-toggle [(isSelected)]="settings.CONNECT_ON_STARTUP"></ui-toggle>
     </div>
 
@@ -20,13 +22,15 @@
 
     <div class="setting-item">
       <span class="small" [translate]>SETTINGS.RELAY_NODE</span>
-      <a ngbTooltip="{{ 'SETTINGS.TOOLTIP_RELAY_NODE' | translate }}" placement="bottom"><img src="assets/imgs/question.svg"/></a>
+      <a ngbTooltip="{{ 'SETTINGS.TOOLTIP_RELAY_NODE' | translate }}" placement="right" class="hide-narrow"><img src="assets/imgs/question.svg"/></a>
+      <a ngbTooltip="{{ 'SETTINGS.TOOLTIP_RELAY_NODE' | translate }}" placement="bottom" class="hide-wide"><img src="assets/imgs/question.svg"/></a>
       <ui-toggle [(isSelected)]="settings.RELAY_NODE" isSelectedChange="settingsChanged()"></ui-toggle>
     </div>
 
     <div class="setting-item setting-item-contains-input limit-bandwidth" *ngIf="settings.RELAY_NODE">
       <span class="small" [translate]>SETTINGS.LIMIT_BANDWIDTH</span>
-      <a ngbTooltip="{{ 'SETTINGS.TOOLTIP_LIMIT_BANDWIDTH' | translate }}" placement="bottom"><img src="assets/imgs/question.svg"/></a>
+      <a ngbTooltip="{{ 'SETTINGS.TOOLTIP_LIMIT_BANDWIDTH' | translate }}" placement="right" class="hide-narrow"><img src="assets/imgs/question.svg"/></a>
+      <a ngbTooltip="{{ 'SETTINGS.TOOLTIP_LIMIT_BANDWIDTH' | translate }}" placement="bottom" class="hide-wide"><img src="assets/imgs/question.svg"/></a>
       <span class="amount-container" [hidden]="!settings.TOOLTIP_LIMIT_BANDWIDTH">
         <input type="number" class="form-control" [(ngModel)]="settings.LIMIT_BANDWIDTH_AMOUNT">GB/{{ 'GENERAL.MONTH_ABBREVIATION' | translate}}
       </span>
@@ -43,7 +47,8 @@
             <ui-radio value="all" [(model)]="settings.LIMIT_CONNECTIONS"></ui-radio>
           </td>
           <td>
-            <a ngbTooltip="{{ 'SETTINGS.TOOLTIP_ALL_CONNECTIONS' | translate }}" placement="bottom"><img src="assets/imgs/question.svg"/></a>
+            <a ngbTooltip="{{ 'SETTINGS.TOOLTIP_ALL_CONNECTIONS' | translate }}" placement="right" class="hide-narrow"><img src="assets/imgs/question.svg"/></a>
+            <a ngbTooltip="{{ 'SETTINGS.TOOLTIP_ALL_CONNECTIONS' | translate }}" placement="top" class="hide-wide"><img src="assets/imgs/question.svg"/></a>
           </td>
         </tr>
         <tr>
@@ -54,7 +59,8 @@
             <ui-radio value="browser" [(model)]="settings.LIMIT_CONNECTIONS"></ui-radio>
           </td>
           <td>
-            <a ngbTooltip="{{ 'SETTINGS.TOOLTIP_BROWSERS_ONLY' | translate }}" placement="bottom"><img src="assets/imgs/question.svg"/></a>
+            <a ngbTooltip="{{ 'SETTINGS.TOOLTIP_BROWSERS_ONLY' | translate }}" placement="right" class="hide-narrow"><img src="assets/imgs/question.svg"/></a>
+            <a ngbTooltip="{{ 'SETTINGS.TOOLTIP_BROWSERS_ONLY' | translate }}" placement="top" class="hide-wide"><img src="assets/imgs/question.svg"/></a>
           </td>
         </tr>
       </table>

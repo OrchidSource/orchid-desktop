@@ -35,7 +35,7 @@
     "EARNING_SPAN_ALL": "All",
     "TIP_LOCATION_TITLE": "Select browsing location",
     "TIP_LOCATION_CONTENT": "Select the default location for your internet connection. This is where you will appear to be connecting to the internet from.",
-    "TIP_FUND_TITLE": "Time to fund your account",
+    "TIP_FUND_TITLE": "Time to fund your wallet",
     "TIP_FUND_CONTENT": "You will need to add some Orchid tokens (OCT) to your wallet in order to use the Orchid Network.",
     "TIP_OK": "Got it"
 
@@ -105,11 +105,11 @@
     "TOOLTIP_EXIT_NODE": "Allow others to use your computer or device as a relay and you’ll earn tokens for participating in the network. As a Relay, your IP address will always remain private. While a Seller’s IP address may be tracked by websites visited by Orchid users, a Relay’s IP address is never exposed and is simply used to pass on the user's request to an available Seller. Being as a Relay could impact your Internet connection speed, especially when streaming media.",
     "TOOLTIP_LIMIT_BANDWIDTH": "If your Internet Service Provider (ISP) limits your bandwidth and you’re concerned about being charged fees for exceeding data limits, you may want to turn this on and set a monthly GB limit for Orchid.",
     "TOOLTIP_RELAY_NODE": "Allow others to use your computer or device as a relay and you’ll earn tokens for participating in the network. As a Relay, your IP address will always remain private. While a Seller’s IP address may be tracked by websites visited by Orchid users, a Relay’s IP address is never exposed and is simply used to pass on the user's request to an available Seller. Being as a Relay could impact your Internet connection speed, especially when streaming media.",
-    "TOOLTIP_ALL_CONNECTIONS": "",
+    "TOOLTIP_ALL_CONNECTIONS": "If this is selected, any program running on your computer that connects to the Internet will access the Internet through the Orchid Network.",
     "TOOLTIP_BROWSERS_ONLY": "In some cases you may wish to only connect through the Orchid Network using your internet browser. For instance if you use a VPN, mail client or FTP program that requires you to connect from your local IP address. If you enable this setting these types of connections will not run through the Orchid network.",
     "TOOLTIP_AUTO_TRANSFER": "If you prefer not to manually move OCT funds to your external wallet, Orchid gives you the option to set up automatic forwarding using auto-transfer. You can easily add, unlink, delete, and change settings for your external wallet using this feature.",
-    "TOOLTIP_PRICE_GB_SHARED": "",
-    "TOOLTIP_PRICE_GB_USED": "",
+    "TOOLTIP_PRICE_GB_SHARED": "Your price per gigabyte when selling bandwidth. Orchid automatically sets your price to the current market rate for sellers. You can also opt to set your own price, higher or lower.",
+    "TOOLTIP_PRICE_GB_USED": "Your price per gigabyte when buying bandwidth. Orchid automatically sets your price to the going market rate for buyers. You can also opt to set your own price, higher or lower.",
     "BUTTON_NEW_WALLET": "New wallet",
     "BUTTON_UNLINK_WALLET": "Unlink wallet"
   },
