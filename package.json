@@ -67,8 +67,6 @@
     "@ng-bootstrap/ng-bootstrap": "^1.0.0",
     "@ngx-translate/core": "^9.1.1",
     "@ngx-translate/http-loader": "^2.0.1",
-    "@orchidprotocol/core": "^0.9.0",
-    "@orchidprotocol/service-vpn": "^0.9.0",
     "angular2-text-mask": "^8.0.4",
     "bootstrap": "^4.0.0",
     "chart.js": "^2.6.0",

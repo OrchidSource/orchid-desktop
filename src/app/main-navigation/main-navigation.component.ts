@@ -94,8 +94,8 @@ export class MainNavigationComponent implements OnInit {
     this.connected = !this.connected;
 
     if (this.connected) {
-      this.orchidNetService.startChrome();
+      this.orchidNetService.startNetwork();
     } else
-      this.orchidNetService.stopChrome();
+      this.orchidNetService.stopNetwork();
   }
 }

@@ -47,7 +47,6 @@ export class OrchidNetService {
     })
   }
 
-
   /**
    * Sets the browsing location
    */
@@ -63,6 +62,14 @@ export class OrchidNetService {
     if ((<any>window).require) {
       app.chrome_vars.startChrome();
     }
+  }
+
+  startNetwork() {
+      app.chrome_vars.startNetwork();
+  }
+
+  stopNetwork() {
+    app.chrome_vars.stopNetwork();
   }
 
   /**

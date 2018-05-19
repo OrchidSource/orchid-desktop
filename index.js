@@ -1,4 +1,4 @@
-var {app, BrowserWindow, Menu, MenuItem, nativeImage, Tray} = require('electron');
+var {app, BrowserWindow, Menu, MenuItem, nativeImage, Tray, shell} = require('electron');
 const path = require('path');
 const url = require('url');
 const fs = require('fs');
@@ -39,6 +39,13 @@ function createWindow(width) {
     protocol: 'file:',
     slashes: true
   }));
+
+  // Opens links with target="_blank" in an external browser window
+  win.webContents.on('new-window', function(e, url) {
+    console.log('new-window');
+    e.preventDefault();
+    shell.openExternal(url);
+  });
 
   // indicates that "electron" was run with a target directory, which should
   // only happen when developing
@@ -91,44 +98,43 @@ function createWindow(width) {
 
 function createTray() {
   tray = new Tray(__dirname + "/icons/orchid.iconset/icon_22x22.png");
-  const trayMenu = new Menu();
-  trayMenu.append(new MenuItem({
-    label: 'Open',
-    click() {
-      console.log('Open clicked');
-      if (win == null) {
-        createWindow(NARROW_WIDTH);
-      } else {
-        // win.focusOnWebView();
-        win.restore();
-      }
-    }
-  }));
-
-  trayMenu.append(new MenuItem({
-    type: 'separator'
-  }));
-
-  trayMenu.append(new MenuItem({
-    label: 'Exit Orchid',
-    click() {
-      console.log('Exit clicked');
-      app.quit();
-    }
-  }));
-
-  tray.setContextMenu(trayMenu);
+  // const trayMenu = new Menu();
+  // trayMenu.append(new MenuItem({
+  //   label: 'Open',
+  //   click() {
+  //     console.log('Open clicked');
+  //     if (win == null) {
+  //       createWindow(NARROW_WIDTH);
+  //     } else {
+  //       // win.focusOnWebView();
+  //       win.restore();
+  //     }
+  //   }
+  // }));
+  //
+  // trayMenu.append(new MenuItem({
+  //   type: 'separator'
+  // }));
+  //
+  // trayMenu.append(new MenuItem({
+  //   label: 'Exit Orchid',
+  //   click() {
+  //     console.log('Exit clicked');
+  //     app.quit();
+  //   }
+  // }));
+  // tray.setContextMenu(trayMenu);
 
   tray.setToolTip('Orchid VPN');
 
-// tray.on('click', function(event) {
-//   console.log('tray click');
-//   if (win == null) {
-//     createWindow(NARROW_WIDTH);
-//   } else {
-//     win.focusOnWebView();
-//   }
-// });
+  tray.on('click', function(event) {
+    console.log('tray click');
+    if (win == null) {
+      createWindow(NARROW_WIDTH);
+    } else {
+      win.focusOnWebView();
+    }
+  });
 }
 
 // This method will be called when Electron has finished
@@ -158,14 +164,18 @@ app.on('activate', () => {
 // code. You can also put them in separate files and require them here.
 
 let logizomai = require('logizomai');
+// let orchid = {
+//   core: require('@orchidprotocol/core'),
+//   vpn: require('@orchidprotocol/service-vpn')
+// };
 let orchid = {
-  core: require('@orchidprotocol/core'),
-  vpn: require('@orchidprotocol/service-vpn')
+  core: {},
+  vpn: {}
 };
+
 let using = logizomai.using;
 
 async function filter(host) {
-  console.log("FILTER CALLED");
   return true;
 }
 
@@ -266,12 +276,14 @@ var chrome_variables = {
   instance: null,
 
   startNetwork: function(location) {
-    stop_orchid_network();
-    start_orchid_network(location);
+    win.webContents.send(this.EVENTS.CONNECTED);
+  // stop_orchid_network();
+  // start_orchid_network(location);
   },
 
-  stoptNetwork: function() {
-    stop_orchid_network();
+  stopNetwork: function() {
+    win.webContents.send(this.EVENTS.DISCONNECTED);
+  // stop_orchid_network();
   },
 
   startChrome: function() {
@@ -310,6 +322,6 @@ if (fs.existsSync(setup_script)) {
   spawn("/bin/bash", [setup_script]);
 }
 
-setTimeout(function() {
-  app.chrome_vars.startNetwork("EU");
-}, 500);
+// setTimeout(function() {
+//   app.chrome_vars.startNetwork("EU");
+// }, 500);
