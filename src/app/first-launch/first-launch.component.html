@@ -50,7 +50,10 @@
       <a class="btn btn-primary btn-lg" routerLink="/main/dashboard" [translate]>Get Started</a>
     </div>
     <div class="first-launch-dots">
-      <img [src]="'assets/imgs/first-launch/first-launch-dots-' + page + '.svg'" alt="dots">
+      <span class="first-run-dot" [ngClass]="{ active: page === 1}" (click)="page = 1"></span>
+      <span class="first-run-dot" [ngClass]="{ active: page === 2}" (click)="page = 2"></span>
+      <span class="first-run-dot" [ngClass]="{ active: page === 3}" (click)="page = 3"></span>
+      <!-- <img [src]="'assets/imgs/first-launch/first-launch-dots-' + page + '.svg'" alt="dots"> -->
     </div>
   </div>
   <div class="next-prev">

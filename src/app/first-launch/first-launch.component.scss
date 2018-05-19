@@ -67,7 +67,7 @@ $fl-padding: 15px;
             max-width: 440px;
           }
         }
-        
+
         .first-launch-text {
           font-size: 18px;
           padding-bottom: 40px;
@@ -107,6 +107,24 @@ $fl-padding: 15px;
     .first-launch-dots {
       margin-top: 40px;
       text-align: center;
+      .first-run-dot {
+        display: inline-block;
+        border-radius:8px;
+        margin: 0 16px;
+        width: 15px;
+        height: 15px;
+        background-color: $gray-lighter;
+        &:hover {
+          cursor: pointer;
+          background-color: $gray-lightest;
+        }
+      }
+      .first-run-dot.active {
+        background-color: $brand-primary;
+        &:hover {
+          cursor: none;
+        }
+      }
     }
   }
 }
