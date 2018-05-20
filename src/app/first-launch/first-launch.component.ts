@@ -1,4 +1,6 @@
-import { Component, HostListener, OnInit } from '@angular/core';
+import { AfterContentInit, Component, HostListener, OnInit, TemplateRef, ViewChild } from '@angular/core';
+import {NgbModal, ModalDismissReasons} from '@ng-bootstrap/ng-bootstrap';
+
 
 enum KEY_CODE {
   RIGHT_ARROW = 39,
@@ -10,12 +12,21 @@ enum KEY_CODE {
   templateUrl: './first-launch.component.html',
   styleUrls: ['./first-launch.component.scss']
 })
-export class FirstLaunchComponent implements OnInit {
+export class FirstLaunchComponent implements AfterContentInit, OnInit {
 
+  @ViewChild('noticeModal') noticeModal: TemplateRef<any>;
+
+  /** The page number */
   public page: number = 1;
-  constructor() { }
+  constructor(private modalService: NgbModal) {}
 
   ngOnInit() {
+  }
+
+  ngAfterContentInit() {
+    setTimeout(() => {
+      this.modalService.open(this.noticeModal, { centered: true, size: 'lg' });
+    }, 1)
   }
 
   @HostListener('window:keyup', ['$event'])
