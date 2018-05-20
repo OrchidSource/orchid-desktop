@@ -47,6 +47,10 @@
         "Name": "Orchid"
       }
     },
+    "win":
+    {
+      "icon": "icons/icon.png"
+    },
     "directories": {
       "buildResources": "build-resources",
       "output": "out"
