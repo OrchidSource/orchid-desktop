@@ -24,9 +24,9 @@
     "NOT_CONNECTED": "Not connected",
     "TOTAL_EARNINGS": "Total earnings",
     "EARN_MORE": "Earn more",
-    "FUND_ACCOUNT": "Fund account",
+    "FUND_ACCOUNT": "Fund wallet",
     "TOOLTIP_CONNECTION": "Connect or disconnect to the Orchid Network at any time. Through the Orchid Network, you can connect to the internet safely and privately.",
-    "TOOLTIP_GB_REMAINING": "This an estimate of how much data (in gigabytes) you can use. This number goes up or down with the funds in your account and is likely to decrease faster when you’re using more data (ex. streaming video) and other network factors.",
+    "TOOLTIP_GB_REMAINING": "This an estimate of how much data (in gigabytes) you can use. This number goes up or down with the funds in your wallet and is likely to decrease faster when you’re using more data (ex. streaming video) and other network factors.",
     "TOOLTIP_LOCATION": "Orchid will route all of your web traffic through an IP address located in the country you select. For example, to browse sites accessible from the United States select “United States” from the drop-down menu.",
     "TOOLTIP_TOTAL_EARNINGS": "Track your month-to-month earnings for bandwidth sold. Your earnings may be impacted by your selling price or by limiting bandwidth usage in Settings.",
     "EARNING_SPAN_HOUR": "1H",
@@ -58,7 +58,7 @@
     "NO_TRANSACTIONS": "No transactions at this time."
   },
   "WALLET_SETUP": {
-    "TITLE": "Time to fund your account",
+    "TITLE": "Time to fund your wallet",
     "ADDRESS": "Wallet address",
     "TRANSFER_COPY": "Transfer some Orchid tokens to your wallet to start using Orchid",
     "WHERE": "Where can I get Orchid tokens?",
