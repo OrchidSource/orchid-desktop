@@ -1,6 +1,6 @@
 {
   "name": "OrchidBeta",
-  "version": "0.0.2",
+  "version": "0.0.4",
   "description": "Orchid html5/electron front-end",
   "main": "index.js",
   "scripts": {
@@ -47,8 +47,7 @@
         "Name": "Orchid"
       }
     },
-    "win":
-    {
+    "win": {
       "icon": "icons/icon.png"
     },
     "directories": {
