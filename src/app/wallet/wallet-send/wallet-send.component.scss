@@ -1,0 +1,20 @@
+// TODO: we don't actually use h5; figure out the correct element/class
+h5 {
+  margin-top: 20px;
+  font-size: 18px;
+  font-weight: bold;
+}
+
+.amount-row {
+  display: flex;
+  flex-direction:row;
+  justify-content: space-between;
+
+  > div {
+    width: 45%;
+  }
+}
+
+.btn {
+  margin-top: 30px;
+}

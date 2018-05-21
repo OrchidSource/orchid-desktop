@@ -68,7 +68,8 @@
   "WALLET_SEND": {
     "TITLE": "Send OCT",
     "SEND": "Send OCT",
-    "CURRENT_BALANCE": "Current balance"
+    "CURRENT_BALANCE": "Current balance",
+    "RECIPIENT_EXPLANATION": "Enter an ERC20 compatible Ethereum address below in a format that starts with 0x."
   },
   "WALLET_SHARE": {
     "TITLE": "Share Orchid",
@@ -125,6 +126,8 @@
     "WALLET": "Wallet",
     "SETTINGS": "Settings",
     "MONTH_ABBREVIATION": "Mo",
-    "INSUFFICIENT_FUNDS": "Insufficient funds"
+    "INSUFFICIENT_FUNDS": "Insufficient funds",
+    "AMOUNT": "Amount",
+    "RECIPIENT": "Recipient"
   }
 }
