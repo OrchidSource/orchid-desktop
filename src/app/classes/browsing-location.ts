@@ -1,5 +1,7 @@
 import { default as countries } from '../data/countries.json';
 
+var AVAILABLE_BROWSING_LOCATIONS: BrowsingLocation[] = [];
+
 export class BrowsingLocation {
 
   constructor(code, name) {
@@ -53,8 +55,14 @@ export class BrowsingLocation {
   };
 }
 
+if (!countries.length) {
+  throw "no countries!";
+}
+
 // populate the available browsing locations
-var AVAILABLE_BROWSING_LOCATIONS: BrowsingLocation[] = [];
 countries.forEach((c) => {
   AVAILABLE_BROWSING_LOCATIONS.push(new BrowsingLocation(c['alpha-2'], c.name));
 });
+
+console.log('HERRE');
+console.log(AVAILABLE_BROWSING_LOCATIONS);

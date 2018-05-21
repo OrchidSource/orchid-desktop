@@ -6,6 +6,8 @@ const gbOrcRatio: number = 5.899;
 const usdOrcRatio: number = 6.685;
 const WALLET_ADDRESS: string = '0x177b46f8fCf57C5CA32747ecf57ed359481b16eD';
 
+const MOCK_ORC_BALANCE_KEY: string = 'MOCK_ORC_BALANCE_KEY';
+
 /**
 * Service for handling a user's wallet.
 * Currently just a mock
@@ -19,6 +21,11 @@ export class WalletService {
 
   constructor() {
     this.octBalanceBehaviorSubject = new BehaviorSubject(this.orcBalance);
+    var amt = window.localStorage.getItem(MOCK_ORC_BALANCE_KEY);
+    if (amt) {
+      this.orcBalance = Number(amt);
+      this.octBalanceBehaviorSubject.next(this.orcBalance);
+    }
   }
 
   /**
@@ -88,6 +95,7 @@ export class WalletService {
     }
 
     this.orcBalance = this.orcBalance - amount;
+    window.localStorage.setItem(MOCK_ORC_BALANCE_KEY, String(this.orcBalance));
     this.mockTransaction(amount, 'sent');
     this.octBalanceBehaviorSubject.next(this.orcBalance);
     return Promise.resolve('')
@@ -96,7 +104,9 @@ export class WalletService {
   creditOrc(amount: number): Promise<string> {
     this.orcBalance += amount;
     this.octBalanceBehaviorSubject.next(this.orcBalance);
+    window.localStorage.setItem(MOCK_ORC_BALANCE_KEY, String(this.orcBalance));
     this.mockTransaction(amount, 'received');
     return Promise.resolve('');
   }
+
 }

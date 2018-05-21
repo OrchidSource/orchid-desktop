@@ -5,6 +5,9 @@ import { Injectable } from '@angular/core';
 import { BrowsingLocation } from "../classes/browsing-location";
 import { Observable } from 'rxjs/Observable';
 
+const MOCK_START_TIME: string =  'MOCK_START_TIME';
+const MOCK_CONNECTION_STATUS: string = 'MOCK_CONNECTION_STATUS';
+
 
 // Allows us to run UI in browser
 // TODO: use injection to inject a mock service when running in the browser
@@ -30,17 +33,33 @@ export class OrchidNetService {
 
   constructor() {
 
+    var start_time = window.localStorage.getItem(MOCK_START_TIME);
+    var connected = window.localStorage.getItem(MOCK_CONNECTION_STATUS);
+    if (start_time && connected) {
+      this.connectionStartTime = Number(start_time);
+      this.isConnected = true;
+    }
+
     this.connectedObservable = new Observable(observer => {
       if ((<any>window).require) {
+
+        if (this.isConnected) {
+          observer.next(true);
+        }
+
         var app = (<any>window).require('electron').remote.app;
         ipcRenderer.on('connected', () => {
           this.connectionStartTime = Date.now();
+          window.localStorage.setItem(MOCK_START_TIME, String(this.connectionStartTime));
+          window.localStorage.setItem(MOCK_CONNECTION_STATUS, 'T');
           this.isConnected = true;
           observer.next(true);
         });
         ipcRenderer.on('disconnected', () => {
           this.connectionStartTime = null;
           this.isConnected = false;
+          window.localStorage.removeItem(MOCK_START_TIME);
+          window.localStorage.removeItem(MOCK_CONNECTION_STATUS);
           observer.next(false);
         });
       }

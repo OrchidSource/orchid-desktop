@@ -53,6 +53,7 @@ export class MainNavigationComponent implements OnInit {
   }
 
   ngOnInit() {
+    this.connected = this.orchidNetService.isConnected;
     this.octBalanceSubject = this.walletService.octBalanceBehaviorSubject;
   }
 

@@ -33,6 +33,8 @@ export class WorldMapComponent implements OnChanges {
       }
     }
 
+    console.log("the countryCode:" + this.countryCode);
+
     if (!this.countryCode) {
       return;
     }

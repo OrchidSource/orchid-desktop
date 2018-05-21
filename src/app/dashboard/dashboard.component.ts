@@ -84,6 +84,13 @@ export class DashboardComponent implements OnInit, OnDestroy {
 
   constructor(private _config: ConfigService, private changeDetector: ChangeDetectorRef, private orchidNetService: OrchidNetService, private renderer : Renderer2, private walletService: WalletService) {
     this.connected = false;
+    console.log('getting selected browsing location!');
+    this.selectedBrowsingLocation = BrowsingLocation.getLocations().find(bl => {
+      return bl.code == this._config.selectedBrowsingLocation;
+    })
+    if (!this.selectedBrowsingLocation) {
+      this.selectedBrowsingLocation = BrowsingLocation.getLocations()[0];
+    }
   }
 
   ngOnInit() {
@@ -94,17 +101,13 @@ export class DashboardComponent implements OnInit, OnDestroy {
     }
 
     this.connectedSubscription = this.orchidNetService.connectedObservable.subscribe((isConnected: boolean) => {
+      console.log('connection status changed:' + isConnected);
       if (isConnected) {
         this.startTimer();
       } else {
         this.stopTimer();
       }
     });
-
-
-    this.selectedBrowsingLocation = BrowsingLocation.getLocations().find(bl => {
-      return bl.code == this._config.selectedBrowsingLocation;
-    })
 
     this.gbRemaining = this.walletService.getGBRemaining();
 
@@ -121,11 +124,16 @@ export class DashboardComponent implements OnInit, OnDestroy {
       clearInterval(this.timer);
     }
     this.connectedSubscription.unsubscribe();
+    this.changeDetector.detach();
   }
 
   startTimer() {
     this.connected = true;
     this.changeDetector.detectChanges();
+    if (this.timer) {
+      clearInterval(this.timer);
+    }
+
     this.timer = setInterval(() => {
       this.time_connected = Date.now() - this.orchidNetService.connectionStartTime;
       this.time = new Date(0, 0, 0, 0, 0, 0, this.time_connected);
@@ -208,8 +216,7 @@ export class DashboardComponent implements OnInit, OnDestroy {
 
   setSelectedBrowsingLocation(browsingLocation: BrowsingLocation) {
     this.selectedBrowsingLocation = browsingLocation;
-    // this._config.selectedBrowsingLocation = browsingLocation.code;
-    console.log("BrowsingLocation := ", browsingLocation);
+    this._config.selectedBrowsingLocation = browsingLocation.code;
     this.orchidNetService.setBrowsingLocation(browsingLocation);
   }
 
