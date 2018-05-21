@@ -50,3 +50,35 @@
 #main-router {
   z-index: 1;
 }
+
+// throw-away stuff for the temporary "this is all fake" modal
+.modal-header {
+  border: 0px;
+  padding: $orchid-gutter-width  $orchid-gutter-width 0 $orchid-gutter-width;
+  h2 {
+    text-transform: capitalize;
+  }
+}
+
+.modal-body {
+  > div {
+    padding: $orchid-gutter-width;
+
+    > img {
+      text-align: center;
+    }
+
+    p {
+      font-family: 'QuickSand';
+      font-size: 21px;
+      line-height: 28px;
+    }
+  }
+}
+
+.modal-footer {
+  padding: $orchid-gutter-width;
+  .btn {
+    margin: auto;
+  }
+}

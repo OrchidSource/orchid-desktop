@@ -60,11 +60,11 @@ export class MainNavigationComponent implements OnInit {
   }
 
   ngAfterContentInit() {
-    setTimeout(() => {
-      if (window.innerWidth > 400) {
-        this.modalService.open(this.noticeModal, { centered: true, size: 'lg' });
-      }
-    }, 1)
+    // setTimeout(() => {
+    //   if (window.innerWidth > 400) {
+    //     this.modalService.open(this.noticeModal, { centered: true, size: 'lg' });
+    //   }
+    // }, 1)
   }
 
   /**
