@@ -4,7 +4,6 @@ const url = require('url');
 const fs = require('fs');
 const {spawn} = require('child_process');
 
-
 const NARROW_WIDTH = 285;
 const WIDE_WIDTH = 1024;
 const WIDE_HEIGHT = 618;
@@ -28,6 +27,9 @@ function createWindow(width) {
     width: width,
     height: WIDE_HEIGHT,
     minWidth: NARROW_WIDTH,
+    maxWidth: WIDE_WIDTH,
+    maxHeight: WIDE_HEIGHT,
+    fullscreenable: false,
     minHeight: 410,
     icon: _appIcon,
     titleBarStyle: 'hidden'
@@ -51,8 +53,9 @@ function createWindow(width) {
   // only happen when developing
   if (process.defaultApp) {
     // Open the DevTools.
-    win.webContents.openDevTools();
+    // win.webContents.openDevTools();
   }
+  // win.webContents.openDevTools();
 
   win.onbeforeunload = function() {
     console.log('onbeforeunload');
@@ -86,7 +89,7 @@ function createWindow(width) {
   });
 
   win.on('maximize', () => {
-    console.log('minimize');
+    console.log('maximize');
     app.dock.show();
   });
 
