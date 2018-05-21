@@ -1,5 +1,6 @@
 <div class="routed-modal-container" (click)="conditionalClose($event)">
   <form novalidate [formGroup]="walletSetupBeginForm" #walletSetupForm="ngForm" (submit)="walletSetupBeginSubmit()" class="routed-modal divided-dialog">
+
       <div>
         <h2 [translate]>WALLET_BACKUP.TITLE</h2>
         <div [translate]>WALLET_BACKUP.EXPLANATION</div>
@@ -23,5 +24,15 @@
         <button type="submit" class="btn btn-lg btn-block btn-primary" [disabled]="!walletSetupForm.form.valid" [translate]>GENERAL.NEXT</button>
 
       </div>
+
+      <div class="temporary-coverup">
+        <div>
+          <div class="paragraph">This functionality is disabled on the demonstration app.</div>
+          <div>
+            <button type="button" class="btn btn-lg btn-wide btn-border" [routerLink]="['', {outlets: {modal:null}}]">OK</button>
+          </div>
+        </div>
+      </div>
+
     </form>
 </div>

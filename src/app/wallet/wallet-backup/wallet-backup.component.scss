@@ -1,4 +1,10 @@
 @import '../../../assets/scss/mixins';
+@import '../../../assets/scss/variables';
+@import '../../../assets/scss/bootstrap_overrides';
+
+form {
+  position: relative;
+}
 
 .input-group {
   &.user-input-group {
@@ -10,7 +16,28 @@
     input {
       @include input-icon(url('../../../assets/imgs/icons/lock-gray.svg'));
     }
+  }
+}
 
+.temporary-coverup {
+  background-color: rgba(0.5, 0.5, 0.5, 0.5);
+  position: absolute;
+  top: 0;
+  bottom: 0;
+  left: 0;
+  right: 0;
+  width: 100% !important;
+  border-radius: $card-border-radius;
+
+  > div {
+    background-color: white;
+
+    border-radius: $card-border-radius;
+    > * {
+      padding: $orchid-gutter-width;
+      text-align: center;
+
+    }
   }
 
 }

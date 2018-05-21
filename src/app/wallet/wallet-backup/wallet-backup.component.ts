@@ -27,7 +27,6 @@ export class WalletBackupComponent implements OnInit {
   }
 
   walletSetupBeginSubmit() {
-    debugger;
   }
 
   /**
