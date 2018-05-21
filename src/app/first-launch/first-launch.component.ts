@@ -24,9 +24,9 @@ export class FirstLaunchComponent implements AfterContentInit, OnInit {
   }
 
   ngAfterContentInit() {
-    setTimeout(() => {
-      this.modalService.open(this.noticeModal, { centered: true, size: 'lg' });
-    }, 1)
+    // setTimeout(() => {
+    //   this.modalService.open(this.noticeModal, { centered: true, size: 'lg' });
+    // }, 1)
   }
 
   @HostListener('window:keyup', ['$event'])

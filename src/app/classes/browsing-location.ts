@@ -63,6 +63,3 @@ if (!countries.length) {
 countries.forEach((c) => {
   AVAILABLE_BROWSING_LOCATIONS.push(new BrowsingLocation(c['alpha-2'], c.name));
 });
-
-console.log('HERRE');
-console.log(AVAILABLE_BROWSING_LOCATIONS);
