@@ -80,7 +80,6 @@ export class WalletService {
         amount: amount,
         date: new Date()
       })
-
   }
 
   /**
@@ -107,6 +106,14 @@ export class WalletService {
     window.localStorage.setItem(MOCK_ORC_BALANCE_KEY, String(this.orcBalance));
     this.mockTransaction(amount, 'received');
     return Promise.resolve('');
+  }
+
+  octInDollars(oct: number): number {
+    return oct * usdOrcRatio;
+  }
+
+  dollarsInOct(dollars: number): number {
+    return dollars / usdOrcRatio;
   }
 
 }

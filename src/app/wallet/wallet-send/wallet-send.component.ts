@@ -13,10 +13,12 @@ export class WalletSendComponent implements OnInit {
 
   octBalance: number;
   sendAmount: number;
+  sendAmountDollars: number;
 
   ngOnInit() {
     this.octBalance = this.walletService.getOctBalance();
     this.sendAmount = this.octBalance;
+    this.sendAmountDollars = this.walletService.octInDollars(this.octBalance);
   }
 
   conditionalClose($event) {

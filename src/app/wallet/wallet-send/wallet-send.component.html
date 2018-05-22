@@ -1,42 +1,44 @@
 <div class="routed-modal-container" (click)="conditionalClose($event)">
   <div class="routed-modal">
-    <h2>
-      <span [translate]>WALLET_SEND.TITLE</span>
-      <img src="assets/imgs/icons/x-gray.svg" class="pull-right" alt="Close" [routerLink]="['', {outlets: {modal:null}}]">
-    </h2>
+    <form #sendForm="ngForm">
+      <h2>
+        <span [translate]>WALLET_SEND.TITLE</span>
+        <img src="assets/imgs/icons/x-gray.svg" class="pull-right" alt="Close" [routerLink]="['', {outlets: {modal:null}}]">
+      </h2>
 
-    <h5 [translate]>GENERAL.AMOUNT</h5>
+      <h5 [translate]>GENERAL.AMOUNT</h5>
 
-    <div class="amount-row">
-      <div>
-        <div class="input-group">
-          <input type="text" class="form-control" min="0" [max]="octBalance" [(ngModel)]="sendAmount">
-          <div class="input-group-append">
-            <span class="input-group-text">OCT</span>
+      <div class="amount-row">
+        <div>
+          <div class="input-group">
+            <input type="text" class="form-control" min="0" [max]="octBalance" name="sendAmount" [(ngModel)]="sendAmount">
+            <div class="input-group-append">
+              <span class="input-group-text">OCT</span>
+            </div>
+          </div>
+        </div>
+        <div>
+          <div class="input-group">
+            <input type="text" class="form-control" name="sendAmountDollars" [(ngModel)]="sendAmountDollars">
+            <div class="input-group-append">
+              <span class="input-group-text">USD</span>
+            </div>
           </div>
         </div>
       </div>
-      <div>
-        <div class="input-group">
-          <input type="text" class="form-control" value="0.00">
-          <div class="input-group-append">
-            <span class="input-group-text">USD</span>
-          </div>
-        </div>
-      </div>
-    </div>
 
-    <h5 [translate]>GENERAL.RECIPIENT</h5>
-    <div [translate]>WALLET_SEND.RECIPIENT_EXPLANATION</div>
+      <h5 [translate]>GENERAL.RECIPIENT</h5>
+      <div [translate]>WALLET_SEND.RECIPIENT_EXPLANATION</div>
 
       <div>
         <div class="input-group">
-          <input type="text" class="form-control" required>
+          <input type="text" class="form-control"  name="ethAddress" pattern=".{42,}" required>
         </div>
       </div>
-    <div class="row-actions">
-      <button class="btn btn-wide btn-primary btn-lg pull-right" [routerLink]="['', {outlets: {modal:null}}]" [translate]>WALLET_SEND.SEND</button>
-    </div>
+      <div class="row-actions">
+        <button type="submit" class="btn btn-wide btn-primary btn-lg" [routerLink]="['', {outlets: {modal:null}}]" [disabled]="sendForm.form.valid" [translate]>WALLET_SEND.SEND</button>
+      </div>
+    </form>
   </div>
 
 </div>
