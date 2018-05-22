@@ -1,5 +1,6 @@
 import { Component, OnInit } from '@angular/core';
 import { Router } from '@angular/router';
+import { WalletService } from "../../wallet.service";
 
 @Component({
   selector: 'app-wallet-send',
@@ -8,9 +9,14 @@ import { Router } from '@angular/router';
 })
 export class WalletSendComponent implements OnInit {
 
-  constructor(private router: Router) { }
+  constructor(private router: Router, private walletService: WalletService) { }
+
+  octBalance: number;
+  sendAmount: number;
 
   ngOnInit() {
+    this.octBalance = this.walletService.getOctBalance();
+    this.sendAmount = this.octBalance;
   }
 
   conditionalClose($event) {

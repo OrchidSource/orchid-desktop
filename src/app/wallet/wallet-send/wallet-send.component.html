@@ -10,7 +10,7 @@
     <div class="amount-row">
       <div>
         <div class="input-group">
-          <input type="text" class="form-control" value="0.00">
+          <input type="text" class="form-control" min="0" [max]="octBalance" [(ngModel)]="sendAmount">
           <div class="input-group-append">
             <span class="input-group-text">OCT</span>
           </div>
