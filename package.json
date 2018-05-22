@@ -1,6 +1,6 @@
 {
   "name": "OrchidBeta",
-  "version": "0.0.4",
+  "version": "0.0.5",
   "description": "Orchid html5/electron front-end",
   "main": "index.js",
   "scripts": {
