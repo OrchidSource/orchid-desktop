@@ -25,7 +25,9 @@ export class AppComponent implements AfterContentInit, OnInit {
   }
   ngAfterContentInit() {
     setTimeout(() => {
-      this.modalService.open(this.noticeModal, { centered: true, size: 'lg' });
+      if (window.document.body.clientWidth > 500) {
+        this.modalService.open(this.noticeModal, { centered: true, size: 'lg' });
+      }
     }, 1)
   }
 }
