@@ -6,8 +6,8 @@
     </div>
   </div>
   <div class="wallet-actions col-md-8">
-    <div class="wallet-backup" *ngIf="!walletBackedUp">
-      <div class="btn btn-img btn-warning" [routerLink]="['', {outlets: {modal:'wallet-backup'}}]">
+    <div class="wallet-backup" [style.visibility]="walletBackedUp ? 'hidden' : 'visible'">
+      <div class="btn btn-img btn-warning" [routerLink]="['', {outlets: {modal:'wallet-backup'}}]" (click)="setWalletBackedUp()">
         <img src="assets/imgs/icons/alert-circle.svg" aria-disabled>
         <span [translate]>WALLET.PLEASE_BACKUP</span>
       </div>

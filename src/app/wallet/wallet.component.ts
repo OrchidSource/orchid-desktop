@@ -19,7 +19,13 @@ export class WalletComponent implements OnInit {
     this.transactions = this.walletService.getTransactions();
     this.orcBalance = this.walletService.getOctBalance();
     this.usdBalance = this.walletService.getUSDBalance();
-    // todo: set backed up state;
+
+    this.walletBackedUp = !!window.localStorage.getItem('WALLET_BACKED_UP');
+  }
+
+  setWalletBackedUp() {
+    this.walletBackedUp = true;
+    !window.localStorage.setItem('WALLET_BACKED_UP', 'T');
   }
 
 }
