@@ -41,6 +41,8 @@ import { SettingsConnectionComponent } from './settings/settings-connection/sett
 import { SettingsWalletComponent } from './settings/settings-wallet/settings-wallet.component';
 import { SettingsAdvancedComponent } from './settings/settings-advanced/settings-advanced.component';
 import { FirstRunGuardService } from './first-run-guard.service';
+import { WalletBackupPasswordConfirmComponent } from './wallet/wallet-backup-password-confirm/wallet-backup-password-confirm.component';
+import { WalletBackupBeginComponent } from './wallet/wallet-backup-begin/wallet-backup-begin.component';
 
 // Indicates where the translation files live
 export function HttpLoaderFactory(httpClient: HttpClient) {
@@ -67,7 +69,9 @@ export function HttpLoaderFactory(httpClient: HttpClient) {
     SettingsLayoutComponent,
     SettingsConnectionComponent,
     SettingsWalletComponent,
-    SettingsAdvancedComponent
+    SettingsAdvancedComponent,
+    WalletBackupPasswordConfirmComponent,
+    WalletBackupBeginComponent
   ],
   imports: [
     AppRoutingModule,

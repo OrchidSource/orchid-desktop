@@ -1,38 +1,6 @@
 <div class="routed-modal-container" (click)="conditionalClose($event)">
-  <form novalidate [formGroup]="walletSetupBeginForm" #walletSetupForm="ngForm" (submit)="walletSetupBeginSubmit()" class="routed-modal divided-dialog">
-
-      <div>
-        <h2 [translate]>WALLET_BACKUP.TITLE</h2>
-        <div [translate]>WALLET_BACKUP.EXPLANATION</div>
-      </div>
-
-      <div>
-        <div class="input-group user-input-group mb-2 mr-sm-2">
-          <input type="text" id="username" class="form-control input-rounded" ngModel formControlName="username" placeholder="{{ 'GENERAL.USERNAME' | translate}}">
-        </div>
-        <div *ngIf="walletSetupBeginForm.controls.username.errors">
-          <!-- ERR: {{ walletSetupBeginForm.controls.username.errors }} -->
-        </div>
-
-        <div class="input-group password-input-group mb-2 mr-sm-2">
-          <input type="password" class="form-control input-rounded"  ngModel formControlName="password" placeholder="{{ 'GENERAL.PASSWORD' | translate}}">
-        </div>
-
-        <div class="input-group password-input-group mb-2 mr-sm-2">
-          <input type="password" class="form-control input-rounded"  ngModel formControlName="passwordConfirm" placeholder="{{ 'GENERAL.PASSWORD_CONFIRM' | translate}}">
-        </div>
-        <button type="submit" class="btn btn-lg btn-block btn-primary" [disabled]="!walletSetupForm.form.valid" [translate]>GENERAL.NEXT</button>
-
-      </div>
-
-      <div class="temporary-coverup">
-        <div>
-          <div class="paragraph">This functionality is disabled on the demonstration app.</div>
-          <div>
-            <button type="button" class="btn btn-lg btn-wide btn-border" [routerLink]="['', {outlets: {modal:null}}]">OK</button>
-          </div>
-        </div>
-      </div>
-
-    </form>
+  <div class="routed-modal paddingless">
+      <app-wallet-backup-begin></app-wallet-backup-begin>
+  </div>
+      <!-- <app-wallet-backup-password-confirm></app-wallet-backup-password-confirm> -->
 </div>

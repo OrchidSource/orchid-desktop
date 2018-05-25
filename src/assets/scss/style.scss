@@ -399,10 +399,10 @@ input[type=text].input-search {
   }
 
   // Style for modal dialogs with left- and right-hand sides
-  .routed-modal.divided-dialog {
+  .routed-modal.divided-dialog, .divided-dialog {
     padding: 0;
     display: flex;
-    > div {
+    > div, div.divided-dialog-container {
       width: 50%;
       padding: $orchid-gutter-width;
     }

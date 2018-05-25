@@ -1,0 +1,26 @@
+<form novalidate [formGroup]="walletSetupBeginForm" #walletSetupForm="ngForm" (submit)="walletSetupBeginSubmit()" class="divided-dialog">
+
+    <div>
+      <h2 [translate]>WALLET_BACKUP.TITLE</h2>
+      <div [translate]>WALLET_BACKUP.EXPLANATION</div>
+    </div>
+
+    <div>
+      <div class="input-group user-input-group mb-2 mr-sm-2">
+        <input type="text" id="username" class="form-control input-rounded" ngModel formControlName="username" placeholder="{{ 'GENERAL.USERNAME' | translate}}">
+      </div>
+      <div *ngIf="walletSetupBeginForm.controls.username.errors">
+        <!-- ERR: {{ walletSetupBeginForm.controls.username.errors }} -->
+      </div>
+
+      <div class="input-group password-input-group mb-2 mr-sm-2">
+        <input type="password" class="form-control input-rounded"  ngModel formControlName="password" placeholder="{{ 'GENERAL.PASSWORD' | translate}}">
+      </div>
+
+      <div class="input-group password-input-group mb-2 mr-sm-2">
+        <input type="password" class="form-control input-rounded"  ngModel formControlName="passwordConfirm" placeholder="{{ 'GENERAL.PASSWORD_CONFIRM' | translate}}">
+      </div>
+      <button type="submit" class="btn btn-lg btn-block btn-primary" [disabled]="!walletSetupForm.form.valid" [translate]>GENERAL.NEXT</button>
+    </div>
+
+  </form>
