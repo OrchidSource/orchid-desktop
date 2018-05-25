@@ -30,9 +30,11 @@
           </a>
         </div>
 
-        <div class="dropup hide-minimized">
+        <div class="language-dropup hide-narrow">
           <button class="btn btn-outline-primary" (click)="languageMenuOpened = !languageMenuOpened">
-            {{ selectedLanguage.native }} <img src="assets/imgs/icons/down-v-gray.svg" [ngClass]="{opened: languageMenuOpened}" aria-disabled>
+            <img class="language-icon" src="assets/imgs/icons/translate.svg" aria-hidden>
+            {{ selectedLanguage.native }}
+            <img class="language-arrow" src="assets/imgs/icons/down-v-gray.svg" [ngClass]="{opened: languageMenuOpened}" aria-disabled>
           </button>
           <div class="language-list" *ngIf="languageMenuOpened" [@languageSlideOpen]>
             <button class="btn language-dropdown-item" *ngFor="let language of LANGUAGES" (click)="languageSelected(language.code)">{{ language.native }}</button>

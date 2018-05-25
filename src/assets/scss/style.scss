@@ -191,6 +191,10 @@ h4, .h4 {
   color: white;
 }
 
+button:focus, .btn:focus {
+  outline: none;
+}
+
 // an img or .img element inside a .btn.btn-img with .btn-img will be placed at the left-hand side of the button
 .btn.btn-img {
   position: relative;
