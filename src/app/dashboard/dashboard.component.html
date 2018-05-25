@@ -13,7 +13,7 @@
         <div class="gb-amount">
           <span [textContent]="gbRemaining | number: '1.0-2'"></span>GB
         </div>
-        <div class="text-center" [translate]>
+        <div class="text-center" *ngIf="gbRemaining == 0" [translate]>
           DASHBOARD.PLEASE_ADD
         </div>
       </div>
@@ -33,7 +33,7 @@
 
       <div class="card-body" ng-controller="Ctrl" ng-app="sec-val">
         <div class="clock">
-          <img src="assets/imgs/clock-black.svg" aria-disabled>
+          <img src="assets/imgs/icons/timer.png" aria-disabled>
           {{time | date: 'HH:mm:ss'}}
         </div>
       </div>

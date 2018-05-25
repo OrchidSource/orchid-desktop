@@ -17,7 +17,7 @@
     "DASHBOARD": "Dashboard"
   },
   "DASHBOARD": {
-    "GB_REMAINING": "GB Remaining",
+    "GB_REMAINING": "Gigabytes (GB) Remaining",
     "DEFAULT_LOCATION": "Browsing location",
     "PLEASE_ADD": "Please add some OCT to connect",
     "CONNECTED": "Connected to Orchid network",
