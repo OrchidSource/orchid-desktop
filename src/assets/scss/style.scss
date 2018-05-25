@@ -312,6 +312,21 @@ input[type=text].input-search {
   padding-right: 45px; // to prevent the text from overlapping the search icon
 }
 
+/** Puts a User icon inside the input */
+.input-group.user-input-group {
+  input {
+    @include input-icon(url('../imgs/icons/user-gray.svg'));
+  }
+}
+
+/** Puts a padlock icon inside the input */
+.input-group.password-input-group {
+  input {
+    @include input-icon(url('../imgs/icons/lock-gray.svg'));
+  }
+}
+
+
 // Put a "chiclet" on the left of a button.
 // To use, put .btn-chiclet on the .btn element, and put a .chiclet div inside the button
 .btn-chiclet {

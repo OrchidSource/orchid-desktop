@@ -1,6 +1,6 @@
 <div class="routed-modal-container" (click)="conditionalClose($event)">
   <div class="routed-modal paddingless">
-      <app-wallet-backup-begin></app-wallet-backup-begin>
+      <app-wallet-backup-begin *ngIf="!password" [(password)]="password"></app-wallet-backup-begin>
+      <app-wallet-backup-password-confirm *ngIf="password" ></app-wallet-backup-password-confirm>
   </div>
-      <!-- <app-wallet-backup-password-confirm></app-wallet-backup-password-confirm> -->
 </div>

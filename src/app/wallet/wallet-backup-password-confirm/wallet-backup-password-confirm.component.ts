@@ -1,4 +1,5 @@
-import { Component, OnInit } from '@angular/core';
+import { Component, EventEmitter, Input, OnInit, Output } from '@angular/core';
+import { FormControl, FormGroup, Validators } from '@angular/forms';
 
 @Component({
   selector: 'app-wallet-backup-password-confirm',
@@ -7,9 +8,20 @@ import { Component, OnInit } from '@angular/core';
 })
 export class WalletBackupPasswordConfirmComponent implements OnInit {
 
+  public walletConfirmForm: FormGroup;
+
   constructor() { }
 
   ngOnInit() {
+
+    this.walletConfirmForm = new FormGroup({
+      username: new FormControl('', [Validators.required]),
+      password: new FormControl('', [Validators.required]),
+    });
+  }
+
+  submit() {
+    
   }
 
 }

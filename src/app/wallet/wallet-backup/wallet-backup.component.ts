@@ -8,6 +8,8 @@ import { Router } from '@angular/router';
 })
 export class WalletBackupComponent {
 
+  public password: String = '';
+
   constructor(private router: Router) { }
 
   conditionalClose($event) {

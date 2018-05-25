@@ -81,7 +81,9 @@
   },
   "WALLET_BACKUP": {
     "TITLE": "Enter a username & password",
-    "EXPLANATION": "This username and password will enrypt the access keys to your wallet. Please make sure to write down your password and save it in a secure location. You will not be able to recover it if you lose it."
+    "EXPLANATION": "This username and password will enrypt the access keys to your wallet. Please make sure to write down your password and save it in a secure location. You will not be able to recover it if you lose it.",
+    "CONFIRM_TITLE": "Confirm your username and password",
+    "CONFIRM_EXPLANATION": "Your wallet access keys are encrypted with your username and password. Make sure to write down your password and store it in a secure location. If lost, it can't be recovered."
   },
   "WALLET_RECEIVE": {
     "TITLE": "OCT wallet address"

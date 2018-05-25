@@ -7,20 +7,6 @@
   width: 630px;
   max-width: 100%;
   // @include minimized-breakpoint
-
-  .input-group {
-    &.user-input-group {
-      input {
-        @include input-icon(url('../../../assets/imgs/icons/user-gray.svg'));
-      }
-    }
-    &.password-input-group {
-      input {
-        @include input-icon(url('../../../assets/imgs/icons/lock-gray.svg'));
-      }
-    }
-  }
-
 }
 
 
