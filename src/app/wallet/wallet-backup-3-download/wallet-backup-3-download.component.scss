@@ -1,0 +1,22 @@
+@import '../../../assets/scss/variables';
+
+.heading {
+  text-transform: uppercase;
+  margin-bottom: 8px;
+}
+.heading-2 {
+  margin-top: 26px;
+}
+
+// If this style gets used anywhere else, it should be moved to the mother css file
+.btn-underline {
+  text-align: left;
+  border-bottom: 1px solid $gray-lighter;
+  border-radius: 0;
+  font-size: 12px;
+  color: $gray;
+}
+
+.btn-primary {
+  margin-top: 50px;
+}

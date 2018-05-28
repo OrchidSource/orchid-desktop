@@ -9,12 +9,15 @@ import { FormControl, FormGroup, Validators } from '@angular/forms';
 })
 export class WalletBackupBeginComponent implements OnInit {
 
-  public minUsernameLength: number = 8;
-  public minPasswordLength: number = 8;
+  private minUsernameLength: number = 8;
+  private minPasswordLength: number = 8;
+
   public walletBackupBeginForm: FormGroup;
 
   @Input() password:string;
   @Output() passwordChange:EventEmitter<boolean> = new EventEmitter<boolean>();
+  @Input() username:string;
+  @Output() usernameChange:EventEmitter<boolean> = new EventEmitter<boolean>();
 
   constructor() { }
 
@@ -25,13 +28,14 @@ export class WalletBackupBeginComponent implements OnInit {
       password: new FormControl('', [Validators.required, Validators.minLength(this.minPasswordLength)]),
       passwordConfirm: new FormControl('', [Validators.required, Validators.minLength(this.minPasswordLength)])
     });
+    // todo: check that passwords match
 
   }
 
 
   walletSetupBeginSubmit() {
-
     this.passwordChange.emit(this.walletBackupBeginForm.value.password)
+    this.usernameChange.emit(this.walletBackupBeginForm.value.username)
   }
 
 }

@@ -10,10 +10,13 @@ export class WalletBackupPasswordConfirmComponent implements OnInit {
 
   public walletConfirmForm: FormGroup;
 
+  @Input() username: string;
+  @Input() password: string;
+  @Output() confirmed:EventEmitter<boolean> = new EventEmitter<boolean>();
+
   constructor() { }
 
   ngOnInit() {
-
     this.walletConfirmForm = new FormGroup({
       username: new FormControl('', [Validators.required]),
       password: new FormControl('', [Validators.required]),
@@ -21,7 +24,7 @@ export class WalletBackupPasswordConfirmComponent implements OnInit {
   }
 
   submit() {
-    
+    this.confirmed.emit(true);
   }
 
 }

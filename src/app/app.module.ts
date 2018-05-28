@@ -43,6 +43,8 @@ import { SettingsAdvancedComponent } from './settings/settings-advanced/settings
 import { FirstRunGuardService } from './first-run-guard.service';
 import { WalletBackupPasswordConfirmComponent } from './wallet/wallet-backup-password-confirm/wallet-backup-password-confirm.component';
 import { WalletBackupBeginComponent } from './wallet/wallet-backup-begin/wallet-backup-begin.component';
+import { WalletBackup3DownloadComponent } from './wallet/wallet-backup-3-download/wallet-backup-3-download.component';
+import { MapToIterablePipe } from './map-to-iterable.pipe';
 
 // Indicates where the translation files live
 export function HttpLoaderFactory(httpClient: HttpClient) {
@@ -71,7 +73,9 @@ export function HttpLoaderFactory(httpClient: HttpClient) {
     SettingsWalletComponent,
     SettingsAdvancedComponent,
     WalletBackupPasswordConfirmComponent,
-    WalletBackupBeginComponent
+    WalletBackupBeginComponent,
+    WalletBackup3DownloadComponent,
+    MapToIterablePipe
   ],
   imports: [
     AppRoutingModule,

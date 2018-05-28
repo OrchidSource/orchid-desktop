@@ -6,7 +6,9 @@
     </div>
   </div>
   <div class="wallet-actions col-md-8">
-    <div class="wallet-backup" [style.visibility]="walletBackedUp ? 'hidden' : 'visible'">
+    <!-- TODO: add back to the div.wallet-backup -->
+    <!-- [style.visibility]="walletBackedUp ? 'hidden' : 'visible'" -->
+    <div class="wallet-backup" >
       <div class="btn btn-img btn-warning" [routerLink]="['', {outlets: {modal:'wallet-backup'}}]" (click)="setWalletBackedUp()">
         <img src="assets/imgs/icons/alert-circle.png" aria-disabled>
         <span [translate]>WALLET.PLEASE_BACKUP</span>

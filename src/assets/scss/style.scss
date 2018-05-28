@@ -48,17 +48,25 @@ h4, .h4 {
 .paragraph { // also p?
   font-family: 'OpenSans';
   font-weight: bold;
+  line-height: 26px;
   font-size: 16px
 }
 
 .caption {
   font-family: 'OpenSans';
   font-weight: bold;
+  line-height: 18px;
   font-size: 12px
 }
 
 .small {
   font-size: 14px;
+  line-height: 24px;
+}
+
+/* sometimes text is gray */
+.gray {
+  color: $gray !important;
 }
 
 
