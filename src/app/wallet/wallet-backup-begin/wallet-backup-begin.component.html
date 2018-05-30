@@ -9,24 +9,17 @@
       <div class="input-group user-input-group mb-2 mr-sm-2">
         <input type="text" id="username" class="form-control input-rounded" ngModel formControlName="username" placeholder="{{ 'GENERAL.USERNAME' | translate}}">
       </div>
-        ERR: {{ walletBackupBeginForm.controls.username.errors }}
-      <div *ngIf="walletBackupBeginForm.controls.username.errors">
-        <div *ngFor="let error of walletBackupBeginForm.controls.username.errors| mapToIterable">
-          <img src="assets/imgs/icons/x-red.svg" aria-disabled>
-          {{ error.key }}
-          {{ error.value }}
+      <div *ngIf="walletBackupBeginForm.controls.username.errors" class="text-warning">
+        <div *ngIf="walletBackupBeginForm.controls.username.errors.required" class="text-warning">
+          <img src="assets/imgs/icons/x-red.svg" aria-disabled> Username is required
+          <span [translate]>WALLET_BACKUP.USERNAME_REQUIRED</span>
         </div>
       </div>
 
       <div class="input-group password-input-group mb-2 mr-sm-2">
         <input type="password" class="form-control input-rounded"  ngModel formControlName="password" placeholder="{{ 'GENERAL.PASSWORD' | translate}}">
       </div>
-      <!-- <div *ngIf="walletBackupBeginForm.controls.password.errors">
-        <div *ngFor="let error of walletBackupBeginForm.controls.password.errors">
-          <img src="assets/imgs/icons/x-red.svg" aria-disabled>
-          {{ error }}
-        </div>
-      </div> -->
+      <orcui-password-strength [password]="walletBackupBeginForm.controls.password.value"></orcui-password-strength>
 
       <div class="input-group password-input-group mb-2 mr-sm-2">
         <input type="password" class="form-control input-rounded"  ngModel formControlName="passwordConfirm" placeholder="{{ 'GENERAL.PASSWORD_CONFIRM' | translate}}">

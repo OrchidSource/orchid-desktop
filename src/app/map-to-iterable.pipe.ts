@@ -13,7 +13,7 @@ export class MapToIterablePipe implements PipeTransform {
 
   transform(value: any, args?: any): any {
     return Object.keys(value)
-      .filter(v => Object.hasOwnProperty(v))
-      .map(key => value[key]);
+      .filter(key => value.hasOwnProperty(key))
+      .map(key => { return { key: key, value: value[key] }});
   }
 }

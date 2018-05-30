@@ -1,5 +1,7 @@
 /**
  * Module that contains user interface things
+ *
+ * TODO: move all of this to the OrcuiModule
  */
 import { NgModule } from '@angular/core';
 import { FormsModule } from '@angular/forms';

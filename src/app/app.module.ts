@@ -45,6 +45,7 @@ import { WalletBackupPasswordConfirmComponent } from './wallet/wallet-backup-pas
 import { WalletBackupBeginComponent } from './wallet/wallet-backup-begin/wallet-backup-begin.component';
 import { WalletBackup3DownloadComponent } from './wallet/wallet-backup-3-download/wallet-backup-3-download.component';
 import { MapToIterablePipe } from './map-to-iterable.pipe';
+import { OrcuiModule } from './orcui/orcui.module';
 
 // Indicates where the translation files live
 export function HttpLoaderFactory(httpClient: HttpClient) {
@@ -94,14 +95,16 @@ export function HttpLoaderFactory(httpClient: HttpClient) {
         deps: [HttpClient]
       }
     }),
-    UiModule
+    UiModule,
+    OrcuiModule
   ],
   providers: [
     ConfigService,
     InternationalizationService,
     OrchidNetService,
     WalletService,
-    FirstRunGuardService
+    FirstRunGuardService,
+    MapToIterablePipe
   ],
   bootstrap: [AppComponent]
 })
