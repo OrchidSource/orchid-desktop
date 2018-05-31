@@ -202,13 +202,13 @@ button:focus, .btn:focus {
   outline: none;
 }
 
-// an img or .img element inside a .btn.btn-img with .btn-img will be placed at the left-hand side of the button
-.btn.btn-img {
+// an img or .img element inside a .btn.btn-img will be placed at the left-hand side of the button
+// an img or .img element inside a .btn.btn-img-right will be placed at the right-hand side of the button
+.btn.btn-img, .btn.btn-img-right {
   position: relative;
   img, .img {
     position: absolute;
-    width: 18px;
-    left: 14px;
+    width: 18px; //
     top: 50%;
     transform: translateY(-50%);
   }
@@ -217,7 +217,20 @@ button:focus, .btn:focus {
   }
 }
 
+.btn.btn-img {
+  img, .img {
+    left: 14px;
+  }
+}
 
+.btn.btn-img-right {
+  img, .img {
+    right: 14px;
+  }
+}
+
+
+// Fixed-width button
 .btn.btn-wide {
   min-width: 160px;
 }
@@ -279,12 +292,23 @@ button:focus, .btn:focus {
 }
 
 .row .col {
-  padding-top: 30px;
-  padding-bottom: 30px;
+  padding-top: $orchid-gutter-width;
+  padding-bottom: $orchid-gutter-width;
 }
 
 .secondary-text {
   color: $secondary-text-color;
+}
+
+input::placeholder {
+  font-size: 12px;
+  color: $gray-light;
+}
+
+/** Put after an input to show error/info messages about the input */
+div.after-input-message {
+  font-size: 12px;
+  margin: 0 12px;
 }
 
 /** Add to inputs for rounded corner styling */

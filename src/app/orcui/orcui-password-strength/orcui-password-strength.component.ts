@@ -1,5 +1,7 @@
 import { Component, Input, OnInit } from '@angular/core';
+import { Observable } from 'rxjs/Observable';
 
+// regexps have state in javascript, so making them constants is maybe a bad idea
 const STRONG_REGEX = new RegExp("^(?=.{8,})(?=.*[A-Z])(?=.*[a-z])(?=.*[0-9])(?=.*\\W).*$");
 const MEDIUM_REGEX = new RegExp("^(?=.{7,})(((?=.*[A-Z])(?=.*[a-z]))|((?=.*[A-Z])(?=.*[0-9]))|((?=.*[a-z])(?=.*[0-9]))).*$");
 const ENOUGH_REGEX = new RegExp("(?=.{6,}).*");
@@ -11,23 +13,28 @@ const ENOUGH_REGEX = new RegExp("(?=.{6,}).*");
 })
 export class OrcuiPasswordStrengthComponent implements OnInit {
 
-  public strength: number = 0;
-  // TODO: internationalize
-  public strengthMap = {
-    0: 'weak',
-    1: 'weak',
-    2: 'moderate',
-    3: 'strong',
-    4: 'strongest'
-  }
-
   @Input() set password(password: string) {
     this.calculateStrength(password);
   }
 
+  /**
+   * If you want to translate the strength name, pass in a function that takes the English word from this.strengthMap and returns the translated string
+   * returns a string
+   */
+  @Input() translateFunction: (number) => Observable<String>;
+
+  public strength: number = 0;
+  public strengthName: String;
+  public strengthMap = {
+    0: 'Weak',
+    1: 'Weak',
+    2: 'Moderate',
+    3: 'Strong',
+    4: 'Strongest'
+  }
+
   private calculateStrength(password: string) {
     // lifted from https://martech.zone/javascript-password-strength/ and modified
-    console.log(`calculating  strength of password "${password}"`)
     if (password.length == 0) {
       this.strength = 0;
     } else if (STRONG_REGEX.test(password)) {
@@ -39,13 +46,21 @@ export class OrcuiPasswordStrengthComponent implements OnInit {
     } else {
       this.strength = 1
     }
-
-    console.log('strength was: ' + this.strength);
+    if (this.translateFunction) {
+      this.translateFunction(this.strengthMap[this.strength]).subscribe(name => {
+        this.strengthName = name;
+      },
+      error => {
+        this.strengthName = this.strengthMap[this.strength];
+      }
+    );
+    } else {
+      this.strengthName = this.strengthMap[this.strength];
+    }
   }
 
   constructor() { }
 
   ngOnInit() {
   }
-
 }

@@ -6,29 +6,21 @@
   position: relative;
   width: 630px;
   max-width: 100%;
-  // @include minimized-breakpoint
 }
 
+orcui-password-strength {
+  position: relative;
+  top: -4px;
+}
 
-.temporary-coverup {
-  background-color: rgba(0.5, 0.5, 0.5, 0.5);
-  position: absolute;
-  top: 0;
-  bottom: 0;
-  left: 0;
-  right: 0;
-  width: 100% !important;
-  border-radius: $card-border-radius;
+.password-input-group {
+  padding-top: 10px;
+}
 
-  > div {
-    background-color: white;
-
-    border-radius: $card-border-radius;
-    > * {
-      padding: $orchid-gutter-width;
-      text-align: center;
-
-    }
+button.btn[type='submit'] {
+  margin-top: $orchid-gutter-width;
+  img {
+    height: 12px;
+    width: unset;
   }
-
 }

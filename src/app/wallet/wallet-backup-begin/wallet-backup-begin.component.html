@@ -6,32 +6,25 @@
     </div>
 
     <div>
-      <div class="input-group user-input-group mb-2 mr-sm-2">
-        <input type="text" id="username" class="form-control input-rounded" ngModel formControlName="username" placeholder="{{ 'GENERAL.USERNAME' | translate}}">
-      </div>
-      <div *ngIf="walletBackupBeginForm.controls.username.errors" class="text-warning">
-        <div *ngIf="walletBackupBeginForm.controls.username.errors.required" class="text-warning">
-          <img src="assets/imgs/icons/x-red.svg" aria-disabled> Username is required
-          <span [translate]>WALLET_BACKUP.USERNAME_REQUIRED</span>
-        </div>
-      </div>
 
       <div class="input-group password-input-group mb-2 mr-sm-2">
         <input type="password" class="form-control input-rounded"  ngModel formControlName="password" placeholder="{{ 'GENERAL.PASSWORD' | translate}}">
       </div>
-      <orcui-password-strength [password]="walletBackupBeginForm.controls.password.value"></orcui-password-strength>
+      <orcui-password-strength [password]="walletBackupBeginForm.controls.password.value" [translateFunction]="translateStrength"></orcui-password-strength>
 
       <div class="input-group password-input-group mb-2 mr-sm-2">
         <input type="password" class="form-control input-rounded"  ngModel formControlName="passwordConfirm" placeholder="{{ 'GENERAL.PASSWORD_CONFIRM' | translate}}">
       </div>
-      <!-- <div *ngIf="walletBackupBeginForm.controls.passwordConfirm.errors">
-        <div *ngFor="let error of walletBackupBeginForm.controls.passwordConfirm.errors">
-          <img src="assets/imgs/icons/x-red.svg" aria-disabled>
-          {{ error }}
-        </div>
-      </div> -->
 
-      <button type="submit" class="btn btn-lg btn-block btn-primary" [disabled]="!walletBackupForm.form.valid" [translate]>GENERAL.NEXT</button>
+      <div [style.visibility]="(walletBackupBeginForm.controls.passwordConfirm.pristine || !walletBackupBeginForm.errors || !walletBackupBeginForm.errors.passwordMatch)?'hidden':''" class="after-input-message text-warning">
+        <img src="assets/imgs/icons/x-red.svg" aria-disabled>
+        <span [translate]>WALLET_BACKUP.PASSWORDS_DO_NOT_MATCH</span>
+      </div>
+
+      <button type="submit" class="btn btn-lg btn-block btn-primary btn-img-right" [disabled]="!walletBackupForm.form.valid">
+        {{ 'GENERAL.NEXT' | translate }}
+        <img src="assets/imgs/icons/arrow-right-white.png" aria-disabled>
+      </button>
     </div>
 
   </form>

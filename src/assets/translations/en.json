@@ -80,9 +80,10 @@
     "COPY_LINK_DETAILS": "(Share the link to share Orchid)"
   },
   "WALLET_BACKUP": {
-    "TITLE": "Enter a username & password",
-    "EXPLANATION": "This username and password will enrypt the access keys to your wallet. Please make sure to write down your password and save it in a secure location. You will not be able to recover it if you lose it.",
+    "TITLE": "Enter a password",
+    "EXPLANATION": "Your wallet access keys are encrypted with your password. Make sure to write down your password and store it in a secure location. If lost, it can't be recovered.",
     "USERNAME_REQUIRED": "Username is required",
+    "PASSWORDS_DO_NOT_MATCH": "Passwords do not match",
     "CONFIRM_TITLE": "Confirm your username and password",
     "CONFIRM_EXPLANATION": "Your wallet access keys are encrypted with your username and password. Make sure to write down your password and store it in a secure location. If lost, it can't be recovered.",
     "DOWNLOAD_TITLE": "Download & backup your wallet configuration file",
@@ -124,6 +125,14 @@
     "TOOLTIP_PRICE_GB_USED": "Your price per gigabyte when buying bandwidth. Orchid automatically sets your price to the going market rate for Buyers. You can also opt to set your own price, higher or lower.",
     "BUTTON_NEW_WALLET": "New wallet",
     "BUTTON_UNLINK_WALLET": "Unlink wallet"
+  },
+  "ORCUI": {
+    "PASSWORD_STRENGTH": {
+      "WEAK": "Weak",
+      "MODERATE": "Moderate",
+      "STRONG": "Strong",
+      "STRONGEST": "Strongest"
+    }
   },
   "GENERAL": {
     "USERNAME": "Username",
