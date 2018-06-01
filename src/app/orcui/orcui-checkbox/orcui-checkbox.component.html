@@ -1,0 +1,9 @@
+<div class="orcui-checkbox" (click)="clicked()">
+  <div>
+    <div class="orcui-the-checkbox" [ngClass]="{ checked: isChecked }">
+      <img *ngIf="isChecked" src="./assets/imgs/icons/check-green.svg" aria-ignore>
+    </div>
+  </div>
+  <div *ngIf="text" class="orcui-checkbox-text" [innerHTML]="text">
+  </div>
+</div>

@@ -10,11 +10,16 @@
 
 // If this style gets used anywhere else, it should be moved to the mother css file
 .btn-underline {
+  padding-left: 0;
   text-align: left;
   border-bottom: 1px solid $gray-lighter;
   border-radius: 0;
   font-size: 12px;
   color: $gray;
+  img {
+    width: 19px;
+    margin-right: 20px;
+  }
 }
 
 .btn-primary {

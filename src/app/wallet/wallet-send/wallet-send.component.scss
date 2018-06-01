@@ -4,6 +4,10 @@ h5 {
   font-size: 18px;
   font-weight: bold;
 }
+.caption {
+  font-weight: normal;
+
+}
 
 .amount-row {
   display: flex;
@@ -14,6 +18,12 @@ h5 {
     width: 45%;
   }
 }
+
+orcui-checkbox {
+  display: block;
+  margin-top: 20px;
+}
+
 
 .btn {
   margin-top: 30px;

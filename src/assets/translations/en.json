@@ -70,7 +70,13 @@
     "TITLE": "Send OCT",
     "SEND": "Send OCT",
     "CURRENT_BALANCE": "Current balance",
-    "RECIPIENT_EXPLANATION": "Enter an ERC20 compatible Ethereum address below in a format that starts with 0x."
+    "RECIPIENT_EXPLANATION": "Enter an ERC20 compatible Ethereum address below in a format that starts with 0x.",
+    "ETHEREUM_OK": "This address is from a token-compatible Ethereum wallet like <a href=\"https://trustwalletapp.com/\" target=\"_blank\">Trust Wallet App</a> or <a href=\"https://www.myetherwallet.com/\" target=\"_blank\">MyEtherWallet</a>.",
+    "NOT_COINBASE_OK": "This address is <strong>not</strong> from a Coinbase account. Coinbase does not currently support tokens.",
+    "OCT_AMOUNT_MISSING": "Missing amount to send",
+    "OCT_AMOUNT_INVALID": "Invalid OCT amount",
+    "ERC20_NOT_VALID": "Invalid ERC20 address",
+    "ERC20_REQUIRED": "ERC20 address is required"
   },
   "WALLET_SHARE": {
     "TITLE": "Share Orchid",

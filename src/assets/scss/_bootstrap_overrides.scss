@@ -8,6 +8,8 @@ $body-color: #212121; // a.k.a. $body-dark
 $primary: $brand-primary;
 $secondary: $brand-secondary;
 
+$link-color: $brand-secondary;
+
 // bootstrap "theme" colors
 $success: #5CB85C;
 $danger: #E3601F;
@@ -33,8 +35,8 @@ $btn-border-radius-sm: 100px;
 // inputs
 $input-border-color: $gray-lighter;
 
-$input-group-addon-bg: white;
-$input-group-addon-color: $gray-light;
+$input-group-addon-bg: $gray-lightest;
+$input-group-addon-color: $gray-dark;
 $input-group-addon-border-color: $gray-lighter;
 
 $input-box-shadow: none;

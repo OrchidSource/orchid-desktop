@@ -1,6 +1,6 @@
 <div class="routed-modal-container" (click)="conditionalClose($event)">
   <div class="routed-modal">
-    <form #sendForm="ngForm">
+    <form novalidate #sendFormForm="ngForm" [formGroup]="sendForm">
       <h2>
         <span [translate]>WALLET_SEND.TITLE</span>
         <img src="assets/imgs/icons/x-gray.svg" class="pull-right" alt="Close" [routerLink]="['', {outlets: {modal:null}}]">
@@ -11,15 +11,29 @@
       <div class="amount-row">
         <div>
           <div class="input-group">
-            <input type="text" class="form-control" min="0" [max]="octBalance" name="sendAmount" [(ngModel)]="sendAmount">
+            <input type="text" class="form-control" ngModel formControlName="sendAmountOct">
             <div class="input-group-append">
               <span class="input-group-text">OCT</span>
             </div>
           </div>
+
+          <!-- <div *ngIf="sendForm.controls.sendAmountOct.errors"> -->
+            <div class="after-input-message text-warning" [hidden]="!sendForm.controls.sendAmountOct.touched || !sendForm.controls.sendAmountOct.errors || !sendForm.controls.sendAmountOct.errors.required">
+              <img src="assets/imgs/icons/x-red.svg" aria-disabled>
+              {{ 'WALLET_SEND.OCT_AMOUNT_MISSING' | translate }}
+            </div>
+
+            <div class="after-input-message text-warning" [hidden]="!sendForm.controls.sendAmountOct.touched || !sendForm.controls.sendAmountOct.errors || !sendForm.controls.sendAmountOct.errors.pattern">
+              <img src="assets/imgs/icons/x-red.svg" aria-disabled>
+              {{ 'WALLET_SEND.OCT_AMOUNT_INVALID' | translate }}
+            </div>
+          <!-- </div> -->
+
         </div>
+
         <div>
           <div class="input-group">
-            <input type="text" class="form-control" name="sendAmountDollars" [(ngModel)]="sendAmountDollars">
+            <input type="text" class="form-control" ngModel formControlName="sendAmountNative">
             <div class="input-group-append">
               <span class="input-group-text">USD</span>
             </div>
@@ -28,15 +42,33 @@
       </div>
 
       <h5 [translate]>GENERAL.RECIPIENT</h5>
-      <div [translate]>WALLET_SEND.RECIPIENT_EXPLANATION</div>
+      <div [translate] class="caption">WALLET_SEND.RECIPIENT_EXPLANATION</div>
 
       <div>
         <div class="input-group">
-          <input type="text" class="form-control"  name="ethAddress" pattern=".{42,}" required>
+          <input type="text" class="form-control" ngModel formControlName="ercAddress">
         </div>
       </div>
+
+      <div *ngIf="sendForm.controls.ercAddress.errors">
+        <div class="after-input-message text-warning" [hidden]="!sendForm.controls.ercAddress.touched || !sendForm.controls.ercAddress.errors.pattern">
+          <img src="assets/imgs/icons/x-red.svg" aria-disabled>
+          {{ 'WALLET_SEND.ERC20_NOT_VALID' | translate }}
+        </div>
+        <div class="after-input-message text-warning" [hidden]="!sendForm.controls.ercAddress.touched || !sendForm.controls.ercAddress.errors.required">
+          <img src="assets/imgs/icons/x-red.svg" aria-disabled>
+          {{ 'WALLET_SEND.ERC20_REQUIRED' | translate }}
+        </div>
+      </div>
+
+      <div>
+        <orcui-checkbox [(isChecked)]="ethCompatibleOk" [text]="'WALLET_SEND.ETHEREUM_OK' | translate"></orcui-checkbox>
+        <orcui-checkbox [(isChecked)]="notCoinbaseOk" [text]="'WALLET_SEND.NOT_COINBASE_OK' | translate"></orcui-checkbox>
+      </div>
+
+
       <div class="row-actions">
-        <button type="submit" class="btn btn-wide btn-primary btn-lg" [routerLink]="['', {outlets: {modal:null}}]" [disabled]="sendForm.form.valid" [translate]>WALLET_SEND.SEND</button>
+        <button type="submit" class="btn btn-wide btn-primary btn-lg" [routerLink]="['', {outlets: {modal:null}}]" [disabled]="!sendFormForm.form.valid || !ethCompatibleOk || !notCoinbaseOk" [translate]>WALLET_SEND.SEND</button>
       </div>
     </form>
   </div>
