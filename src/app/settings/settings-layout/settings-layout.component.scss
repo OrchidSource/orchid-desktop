@@ -2,8 +2,8 @@
 @import '../../../assets/scss/mixins';
 
 .settings-tab-container {
-  margin: 0 $orchid-gutter-width $orchid-gutter-width $orchid-gutter-width;
-  color: $gray;
+  margin: 0 $orchid-page-margin-width $orchid-gutter-width $orchid-page-margin-width;
+  color: $gray-light;
 
   .active {
     color: $brand-primary;

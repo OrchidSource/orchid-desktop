@@ -4,22 +4,12 @@
   .small {
     padding-left: $orchid-gutter-width;
   }
-
-  .amount-container {
-    position: absolute;
-    right: 100px;
-    input {
-      width: 100px;
-      display: inline-block;
-      margin-right: 20px;
-    }
-  }
-
 }
 
 table.radio-container {
   td {
     vertical-align: top;
     padding-right: 20px;
+    padding-bottom: 16px;
   }
 }

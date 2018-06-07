@@ -12,14 +12,24 @@
 
     <div class="setting-item">
       <span class="small" [translate]>SETTINGS.AUTO_TRANSFER</span>
-      <a ngbTooltip="{{ 'SETTINGS.TOOLTIP_AUTO_TRANSFER' | translate }}" placement="right" class="hide-narrow"><img src="assets/imgs/question.svg"/></a>
-      <a ngbTooltip="{{ 'SETTINGS.TOOLTIP_AUTO_TRANSFER' | translate }}" placement="top" class="hide-wide"><img src="assets/imgs/question.svg"/></a>
+      <a ngbTooltip="{{ 'SETTINGS.TOOLTIP_AUTO_TRANSFER' | translate }}" placement="right" class="hide-narrow"><img src="assets/imgs/icons/question.svg"/></a>
+      <a ngbTooltip="{{ 'SETTINGS.TOOLTIP_AUTO_TRANSFER' | translate }}" placement="top" class="hide-wide"><img src="assets/imgs/icons/question.svg"/></a>
+      <span class="left-of-toggle btn settings-button">
+        <img src="assets/imgs/icons/gear-gray.svg" aria-disabled>
+        <span translate>GENERAL.SETTINGS</span>
+      </span>
       <ui-toggle [(isSelected)]="settings.AUTO_TRANSFER"></ui-toggle>
     </div>
   </div>
 </div>
 
 <div class="row-actions">
-  <button class="btn btn-outline-warning btn-wide btn-lg" [translate]>SETTINGS.BUTTON_NEW_WALLET</button>
-  <button class="btn btn-outline-success btn-wide btn-lg" [translate]>SETTINGS.BUTTON_UNLINK_WALLET</button>
+  <button class="btn btn-outline-success btn-wide btn-lg btn-img">
+    <img src="assets/imgs/icons/plus-green.svg" aria-disabled>
+    <span [translate]>SETTINGS.BUTTON_NEW_WALLET</span>
+  </button>
+  <button class="btn btn-outline-warning btn-wide btn-lg btn-img">
+    <img src="assets/imgs/icons/unlink-warning.svg" aria-disabled>
+    <span [translate]>SETTINGS.BUTTON_UNLINK_WALLET</span>
+  </button>
 </div>

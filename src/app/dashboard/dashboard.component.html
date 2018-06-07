@@ -4,8 +4,8 @@
       <div class="card-header">
         <span [translate]>DASHBOARD.GB_REMAINING</span>
         <span class="card-help">
-          <a ngbTooltip="{{ 'DASHBOARD.TOOLTIP_GB_REMAINING' | translate }}" placement="right" class="hide-narrow"><img src="assets/imgs/question.svg"/></a>
-          <a ngbTooltip="{{ 'DASHBOARD.TOOLTIP_GB_REMAINING' | translate }}" placement="bottom" class="hide-wide"><img src="assets/imgs/question.svg"/></a>
+          <a ngbTooltip="{{ 'DASHBOARD.TOOLTIP_GB_REMAINING' | translate }}" placement="right" class="hide-narrow"><img src="assets/imgs/icons/question.svg"/></a>
+          <a ngbTooltip="{{ 'DASHBOARD.TOOLTIP_GB_REMAINING' | translate }}" placement="bottom" class="hide-wide"><img src="assets/imgs/icons/question.svg"/></a>
         </span>
       </div>
 
@@ -28,7 +28,7 @@
     <div class="card dashboard-card connection-status-card">
       <div class="card-header">
         <span>Connection Status</span>
-        <span class="card-help"><a ngbTooltip="{{ 'DASHBOARD.TOOLTIP_CONNECTION' | translate }}" placement="bottom"><img src="assets/imgs/question.svg"/></a></span>
+        <span class="card-help"><a ngbTooltip="{{ 'DASHBOARD.TOOLTIP_CONNECTION' | translate }}" placement="bottom"><img src="assets/imgs/icons/question.svg"/></a></span>
       </div>
 
       <div class="card-body" ng-controller="Ctrl" ng-app="sec-val">
@@ -55,8 +55,8 @@
     <div class="card dashboard-card browsing-location-card">
       <div class="card-header">
         <span [translate]>DASHBOARD.DEFAULT_LOCATION</span>
-        <span class="card-help"><a ngbTooltip="{{ 'DASHBOARD.TOOLTIP_LOCATION' | translate }}" placement="left" class="hide-narrow"><img src="assets/imgs/question.svg"/></a></span>
-        <span class="card-help"><a ngbTooltip="{{ 'DASHBOARD.TOOLTIP_LOCATION' | translate }}" placement="top" class="hide-wide"><img src="assets/imgs/question.svg"/></a></span>
+        <span class="card-help"><a ngbTooltip="{{ 'DASHBOARD.TOOLTIP_LOCATION' | translate }}" placement="left" class="hide-narrow"><img src="assets/imgs/icons/question.svg"/></a></span>
+        <span class="card-help"><a ngbTooltip="{{ 'DASHBOARD.TOOLTIP_LOCATION' | translate }}" placement="top" class="hide-wide"><img src="assets/imgs/icons/question.svg"/></a></span>
       </div>
 
       <div class="card-body hide-minimized">
@@ -110,8 +110,8 @@
         <div class="chart-header">
           <span [translate]>DASHBOARD.TOTAL_EARNINGS</span>
           {{ octEarned }} (<span (click)="resetSettings()">OCT</span>)
-          <a ngbTooltip="{{ 'DASHBOARD.TOOLTIP_TOTAL_EARNINGS' | translate }}" placement="right" class="hide-narrow"><img src="assets/imgs/question.svg"/></a>
-          <a ngbTooltip="{{ 'DASHBOARD.TOOLTIP_TOTAL_EARNINGS' | translate }}" placement="right" class="hide-wide"><img src="assets/imgs/question.svg"/></a>
+          <a ngbTooltip="{{ 'DASHBOARD.TOOLTIP_TOTAL_EARNINGS' | translate }}" placement="right" class="hide-narrow"><img src="assets/imgs/icons/question.svg"/></a>
+          <a ngbTooltip="{{ 'DASHBOARD.TOOLTIP_TOTAL_EARNINGS' | translate }}" placement="right" class="hide-wide"><img src="assets/imgs/icons/question.svg"/></a>
           <div class="time-span-container">
             <span class="time-span" [ngClass]="{'time-span-selected': earningsSpan==='1h'}" (click)="changeSpan('1h')" [translate]>DASHBOARD.EARNING_SPAN_HOUR</span>
             <span class="time-span" [ngClass]="{'time-span-selected': earningsSpan==='1d'}" (click)="changeSpan('1d')" [translate]>DASHBOARD.EARNING_SPAN_DAY</span>

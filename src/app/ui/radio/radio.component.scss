@@ -1,22 +1,25 @@
 @import '../../../assets/scss/variables';
 @import '../../../assets/scss/bootstrap_overrides';
 
+$diameter: 23px;
+
 .ui-radio-container {
-  height: 24px;
-  width: 24px;
+  height: $diameter;
+  width: $diameter;
   border-radius: 100px; // just bigger than 12px;
-  border: 2px solid $gray-lighter;
+  border: 1px solid $gray-lighter;
   position: relative;
   display: inline-block;
+  box-shadow: 0 0 2px 1px rgba(0, 0, 0, 0.15);
 
   transition: all 200ms ease;
 
   .ui-radio-dot {
-      width: 16px;
-      height: 16px;
+      width: 15px;
+      height: 15px;
       position: relative;
-      top: 2px;
-      left: 2px;
+      top: 3px;
+      left: 3px;
 
       display: block;
       border-radius: 100px;
@@ -30,7 +33,7 @@
 }
 
 .ui-radio-container.ui-radio-selected {
-  border-color: $success;
+  box-shadow: 0 0 2px 1px rgba(92, 184, 92, 0.65);
 
   .ui-radio-dot {
     background-color: $success;

@@ -3,28 +3,31 @@
 @import '../../assets/scss/mixins';
 
 .card {
-  margin: 0 $orchid-gutter-width $orchid-gutter-width $orchid-gutter-width;
+  margin: 0 $orchid-page-margin-width $orchid-gutter-width $orchid-page-margin-width;
 
   .card-body {
-    padding-top: 0;
-    padding-bottom: 0;
+    padding: 0 $orchid-gutter-width;
 
     .setting-item {
       position: relative;
-      padding: 10px 0; // ???
+      padding: 14px 0;
       border-width: 0 0 1px 0;
       border-color: $gray-default;
       border-style: solid;
-      text-transform: uppercase;
 
-      &.setting-item-contains-input {
-        height: 58px;
-        .small, a {
-          position: relative;
-          top: 6px;
-        }
-        ui-toggle {
-          top: 14px;
+      .small {
+        padding-right: 7px;
+      }
+
+      // add this to a div before the toggle to position it left of the toggle
+      .left-of-toggle {
+        position: absolute;
+        right: 100px;
+        top: 8px;
+        input {
+          width: 100px;
+          display: inline-block;
+          margin-right: 20px;
         }
       }
 
@@ -35,7 +38,7 @@
       ui-toggle, .setting-value {
         position: absolute;
         right: 0;
-        top: 8px;
+        top: 14px;
       }
     }
   }

@@ -1,5 +1,19 @@
 @import '../settings';
 
+select {
+  border: none;
+  background-color: white;
+}
+.settings-button {
+  > img {
+    margin-right: 8px;
+  }
+  > span {
+    text-decoration: underline;
+    color: $gray-light;
+  }
+}
+
 .row-actions {
   padding-right: $orchid-gutter-width;
   padding-left: $orchid-gutter-width;
