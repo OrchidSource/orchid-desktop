@@ -3,10 +3,12 @@
     <div class="setting-item">
       <span class="small" [translate]>SETTINGS.NATIVE_CURRENCY</span>
       <div class="form-group setting-value">
-        <!-- <label></label> -->
-        <select [ngModel]="settings.currency">
-          <option *ngFor="let c of currencies" [ngValue]="c.code">{{c.code}}</option>
-        </select>
+        <div ngbDropdown class="">
+          <button class="btn" id="dropdownCurrency" ngbDropdownToggle>{{ settings.currency }}</button>
+          <div ngbDropdownMenu aria-labelledby="dropdownCurrency">
+            <button class="dropdown-item" *ngFor="let c of currencies" (click)="settings.currency = c.code">{{c.code}}</button>
+          </div>
+        </div>
       </div>
     </div>
 
