@@ -15,11 +15,10 @@ export class FirstRunGuardService implements CanActivate {
 
   canActivate(route: ActivatedRouteSnapshot, state: RouterStateSnapshot): boolean {
     /* TODO: use proper settings location */
-    const  firstRunRan = window.localStorage.getItem('FIRST_RUN_RAN');
-    if (firstRunRan) {
+    const  firstRunRan = window.localStorage.getItem('FIRST_RUN_LAST_LOCATION');
+    if (firstRunRan == 'DONE') {
       return true;
     } else {
-      window.localStorage.setItem('FIRST_RUN_RAN', '1');
       this.router.navigate(['/first-launch']);
       return false;
     }

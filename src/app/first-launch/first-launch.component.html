@@ -1,6 +1,6 @@
 <div class="first-launch-container">
   <div class="next-prev">
-    <div (click)="page = page - 1" *ngIf="page != 1">
+    <div (click)="changePage(page - 1)" *ngIf="page != 1">
       <img src="assets/imgs/icons/caret-left.svg" aria-label="back">
     </div>
   </div>
@@ -47,16 +47,16 @@
 
     <div class="first-launch-buttons">
       <a class="btn btn-border btn-lg" target="_blank" href="https://orchid.com/#faq" [translate]>Learn More</a>
-      <a class="btn btn-primary btn-lg" routerLink="/main/dashboard" [translate]>Get Started</a>
+      <a class="btn btn-primary btn-lg" routerLink="/main/dashboard" (click)="firstRunDone()" [translate]>Get Started</a>
     </div>
     <div class="first-launch-dots">
-      <span class="first-run-dot" [ngClass]="{ active: page === 1}" (click)="page = 1"></span>
-      <span class="first-run-dot" [ngClass]="{ active: page === 2}" (click)="page = 2"></span>
-      <span class="first-run-dot" [ngClass]="{ active: page === 3}" (click)="page = 3"></span>
+      <span class="first-run-dot" [ngClass]="{ active: page === 1}" (click)="changePage(1)"></span>
+      <span class="first-run-dot" [ngClass]="{ active: page === 2}" (click)="changePage(2)"></span>
+      <span class="first-run-dot" [ngClass]="{ active: page === 3}" (click)="changePage(3)"></span>
     </div>
   </div>
   <div class="next-prev">
-    <div (click)="page = page + 1" *ngIf="page < 3">
+    <div (click)="changePage(page + 1)" *ngIf="page < 3">
       <img src="assets/imgs/icons/caret-right.svg" aria-label="next">
     </div>
   </div>

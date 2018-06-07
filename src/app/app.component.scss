@@ -21,10 +21,15 @@
   text-transform: uppercase;
 
   .orchid-logo {
-    height: 20px;
+    height: 18px;
     margin-right: 10px;
     margin-top: -3px;
     vertical-align: middle;
+  }
+  @include minimized-breakpoint {
+    .orchid-logo {
+      height: 14px;
+    }
   }
 
   .titlebar-blurb {

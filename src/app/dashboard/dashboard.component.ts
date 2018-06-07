@@ -53,6 +53,8 @@ const TIP_STATES: string[]  = [
   'BROWSING_LOCATION_TIP'
 ];
 
+const FIRST_RUN_STEP_LOCALSTORAGE_KEY = 'DASHBOARD_FIRST_RUN_STEP';
+
 @Component({
   selector: 'app-dashboard',
   templateUrl: './dashboard.component.html',
@@ -70,7 +72,7 @@ export class DashboardComponent implements OnInit, OnDestroy {
   public earningsSpan: string = '1y';
 
   public gbRemaining: number;
-  public tip_state: string;
+  public tip_state: string = null;
 
   public connectedSubscription: Subscription;
 
@@ -84,7 +86,6 @@ export class DashboardComponent implements OnInit, OnDestroy {
 
   constructor(private _config: ConfigService, private changeDetector: ChangeDetectorRef, private orchidNetService: OrchidNetService, private renderer : Renderer2, private walletService: WalletService) {
     this.connected = false;
-    console.log('getting selected browsing location!');
     this.selectedBrowsingLocation = BrowsingLocation.getLocations().find(bl => {
       return bl.code == this._config.selectedBrowsingLocation;
     })
@@ -94,14 +95,19 @@ export class DashboardComponent implements OnInit, OnDestroy {
   }
 
   ngOnInit() {
-    var firstRunRan = window.localStorage.getItem('DASHBOARD_FIRST_RUN_RAN');
-    if (!firstRunRan) {
-      window.localStorage.setItem('DASHBOARD_FIRST_RUN_RAN', '1');
+    // Check the first run state
+    var firstRunStep: string = window.localStorage.getItem(FIRST_RUN_STEP_LOCALSTORAGE_KEY);
+    if (!firstRunStep) {
+      window.localStorage.setItem(FIRST_RUN_STEP_LOCALSTORAGE_KEY, '0');
       this.tip_state = TIP_STATES[0];
+    } else if (firstRunStep === 'DONE') {
+      // do nothing
+    } else {
+      let firstRunStepIdx: number = Number(firstRunStep);
+      this.tip_state = TIP_STATES[firstRunStepIdx];
     }
 
     this.connectedSubscription = this.orchidNetService.connectedObservable.subscribe((isConnected: boolean) => {
-      console.log('connection status changed:' + isConnected);
       if (isConnected) {
         this.startTimer();
       } else {
@@ -171,7 +177,6 @@ export class DashboardComponent implements OnInit, OnDestroy {
    */
   browseLocationInputBlured() {
     this.typeaheadOpen = false;
-    console.log('blurred');
     this.typeaheadBrowsingLocation = null;
   }
 
@@ -204,13 +209,13 @@ export class DashboardComponent implements OnInit, OnDestroy {
    * @param  tip_name one of TIP_STATES
    */
   tipConfirm(tip_name) {
-    console.log("tipConfirm: " + tip_name);
-
-    var next_tip_index = TIP_STATES.indexOf(tip_name);
-    if (next_tip_index != -1) {
-      this.tip_state = TIP_STATES[next_tip_index + 1];
-    } else {
+    var next_tip_index: number = TIP_STATES.indexOf(tip_name) + 1;
+    if (next_tip_index > (TIP_STATES.length - 1)) {
       this.tip_state = null;
+      window.localStorage.setItem(FIRST_RUN_STEP_LOCALSTORAGE_KEY, 'DONE');
+    } else {
+      this.tip_state = TIP_STATES[next_tip_index];
+      window.localStorage.setItem(FIRST_RUN_STEP_LOCALSTORAGE_KEY, String(next_tip_index));
     }
   }
 
