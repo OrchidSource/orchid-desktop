@@ -14,10 +14,6 @@ import { AppRoutingModule } from './app-routing.module';
 import { AppComponent } from './app.component';
 import { NgbModule } from '@ng-bootstrap/ng-bootstrap';
 import { DashboardComponent } from './dashboard/dashboard.component';
-import { PurchaseStartComponent } from './purchase/purchase-start/purchase-start.component';
-import { PurchasePaymentComponent } from './purchase/purchase-payment/purchase-payment.component';
-import { PurchaseConfirmationComponent } from './purchase/purchase-confirmation/purchase-confirmation.component';
-import { PurchaseHowToComponent } from './purchase/purchase-how-to/purchase-how-to.component';
 import { SellHowToComponent } from './sell/sell-how-to/sell-how-to.component';
 
 import { ConfigService } from "./config-service/config.service";
@@ -56,11 +52,7 @@ export function HttpLoaderFactory(httpClient: HttpClient) {
   declarations: [
     AppComponent,
     DashboardComponent,
-    PurchasePaymentComponent,
-    PurchaseConfirmationComponent,
-    PurchaseHowToComponent,
     SellHowToComponent,
-    PurchaseStartComponent,
     WalletComponent,
     MainNavigationComponent,
     FirstLaunchComponent,

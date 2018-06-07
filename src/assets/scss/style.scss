@@ -380,47 +380,6 @@ input[type=text].input-search {
   }
 }
 
-/** no longer used. */
-// .step-group {
-//   .step {
-//     color: #fff;
-//     font-size: 13px;
-//     background-color: $light-grey-bg;
-//     border-radius: 50%;
-//     width: 22px;
-//     height: 22px;
-//     margin-right: 5px;
-//     display: inline-block;
-//     text-align: center;
-//     line-height: 22px;
-//   }
-//
-//   .connector {
-//     hr {
-//       width: 100%;
-//     }
-//   }
-//
-//   &.active span {
-//     // background-color: $secondary-color;
-//   }
-//
-//   &.complete {
-//     span {
-//       background-color: $brand-success;
-//     }
-//
-//     .fa-check {
-//       color: $brand-success;
-//     }
-//   }
-//
-//   &.col {
-//     padding-top: 0;
-//     padding-bottom: 0;
-//   }
-// }
-
 
 // override the dropdown icon
 .dropdown-toggle::after {
