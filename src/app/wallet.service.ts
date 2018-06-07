@@ -40,7 +40,20 @@ export class WalletService {
   }
 
   getUSDBalance(): number {
-    return this.orcBalance * usdOrcRatio;
+    return this.orcToUSD(this.orcBalance);
+  }
+
+  /**
+   * Returns the value of ORC in US Dollars
+   * Probably this function will be replaced by a more general currency function
+   * @param  orc The amount of ORC
+   * @return     The amount of USD
+   */
+  orcToUSD(orc: number): number {
+    if (orc == null) {
+      return null;
+    }
+    return orc * usdOrcRatio;
   }
 
   getWalletAddress(): string {

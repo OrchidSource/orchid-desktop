@@ -1,4 +1,5 @@
 import { Component, OnInit } from '@angular/core';
+import { WalletService } from '../../wallet.service';
 
 @Component({
   selector: 'app-settings-advanced',
@@ -8,13 +9,25 @@ import { Component, OnInit } from '@angular/core';
 export class SettingsAdvancedComponent implements OnInit {
 
   settings: object = {
-    PRICE_GB_USED: 0.569423,
-    PRICE_GB_SHARED: 0.76942
+    PRICE_GB_USED: 0.569,
+    PRICE_GB_SHARED: 0.769
   };
 
-  constructor() { }
+  constructor(private walletService: WalletService) { }
 
   ngOnInit() {
+  }
+
+  setSellingPriceForMe():void {
+    console.log('TODO: setSellingPriceForMe()');
+  }
+
+  setBuyingPriceForMe():void {
+    console.log('TODO: setBuyingPriceForMe()');
+  }
+
+  orcToUSD(orc: number): number {
+    return this.walletService.orcToUSD(orc);
   }
 
 }

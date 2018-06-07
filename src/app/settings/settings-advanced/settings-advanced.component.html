@@ -1,35 +1,47 @@
 <div class="card">
   <div class="card-body">
     <div class="setting-item row">
-      <div class="col-lg-6 p-2">
+      <div class="col-md-12 col-lg-6 p-2">
         <div class="row">
-          <div class="col-sm-6 small">
+          <div class="col-sm-4 small">
             <span [translate]>SETTINGS.PRICE_GB_SHARED</span>
             <a ngbTooltip="{{ 'SETTINGS.TOOLTIP_PRICE_GB_SHARED' | translate }}" placement="bottom"><img src="assets/imgs/icons/question.svg"/></a>
           </div>
-          <div class="col-sm-6">
+          <div class="col-sm-5">
             <div class="input-group">
               <input type="number" class="form-control" [(ngModel)]="settings.PRICE_GB_SHARED">
               <div class="input-group-append">
                 <span class="input-group-text">OCT</span>
               </div>
             </div>
+            <div class="gray pt-1">
+              (${{ orcToUSD(settings.PRICE_GB_SHARED) | number : '1.2-2' }})
+            </div>
+          </div>
+          <div class="col-sm-3">
+            <div class="btn btn-link font-weight-bold" (click)="setSellingPriceForMe()" translate>SETTINGS.PRICE_SET_FOR_ME</div>
           </div>
         </div>
       </div>
       <div class="col-lg-6 p-2">
         <div class="row">
-          <div class="col-sm-6 small">
+          <div class="col-sm-4 small">
             <span [translate]>SETTINGS.PRICE_GB_USED</span>
             <a ngbTooltip="{{ 'SETTINGS.TOOLTIP_PRICE_GB_USED' | translate }}" placement="bottom"><img src="assets/imgs/icons/question.svg"/></a>
           </div>
-          <div class="col-sm-6">
+          <div class="col-sm-5">
             <div class="input-group">
               <input type="number" class="form-control" [(ngModel)]="settings.PRICE_GB_USED">
               <div class="input-group-append">
                 <span class="input-group-text">OCT</span>
               </div>
             </div>
+            <div class="gray pt-1">
+              (${{ orcToUSD(settings.PRICE_GB_USED) | number : '1.2-2' }})
+            </div>
+          </div>
+          <div class="col-sm-3">
+            <div class="btn btn-link font-weight-bold" (click)="setBuyingPriceForMe()" translate>SETTINGS.PRICE_SET_FOR_ME</div>
           </div>
         </div>
       </div>
