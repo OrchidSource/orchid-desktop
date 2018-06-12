@@ -53,9 +53,8 @@ function createWindow(width) {
   // only happen when developing
   if (process.defaultApp) {
     // Open the DevTools.
-    // win.webContents.openDevTools();
+    win.webContents.openDevTools();
   }
-  // win.webContents.openDevTools();
 
   win.onbeforeunload = function() {
     console.log('onbeforeunload');
