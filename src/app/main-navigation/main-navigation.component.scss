@@ -285,9 +285,8 @@ $minimized-link-height: 45px;
   overflow-y: scroll;
   background-color: $content-background;
   flex: 0 1;
-  padding-top: $orchid-page-margin-width;
-  padding-right: 0;
-  padding-left: 0;
+  padding: $orchid-page-margin-width 0;
+  
   @include minimized-breakpoint {
     padding-top: 0px;
     margin-top: 45px;
