@@ -4,7 +4,7 @@
       <div class="card-header">
         <span [translate]>DASHBOARD.GB_REMAINING</span>
         <span class="card-help">
-          <a ngbTooltip="{{ 'DASHBOARD.TOOLTIP_GB_REMAINING' | translate }}" placement="right" class="hide-narrow"><img src="assets/imgs/icons/question.svg"/></a>
+          <a ngbPopover="{{ 'DASHBOARD.TOOLTIP_GB_REMAINING' | translate }}" triggers="mouseenter:mouseleave" placement="right" class="hide-narrow"><img src="assets/imgs/icons/question.svg"/></a>
           <a ngbTooltip="{{ 'DASHBOARD.TOOLTIP_GB_REMAINING' | translate }}" placement="bottom" class="hide-wide"><img src="assets/imgs/icons/question.svg"/></a>
         </span>
       </div>
@@ -104,6 +104,7 @@
       </div>
     </div>
   </div>
+
   <div class="col-lg-12 total-earnings-container hide-minimized">
     <div class="card dashboard-card earnings-card">
       <div class="card-body">
@@ -113,15 +114,38 @@
           <a ngbTooltip="{{ 'DASHBOARD.TOOLTIP_TOTAL_EARNINGS' | translate }}" placement="right" class="hide-narrow"><img src="assets/imgs/icons/question.svg"/></a>
           <a ngbTooltip="{{ 'DASHBOARD.TOOLTIP_TOTAL_EARNINGS' | translate }}" placement="right" class="hide-wide"><img src="assets/imgs/icons/question.svg"/></a>
           <div class="time-span-container">
-            <span class="time-span" [ngClass]="{'time-span-selected': earningsSpan==='1h'}" (click)="changeSpan('1h')" [translate]>DASHBOARD.EARNING_SPAN_HOUR</span>
-            <span class="time-span" [ngClass]="{'time-span-selected': earningsSpan==='1d'}" (click)="changeSpan('1d')" [translate]>DASHBOARD.EARNING_SPAN_DAY</span>
-            <span class="time-span" [ngClass]="{'time-span-selected': earningsSpan==='1w'}" (click)="changeSpan('1w')" [translate]>DASHBOARD.EARNING_SPAN_WEEK</span>
-            <span class="time-span" [ngClass]="{'time-span-selected': earningsSpan==='1y'}" (click)="changeSpan('1y')" [translate]>DASHBOARD.EARNING_SPAN_YEAR</span>
-            <span class="time-span" [ngClass]="{'time-span-selected': earningsSpan==='all'}" (click)="changeSpan('all')" [translate]>DASHBOARD.EARNING_SPAN_ALL</span>
+            <span class="time-span" [ngClass]="{'time-span-selected': earningsSpan==='1h'}" (click)="changeEarningsSpan('1h')" [translate]>DASHBOARD.EARNING_SPAN_HOUR</span>
+            <span class="time-span" [ngClass]="{'time-span-selected': earningsSpan==='1d'}" (click)="changeEarningsSpan('1d')" [translate]>DASHBOARD.EARNING_SPAN_DAY</span>
+            <span class="time-span" [ngClass]="{'time-span-selected': earningsSpan==='1w'}" (click)="changeEarningsSpan('1w')" [translate]>DASHBOARD.EARNING_SPAN_WEEK</span>
+            <span class="time-span" [ngClass]="{'time-span-selected': earningsSpan==='1y'}" (click)="changeEarningsSpan('1y')" [translate]>DASHBOARD.EARNING_SPAN_YEAR</span>
+            <span class="time-span" [ngClass]="{'time-span-selected': earningsSpan==='all'}" (click)="changeEarningsSpan('all')" [translate]>DASHBOARD.EARNING_SPAN_ALL</span>
           </div>
         </div>
         <div class="chart-container">
           <canvas id="dashboardEarningsChart">{{ earningsChart }}</canvas>
+        </div>
+      </div>
+    </div>
+  </div>
+
+  <div class="col-lg-12 bandwidth-used-container hide-minimized">
+    <div class="card dashboard-card earnings-card">
+      <div class="card-body">
+        <div class="chart-header">
+          <span [translate]>DASHBOARD.BANDWIDTH_USED</span>
+          {{ bandwidthUsed }} (<span (click)="resetSettings()">GB</span>)
+          <a ngbTooltip="{{ 'DASHBOARD.TOOLTIP_BANDWIDTH_USED' | translate }}" placement="right" class="hide-narrow"><img src="assets/imgs/icons/question.svg"/></a>
+          <a ngbTooltip="{{ 'DASHBOARD.TOOLTIP_BANDWIDTH_USED' | translate }}" placement="right" class="hide-wide"><img src="assets/imgs/icons/question.svg"/></a>
+          <div class="time-span-container">
+            <span class="time-span" [ngClass]="{'time-span-selected': bandwidthUsedSpan==='1h'}" (click)="changeBandwidthUsedSpan('1h')" [translate]>DASHBOARD.EARNING_SPAN_HOUR</span>
+            <span class="time-span" [ngClass]="{'time-span-selected': bandwidthUsedSpan==='1d'}" (click)="changeBandwidthUsedSpan('1d')" [translate]>DASHBOARD.EARNING_SPAN_DAY</span>
+            <span class="time-span" [ngClass]="{'time-span-selected': bandwidthUsedSpan==='1w'}" (click)="changeBandwidthUsedSpan('1w')" [translate]>DASHBOARD.EARNING_SPAN_WEEK</span>
+            <span class="time-span" [ngClass]="{'time-span-selected': bandwidthUsedSpan==='1y'}" (click)="changeBandwidthUsedSpan('1y')" [translate]>DASHBOARD.EARNING_SPAN_YEAR</span>
+            <span class="time-span" [ngClass]="{'time-span-selected': bandwidthUsedSpan==='all'}" (click)="changeBandwidthUsedSpan('all')" [translate]>DASHBOARD.EARNING_SPAN_ALL</span>
+          </div>
+        </div>
+        <div class="chart-container">
+          <canvas id="bandwidthUsedChart">{{ bandwidthUsedChart }}</canvas>
         </div>
       </div>
     </div>

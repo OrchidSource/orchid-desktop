@@ -26,7 +26,8 @@ const CHART_OPTIONS = {
     }],
     yAxes: [{
       gridLines: {
-        display: false
+        // display: false
+        display: true
       },
       ticks: {
         beginAtZero: true,
@@ -68,8 +69,13 @@ export class DashboardComponent implements OnInit, OnDestroy {
   time: Date = new Date(0, 0, 0, 0, 0, 0, 0);
   selectedBrowsingLocation: BrowsingLocation;
   public earningsChart: Chart;
+  public bandwidthUsedChart: Chart;
   /** Time span to show in the chart */
   public earningsSpan: string = '1y';
+  public bandwidthUsedSpan: string = '1y';
+
+  public octEarned: number = 0;
+  public bandwidthUsed: number = 0;
 
   public gbRemaining: number;
   public tip_state: string = null;
@@ -235,8 +241,12 @@ export class DashboardComponent implements OnInit, OnDestroy {
    * Change the timespan shown in the earnings graph
    * @param  span the span to show
    */
-  changeSpan(span) {
+  changeEarningsSpan(span : string) {
     this.earningsSpan = span;
+  }
+
+  changeBandwidthUsedSpan(span : string) {
+    this.bandwidthUsedSpan = span;
   }
 
   /**
@@ -266,9 +276,31 @@ export class DashboardComponent implements OnInit, OnDestroy {
       }]
     };
 
+    var bandwidthUsedData = {
+      labels: ['Jun', 'Jul', 'Aug', 'Sep', 'Oct', 'Nov', 'Dec', 'Jan', 'Feb', 'Mar', 'Apr', 'May'],
+      datasets: [{
+        label: "Bandwidth used",
+        data: (Array(12).fill(0)), // TODO: use real data
+        fill: true,
+        borderColor: '#553591',
+        pointBorderColor: '#553591',
+        pointBorderWidth: '1',
+        backgroundColor: '#f2eefa',
+        pointBackgroundColor: '#fff',
+        pointRadius: 6,
+      }]
+
+    };
+
     this.earningsChart = new Chart('dashboardEarningsChart', {
       type: 'bar',
       data: earningsData,
+      options: CHART_OPTIONS
+    });
+
+    this.earningsChart = new Chart('bandwidthUsedChart', {
+      type: 'bar',
+      data: bandwidthUsedData,
       options: CHART_OPTIONS
     });
   }

@@ -23,6 +23,8 @@
     "CONNECTED": "Connected to Orchid network",
     "NOT_CONNECTED": "Not connected",
     "TOTAL_EARNINGS": "Total earnings",
+    "BANDWIDTH_USED": "Bandwidth used",
+    "TOOLTIP_BANDWIDTH_USED": "TODO: bandwidth used tooltip",
     "EARN_MORE": "Earn more",
     "FUND_ACCOUNT": "Fund wallet",
     "TOOLTIP_CONNECTION": "Connect or disconnect to the Orchid Network at any time. Through the Orchid Network, you can connect to the Ineternet safely and privately.",
