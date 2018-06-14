@@ -391,6 +391,7 @@ input[type=number]::-webkit-outer-spin-button {
 
 .btn.dropdown-toggle {
   background-color: white;
+  color: $gray;
 }
 // override the dropdown icon
 .btn.dropdown-toggle::after {
