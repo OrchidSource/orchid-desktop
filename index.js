@@ -4,9 +4,16 @@ const url = require('url');
 const fs = require('fs');
 const {spawn} = require('child_process');
 
+const SplashScreen = require("@trodi/electron-splashscreen");
+
+// import * as Splashscreen from "@trodi/electron-splashscreen";
+
+
 const NARROW_WIDTH = 285;
 const WIDE_WIDTH = 1024;
 const WIDE_HEIGHT = 618;
+
+
 
 // Keep a global reference of the window object, if you don't, the window will
 // be closed automatically when the JavaScript object is garbage collected.
@@ -23,7 +30,7 @@ function createWindow(width) {
   // and should be fixed to deal with multiple resolution sizes
   let _appIcon = nativeImage.createFromPath(__dirname + "/build/icons/icon_128x128.png");
 
-  win = new BrowserWindow({
+  const mainConfig = {
     width: width,
     height: WIDE_HEIGHT,
     minWidth: NARROW_WIDTH,
@@ -33,7 +40,19 @@ function createWindow(width) {
     minHeight: 410,
     icon: _appIcon,
     titleBarStyle: 'hidden'
-  });
+  };
+
+  const splashConfig = {
+    windowOpts: mainConfig,
+    templateUrl: path.join(__dirname, 'build', 'splash.html'),
+    splashScreenOpts: {
+      width: 425,
+      height: 325,
+    },
+  };
+
+  // win = new BrowserWindow();
+  win = SplashScreen.initSplashScreen(splashConfig);
 
   // and load the index.html of the app.
   win.loadURL(url.format({
