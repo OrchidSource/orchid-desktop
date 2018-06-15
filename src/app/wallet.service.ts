@@ -22,9 +22,12 @@ export class WalletService {
   constructor() {
     this.octBalanceBehaviorSubject = new BehaviorSubject(this.orcBalance);
     var amt = window.localStorage.getItem(MOCK_ORC_BALANCE_KEY);
+
     if (amt) {
       this.orcBalance = Number(amt);
       this.octBalanceBehaviorSubject.next(this.orcBalance);
+    } else {
+      this.octBalanceBehaviorSubject.next(0);
     }
   }
 
