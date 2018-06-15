@@ -2,13 +2,12 @@
  * Component for the main application pages. Has side/top (depending on size of window)
  * navigation links
  */
-import { AfterContentInit, Component, OnInit, TemplateRef, ViewChild } from '@angular/core';
+import { Component, OnInit } from '@angular/core';
 import { InternationalizationService } from '../internationalization-service/internationalization.service';
 import { OrchidNetService } from '../orchid-net/orchid-net.service';
 import { WalletService } from "../wallet.service";
 import { trigger, transition, animate, style } from '@angular/animations'
 import {BehaviorSubject } from 'rxjs/BehaviorSubject';
-import {NgbModal, ModalDismissReasons} from '@ng-bootstrap/ng-bootstrap';
 
 // magic number; will have to be changed if the number of languages changes
 const LANGUAGE_LIST_HEIGHT = "280px";
@@ -45,11 +44,10 @@ export class MainNavigationComponent implements OnInit {
   languageMenuOpened: boolean = false;
   LANGUAGES: Array<any>;
   selectedLanguage: object;
-  @ViewChild('noticeModal') noticeModal: TemplateRef<any>;
 
   octBalanceSubject: BehaviorSubject<number>;
 
-  constructor(private internationalization: InternationalizationService, private orchidNetService: OrchidNetService, private walletService: WalletService, private modalService: NgbModal) {
+  constructor(private internationalization: InternationalizationService, private orchidNetService: OrchidNetService, private walletService: WalletService) {
     this.LANGUAGES = internationalization.LANGUAGES;
     this.selectedLanguage = internationalization.selectedLanguage;
   }

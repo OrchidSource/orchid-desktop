@@ -474,3 +474,9 @@ a > img[src='assets/imgs/icons/question.svg'], {
 .hide-maximized, .hide-wide {
   @include hide-maximized();
 }
+
+// Put some space at the top so that when the user clicks the title bar the modal
+// isn't caused to close by the user clicking the modal backdrop
+ngb-modal-window.modal[role=dialog] {
+  margin-top: 35px;
+}

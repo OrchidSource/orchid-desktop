@@ -1,5 +1,4 @@
-import { Component, HostListener, OnInit, TemplateRef, ViewChild } from '@angular/core';
-import {NgbModal, ModalDismissReasons} from '@ng-bootstrap/ng-bootstrap';
+import { Component, HostListener, OnInit } from '@angular/core';
 
 
 enum KEY_CODE {
@@ -15,11 +14,9 @@ const LAST_LOCATION_LOCALSTORAGE_KEY = "FIRST_RUN_LAST_LOCATION";
 })
 export class FirstLaunchComponent implements OnInit {
 
-  @ViewChild('noticeModal') noticeModal: TemplateRef<any>;
-
   /** The page number */
   public page: number = 1;
-  constructor(private modalService: NgbModal) {}
+  constructor() {}
 
   ngOnInit() {
     var lastPage = this.getLastPage();
