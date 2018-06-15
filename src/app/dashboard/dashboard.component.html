@@ -11,7 +11,7 @@
 
       <div class="card-body text-center">
         <div class="gb-amount">
-          <span [textContent]="gbRemaining | number: '1.0-2'"></span>GB
+          <span [textContent]="(gbRemaining || 0) | number: '1.0-2'"></span>GB
         </div>
         <div class="text-center" *ngIf="gbRemaining == 0" [translate]>
           DASHBOARD.PLEASE_ADD
@@ -152,9 +152,9 @@
   </div>
 </div>
 
-<div class="tip-overlay" *ngIf="tip_state"></div>
+<div class="tip-overlay hide-narrow" *ngIf="tip_state"></div>
 
-<div class="tip-container" *ngIf="tip_state == 'BROWSING_LOCATION_TIP'">
+<div class="tip-container hide-narrow" *ngIf="tip_state == 'BROWSING_LOCATION_TIP'">
   <div class="row equal-height">
     <div class="col-lg-8 col-md-12 col-sm-12">
       <div class="card dashboard-card browsing-location-card-tip">
@@ -181,7 +181,7 @@
   </div>
 </div>
 
-<div class="tip-container" *ngIf="tip_state == 'FUND_ACCOUNT_TIP'">
+<div class="tip-container hide-narrow" *ngIf="tip_state == 'FUND_ACCOUNT_TIP'">
   <div class="row equal-height">
     <div class="col-lg-4 col-md-12 col-sm-12">
     </div>

@@ -15,7 +15,7 @@ const MOCK_ORC_BALANCE_KEY: string = 'MOCK_ORC_BALANCE_KEY';
 @Injectable()
 export class WalletService {
 
-  private orcBalance: number = 0;
+  private orcBalance: number = null;
 
   public octBalanceBehaviorSubject: BehaviorSubject<number>;
 
@@ -29,14 +29,18 @@ export class WalletService {
   }
 
   /**
-  * @return [description]
+   * @return The user's OCT balance. null if the user has not yet purchased any ORC
   */
   getOctBalance(): number {
     return this.orcBalance;
   }
 
+  /**
+   * Get the remaining GB.
+   * @return The amount of remaining GB. null if the user has not yet purchased any OCT
+   */
   getGBRemaining(): number {
-    return this.orcBalance * gbOrcRatio;
+    return this.orcBalance === null ? null : this.orcBalance * gbOrcRatio;
   }
 
   getUSDBalance(): number {

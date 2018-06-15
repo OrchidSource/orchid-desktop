@@ -101,13 +101,15 @@ export class DashboardComponent implements OnInit, OnDestroy {
   }
 
   ngOnInit() {
+    this.gbRemaining = this.walletService.getGBRemaining();
+
     // Check the first run state
     var firstRunStep: string = window.localStorage.getItem(FIRST_RUN_STEP_LOCALSTORAGE_KEY);
-    if (!firstRunStep) {
+    if (firstRunStep === 'DONE' || this.gbRemaining !== null) {
+      // do nothing; user has gone through first-run stuff, or has purchased OCT
+    } else if (!firstRunStep) {
       window.localStorage.setItem(FIRST_RUN_STEP_LOCALSTORAGE_KEY, '0');
       this.tip_state = TIP_STATES[0];
-    } else if (firstRunStep === 'DONE') {
-      // do nothing
     } else {
       let firstRunStepIdx: number = Number(firstRunStep);
       this.tip_state = TIP_STATES[firstRunStepIdx];
@@ -121,9 +123,8 @@ export class DashboardComponent implements OnInit, OnDestroy {
       }
     });
 
-    this.gbRemaining = this.walletService.getGBRemaining();
 
-    this.initializeChart()
+    this.initializeCharts()
 
     // This needs to be last
     if (this.orchidNetService.isConnected) {
@@ -258,7 +259,7 @@ export class DashboardComponent implements OnInit, OnDestroy {
     window.localStorage.clear();
   }
 
-  initializeChart() {
+  initializeCharts() {
     // mock data
     var earningsData = {
       // TODO: internationalize

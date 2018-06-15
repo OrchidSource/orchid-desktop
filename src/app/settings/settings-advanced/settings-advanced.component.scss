@@ -3,5 +3,7 @@
 .btn-link {
   padding-left: 0;
   position: relative;
-  left: -16px;
+  @include wide-breakpoint {
+    left: -16px;
+  }
 }

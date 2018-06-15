@@ -21,8 +21,16 @@
 
 $minimize-breakpoint: 575px;
 
+/** Put around styles that you only want applied when the app is its "narrow" mode */
 @mixin minimized-breakpoint() {
   @media (max-width: $minimize-breakpoint) {
+    @content;
+  }
+}
+
+/** Put around styles that you only want applied when the app is its "wide" mode */
+@mixin wide-breakpoint() {
+  @media (min-width: $minimize-breakpoint) {
     @content;
   }
 }
