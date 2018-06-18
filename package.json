@@ -14,7 +14,7 @@
     "test": "ng test",
     "lint": "ng lint",
     "build-mac-executable": "npm run build && node_modules/.bin/electron-builder --mac",
-    "build-win-executable": "npm run build && docker run --rm -ti -v ${PWD}:/project -v ${PWD}/node-modules:/project/node_modules -v ~/.cache/electron:/root/.cache/electron -v ~/.cache/electron-builder:/root/.cache/electron-builder electronuserland/electron-builder:wine /bin/bash -c \"yarn && node_modules/.bin/electron-builder --win\"",
+    "build-win-executable": "npm run build && docker run --rm -ti --env ELECTRON_BUILDER_CACHE=/root/.cache/electron-builder -v ${PWD}:/project -v ${PWD##*/}-node-modules:/project/node_modules -v ~/.cache/electron:/root/.cache/electron -v ~/.cache/electron-builder:/root/.cache/electron-builder electronuserland/builder:wine \"yarn && node_modules/.bin/electron-builder --win\"",
     "build-linux-executable": "npm run build && npm run generate-icon-linux && docker run --rm -ti -v ${PWD}:/project -v ${PWD}/node-modules:/project/node_modules -v ~/.cache/electron:/root/.cache/electron -v ~/.cache/electron-builder:/root/.cache/electron-builder -e ELECTRON_BUILDER_ALLOW_UNRESOLVED_DEPENDENCIES='true' electronuserland/electron-builder:latest /bin/bash -c \"yarn && node_modules/.bin/electron-builder\"",
     "postinstall": "node_modules/.bin/electron-builder install-app-deps",
     "generate-icon": "iconutil -c icns icons/orchid.iconset --output ./build-resources/icon.icns",
@@ -25,10 +25,10 @@
     "type": "git",
     "url": ""
   },
-  "author": "Mesh Network Lab Inc.",
+  "author": "Orchid Labs, Inc.",
   "license": "AGPLv3",
   "bugs": {
-    "url": "https://meshlabs.org/support"
+    "url": "https://orchid.com/support"
   },
   "build": {
     "appId": "network.orchid.macosx.app",
