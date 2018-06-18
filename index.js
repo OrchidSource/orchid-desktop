@@ -14,6 +14,25 @@ const WIDE_WIDTH = 1024;
 const WIDE_HEIGHT = 618;
 
 
+var IS_DARWIN = false;
+var IS_WINDOWS = false;
+var IS_LINUX = false;
+
+switch (process.platform) {
+  case "darwin":
+    IS_DARWIN = true;
+    break;
+  case "win32":
+    IS_WINDOWS = true;
+    break;
+  case "linux":
+    IS_LINUX = true;
+    break;
+  default:
+    throw new Error("unsupported platform: " + process.platform);
+}
+
+
 
 // Keep a global reference of the window object, if you don't, the window will
 // be closed automatically when the JavaScript object is garbage collected.
@@ -51,7 +70,7 @@ function createWindow(width) {
     },
   };
 
-  // win = new BrowserWindow();
+  // win = new BrowserWindow(mainConfig);
   win = SplashScreen.initSplashScreen(splashConfig);
 
   // and load the index.html of the app.
@@ -96,24 +115,32 @@ function createWindow(width) {
 
     // If the window was closed, remove from dock. The user can get back to the UI
     // by clicking the tray icon
-    app.dock.hide();
+    if (IS_DARWIN) {
+      app.dock.hide();
+    }
 
     win = null;
   });
 
   win.on('minimize', () => {
     console.log('minimize');
-    app.dock.show();
+    if (IS_DARWIN) {
+      app.dock.show();
+    }
   });
 
   win.on('maximize', () => {
     console.log('maximize');
-    app.dock.show();
+    if (IS_DARWIN) {
+      app.dock.show();
+    }
   });
 
 
   // Show the icon in the dock; it may have been hidden if the user previously closed the window
-  app.dock.show();
+  if (IS_DARWIN) {
+    app.dock.show();
+  }
 }
 
 
