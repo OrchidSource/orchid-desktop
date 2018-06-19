@@ -59,6 +59,7 @@
   "dependencies": {
     "7zip-bin": "^1.0.1",
     "@angular/animations": "^5.0.0",
+    "@angular/cdk": "^5.0.0",
     "@angular/common": "^5.0.0",
     "@angular/compiler": "^5.0.0",
     "@angular/core": "^5.0.0",
