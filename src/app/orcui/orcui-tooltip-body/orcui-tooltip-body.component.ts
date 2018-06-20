@@ -1,4 +1,4 @@
-import { Component, HostListener, OnInit } from '@angular/core';
+import { Component, HostListener, OnInit, TemplateRef, ViewChild } from '@angular/core';
 import { OrcuiTooltipService } from '../orcui-tooltip/orcui-tooltip.service';
 
 @Component({
@@ -10,15 +10,20 @@ export class OrcuiTooltipBodyComponent implements OnInit {
 
   constructor(private tooltipService: OrcuiTooltipService) { }
 
+  public tip: string = '';
+
+  // @ViewChild('tooltipTemplateRef') tooltipTemplateRef: TemplateRef<any>;
+
   @HostListener('mouseenter')
   onMouseEnter(): void {
-    this.tooltipService.hoveringTooltip = true;
+    console.log('tooltip-body: mouseenter');
+    this.tooltipService.setHoveringTooltip(true);
   }
 
   @HostListener('mouseleave')
   onMouseLeave(): void {
-    // TODO: trigger event to indicate 
-    this.tooltipService.hoveringTooltip = false;
+    console.log('tooltip-body: mouseleave');
+    this.tooltipService.setHoveringTooltip(false);
   }
 
   ngOnInit() {
