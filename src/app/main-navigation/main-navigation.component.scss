@@ -2,7 +2,6 @@
 @import '../../assets/scss/bootstrap_overrides';
 @import '../../assets/scss/mixins';
 
-$sidebar-width: 180px;
 $sidebar-padding: 30px;
 
 #wrapper {
@@ -286,7 +285,7 @@ $minimized-link-height: 45px;
   background-color: $content-background;
   flex: 0 1;
   padding: $orchid-page-margin-width 0;
-  
+
   @include minimized-breakpoint {
     padding-top: 0px;
     margin-top: 45px;

@@ -408,8 +408,13 @@ input[type=number]::-webkit-outer-spin-button {
  * The style for components put in the "modal" outlet
  */
 .routed-modal-container {
-  height: 100%;
   width: 100%;
+  top: 0;
+
+  height: calc(100% - #{$topbar-height-wide});
+  margin-top: $topbar-height-wide;
+
+  padding-left: $sidebar-width;
   position: fixed;
   z-index: 100;
   display: inline-flex;
@@ -422,8 +427,7 @@ input[type=number]::-webkit-outer-spin-button {
     padding: $orchid-gutter-width;
 
     // set these to change the size
-    width: 50%;
-    // height: 50%;
+    width: 82%;
     margin: auto auto;
     box-shadow: $default-shadow;
   }
@@ -451,6 +455,8 @@ input[type=number]::-webkit-outer-spin-button {
 
 @include minimized-breakpoint {
   .routed-modal-container {
+    padding-left: 0;
+
     .routed-modal {
       margin-left: 0;
       margin-right: 0;
