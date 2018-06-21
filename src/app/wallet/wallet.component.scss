@@ -21,6 +21,7 @@
     // width: 66%;
 
     .wallet-backup {
+      height: 50px; // So it takes up space even after the button has been removed
       > .btn {
         float: right;
         width: 65%;
