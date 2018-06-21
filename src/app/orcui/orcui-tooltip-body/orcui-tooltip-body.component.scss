@@ -3,18 +3,17 @@
 .tooltip-container {
   // dimensions are maybe handled by the CDK library?
   min-width: 250px;
-  max-width: 300px;
+  max-width: 400px;
   border-radius: 5px;
   box-shadow: 0 2px 10px 0 #74748026;
   background-color: $brand-muted;
   border: solid 1px $gray-lighter;
   box-shadow: 0 2px 10px 0 rgba(116,116,128,0.15);
   padding: 20px 15px;
+  color: $gray;
 }
 
 .tooltip-container:after, .tooltip-container:before {
-	right: calc(100% - 1px);
-	top: 50%;
 	border: solid transparent;
 	content: " ";
 	height: 0;
@@ -23,16 +22,76 @@
 	pointer-events: none;
 }
 
-.tooltip-container:after {
-	// border-color: $gray-lighter;
+.right.tooltip-container:after, .right.tooltip-container:before {
+	right: calc(100% - 1px);
+	top: 20px;
+}
+
+.right.tooltip-container:after {
 	border-right-color: $brand-muted;
 	border-width: 13px;
 	margin-top: -13px;
 }
 
-.tooltip-container:before {
-	// border-color: $brand-muted;
+.right.tooltip-container:before {
 	border-right-color: $gray-lighter;
+	border-width: 14px;
+	margin-top: -14px;
+}
+
+.left.tooltip-container:after, .left.tooltip-container:before {
+	left: calc(100% - 1px);
+	top: 20px;
+}
+
+.left.tooltip-container:after {
+	border-left-color: $brand-muted;
+	border-width: 13px;
+	margin-top: -13px;
+}
+
+.left.tooltip-container:before {
+	border-left-color: $gray-lighter;
+	border-width: 14px;
+	margin-top: -14px;
+}
+
+.bottom.tooltip-container:after, .bottom.tooltip-container:before {
+	bottom: calc(100% - 1px);
+}
+
+.bottom.tooltip-container:after {
+	left: calc(50% - 13px);
+
+	border-bottom-color: $brand-muted;
+	border-width: 13px;
+	margin-top: -13px;
+}
+
+.bottom.tooltip-container:before {
+  left: calc( 50% - 14px);
+
+	border-bottom-color: $gray-lighter;
+	border-width: 14px;
+	margin-top: -14px;
+}
+
+
+.top.tooltip-container:after, .top.tooltip-container:before {
+}
+
+.top.tooltip-container:after {
+  bottom: -25px;
+	left: calc(50% - 13px);
+	border-top-color: $brand-muted;
+	border-width: 13px;
+	margin-top: -13px;
+}
+
+.top.tooltip-container:before {
+  bottom: -27px;
+  left: calc(50% - 14px);
+	border-top-color: $gray-lighter;
 	border-width: 14px;
 	margin-top: -14px;
 }

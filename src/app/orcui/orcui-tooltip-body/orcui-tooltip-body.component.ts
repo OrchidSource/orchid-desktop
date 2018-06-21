@@ -11,8 +11,14 @@ export class OrcuiTooltipBodyComponent implements OnInit {
   constructor(private tooltipService: OrcuiTooltipService) { }
 
   public tip: string = '';
+  public tipPlacement: string = 'right';
 
-  // @ViewChild('tooltipTemplateRef') tooltipTemplateRef: TemplateRef<any>;
+  /**
+   * Click to close
+   */
+  @HostListener('click') onClick(){
+    this.tooltipService.setHoveringTooltip(false);
+  }
 
   @HostListener('mouseenter')
   onMouseEnter(): void {

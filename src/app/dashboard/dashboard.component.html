@@ -4,7 +4,8 @@
       <div class="card-header">
         <span [translate]>DASHBOARD.GB_REMAINING</span>
         <span class="card-help">
-          <a orcui-tooltip="{{ 'DASHBOARD.TOOLTIP_GB_REMAINING' | translate }}" class="hide-narrow"><img src="assets/imgs/icons/question.svg"/></a>
+          <a orcui-tooltip="{{ 'DASHBOARD.TOOLTIP_GB_REMAINING' | translate }}" orcui-tooltip-placement="right" class="hide-narrow"><img src="assets/imgs/icons/question.svg"/></a>
+          <a orcui-tooltip="{{ 'DASHBOARD.TOOLTIP_GB_REMAINING' | translate }}" orcui-tooltip-placement="bottom" class="hide-wide"><img src="assets/imgs/icons/question.svg"/></a>
         </span>
       </div>
 
@@ -27,7 +28,7 @@
     <div class="card dashboard-card connection-status-card">
       <div class="card-header">
         <span>Connection Status</span>
-        <span class="card-help"><a ngbTooltip="{{ 'DASHBOARD.TOOLTIP_CONNECTION' | translate }}" placement="bottom"><img src="assets/imgs/icons/question.svg"/></a></span>
+        <span class="card-help"><a  orcui-tooltip="{{ 'DASHBOARD.TOOLTIP_CONNECTION' | translate }}" orcui-tooltip-placement="bottom"><img src="assets/imgs/icons/question.svg"/></a></span>
       </div>
 
       <div class="card-body" ng-controller="Ctrl" ng-app="sec-val">
@@ -54,8 +55,9 @@
     <div class="card dashboard-card browsing-location-card">
       <div class="card-header">
         <span [translate]>DASHBOARD.DEFAULT_LOCATION</span>
-        <span class="card-help"><a ngbTooltip="{{ 'DASHBOARD.TOOLTIP_LOCATION' | translate }}" placement="left" class="hide-narrow"><img src="assets/imgs/icons/question.svg"/></a></span>
-        <span class="card-help"><a ngbTooltip="{{ 'DASHBOARD.TOOLTIP_LOCATION' | translate }}" placement="top" class="hide-wide"><img src="assets/imgs/icons/question.svg"/></a></span>
+
+        <span class="card-help"><a  orcui-tooltip="{{ 'DASHBOARD.TOOLTIP_LOCATION' | translate }}" orcui-tooltip-placement="left" class="hide-narrow"><img src="assets/imgs/icons/question.svg"/></a></span>
+        <span class="card-help"><a  orcui-tooltip="{{ 'DASHBOARD.TOOLTIP_LOCATION' | translate }}" orcui-tooltip-placement="top" class="hide-wide"><img src="assets/imgs/icons/question.svg"/></a></span>
       </div>
 
       <div class="card-body hide-minimized">
@@ -110,8 +112,8 @@
         <div class="chart-header">
           <span [translate]>DASHBOARD.TOTAL_EARNINGS</span>
           {{ octEarned }} (<span (click)="resetSettings()">OCT</span>)
-          <a ngbTooltip="{{ 'DASHBOARD.TOOLTIP_TOTAL_EARNINGS' | translate }}" placement="right" class="hide-narrow"><img src="assets/imgs/icons/question.svg"/></a>
-          <a ngbTooltip="{{ 'DASHBOARD.TOOLTIP_TOTAL_EARNINGS' | translate }}" placement="right" class="hide-wide"><img src="assets/imgs/icons/question.svg"/></a>
+          <a orcui-tooltip="{{ 'DASHBOARD.TOOLTIP_TOTAL_EARNINGS' | translate }}" orcui-tooltip-placement="right" class="hide-narrow"><img src="assets/imgs/icons/question.svg"/></a>
+          <a orcui-tooltip="{{ 'DASHBOARD.TOOLTIP_TOTAL_EARNINGS' | translate }}" orcui-tooltip-placement="right" class="hide-wide"><img src="assets/imgs/icons/question.svg"/></a>
           <div class="time-span-container">
             <span class="time-span" [ngClass]="{'time-span-selected': earningsSpan==='1h'}" (click)="changeEarningsSpan('1h')" [translate]>DASHBOARD.EARNING_SPAN_HOUR</span>
             <span class="time-span" [ngClass]="{'time-span-selected': earningsSpan==='1d'}" (click)="changeEarningsSpan('1d')" [translate]>DASHBOARD.EARNING_SPAN_DAY</span>
@@ -133,8 +135,8 @@
         <div class="chart-header">
           <span [translate]>DASHBOARD.BANDWIDTH_USED</span>
           {{ bandwidthUsed }} (<span (click)="resetSettings()">GB</span>)
-          <a ngbTooltip="{{ 'DASHBOARD.TOOLTIP_BANDWIDTH_USED' | translate }}" placement="right" class="hide-narrow"><img src="assets/imgs/icons/question.svg"/></a>
-          <a ngbTooltip="{{ 'DASHBOARD.TOOLTIP_BANDWIDTH_USED' | translate }}" placement="right" class="hide-wide"><img src="assets/imgs/icons/question.svg"/></a>
+          <a orcui-tooltip="{{ 'DASHBOARD.TOOLTIP_BANDWIDTH_USED' | translate }}" orcui-tooltip-placement="right" class="hide-narrow"><img src="assets/imgs/icons/question.svg"/></a>
+          <a orcui-tooltip="{{ 'DASHBOARD.TOOLTIP_BANDWIDTH_USED' | translate }}" orcui-tooltip-placement="right" class="hide-wide"><img src="assets/imgs/icons/question.svg"/></a>
           <div class="time-span-container">
             <span class="time-span" [ngClass]="{'time-span-selected': bandwidthUsedSpan==='1h'}" (click)="changeBandwidthUsedSpan('1h')" [translate]>DASHBOARD.EARNING_SPAN_HOUR</span>
             <span class="time-span" [ngClass]="{'time-span-selected': bandwidthUsedSpan==='1d'}" (click)="changeBandwidthUsedSpan('1d')" [translate]>DASHBOARD.EARNING_SPAN_DAY</span>
