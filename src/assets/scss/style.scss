@@ -194,6 +194,11 @@ h4, .h4 {
   &:active:focus:not(:disabled):not(.disabled), &:focus {
     box-shadow: none;
   }
+  &:disabled {
+    background-color: #aeaeae;
+    border-color: #aeaeae;
+    color: white;
+  }
 }
 
 .btn-secondary {

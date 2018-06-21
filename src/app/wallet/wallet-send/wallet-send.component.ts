@@ -29,7 +29,7 @@ export class WalletSendComponent implements OnInit {
     this.sendForm = new FormGroup({
       sendAmountOct: new FormControl('', [Validators.required, Validators.pattern(/^[0-9]*\.?[0-9]+$/)]),
       sendAmountNative: new FormControl('', [Validators.required, Validators.pattern(/^[0-9]*\.?[0-9]+$/)]),
-      ercAddress: new FormControl('', [Validators.required, Validators.pattern(/^0x.+$/)]), // TODO: add better ERC20 format validation
+      ercAddress: new FormControl('', [Validators.required, Validators.pattern(/^0x[0-9a-z]{40}$/i)]),
       // add the checkboxes; They need to be made to accept FormControls
     });
 
