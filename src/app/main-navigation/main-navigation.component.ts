@@ -7,7 +7,7 @@ import { InternationalizationService } from '../internationalization-service/int
 import { OrchidNetService } from '../orchid-net/orchid-net.service';
 import { WalletService } from "../wallet.service";
 import { trigger, transition, animate, style } from '@angular/animations'
-import {BehaviorSubject } from 'rxjs/BehaviorSubject';
+import { BehaviorSubject } from 'rxjs/BehaviorSubject';
 
 // magic number; will have to be changed if the number of languages changes
 const LANGUAGE_LIST_HEIGHT = "280px";
@@ -21,17 +21,17 @@ const LANGUAGE_LIST_TRANSITION = "200ms ease-in";
     trigger('languageSlideOpen', [
       transition(':enter', [
         style({
-           'height': '0px',
-           'overflow': 'hidden'
-         }),
-        animate(LANGUAGE_LIST_TRANSITION, style({ 'height': LANGUAGE_LIST_HEIGHT}))
+          'height': '0px',
+          'overflow': 'hidden'
+        }),
+        animate(LANGUAGE_LIST_TRANSITION, style({ 'height': LANGUAGE_LIST_HEIGHT }))
       ]),
       transition(':leave', [
         style({
-           'height': LANGUAGE_LIST_HEIGHT,
-           'overflow': 'hidden'
-         }),
-        animate(LANGUAGE_LIST_TRANSITION, style({'height': '0px'}))
+          'height': LANGUAGE_LIST_HEIGHT,
+          'overflow': 'hidden'
+        }),
+        animate(LANGUAGE_LIST_TRANSITION, style({ 'height': '0px' }))
       ])
     ]),
 
@@ -91,7 +91,7 @@ export class MainNavigationComponent implements OnInit {
    */
   toggleOnOff() {
     // Don't let the user connect if she has no ORCs
-    if ( !(this.walletService.getOctBalance() > 0) && !this.connected) {
+    if (!(this.walletService.getOctBalance() > 0) && !this.connected) {
       return;
     }
 
