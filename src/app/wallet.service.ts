@@ -1,6 +1,5 @@
 import { Injectable } from '@angular/core';
-import {BehaviorSubject } from 'rxjs/BehaviorSubject';
-
+import { BehaviorSubject } from 'rxjs/BehaviorSubject';
 
 const gbOrcRatio: number = 5.899;
 const usdOrcRatio: number = 6.685;
@@ -68,7 +67,7 @@ export class WalletService {
   }
 
   /// Mock; holds transactions
-  private  transactions: object[] = [];
+  private transactions: object[] = [];
 
   /** get a list of getTransactions
    * TODO: create transaction type
@@ -81,7 +80,7 @@ export class WalletService {
   mockSomeTransaction(): void {
     var today = new Date();
 
-    for (let i = 0; i < 10; i ++) {
+    for (let i = 0; i < 10; i++) {
       this.transactions.push({
         from: 'X09HS7GHFFIDXIANGIA',
         to: 'F10HW40HFFIGXIACQIA',
@@ -93,13 +92,13 @@ export class WalletService {
   }
 
   mockTransaction(amount: number, status: string): void {
-      this.transactions.push({
-        from: 'X09HS7GHFFIDXIANGIA',
-        to: WALLET_ADDRESS,
-        status: status,
-        amount: amount,
-        date: new Date()
-      })
+    this.transactions.push({
+      from: 'X09HS7GHFFIDXIANGIA',
+      to: WALLET_ADDRESS,
+      status: status,
+      amount: amount,
+      date: new Date()
+    })
   }
 
   /**
@@ -109,7 +108,7 @@ export class WalletService {
   * @return        A promise
   */
   debitOrc(amount: number): Promise<string> {
-    if (amount > this.orcBalance){
+    if (amount > this.orcBalance) {
       return Promise.reject('You do not have enough credits');
     }
 

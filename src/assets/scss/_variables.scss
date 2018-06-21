@@ -68,8 +68,6 @@ $gray-default: $gray-lighter;
 
 /// The orchid colors
 
-// color that goes behind cards
-$content-background: #f5f6fa;
 
 // navbar colors
 $navbar-background: #332058;
@@ -95,6 +93,10 @@ $brand-primary-clicked: #37225E !default;
 $brand-secondary: #00B3B4 !default;
 $brand-secondary-hover: #00CCCC !default;
 $brand-secondary-clicked: #008080 !default;
+
+$brand-muted: #f5f6fa;
+// color that goes behind cards; deprecated in favor of $brand-muted
+$content-background: $brand-muted;
 
 
 $brand-primary-light:       green !default;

@@ -7,6 +7,8 @@
 @import './variables';
 @import './bootstrap_overrides';
 @import '~bootstrap/scss/bootstrap.scss';
+@import '~@angular/cdk/_overlay.scss';
+@include cdk-overlay();
 
 /*common */
 html {
