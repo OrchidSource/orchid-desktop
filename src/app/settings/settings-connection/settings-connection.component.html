@@ -4,21 +4,21 @@
       <span class="small" [translate]>SETTINGS.LAUNCH_STARTUP</span>
       <a orcui-tooltip="{{ 'SETTINGS.TOOLTIP_LAUNCH_STARTUP' | translate }}" orcui-tooltip-placement="right"  class="hide-narrow"><img src="assets/imgs/icons/question.svg"/></a>
       <a orcui-tooltip="{{ 'SETTINGS.TOOLTIP_LAUNCH_STARTUP' | translate }}" orcui-tooltip-placement="bottom" class="hide-wide"><img src="assets/imgs/icons/question.svg"/></a>
-      <ui-toggle [(isSelected)]="settings.LAUNCH_STARTUP"></ui-toggle>
+      <orcui-toggle [(isSelected)]="settings.LAUNCH_STARTUP"></orcui-toggle>
     </div>
 
     <div class="setting-item">
       <span class="small" [translate]>SETTINGS.CONNECT_ON_STARTUP</span>
       <a orcui-tooltip="{{ 'SETTINGS.TOOLTIP_CONNECT_ON_STARTUP' | translate }}" orcui-tooltip-placement="right" class="hide-narrow"><img src="assets/imgs/icons/question.svg"/></a>
       <a orcui-tooltip="{{ 'SETTINGS.TOOLTIP_CONNECT_ON_STARTUP' | translate }}" orcui-tooltip-placement="bottom" class="hide-wide"><img src="assets/imgs/icons/question.svg"/></a>
-      <ui-toggle [(isSelected)]="settings.CONNECT_ON_STARTUP"></ui-toggle>
+      <orcui-toggle [(isSelected)]="settings.CONNECT_ON_STARTUP"></orcui-toggle>
     </div>
 
     <div class="setting-item">
       <span class="small" [translate]>SETTINGS.RELAY_NODE</span>
       <a orcui-tooltip="{{ 'SETTINGS.TOOLTIP_RELAY_NODE' | translate }}" orcui-tooltip-placement="right" class="hide-narrow"><img src="assets/imgs/icons/question.svg"/></a>
       <a orcui-tooltip="{{ 'SETTINGS.TOOLTIP_RELAY_NODE' | translate }}" orcui-tooltip-placement="bottom" class="hide-wide"><img src="assets/imgs/icons/question.svg"/></a>
-      <ui-toggle [(isSelected)]="settings.RELAY_NODE" isSelectedChange="settingsChanged()"></ui-toggle>
+      <orcui-toggle [(isSelected)]="settings.RELAY_NODE" isSelectedChange="settingsChanged()"></orcui-toggle>
     </div>
 
     <div class="setting-item setting-item-contains-input limit-bandwidth" *ngIf="settings.RELAY_NODE">
@@ -28,7 +28,7 @@
       <span class="left-of-toggle" [hidden]="!settings.TOOLTIP_LIMIT_BANDWIDTH">
         <input type="number" class="form-control" [(ngModel)]="settings.LIMIT_BANDWIDTH_AMOUNT">GB/{{ 'GENERAL.MONTH_ABBREVIATION' | translate}}
       </span>
-      <ui-toggle [(isSelected)]="settings.TOOLTIP_LIMIT_BANDWIDTH"></ui-toggle>
+      <orcui-toggle [(isSelected)]="settings.TOOLTIP_LIMIT_BANDWIDTH"></orcui-toggle>
     </div>
 
     <div class="setting-item">
