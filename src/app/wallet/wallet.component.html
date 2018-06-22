@@ -8,8 +8,12 @@
   <div class="wallet-actions col-md-8">
     <div class="wallet-backup">
       <div class="btn btn-img btn-warning" [routerLink]="['', {outlets: {modal:'wallet-backup'}}]" *ngIf="!(isWalletBackedUp | async)" [@walletBackupSlideClosed]>
-        <img src="assets/imgs/icons/alert-circle.png" aria-disabled>
+        <img src="assets/imgs/icons/Alert-circle.png"
+             srcset="assets/imgs/icons/Alert-circle@2x.png 2x, assets/imgs/icons/Alert-circle@3x.png 3x"
+             class="img-left"
+             aria-disabled>
         <span [translate]>WALLET.PLEASE_BACKUP</span>
+        <img src="assets/imgs/icons/Arrow.png" srcset="assets/imgs/icons/Arrow@2x.png 2x, assets/imgs/icons/Arrow@3x.png 3x" class="img-right" aria-disabled>
       </div>
     </div>
     <div class="wallet-button-row">
@@ -18,11 +22,11 @@
       </span> -->
       <span></span>
       <span class="btn btn-img btn-secondary" [routerLink]="['', {outlets: {modal: 'wallet-send'}}]">
-        <img src="assets/imgs/icons/send.png" aria-disabled>
+        <img src="assets/imgs/icons/Send.png" srcset="assets/imgs/icons/Send@2x.png 3x, assets/imgs/icons/Send@2x.png 3x" aria-disabled>
         <span [translate]>WALLET.SEND</span>
       </span>
       <span class="btn btn-img btn-border" [routerLink]="['', {outlets: {modal:'wallet-receive'}}]">
-        <img src="assets/imgs/icons/qr-code-gray.svg" aria-disabled>
+        <img src="assets/imgs/icons/qr-code-gray.png" srcset="assets/imgs/icons/qr-code-gray@2x.png 2x, assets/imgs/icons/qr-code-gray@3x.png 3x" aria-disabled>
         <span [translate]>WALLET.RECEIVE</span>
       </span>
     </div>
@@ -31,7 +35,9 @@
 
 <div class="wallet-top-area-narrow hide-wide">
   <div class="btn btn-img btn-warning backup-button" [routerLink]="['', {outlets: {modal:'wallet-backup'}}]" *ngIf="!(isWalletBackedUp | async)">
-    <img src="assets/imgs/icons/alert-circle.svg" aria-disabled>
+    <img src="assets/imgs/icons/Alert-circle.png"
+         srcset="assets/imgs/icons/Alert-circle@2x.png 2x, assets/imgs/icons/Alert-circle@3x.png 3x"
+         aria-disabled>
     <span [translate]>WALLET.PLEASE_BACKUP</span>
   </div>
 
@@ -47,11 +53,11 @@
       <span [translate]>WALLET.SHARE</span>
     </span> -->
     <span class="btn btn-img btn-secondary" [routerLink]="['', {outlets: {modal: 'wallet-send'}}]">
-      <img src="assets/imgs/icons/send.svg" aria-disabled>
+      <img src="assets/imgs/icons/Send.png" srcset="assets/imgs/icons/Send@2x.png 3x, assets/imgs/icons/Send@2x.png 3x" aria-disabled>
       <span [translate]>WALLET.SEND</span>
     </span>
     <span class="btn btn-img btn-border" [routerLink]="['', {outlets: {modal:'wallet-receive'}}]">
-      <img src="assets/imgs/icons/qr-code-gray.png" aria-disabled>
+      <img src="assets/imgs/icons/qr-code-gray.png" srcset="assets/imgs/icons/qr-code-gray@2x.png 2x, assets/imgs/icons/qr-code-gray@3x.png 3x" aria-disabled>
       <span [translate]>WALLET.RECEIVE</span>
     </span>
   </div>

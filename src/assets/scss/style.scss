@@ -211,6 +211,7 @@ button:focus, .btn:focus {
 
 // an img or .img element inside a .btn.btn-img will be placed at the left-hand side of the button
 // an img or .img element inside a .btn.btn-img-right will be placed at the right-hand side of the button
+// use .btn > .img-right and .btn > .img-left to put images on both the left and right
 .btn.btn-img, .btn.btn-img-right {
   position: relative;
   img, .img {
@@ -222,11 +223,15 @@ button:focus, .btn:focus {
   span {
     padding: 0 18px; // To prevent overlapping with image when text gets long
   }
-}
 
-.btn.btn-img {
-  img, .img {
+  // left by default
+  img, .img, .img-left {
     left: 14px;
+  }
+
+  img.img-right, .img.img-right {
+    left: unset;
+    right: 14px;
   }
 }
 

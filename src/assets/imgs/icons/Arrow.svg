@@ -1,0 +1,26 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<svg width="23px" height="17px" viewBox="0 0 23 17" version="1.1" xmlns="http://www.w3.org/2000/svg" xmlns:xlink="http://www.w3.org/1999/xlink">
+    <!-- Generator: Sketch 50.2 (55047) - http://www.bohemiancoding.com/sketch -->
+    <title>Icons/Arrow</title>
+    <desc>Created with Sketch.</desc>
+    <defs>
+        <path d="M4.65749008,12.1666667 L9.83105985,17.4880527 C10.2785356,17.9483135 10.2785356,18.6945436 9.83105985,19.1548044 C9.3835841,19.6150652 8.65808256,19.6150652 8.21060681,19.1548044 L1.33560681,12.0833758 C0.888131062,11.6231151 0.888131062,10.8768849 1.33560681,10.4166242 L8.21060681,3.34519558 C8.65808256,2.88493481 9.3835841,2.88493481 9.83105985,3.34519558 C10.2785356,3.80545635 10.2785356,4.55168651 9.83105985,5.01194728 L4.65749008,10.3333333 L22.7777778,10.3333333 C23.4527925,10.3333333 24,10.743739 24,11.25 C24,11.756261 23.4527925,12.1666667 22.7777778,12.1666667 L4.65749008,12.1666667 Z" id="path-1"></path>
+    </defs>
+    <g id="Symbols" stroke="none" stroke-width="1" fill="none" fill-rule="evenodd">
+        <g id="Alert-message" transform="translate(-295.000000, -9.000000)">
+            <g transform="translate(3.000000, 0.000000)" id="Icons/Arrow">
+                <g transform="translate(304.000000, 18.000000) scale(-1, 1) translate(-304.000000, -18.000000) translate(292.000000, 6.000000)">
+                    <mask id="mask-2" fill="white">
+                        <use xlink:href="#path-1"></use>
+                    </mask>
+                    <use id="Arrow" fill="#000000" fill-rule="nonzero" xlink:href="#path-1"></use>
+                    <g id="Colors/BG/White_Dashboard-Card-BG" mask="url(#mask-2)" fill="#FFFFFF" fill-rule="evenodd">
+                        <g transform="translate(0.000000, 1.000000)" id="Rectangle-2">
+                            <rect x="0" y="0" width="24" height="24"></rect>
+                        </g>
+                    </g>
+                </g>
+            </g>
+        </g>
+    </g>
+</svg>
