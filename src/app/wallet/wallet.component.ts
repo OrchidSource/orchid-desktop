@@ -1,4 +1,5 @@
 import { Component, OnInit } from '@angular/core';
+import { BehaviorSubject } from 'rxjs/BehaviorSubject';
 import { WalletService } from "../wallet.service";
 import { trigger, transition, animate, style } from '@angular/animations'
 
@@ -31,7 +32,7 @@ export class WalletComponent implements OnInit {
   transactions: Array<object> = [];
   orcBalance: number;
   usdBalance: number;
-  walletBackedUp: boolean = false;
+  isWalletBackedUp: BehaviorSubject<boolean>;
 
   constructor(private walletService: WalletService) { }
 
@@ -39,13 +40,7 @@ export class WalletComponent implements OnInit {
     this.transactions = this.walletService.getTransactions();
     this.orcBalance = this.walletService.getOctBalance();
     this.usdBalance = this.walletService.getUSDBalance();
-
-    this.walletBackedUp = !!window.localStorage.getItem('WALLET_BACKED_UP');
-  }
-
-  setWalletBackedUp() {
-    this.walletBackedUp = true;
-    window.localStorage.setItem('WALLET_BACKED_UP', 'T');
+    this.isWalletBackedUp = this.walletService.isWalletBackedUp;
   }
 
 }

@@ -7,7 +7,7 @@
   </div>
   <div class="wallet-actions col-md-8">
     <div class="wallet-backup">
-      <div class="btn btn-img btn-warning" [routerLink]="['', {outlets: {modal:'wallet-backup'}}]" (click)="setWalletBackedUp()" *ngIf="!walletBackedUp" [@walletBackupSlideClosed]>
+      <div class="btn btn-img btn-warning" [routerLink]="['', {outlets: {modal:'wallet-backup'}}]" *ngIf="!(isWalletBackedUp | async)" [@walletBackupSlideClosed]>
         <img src="assets/imgs/icons/alert-circle.png" aria-disabled>
         <span [translate]>WALLET.PLEASE_BACKUP</span>
       </div>
@@ -30,7 +30,7 @@
 </div>
 
 <div class="wallet-top-area-narrow hide-wide">
-  <div class="btn btn-img btn-warning backup-button" [routerLink]="['', {outlets: {modal:'wallet-backup'}}]" *ngIf="!walletBackedUp">
+  <div class="btn btn-img btn-warning backup-button" [routerLink]="['', {outlets: {modal:'wallet-backup'}}]" *ngIf="!(isWalletBackedUp | async)">
     <img src="assets/imgs/icons/alert-circle.svg" aria-disabled>
     <span [translate]>WALLET.PLEASE_BACKUP</span>
   </div>

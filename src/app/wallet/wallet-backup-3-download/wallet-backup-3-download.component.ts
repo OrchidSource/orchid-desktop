@@ -1,4 +1,6 @@
 import { Component, OnInit } from '@angular/core';
+import { Router } from '@angular/router';
+import { WalletService } from "../../wallet.service";
 
 @Component({
   selector: 'app-wallet-backup-3-download',
@@ -7,9 +9,13 @@ import { Component, OnInit } from '@angular/core';
 })
 export class WalletBackup3DownloadComponent implements OnInit {
 
-  constructor() { }
+  constructor(private router: Router, private walletService: WalletService) { }
 
   ngOnInit() {
   }
 
+  done(): void {
+    this.walletService.isWalletBackedUp.next(true);
+    this.router.navigate(['', { outlets: { modal: null } }]);
+  }
 }

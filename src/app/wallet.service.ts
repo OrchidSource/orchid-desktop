@@ -6,6 +6,7 @@ const usdOrcRatio: number = 6.685;
 const WALLET_ADDRESS: string = '0x177b46f8fCf57C5CA32747ecf57ed359481b16eD';
 
 const MOCK_ORC_BALANCE_KEY: string = 'MOCK_ORC_BALANCE_KEY';
+const WALLET_BACKED_UP_SETTINGS_KEY: string = 'WALLET_BACKED_UP';
 
 /**
 * Service for handling a user's wallet.
@@ -18,6 +19,11 @@ export class WalletService {
 
   public octBalanceBehaviorSubject: BehaviorSubject<number>;
 
+  /**
+   * Indicates whether the user has gone through the wallet backup pages
+   */
+  public isWalletBackedUp: BehaviorSubject<boolean>;
+
   constructor() {
     this.octBalanceBehaviorSubject = new BehaviorSubject(this.orcBalance);
     var amt = window.localStorage.getItem(MOCK_ORC_BALANCE_KEY);
@@ -28,6 +34,18 @@ export class WalletService {
     } else {
       this.octBalanceBehaviorSubject.next(0);
     }
+
+    // TODO: don't use localStorage to save this
+    this.isWalletBackedUp = new BehaviorSubject((!!window.localStorage.getItem(WALLET_BACKED_UP_SETTINGS_KEY)));
+
+    this.isWalletBackedUp.subscribe((val)=> {
+      if (val) {
+        window.localStorage.setItem(WALLET_BACKED_UP_SETTINGS_KEY, 'T');
+      } else {
+        window.localStorage.removeItem(WALLET_BACKED_UP_SETTINGS_KEY);
+      }
+    })
+
   }
 
   /**
