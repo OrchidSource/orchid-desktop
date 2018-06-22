@@ -13,15 +13,16 @@
     </div>
 
     <div class="setting-item">
-      <span class="small" [translate]>SETTINGS.AUTO_TRANSFER</span>
+      <span class="small" id="settings_auto_transfer" [translate]>SETTINGS.AUTO_TRANSFER</span>
       <a orcui-tooltip="{{ 'SETTINGS.TOOLTIP_AUTO_TRANSFER' | translate }}" orcui-tooltip-placement="right" class="hide-narrow"><img src="assets/imgs/icons/question.svg"/></a>
       <a orcui-tooltip="{{ 'SETTINGS.TOOLTIP_AUTO_TRANSFER' | translate }}" orcui-tooltip-placement="top" class="hide-wide"><img src="assets/imgs/icons/question.svg"/></a>
       <span class="left-of-toggle btn btn-link font-weight-bold settings-button hide-narrow">
         <img src="assets/imgs/icons/gear-gray.svg" aria-disabled>
         <span translate>GENERAL.SETTINGS</span>
       </span>
-      <orcui-toggle [(isSelected)]="settings.AUTO_TRANSFER"></orcui-toggle>
+      <orcui-toggle [(isSelected)]="settings.AUTO_TRANSFER" aria-labelledby="settings_auto_transfer"></orcui-toggle>
     </div>
+
     <div class="setting-item hide-wide">
       <span class="btn btn-link font-weight-bold settings-button">
         <img src="assets/imgs/icons/gear-gray.svg" aria-disabled>
