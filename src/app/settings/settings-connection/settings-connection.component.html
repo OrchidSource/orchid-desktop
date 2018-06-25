@@ -1,34 +1,35 @@
+<form #form="ngForm">
 <div class="card">
   <div class="card-body">
     <div class="setting-item">
       <label class="small" id="launch_startup" [translate]>SETTINGS.LAUNCH_STARTUP</label>
       <a orcui-tooltip="{{ 'SETTINGS.TOOLTIP_LAUNCH_STARTUP' | translate }}" orcui-tooltip-placement="right"  class="hide-narrow"><img src="assets/imgs/icons/question.svg"/></a>
       <a orcui-tooltip="{{ 'SETTINGS.TOOLTIP_LAUNCH_STARTUP' | translate }}" orcui-tooltip-placement="bottom" class="hide-wide"><img src="assets/imgs/icons/question.svg"/></a>
-      <orcui-toggle [(isSelected)]="settings.LAUNCH_STARTUP" aria-labelledby="launch_startup"></orcui-toggle>
+      <orcui-toggle [ngModel]="settings.launch_startup" name="launch_startup" aria-lablledby="launch_startup"></orcui-toggle>
     </div>
 
     <div class="setting-item">
       <label class="small" id="connect_on_startup" [translate]>SETTINGS.CONNECT_ON_STARTUP</label>
       <a orcui-tooltip="{{ 'SETTINGS.TOOLTIP_CONNECT_ON_STARTUP' | translate }}" orcui-tooltip-placement="right" class="hide-narrow"><img src="assets/imgs/icons/question.svg"/></a>
       <a orcui-tooltip="{{ 'SETTINGS.TOOLTIP_CONNECT_ON_STARTUP' | translate }}" orcui-tooltip-placement="bottom" class="hide-wide"><img src="assets/imgs/icons/question.svg"/></a>
-      <orcui-toggle [(isSelected)]="settings.CONNECT_ON_STARTUP" aria-labelledby="connect_on_startup"></orcui-toggle>
+      <orcui-toggle [ngModel]="settings.connect_on_startup" name="connect_on_startup" aria-labelledby="connect_on_startup"></orcui-toggle>
     </div>
 
     <div class="setting-item">
       <label class="small" id="relay_node" [translate]>SETTINGS.RELAY_NODE</label>
       <a orcui-tooltip="{{ 'SETTINGS.TOOLTIP_RELAY_NODE' | translate }}" orcui-tooltip-placement="right" class="hide-narrow"><img src="assets/imgs/icons/question.svg"/></a>
       <a orcui-tooltip="{{ 'SETTINGS.TOOLTIP_RELAY_NODE' | translate }}" orcui-tooltip-placement="bottom" class="hide-wide"><img src="assets/imgs/icons/question.svg"/></a>
-      <orcui-toggle [(isSelected)]="settings.RELAY_NODE" aria-labelledby="relay_node" isSelectedChange="settingsChanged()"></orcui-toggle>
+      <orcui-toggle [ngModel]="settings.relay_node" name="relay_node" aria-labelledby="relay_node"></orcui-toggle>
     </div>
 
-    <div class="setting-item setting-item-contains-input limit-bandwidth" *ngIf="settings.RELAY_NODE">
+    <div class="setting-item setting-item-contains-input limit-bandwidth" *ngIf="form.value.relay_node">
       <label class="small" id="settings_limit_bandwidth" [translate]>SETTINGS.LIMIT_BANDWIDTH</label>
       <a orcui-tooltip="{{ 'SETTINGS.TOOLTIP_LIMIT_BANDWIDTH' | translate }}" orcui-tooltip-placement="right" class="hide-narrow"><img src="assets/imgs/icons/question.svg"/></a>
       <a orcui-tooltip="{{ 'SETTINGS.TOOLTIP_LIMIT_BANDWIDTH' | translate }}" orcui-tooltip-placement="bottom" class="hide-wide"><img src="assets/imgs/icons/question.svg"/></a>
-      <span class="left-of-toggle" [hidden]="!settings.TOOLTIP_LIMIT_BANDWIDTH">
-        <input type="number" class="form-control" [(ngModel)]="settings.LIMIT_BANDWIDTH_AMOUNT">GB/{{ 'GENERAL.MONTH_ABBREVIATION' | translate}}
+      <span class="left-of-toggle" [hidden]="!form.value.tooltip_limit_bandwidth">
+        <input type="number" class="form-control" name="limit_bandwidth_amount" [(ngModel)]="settings.limit_bandwidth_amount">GB/{{ 'GENERAL.MONTH_ABBREVIATION' | translate}}
       </span>
-      <orcui-toggle [(isSelected)]="settings.TOOLTIP_LIMIT_BANDWIDTH" aria-labelledby="settings_limit_bandwidth"></orcui-toggle>
+      <orcui-toggle [ngModel]="form.value.tooltip_limit_bandwidth" name="tooltip_limit_bandwidth" aria-labelledby="settings_limit_bandwidth"></orcui-toggle>
     </div>
 
     <div class="setting-item">
@@ -38,7 +39,7 @@
             <span class="small" [translate]>SETTINGS.ALL_CONNECTIONS</span>
           </td>
           <td>
-            <ui-radio value="all" [(model)]="settings.LIMIT_CONNECTIONS"></ui-radio>
+            <ui-radio value="all" [(model)]="settings.limit_connections"></ui-radio>
           </td>
           <td>
             <a orcui-tooltip="{{ 'SETTINGS.TOOLTIP_ALL_CONNECTIONS' | translate }}" orcui-tooltip-placement="right" class="hide-narrow"><img src="assets/imgs/icons/question.svg"/></a>
@@ -50,7 +51,7 @@
             <span class="small" [translate]>SETTINGS.BROWSERS_ONLY</span>
           </td>
           <td>
-            <ui-radio value="browser" [(model)]="settings.LIMIT_CONNECTIONS"></ui-radio>
+            <ui-radio value="browser" [(model)]="settings.limit_connections"></ui-radio>
           </td>
           <td>
             <a orcui-tooltip="{{ 'SETTINGS.TOOLTIP_BROWSERS_ONLY' | translate }}" orcui-tooltip-placement="right" class="hide-narrow"><img src="assets/imgs/icons/question.svg"/></a>
@@ -62,3 +63,6 @@
 
   </div>
 </div>
+</form>
+
+{{ form.value | json }}

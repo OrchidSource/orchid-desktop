@@ -20,7 +20,7 @@
         <img src="assets/imgs/icons/gear-gray.svg" aria-disabled>
         <span translate>GENERAL.SETTINGS</span>
       </span>
-      <orcui-toggle [(isSelected)]="settings.AUTO_TRANSFER" aria-labelledby="settings_auto_transfer"></orcui-toggle>
+      <orcui-toggle [ngModel]="settings.auto_transfer" name="auto_transfer" aria-labelledby="settings_auto_transfer"></orcui-toggle>
     </div>
 
     <div class="setting-item hide-wide">

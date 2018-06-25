@@ -1,4 +1,5 @@
 import { Component, OnInit } from '@angular/core';
+// import { AbstractControl, FormControl, FormGroup, Validators } from '@angular/forms';
 
 const SETTINGS_KEY: string = "SETTINGS_CONNECTION";
 
@@ -12,6 +13,8 @@ export class SettingsConnectionComponent implements OnInit {
   settings: object;
   constructor() { }
 
+  // form: FormGroup;
+
   settingsChanged() {
     console.log('settingsChanged');
   }
@@ -20,15 +23,16 @@ export class SettingsConnectionComponent implements OnInit {
     this.getSettings();
   }
 
-  getSettings () {
+  getSettings() {
 
     var savedSettings = window.localStorage.getItem(SETTINGS_KEY);
     if (savedSettings) {
       this.settings = JSON.parse(savedSettings);
     } else {
       this.settings = {
-        LIMIT_CONNECTIONS: "browser",
-        RELAY_NODE: true
+        launch_startup: true,
+        limit_connections: "browser",
+        relay_node: true
       };
     }
   }
