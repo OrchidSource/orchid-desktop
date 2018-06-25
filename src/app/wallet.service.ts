@@ -38,7 +38,7 @@ export class WalletService {
     // TODO: don't use localStorage to save this
     this.isWalletBackedUp = new BehaviorSubject((!!window.localStorage.getItem(WALLET_BACKED_UP_SETTINGS_KEY)));
 
-    this.isWalletBackedUp.subscribe((val)=> {
+    this.isWalletBackedUp.subscribe((val) => {
       if (val) {
         window.localStorage.setItem(WALLET_BACKED_UP_SETTINGS_KEY, 'T');
       } else {
@@ -117,6 +117,26 @@ export class WalletService {
       amount: amount,
       date: new Date()
     })
+  }
+
+  /**
+   * Send OCT.
+   * @param  octAmount The amount, in OCT, to send
+   * @param  toAddress The ERC20 address to send to
+   * @return           A promise that resolves when/if sending was successful
+   */
+  sendOct(octAmount: number, toAddress: string) {
+
+    return this.debitOrc(octAmount).then(() => {
+      this.transactions.push({
+        from: WALLET_ADDRESS,
+        to: toAddress,
+        status: status,
+        amount: octAmount,
+        date: new Date()
+      })
+    })
+
   }
 
   /**
