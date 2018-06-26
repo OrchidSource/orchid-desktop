@@ -55,15 +55,6 @@ export class OrcuiToggleComponent implements ControlValueAccessor {
     }
   }
 
-  /**
-   * Changes the value if the toggle has focus and the user clicks the enter key
-   */
-  // @HostListener('keydown.enter')
-  // onFocusedEnter() {
-  //   this.onClick();
-  // }
-
-
   registerOnChange(fn: Function) {
     this.onChangeFunction = fn;
   }

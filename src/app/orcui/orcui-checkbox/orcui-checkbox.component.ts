@@ -18,6 +18,9 @@ export class OrcuiCheckboxComponent implements ControlValueAccessor {
   @HostBinding('attr.tabindex') tabindex: string = '0';
 
   isChecked: boolean;
+  /**
+   * The text to add to the checkbox
+   */
   @Input() text: String;
 
   private onChangeFunction: Function;
