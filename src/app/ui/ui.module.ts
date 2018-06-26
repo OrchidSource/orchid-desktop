@@ -9,14 +9,13 @@ import { CommonModule } from '@angular/common';
 
 import { WorldMapComponent } from './world-map/world-map.component';
 import { WalletQrComponent } from './wallet-qr/wallet-qr.component';
-import { RadioComponent } from './radio/radio.component';
 
 @NgModule({
   imports: [
     CommonModule,
     FormsModule
   ],
-  declarations: [RadioComponent, WorldMapComponent, WalletQrComponent],
-  exports: [RadioComponent, WorldMapComponent, WalletQrComponent]
+  declarations: [WorldMapComponent, WalletQrComponent],
+  exports: [WorldMapComponent, WalletQrComponent]
 })
 export class UiModule { }

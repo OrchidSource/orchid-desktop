@@ -39,7 +39,7 @@
             <span class="small" [translate]>SETTINGS.ALL_CONNECTIONS</span>
           </td>
           <td>
-            <ui-radio value="all" [(model)]="settings.limit_connections"></ui-radio>
+            <orcui-radio value="all" [(model)]="settings.limit_connections"></orcui-radio>
           </td>
           <td>
             <a orcui-tooltip="{{ 'SETTINGS.TOOLTIP_ALL_CONNECTIONS' | translate }}" orcui-tooltip-placement="right" class="hide-narrow"><img src="assets/imgs/icons/question.svg"/></a>
@@ -51,7 +51,7 @@
             <span class="small" [translate]>SETTINGS.BROWSERS_ONLY</span>
           </td>
           <td>
-            <ui-radio value="browser" [(model)]="settings.limit_connections"></ui-radio>
+            <orcui-radio value="browser" [(model)]="settings.limit_connections"></orcui-radio>
           </td>
           <td>
             <a orcui-tooltip="{{ 'SETTINGS.TOOLTIP_BROWSERS_ONLY' | translate }}" orcui-tooltip-placement="right" class="hide-narrow"><img src="assets/imgs/icons/question.svg"/></a>

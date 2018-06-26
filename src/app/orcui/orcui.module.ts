@@ -2,8 +2,10 @@ import { NgModule } from '@angular/core';
 import { CommonModule } from '@angular/common';
 import { FormsModule } from '@angular/forms';
 import { OverlayModule } from '@angular/cdk/overlay';
+
 import { OrcuiPasswordStrengthComponent } from './orcui-password-strength/orcui-password-strength.component';
 import { OrcuiCheckboxComponent } from './orcui-checkbox/orcui-checkbox.component';
+import { OrcuiRadioComponent } from './orcui-radio/orcui-radio.component';
 import { OrcuiTooltipComponent } from './orcui-tooltip/orcui-tooltip.component';
 import { OrcuiTooltipBodyComponent } from './orcui-tooltip-body/orcui-tooltip-body.component';
 import { OrcuiTooltipService } from './orcui-tooltip/orcui-tooltip.service';
@@ -18,6 +20,7 @@ import { OrcuiToggleComponent } from './orcui-toggle/orcui-toggle.component';
   declarations: [
     OrcuiPasswordStrengthComponent,
     OrcuiCheckboxComponent,
+    OrcuiRadioComponent,
     OrcuiToggleComponent,
     OrcuiTooltipComponent,
     OrcuiTooltipBodyComponent
@@ -25,6 +28,7 @@ import { OrcuiToggleComponent } from './orcui-toggle/orcui-toggle.component';
   exports: [
     OrcuiPasswordStrengthComponent,
     OrcuiCheckboxComponent,
+    OrcuiRadioComponent,
     OrcuiToggleComponent,
     OrcuiTooltipComponent
   ],

@@ -13,7 +13,6 @@ import { ControlValueAccessor, NG_VALUE_ACCESSOR } from '@angular/forms'
 })
 export class OrcuiCheckboxComponent implements ControlValueAccessor {
 
-
   @HostBinding('attr.role') role: string = 'checkbox';
   @HostBinding('attr.aria-checked') ariaChecked: boolean = false;
   @HostBinding('attr.tabindex') tabindex: string = '0';
