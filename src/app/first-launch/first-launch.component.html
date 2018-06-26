@@ -1,63 +1,15 @@
 <div class="first-launch-container">
-  <div class="next-prev">
-    <div (click)="changePage(page - 1)" *ngIf="page != 1">
-      <img src="assets/imgs/icons/caret-left.svg" aria-label="back">
-    </div>
-  </div>
   <div class="first-launch-content">
-    <div class="launch-content launch-1" *ngIf="page === 1">
-      <div class="first-launch-image">
-        <img src="assets/imgs/first-launch/intro-1.png" alt="Panda">
-      </div>
-      <div class="first-launch-text">
-        <div>
-          <img src="assets/imgs/h-logo-purple.svg" alt="Orchid">
-          <div [translate]>Welcome to the Orchid network, where the internet belongs to <b>you</b>.</div>
-        </div>
-      </div>
-    </div>
 
-    <div class="launch-content launch-2" *ngIf="page === 2">
-      <div class="first-launch-image">
-        <img src="assets/imgs/first-launch/intro-2.png" alt="Panda">
-      </div>
-      <div class="first-launch-text">
-        <div>
-          <h2>
-            <span [translate]>Access the internet safely & securely</span>
-          </h2>
-          <div class="text-container" [translate]>Private, secure, reliable and decentralized. Connect to the entire internet safely and securely from anywhere in the world. Your data belongs to you.</div>
-        </div>
-      </div>
-    </div>
-
-    <div class="launch-content launch-3" *ngIf="page === 3">
-      <div class="first-launch-image">
-        <img src="assets/imgs/first-launch/intro-3.png" alt="Panda">
-      </div>
-      <div class="first-launch-text">
-        <div>
-          <h2>
-            <span [translate]>Share your extra bandwidth and earn orchid tokens</span>
-          </h2>
-          <div class="text-container" [translate]>Save, share, trade or exchange Orchid tokens (OCT) for local or digital currency.</div>
-        </div>
-      </div>
+    <div class="launch-content">
+      <video controls autoplay muted id="first-run-video" (ended)="videoStopped()">
+        <source src="assets/videos/orchid_obanimaticrough_v3.mp4" type="video/mp4" />
+      </video>
     </div>
 
     <div class="first-launch-buttons">
       <a class="btn btn-border btn-lg" target="_blank" href="https://orchid.com/#faq" [translate]>Learn More</a>
-      <a class="btn btn-primary btn-lg" routerLink="/main/dashboard" (click)="firstRunDone()" [translate]>Get Started</a>
-    </div>
-    <div class="first-launch-dots">
-      <span class="first-run-dot" [ngClass]="{ active: page === 1}" (click)="changePage(1)"></span>
-      <span class="first-run-dot" [ngClass]="{ active: page === 2}" (click)="changePage(2)"></span>
-      <span class="first-run-dot" [ngClass]="{ active: page === 3}" (click)="changePage(3)"></span>
-    </div>
-  </div>
-  <div class="next-prev">
-    <div (click)="changePage(page + 1)" *ngIf="page < 3">
-      <img src="assets/imgs/icons/caret-right.svg" aria-label="next">
+      <a class="btn btn-primary btn-lg" (click)="firstRunDone()" [translate]>Get Started</a>
     </div>
   </div>
 </div>
