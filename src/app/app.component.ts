@@ -1,7 +1,8 @@
 import { AfterContentInit, Component, OnInit, TemplateRef, ViewChild } from '@angular/core';
 import { WalletService } from "./wallet.service";
 import { BehaviorSubject } from 'rxjs/BehaviorSubject';
-import { NgbModal, ModalDismissReasons } from '@ng-bootstrap/ng-bootstrap';
+
+import { DemoWarningService } from './demo/demo-warning.service';
 
 @Component({
   selector: 'body',
@@ -9,11 +10,10 @@ import { NgbModal, ModalDismissReasons } from '@ng-bootstrap/ng-bootstrap';
   styleUrls: ['./app.component.scss']
 })
 export class AppComponent implements AfterContentInit, OnInit {
-  @ViewChild('noticeModal') noticeModal: TemplateRef<any>;
 
   public octBalanceSubject: BehaviorSubject<number>;
 
-  constructor(private walletService: WalletService, private modalService: NgbModal) {
+  constructor(private demoWarningService: DemoWarningService, private walletService: WalletService) {
   }
 
   ngOnInit() {
@@ -22,7 +22,7 @@ export class AppComponent implements AfterContentInit, OnInit {
   ngAfterContentInit() {
     setTimeout(() => {
       if (window.document.body.clientWidth > 500) {
-        this.modalService.open(this.noticeModal, { centered: true, size: 'lg' });
+        this.demoWarningService.showWarning();
       }
     }, 1)
   }

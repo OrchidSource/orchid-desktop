@@ -5,7 +5,7 @@ import { FormsModule, ReactiveFormsModule } from '@angular/forms';
 import * as Chart from 'chart.js';
 // import * as currency_codes from 'currency-codes';
 import { ChartsModule } from 'ng2-charts/ng2-charts';
-import {  TranslateModule, TranslateLoader } from '@ngx-translate/core';
+import { TranslateModule, TranslateLoader } from '@ngx-translate/core';
 import { TranslateHttpLoader } from '@ngx-translate/http-loader';
 import { HttpClientModule, HttpClient } from '@angular/common/http';
 import { BrowserAnimationsModule } from '@angular/platform-browser/animations';
@@ -15,6 +15,8 @@ import { AppComponent } from './app.component';
 import { NgbModule } from '@ng-bootstrap/ng-bootstrap';
 import { DashboardComponent } from './dashboard/dashboard.component';
 import { SellHowToComponent } from './sell/sell-how-to/sell-how-to.component';
+
+import { DemoWarningService } from "./demo/demo-warning.service";
 
 import { ConfigService } from "./config-service/config.service";
 import { WalletService } from "./wallet.service";
@@ -42,6 +44,7 @@ import { WalletBackupBeginComponent } from './wallet/wallet-backup-begin/wallet-
 import { WalletBackup3DownloadComponent } from './wallet/wallet-backup-3-download/wallet-backup-3-download.component';
 import { MapToIterablePipe } from './map-to-iterable.pipe';
 import { OrcuiModule } from './orcui/orcui.module';
+import { DemoWarningComponent } from './demo/demo-warning/demo-warning.component';
 
 // Indicates where the translation files live
 export function HttpLoaderFactory(httpClient: HttpClient) {
@@ -68,7 +71,8 @@ export function HttpLoaderFactory(httpClient: HttpClient) {
     WalletBackupPasswordConfirmComponent,
     WalletBackupBeginComponent,
     WalletBackup3DownloadComponent,
-    MapToIterablePipe
+    MapToIterablePipe,
+    DemoWarningComponent
   ],
   imports: [
     AppRoutingModule,
@@ -92,12 +96,14 @@ export function HttpLoaderFactory(httpClient: HttpClient) {
   ],
   providers: [
     ConfigService,
-    InternationalizationService,
-    OrchidNetService,
-    WalletService,
+    DemoWarningService,
     FirstRunGuardService,
-    MapToIterablePipe
+    InternationalizationService,
+    MapToIterablePipe,
+    OrchidNetService,
+    WalletService
   ],
+  entryComponents: [DemoWarningComponent],
   bootstrap: [AppComponent]
 })
 

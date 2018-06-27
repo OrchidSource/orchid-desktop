@@ -7,21 +7,3 @@
 <router-outlet name="modal"></router-outlet>
 
 <router-outlet id="main-router"></router-outlet>
-
-<ng-template #noticeModal let-c="close" let-d="dismiss">
-  <div class="modal-header">
-    <h2 class="modal-title">Welcome.</h2>
-  </div>
-  <div class="modal-body row">
-    <div class="col-sm-3" style="text-align: center;">
-        <img src="assets/imgs/warning.png" style="max-width: 100%;" aria-hidden>
-    </div>
-    <div class="col-sm-9">
-      <p>This demo is intended for testing purposes and does not provide a secure connection to the Orchid Network.</p>
-      <p>Tokens earned, transacted, or stored in this version are not real.</p>
-    </div>
-  </div>
-  <div class="modal-footer" style="border: 0px">
-    <button type="button" class="btn btn-primary btn-lg btn-wide" (click)="c('Close click')">Got it</button>
-  </div>
-</ng-template>
