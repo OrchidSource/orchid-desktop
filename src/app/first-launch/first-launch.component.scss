@@ -21,15 +21,20 @@ $fl-padding: 15px;
       }
     }
 
-    .first-launch-buttons {
-      position: absolute;
-      padding-left: $fl-padding;
-      right: 0;
-      width: 50%;
-      .btn {
-        width: 180px;
-        margin-right: 20px;
-      }
     }
   }
+
+  .first-launch-buttons {
+    position: absolute;
+    right: 0;
+    top: 38px;
+    .btn {
+      color: $secondary-text-color;
+      span {
+        text-decoration: underline;
+      }
+      img {
+        height: 12px;
+      }
+    }
 }

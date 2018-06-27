@@ -2,14 +2,16 @@
   <div class="first-launch-content">
 
     <div class="launch-content">
-      <video controls autoplay muted id="first-run-video" (ended)="videoStopped()">
+      <video controls muted id="first-run-video" (ended)="videoStopped()" #videoElement>
         <source src="assets/videos/orchid_obanimaticrough_v3.mp4" type="video/mp4" />
       </video>
     </div>
 
-    <!-- <div class="first-launch-buttons">
-      <a class="btn btn-border btn-lg" target="_blank" href="https://orchid.com/#faq" [translate]>Learn More</a>
-      <a class="btn btn-primary btn-lg" (click)="firstRunDone()" tabindex="0" [translate]>Get Started</a>
-    </div> -->
+  </div>
+  <div class="first-launch-buttons">
+    <a class="btn" (click)="firstRunDone()" tabindex="0" [translate]>
+      <span>Skip</span>
+      <img src="assets/imgs/icons/arrow-right-gray.png" aria-hidden>
+    </a>
   </div>
 </div>

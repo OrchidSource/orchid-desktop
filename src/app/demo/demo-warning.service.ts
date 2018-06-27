@@ -19,10 +19,14 @@ export class DemoWarningService {
   }
 
   showWarning() {
-    this.modalService
-      .open(DemoWarningComponent, { centered: true, size: 'lg' })
-      .result
-      .then(() => this.setWarningDismissed(), () => this.setWarningDismissed());
+    if (window.document.body.clientWidth > 500) { // only show warning on wide-ish windows (use can only get to a narrow version if she has already opened the wide one)
+      this.modalService
+        .open(DemoWarningComponent, { centered: true, size: 'lg' })
+        .result
+        .then(() => this.setWarningDismissed(), () => this.setWarningDismissed());
+    } else {
+      this.setWarningDismissed();
+    }
   }
 
   setWarningDismissed() {

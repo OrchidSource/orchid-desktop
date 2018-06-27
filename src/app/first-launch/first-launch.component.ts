@@ -1,5 +1,7 @@
-import { Component, HostListener, OnInit } from '@angular/core';
+import { Component, HostListener, OnInit, ViewChild } from '@angular/core';
 import { Router } from '@angular/router';
+import { DemoWarningService } from '../demo/demo-warning.service';
+import { Subscription } from 'rxjs/Subscription';
 
 const LAST_LOCATION_LOCALSTORAGE_KEY = "FIRST_RUN_LAST_LOCATION";
 
@@ -10,23 +12,25 @@ const LAST_LOCATION_LOCALSTORAGE_KEY = "FIRST_RUN_LAST_LOCATION";
 })
 export class FirstLaunchComponent implements OnInit {
 
-  constructor(private router: Router) { }
+  @ViewChild('videoElement') videoElement;
+  private demoWarningSubscription: Subscription;
 
-  // app: any = null;
+  constructor(private demoWarningService: DemoWarningService, private router: Router) {
+  }
 
   ngOnInit() {
-    // if ((<any>window).require) {
-    //   this.app = (<any>window).require('electron').remote.app;
-    // }
-    //
-    // if (this.app) {
-    //   this.app.win_maximize();
-    // }
-
+    // I don't get why this "that" is necessary
+    var that = this;
+    this.demoWarningSubscription = this.demoWarningService.warningDismissed.subscribe(val => {
+      if (val) {
+        that.videoElement.nativeElement.play();
+        that.videoElement;
+        that.demoWarningSubscription.unsubscribe();
+      }
+    });
   }
 
   videoStopped() {
-    console.log('stopped');
 
     setTimeout(() => {
       this.firstRunDone();
@@ -35,9 +39,6 @@ export class FirstLaunchComponent implements OnInit {
 
   firstRunDone() {
     localStorage.setItem(LAST_LOCATION_LOCALSTORAGE_KEY, 'DONE');
-    // if (this.app) {
-    //   this.app.win_setDefaultSize();
-    // }
     this.router.navigate(['/main/dashboard']);
   }
 

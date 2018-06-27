@@ -20,7 +20,8 @@ const SplashScreen = require("@trodi/electron-splashscreen");
 
 
 const NARROW_WIDTH = 285;
-const WIDE_WIDTH = 1024;
+// make wider in development mode, so the developer doesn't have to
+const WIDE_WIDTH = process.defaultApp ? 1624 : 1024;
 const WIDE_HEIGHT = 618;
 
 
