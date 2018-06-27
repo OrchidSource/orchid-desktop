@@ -40,7 +40,10 @@
       </div>
 
       <h5 [translate]>GENERAL.RECIPIENT</h5>
-      <div [translate] class="caption">WALLET_SEND.RECIPIENT_EXPLANATION</div>
+      <div  class="caption">
+        <span [translate]>WALLET_SEND.RECIPIENT_EXPLANATION</span>
+        <a orcui-tooltip="{{ 'WALLET_SEND.RECIPIENT_TOOLTIP' | translate }}" orcui-tooltip-placement="bottom" class="hide-narrow"><img src="assets/imgs/icons/question.svg"/></a>
+      </div>
 
       <div>
         <div class="input-group">
