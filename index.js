@@ -1,8 +1,18 @@
-var {app, BrowserWindow, Menu, MenuItem, nativeImage, Tray, shell} = require('electron');
+var {
+  app,
+  BrowserWindow,
+  Menu,
+  MenuItem,
+  nativeImage,
+  Tray,
+  shell
+} = require('electron');
 const path = require('path');
 const url = require('url');
 const fs = require('fs');
-const {spawn} = require('child_process');
+const {
+  spawn
+} = require('child_process');
 
 const SplashScreen = require("@trodi/electron-splashscreen");
 
@@ -196,7 +206,7 @@ app.on('ready', function() {
 // Quit when all windows are closed.
 app.on('window-all-closed', () => {
   console.log('window-all-closed');
-// do nothing; keep open in tray
+  // do nothing; keep open in tray
 });
 
 app.on('activate', () => {
@@ -275,7 +285,7 @@ function start_orchid_network(desired_exit_location) {
   var result;
 
   console.log("REFERRAL:" + referral);
-  result = (async() => {
+  result = (async () => {
     await using(new orchid.core.DummyClock(), async (clock) => {
       await using(new orchid.core.DummyContext(clock), async (context) => {
         await context.refer(referral);
@@ -325,13 +335,13 @@ var chrome_variables = {
 
   startNetwork: function(location) {
     win.webContents.send(this.EVENTS.CONNECTED);
-  // stop_orchid_network();
-  // start_orchid_network(location);
+    // stop_orchid_network();
+    // start_orchid_network(location);
   },
 
   stopNetwork: function() {
     win.webContents.send(this.EVENTS.DISCONNECTED);
-  // stop_orchid_network();
+    // stop_orchid_network();
   },
 
   startChrome: function() {
@@ -340,7 +350,8 @@ var chrome_variables = {
     var args = ['--user-data-dir=' + userData,
       '--no-first-run',
       '--proxy-server=socks5://127.0.0.1:1323',
-      '--host-resolver-rules=MAP * ~NOTFOUND , EXCLUDE 127.0.0.1'];
+      '--host-resolver-rules=MAP * ~NOTFOUND , EXCLUDE 127.0.0.1'
+    ];
     if (this.instance) this.instance.kill();
     this.instance = spawn(program, args);
     win.webContents.send(this.EVENTS.CONNECTED);
@@ -360,6 +371,21 @@ var chrome_variables = {
 };
 
 app.chrome_vars = chrome_variables;
+
+
+/**
+ * Set the app to full-screen
+ */
+app.win_maximize = function() {
+  win.maximize();
+}
+
+/**
+ * Set the app to the default size
+ */
+app.win_setDefaultSize = function() {
+  win.setContentSize(WIDE_WIDTH, WIDE_HEIGHT);
+}
 
 process.on('uncaughtException', function(error) {
   console.log("GOT ERROR: ", error);

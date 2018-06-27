@@ -3,7 +3,6 @@
 $fl-padding: 15px;
 
 .first-launch-container {
-  height: calc(100vh - 36px); // full height minus topbar
   display: flex;
   flex-direction: row;
 
@@ -12,15 +11,13 @@ $fl-padding: 15px;
     .launch-content {
       width: 100%;
       text-align: center;
-      height: calc(100% - 70px);
       display: flex;
       flex-direction: column;
       justify-content: center;
       align-items: center;
 
       > video {
-        max-width: 95%;
-        max-height: 95%;
+        max-width: 100%;
       }
     }
 
@@ -34,38 +31,5 @@ $fl-padding: 15px;
         margin-right: 20px;
       }
     }
-  }
-}
-
-
-// throw-away stuff for the temporary "this is all fake" modal
-.modal-header {
-  border: 0px;
-  padding: $orchid-gutter-width  $orchid-gutter-width 0 $orchid-gutter-width;
-  h2 {
-    text-transform: capitalize;
-  }
-}
-
-.modal-body {
-  > div {
-    padding: $orchid-gutter-width;
-
-    > img {
-      text-align: center;
-    }
-
-    p {
-      font-family: 'QuickSand';
-      font-size: 21px;
-      line-height: 28px;
-    }
-  }
-}
-
-.modal-footer {
-  padding: $orchid-gutter-width;
-  .btn {
-    margin: auto;
   }
 }

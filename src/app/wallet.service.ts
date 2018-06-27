@@ -100,8 +100,8 @@ export class WalletService {
 
     for (let i = 0; i < 10; i++) {
       this.transactions.push({
-        from: 'X09HS7GHFFIDXIANGIA',
-        to: 'F10HW40HFFIGXIACQIA',
+        from: '0X09HS7GHFFIDXIANGIA...', // todo: full address
+        to: '0F10HW40HFFIGXIACQIA...',
         status: (i % 2) ? 'sent' : 'received',
         amount: 1 + i * 10.25,
         date: new Date(today.getFullYear(), today.getUTCMonth(), today.getUTCDay() - i)
@@ -111,7 +111,7 @@ export class WalletService {
 
   mockTransaction(amount: number, status: string): void {
     this.transactions.push({
-      from: 'X09HS7GHFFIDXIANGIA',
+      from: 'X09HS7GHFFIDXIANGIA...',
       to: WALLET_ADDRESS,
       status: status,
       amount: amount,

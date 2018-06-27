@@ -1,4 +1,4 @@
-import { Component, HostListener } from '@angular/core';
+import { Component, HostListener, OnInit } from '@angular/core';
 import { Router } from '@angular/router';
 
 const LAST_LOCATION_LOCALSTORAGE_KEY = "FIRST_RUN_LAST_LOCATION";
@@ -8,9 +8,22 @@ const LAST_LOCATION_LOCALSTORAGE_KEY = "FIRST_RUN_LAST_LOCATION";
   templateUrl: './first-launch.component.html',
   styleUrls: ['./first-launch.component.scss']
 })
-export class FirstLaunchComponent {
+export class FirstLaunchComponent implements OnInit {
 
   constructor(private router: Router) { }
+
+  // app: any = null;
+
+  ngOnInit() {
+    // if ((<any>window).require) {
+    //   this.app = (<any>window).require('electron').remote.app;
+    // }
+    //
+    // if (this.app) {
+    //   this.app.win_maximize();
+    // }
+
+  }
 
   videoStopped() {
     console.log('stopped');
@@ -20,9 +33,11 @@ export class FirstLaunchComponent {
     }, 2000);
   }
 
-
   firstRunDone() {
     localStorage.setItem(LAST_LOCATION_LOCALSTORAGE_KEY, 'DONE');
+    // if (this.app) {
+    //   this.app.win_setDefaultSize();
+    // }
     this.router.navigate(['/main/dashboard']);
   }
 
