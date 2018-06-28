@@ -1,8 +1,7 @@
 import { AfterContentInit, Component, OnInit, TemplateRef, ViewChild } from '@angular/core';
 import { WalletService } from "./wallet.service";
-import { NgbTooltipConfig } from '@ng-bootstrap/ng-bootstrap';
 import { BehaviorSubject } from 'rxjs/BehaviorSubject';
-import {NgbModal, ModalDismissReasons} from '@ng-bootstrap/ng-bootstrap';
+import { NgbModal, ModalDismissReasons } from '@ng-bootstrap/ng-bootstrap';
 
 @Component({
   selector: 'body',
@@ -14,10 +13,7 @@ export class AppComponent implements AfterContentInit, OnInit {
 
   public octBalanceSubject: BehaviorSubject<number>;
 
-  constructor(private walletService: WalletService, private ngbTooltipConfig: NgbTooltipConfig, private modalService: NgbModal) {
-    // Uncomment to keep the tooltip open to make make styling the tooltips easier
-    // ngbTooltipConfig.triggers = 'click';
-    ngbTooltipConfig.container = 'body';
+  constructor(private walletService: WalletService, private modalService: NgbModal) {
   }
 
   ngOnInit() {
