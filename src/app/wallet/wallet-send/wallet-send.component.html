@@ -10,12 +10,12 @@
 
       <div class="amount-row">
         <div>
-          <div class="input-group">
+          <label class="input-group">
             <input type="text" class="form-control" ngModel formControlName="sendAmountOct">
             <div class="input-group-append">
               <span class="input-group-text">OCT</span>
             </div>
-          </div>
+          </label>
 
           <div class="after-input-message text-warning" [hidden]="!sendForm.controls.sendAmountOct.touched || !sendForm.controls.sendAmountOct.errors || !sendForm.controls.sendAmountOct.errors.required">
             <img src="assets/imgs/icons/x-red.svg" aria-disabled>
@@ -30,12 +30,12 @@
         </div>
 
         <div>
-          <div class="input-group">
+          <label class="input-group">
             <input type="text" class="form-control" ngModel formControlName="sendAmountNative">
             <div class="input-group-append">
               <span class="input-group-text">USD</span>
             </div>
-          </div>
+          </label>
         </div>
       </div>
 
@@ -60,8 +60,12 @@
       </div>
 
       <div>
-        <orcui-checkbox ngModel formControlName="ethCompatibleOk" [text]="'WALLET_SEND.ETHEREUM_OK' | translate"></orcui-checkbox>
-        <orcui-checkbox ngModel formControlName="notCoinbaseOk" [text]="'WALLET_SEND.NOT_COINBASE_OK' | translate"></orcui-checkbox>
+        <orcui-checkbox ngModel formControlName="ethCompatibleOk">
+          <span [innerHTML]=" 'WALLET_SEND.ETHEREUM_OK' | translate "></span>
+        </orcui-checkbox>
+        <orcui-checkbox ngModel formControlName="notCoinbaseOk">
+          <span [innerHTML]="'WALLET_SEND.NOT_COINBASE_OK' | translate "></span>
+          </orcui-checkbox>
       </div>
 
       <div class="after-input-message text-warning" *ngIf="sendErrorMessage">

@@ -1,6 +1,13 @@
-import { Component, EventEmitter, HostBinding, HostListener, Input } from '@angular/core';
+import { Component, EventEmitter, HostBinding, HostListener } from '@angular/core';
 import { ControlValueAccessor, NG_VALUE_ACCESSOR } from '@angular/forms'
 
+/**
+ * Component for creating checkboxes. Example:
+ *
+ * <orcui-checkbox ngModel formControlName="myBooleanValue">
+ *    Checkbox text
+ * </orcui-checkbox>
+ */
 @Component({
   selector: 'orcui-checkbox',
   templateUrl: './orcui-checkbox.component.html',
@@ -14,14 +21,8 @@ import { ControlValueAccessor, NG_VALUE_ACCESSOR } from '@angular/forms'
 export class OrcuiCheckboxComponent implements ControlValueAccessor {
 
   @HostBinding('attr.role') role: string = 'checkbox';
-  @HostBinding('attr.aria-checked') ariaChecked: boolean = false;
+  @HostBinding('attr.aria-checked') isChecked: boolean = false;
   @HostBinding('attr.tabindex') tabindex: string = '0';
-
-  isChecked: boolean;
-  /**
-   * The text to add to the checkbox
-   */
-  @Input() text: String;
 
   private onChangeFunction: Function;
   private onTouchedFunction: Function;
@@ -45,7 +46,6 @@ export class OrcuiCheckboxComponent implements ControlValueAccessor {
   @HostListener('keydown.space')
   clicked() {
     this.isChecked = !this.isChecked;
-    console.log('clicked; value:', this.isChecked);
     this.onChangeFunction(this.isChecked);
   }
 
