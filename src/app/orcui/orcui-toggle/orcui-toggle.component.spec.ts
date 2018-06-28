@@ -1,20 +1,20 @@
 import { async, ComponentFixture, TestBed } from '@angular/core/testing';
 
-import { ToggleComponent } from './toggle.component';
+import { OrcuiToggleComponent } from './orcui-toggle.component';
 
-describe('ToggleComponent', () => {
-  let component: ToggleComponent;
-  let fixture: ComponentFixture<ToggleComponent>;
+describe('OrcuiToggleComponent', () => {
+  let component: OrcuiToggleComponent;
+  let fixture: ComponentFixture<OrcuiToggleComponent>;
 
   beforeEach(async(() => {
     TestBed.configureTestingModule({
-      declarations: [ ToggleComponent ]
+      declarations: [OrcuiToggleComponent]
     })
-    .compileComponents();
+      .compileComponents();
   }));
 
   beforeEach(() => {
-    fixture = TestBed.createComponent(ToggleComponent);
+    fixture = TestBed.createComponent(OrcuiToggleComponent);
     component = fixture.componentInstance;
     fixture.detectChanges();
   });

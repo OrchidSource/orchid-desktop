@@ -3,9 +3,20 @@ import { RouterTestingModule } from '@angular/router/testing';
 
 import { AppComponent } from './app.component';
 
+import { BehaviorSubject } from 'rxjs/BehaviorSubject';
+import { WalletService } from "./wallet.service";
+
+class MockWalletService {
+  private octBalanceBehaviorSubject: BehaviorSubject<number>;
+  constructor() {
+    this.octBalanceBehaviorSubject = new BehaviorSubject(0);
+  }
+}
+
 describe('AppComponent', () => {
   beforeEach(async(() => {
     TestBed.configureTestingModule({
+      providers: [{ provide: WalletService, useValue: (new MockWalletService()) }],
       imports: [
         RouterTestingModule
       ],
