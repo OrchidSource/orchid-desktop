@@ -42,7 +42,7 @@ export class OrcuiCheckboxComponent implements ControlValueAccessor {
 
 
   @HostListener('click')
-  @HostListener('keydown.enter')
+  @HostListener('keydown.space')
   clicked() {
     this.isChecked = !this.isChecked;
     console.log('clicked; value:', this.isChecked);

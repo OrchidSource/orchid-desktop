@@ -43,7 +43,7 @@ export class OrcuiRadioComponent implements ControlValueAccessor, OnInit {
   }
 
   @HostListener('click')
-  @HostListener('keydown.enter')
+  @HostListener('keydown.space')
   clicked() {
     this.isSelected = true;
     this.onChangeFunction(this.value);

@@ -12,7 +12,7 @@ import { ControlValueAccessor, NG_VALUE_ACCESSOR } from '@angular/forms'
  *
  *  <form #form="ngForm">
  *    <label id="id_of_label">Description of toggle</label>
- *    <orcui-toggle [ngModel]="initial_model_value" name="model_name" aria-labelledby="id_of_label"></orcui-toggle>
+ *    <orcui-toggle [(ngModel)]="initial_model_value" name="model_name" aria-labelledby="id_of_label"></orcui-toggle>
  *  </form>
  */
 @Component({
@@ -45,7 +45,7 @@ export class OrcuiToggleComponent implements ControlValueAccessor {
     }
   }
 
-  @HostListener('keydown.enter')
+  @HostListener('keydown.space')
   @HostListener('click')
   onClick() {
     console.log('clicked');
