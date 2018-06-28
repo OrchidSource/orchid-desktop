@@ -10,6 +10,14 @@ interface NodeModule {
  *    import { default as data } from 'data.json';
  */
 declare module "*.json" {
-    const value: any;
-    export default value;
+  const value: any;
+  export default value;
 }
+
+
+/**
+ * To import this node module:
+ *
+ *     import * as currency_codes from "currency-codes";
+ */
+declare module "currency-codes"

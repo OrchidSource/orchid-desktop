@@ -6,7 +6,7 @@
         <div ngbDropdown class="">
           <button class="btn" id="dropdownCurrency" ngbDropdownToggle>{{ settings.currency }}</button>
           <div ngbDropdownMenu aria-labelledby="dropdownCurrency">
-            <button class="dropdown-item" *ngFor="let c of currencies" (click)="settings.currency = c.code">{{c.code}}</button>
+            <button class="dropdown-item" *ngFor="let currency of currencies" (click)="settings.currency = currency">{{ currency }}</button>
           </div>
         </div>
       </div>

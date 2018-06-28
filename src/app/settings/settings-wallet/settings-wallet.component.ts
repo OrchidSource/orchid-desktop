@@ -1,8 +1,7 @@
 import { Component, OnInit } from '@angular/core';
 
-// Seems like there should be a better way to include npm modules
-export declare let require: any;
-const currency_codes_data = require('currency-codes/data');
+import * as currency_codes from "currency-codes";
+
 
 @Component({
   selector: 'app-settings-wallet',
@@ -15,12 +14,12 @@ export class SettingsWalletComponent implements OnInit {
     currency: 'USD'
   };
 
-  currencies: object[];
+  currencies: string[];
 
   constructor() { }
 
   ngOnInit() {
-    this.currencies = currency_codes_data;
+    this.currencies = currency_codes.codes();
   }
 
 }
