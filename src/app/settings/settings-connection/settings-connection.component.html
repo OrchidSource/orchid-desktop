@@ -36,10 +36,9 @@
       <table class="radio-container">
         <tr>
           <td>
-            <span class="small" [translate]>SETTINGS.ALL_CONNECTIONS</span>
-          </td>
-          <td>
-            <orcui-radio value="all" name="limit_connections" [(ngModel)]="settings.limit_connections"></orcui-radio>
+            <orcui-radio value="all" name="limit_connections" [(ngModel)]="settings.limit_connections">
+              <span class="small" [translate]>SETTINGS.ALL_CONNECTIONS</span>
+            </orcui-radio>
           </td>
           <td>
             <a orcui-tooltip="{{ 'SETTINGS.TOOLTIP_ALL_CONNECTIONS' | translate }}" orcui-tooltip-placement="right" class="hide-narrow"><img src="assets/imgs/icons/question.svg"/></a>
@@ -48,10 +47,9 @@
         </tr>
         <tr>
           <td>
-            <span class="small" [translate]>SETTINGS.BROWSERS_ONLY</span>
-          </td>
-          <td>
-            <orcui-radio value="browser" name="limit_connections" [(ngModel)]="settings.limit_connections"></orcui-radio>
+            <orcui-radio value="browser" name="limit_connections" [(ngModel)]="settings.limit_connections">
+              <span class="small" [translate]>SETTINGS.BROWSERS_ONLY</span>
+            </orcui-radio>
           </td>
           <td>
             <a orcui-tooltip="{{ 'SETTINGS.TOOLTIP_BROWSERS_ONLY' | translate }}" orcui-tooltip-placement="right" class="hide-narrow"><img src="assets/imgs/icons/question.svg"/></a>

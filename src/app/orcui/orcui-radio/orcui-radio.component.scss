@@ -4,6 +4,7 @@
 $diameter: 23px;
 
 .ui-radio-container {
+  float: right;
   height: $diameter;
   width: $diameter;
   border-radius: 100px; // just bigger than 12px;
