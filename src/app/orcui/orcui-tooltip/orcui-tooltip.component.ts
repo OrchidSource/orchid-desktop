@@ -93,7 +93,6 @@ export class OrcuiTooltipComponent implements OnInit {
   @HostListener('mouseenter')
   onMouseEnter(): void {
     this.hovering = true;
-    console.log('mouse enter!!!; tip: ' + this.tip);
 
     // Only show the tooltip if the cursor has been hovering over the target
     // for a little bit of time
@@ -107,12 +106,9 @@ export class OrcuiTooltipComponent implements OnInit {
 
   @HostListener('mouseleave')
   onMouseLeave(): void {
-    console.log('mouseleave');
     this.hovering = false;
     setTimeout(() => {
-      console.log('detaching?');
       if (!this.tooltipService.tooltipHoverBehaviorSubject.getValue()) {
-        console.log('detaching!');
         this.detachTooltip();
       }
     }, 200);
