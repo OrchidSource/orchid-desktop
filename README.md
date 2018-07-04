@@ -106,3 +106,13 @@ It is possible to build for Windows from a non-windows machine using Docker. To 
 This is untested, but should work:
 
     $ npm run build-linux-executable
+
+# Importing translations
+
+Translations currently live in this spreadsheet:
+
+https://docs.google.com/spreadsheets/d/1Nm10JF2oqftGZbre658UB935_ErB8HeGZ18eHffthZw/
+
+To load those translations into the app, first export the spreadsheet as a csv file and place it in the root directory with the name `translations.csv`. Then run `npm run import-translations`. The new translation files will be placed in `src/assets/translations`, and can be committed.
+
+In the future we may make the sceript automatically pull the translations from the spreadsheet.
