@@ -6,7 +6,6 @@ import {
   HostListener,
   Injector,
   Input,
-  OnInit,
   ViewContainerRef
 } from '@angular/core';
 
@@ -15,14 +14,13 @@ import { ComponentPortal } from '@angular/cdk/portal';
 import { OrcuiTooltipBodyComponent } from '../orcui-tooltip-body/orcui-tooltip-body.component';
 import { OrcuiTooltipService } from './orcui-tooltip.service';
 
-
 /**
  * Distance between the tooltip target and the tooltip
  */
 const ARROW_OFFSET: number = 20;
 
 /**
- *  The keys in this object are the valid arguments to orcui-tooltip-placement
+ * The keys in this object are the valid arguments to orcui-tooltip-placement
  */
 const TIP_CONFIG = {
   right: {
@@ -60,19 +58,19 @@ const TIP_CONFIG = {
 @Directive({
   selector: '[orcui-tooltip]'
 })
-export class OrcuiTooltipComponent implements OnInit {
+export class OrcuiTooltipComponent {
 
   /**
    * The text to show in the tooltip
    */
   @Input('orcui-tooltip') tip: string;
+
   /**
    * Where to position the tooltip relative to the target.
    *  'left' | 'right' | 'top' | 'bottom'
    * Defaults to 'right'
    */
   @Input('orcui-tooltip-placement') tipPlacement: string;
-
 
   private overlayRef: OverlayRef;
   private portal: ComponentPortal<any>;
@@ -81,6 +79,8 @@ export class OrcuiTooltipComponent implements OnInit {
    * Whether the cursor is hovering over the tooltip icon
    */
   private hovering: boolean = false;
+
+  private attachedComponent: any;
 
   constructor(private componentFactoryResolver: ComponentFactoryResolver,
     private injector: Injector,
@@ -140,8 +140,6 @@ export class OrcuiTooltipComponent implements OnInit {
         hasBackdrop: false
       });
 
-      // this.overlayRef.hostElement;
-
       this.portal = new ComponentPortal(OrcuiTooltipBodyComponent);
 
       // set up the listener for hover over the tooltip
@@ -151,10 +149,31 @@ export class OrcuiTooltipComponent implements OnInit {
         }
       });
     }
+
     if (!this.overlayRef.hasAttached()) {
-      let component = this.overlayRef.attach(this.portal);
-      component.instance.tip = this.tip;
-      component.instance.tipPlacement = this.tipPlacement;
+      this.attachedComponent = this.overlayRef.attach(this.portal);
+      this.attachedComponent.instance.tip = this.tip;
+      this.attachedComponent.instance.tipPlacement = this.tipPlacement;
+
+      // If in "top" or "bottom" orientation, set the point the tooltip triangle should point at
+      if (this.tipPlacement === 'top' || this.tipPlacement === 'bottom') {
+        this.setTooltipTargetPosition()
+      }
+    }
+  }
+
+  /**
+   * Tell the tooltip body the position of the tooltip
+   */
+  private setTooltipTargetPosition() {
+    if (this.attachedComponent && (this.tipPlacement === 'top' || this.tipPlacement === 'bottom')) {
+      let clientRect = this.thisElement.nativeElement.getBoundingClientRect();
+      this.attachedComponent.instance.pointAtXCoordinate = clientRect.x - (clientRect.width / 2);
+      if (this.tipPlacement === 'top') {
+        this.attachedComponent.instance.pointAtYCoordinate = clientRect.y;
+      } else {
+        this.attachedComponent.instance.pointAtYCoordinate = clientRect.y + clientRect.height;
+      }
     }
   }
 
@@ -162,9 +181,6 @@ export class OrcuiTooltipComponent implements OnInit {
     if (this.overlayRef && this.overlayRef.hasAttached()) {
       this.overlayRef.detach();
     }
-  }
-
-  ngOnInit() {
   }
 
 }
