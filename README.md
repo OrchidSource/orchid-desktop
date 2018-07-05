@@ -113,6 +113,6 @@ Translations currently live in this spreadsheet:
 
 https://docs.google.com/spreadsheets/d/1Nm10JF2oqftGZbre658UB935_ErB8HeGZ18eHffthZw/
 
-To load those translations into the app, first export the spreadsheet as a csv file and place it in the root directory with the name `translations.csv`. Then run `npm run import-translations`. The new translation files will be placed in `src/assets/translations`, and can be committed.
+To load those translations into the app, export the spreadsheet as a csv file and place it in the root directory with the name `translations.csv`. Then run `npm run import-translations`. The new translation files will be placed in `src/assets/translations/`. and can be committed.
 
-In the future we may make the sceript automatically pull the translations from the spreadsheet.
+In the future we may make the script automatically pull the translations from the spreadsheet.
