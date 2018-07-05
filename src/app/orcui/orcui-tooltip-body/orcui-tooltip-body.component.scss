@@ -13,7 +13,14 @@
   color: $gray;
 }
 
-.tooltip-container:after, .tooltip-container:before {
+.tooltip-pointer {
+	height: 0;
+	width: 0;
+	position: absolute;
+	pointer-events: none;
+}
+
+.tooltip-pointer:after, .tooltip-pointer:before {
 	border: solid transparent;
 	content: " ";
 	height: 0;
@@ -22,75 +29,75 @@
 	pointer-events: none;
 }
 
-.right.tooltip-container:after, .right.tooltip-container:before {
-	right: calc(100% - 1px);
+.right.tooltip-container .tooltip-pointer {
+	left: -26px; // TODO: fix
 	top: 20px;
 }
 
-.right.tooltip-container:after {
+.right.tooltip-container .tooltip-pointer:after {
 	border-right-color: $brand-muted;
 	border-width: 13px;
 	margin-top: -13px;
+  left: 2px;
 }
 
-.right.tooltip-container:before {
+.right.tooltip-container .tooltip-pointer:before {
 	border-right-color: $gray-lighter;
 	border-width: 14px;
 	margin-top: -14px;
 }
 
-.left.tooltip-container:after, .left.tooltip-container:before {
+.left.tooltip-container .tooltip-pointer {
 	left: calc(100% - 1px);
 	top: 20px;
 }
 
-.left.tooltip-container:after {
+.left.tooltip-container .tooltip-pointer:after {
 	border-left-color: $brand-muted;
 	border-width: 13px;
 	margin-top: -13px;
 }
 
-.left.tooltip-container:before {
+.left.tooltip-container .tooltip-pointer:before {
 	border-left-color: $gray-lighter;
 	border-width: 14px;
 	margin-top: -14px;
 }
 
-.bottom.tooltip-container:after, .bottom.tooltip-container:before {
-	bottom: calc(100% - 1px);
+.bottom.tooltip-container .tooltip-pointer {
+  top: -13px;
+	left: calc(50% - 13px);
 }
 
-.bottom.tooltip-container:after {
-	left: calc(50% - 13px);
-
+.bottom.tooltip-container .tooltip-pointer:after {
 	border-bottom-color: $brand-muted;
 	border-width: 13px;
-	margin-top: -13px;
+	margin-top: -12px;
 }
 
-.bottom.tooltip-container:before {
-  left: calc( 50% - 14px);
-
+.bottom.tooltip-container .tooltip-pointer:before {
 	border-bottom-color: $gray-lighter;
 	border-width: 14px;
-	margin-top: -14px;
+	margin-top: -15px;
+  left: -1px;
 }
 
 
-.top.tooltip-container:after, .top.tooltip-container:before {
-}
-
-.top.tooltip-container:after {
-  bottom: -25px;
+.top.tooltip-container .tooltip-pointer {
+  bottom: 0;
 	left: calc(50% - 13px);
+}
+
+.top.tooltip-container .tooltip-pointer:after {
+  bottom: -25px;
 	border-top-color: $brand-muted;
 	border-width: 13px;
 	margin-top: -13px;
 }
 
-.top.tooltip-container:before {
+.top.tooltip-container .tooltip-pointer:before {
+  left: -1px;
   bottom: -27px;
-  left: calc(50% - 14px);
 	border-top-color: $gray-lighter;
 	border-width: 14px;
 	margin-top: -14px;
