@@ -7,7 +7,6 @@ import { NgModule } from '@angular/core';
 import { FormsModule } from '@angular/forms';
 import { CommonModule } from '@angular/common';
 
-import { WorldMapComponent } from './world-map/world-map.component';
 import { WalletQrComponent } from './wallet-qr/wallet-qr.component';
 
 @NgModule({
@@ -15,7 +14,7 @@ import { WalletQrComponent } from './wallet-qr/wallet-qr.component';
     CommonModule,
     FormsModule
   ],
-  declarations: [WorldMapComponent, WalletQrComponent],
-  exports: [WorldMapComponent, WalletQrComponent]
+  declarations: [WalletQrComponent],
+  exports: [WalletQrComponent]
 })
 export class UiModule { }

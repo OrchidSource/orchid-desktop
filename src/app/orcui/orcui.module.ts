@@ -10,6 +10,7 @@ import { OrcuiTooltipComponent } from './orcui-tooltip/orcui-tooltip.component';
 import { OrcuiTooltipBodyComponent } from './orcui-tooltip-body/orcui-tooltip-body.component';
 import { OrcuiTooltipService } from './orcui-tooltip/orcui-tooltip.service';
 import { OrcuiToggleComponent } from './orcui-toggle/orcui-toggle.component';
+import { OrcuiWorldMapComponent } from './orcui-world-map/orcui-world-map.component';
 
 @NgModule({
   imports: [
@@ -23,17 +24,18 @@ import { OrcuiToggleComponent } from './orcui-toggle/orcui-toggle.component';
     OrcuiRadioComponent,
     OrcuiToggleComponent,
     OrcuiTooltipComponent,
-    OrcuiTooltipBodyComponent
+    OrcuiTooltipBodyComponent,
+    OrcuiWorldMapComponent
   ],
   exports: [
     OrcuiPasswordStrengthComponent,
     OrcuiCheckboxComponent,
     OrcuiRadioComponent,
     OrcuiToggleComponent,
-    OrcuiTooltipComponent
+    OrcuiTooltipComponent,
+    OrcuiWorldMapComponent
   ],
   entryComponents: [OrcuiTooltipBodyComponent],
   providers: [OrcuiTooltipService]
-
 })
 export class OrcuiModule { }

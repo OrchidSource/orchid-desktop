@@ -1,20 +1,20 @@
 import { async, ComponentFixture, TestBed } from '@angular/core/testing';
 
-import { WorldMapComponent } from './world-map.component';
+import { OrcuiWorldMapComponent } from './orcui-world-map.component';
 
-describe('WorldMapComponent', () => {
+describe('OrcuiWorldMapComponent', () => {
   let component: WorldMapComponent;
   let fixture: ComponentFixture<WorldMapComponent>;
 
   beforeEach(async(() => {
     TestBed.configureTestingModule({
-      declarations: [ WorldMapComponent ]
+      declarations: [OrcuiWorldMapComponent]
     })
-    .compileComponents();
+      .compileComponents();
   }));
 
   beforeEach(() => {
-    fixture = TestBed.createComponent(WorldMapComponent);
+    fixture = TestBed.createComponent(OrcuiWorldMapComponent);
     component = fixture.componentInstance;
     fixture.detectChanges();
   });
