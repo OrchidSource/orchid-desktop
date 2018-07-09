@@ -1,0 +1,20 @@
+<div class="orcui-country-selector">
+  <div *ngIf="selected">
+    <span *ngTemplateOutlet="resultTemplate; context: { $implicit: selected }"></span>
+  </div>
+  <div *ngIf="!selected">
+    NOTHING SELECTED:(
+  </div>
+</div>
+
+<ng-template cdkPortal #searchTemplate>
+  <div style="background-color: green">
+    Portal for searching!!!!???
+    <label class="input-group">
+      <input type="text" class="form-control" [(ngModel)]="searchText" (ngModelChange)="search()">
+    </label>
+    <div *ngFor="let item of searchResults" (click)="selectItem(item)">
+      <span *ngTemplateOutlet="resultTemplate; context: { $implicit: item }"></span>
+    </div>
+  </div>
+</ng-template>
